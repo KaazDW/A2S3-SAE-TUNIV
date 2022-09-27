@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+}
+:root{
+    --dark-navcolor: #161B22;
+    --dark-backgroundcolor: #24242D;
+    --light-backgroundcolor: white;
+}
+body{
+    background-color: var(--dark-backgroundcolor);
+    font-family: Poppins;
+}
+
+header{
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--dark-navcolor);
+    color: white;
+    align-items: center;
+}
+header div{
+    display: flex;
+    align-items: center;
+}
+header div h1{
+    margin: 10px;
+    font-weight: 300;
+}
+header ul{
+    display: flex;
+}
+header ul li{
+    margin: 10px;
+}
+header ul li a{
+    color: white;
+
+}
+.colormod{
+    background-color: blue;
+}
