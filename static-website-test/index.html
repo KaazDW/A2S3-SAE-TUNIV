@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,8 +7,8 @@
     <title>Document</title>
     <link href="css/index.css" rel="stylesheet">
 </head>
-<body class="body">
-    <header>
+<body id="body" class="body-dark">
+    <header id="header" class="header-dark">
         <div>
             <svg width="30" height="30" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <rect width="25" height="25" fill="url(#pattern0)"/>
@@ -24,40 +24,34 @@
         <ul>
             <li><a href="">contact</a></li>
             <li><a href="">informations</a></li>
-            <li><a href="">login</a></li>
-            <li><button onClick="ChangeColorMod()">lightmod</button></li>
+            <li><a href="" class="header-login">login</a></li>
+            <li><button onClick="myFunction()">lightmod</button></li>
         </ul>
     </header>
 
     <script>
-        var r = document.querySelector(':root');
+            
+        var DarkMod = true; console.log(DarkMod);
+        var ebody = document.getElementById("body");
+        var eheader = document.getElementById("header");
 
-
-        function myFunction_get() {
-          var rs = getComputedStyle(r);
-          console.log("The value of --blue is: " + rs.getPropertyValue('--blue'));
-        }
-        
-        var DarkMod = true;
-        console.log(DarkMod);
-
-        function ChangeColorMod() {
+        function myFunction() {
             if(DarkMod){
-                r.style.setProperty('--dark-backgroundcolor', '--light-backgroundcolor');
-                
+                eheader.classList.remove("header-dark"); 
+                eheader.classList.add("header-light");
+                ebody.classList.remove("body-dark"); 
+                ebody.classList.add("body-light");
                 DarkMod = false;
-                console.log("if " + DarkMod);
-
             }
-            else if (!DarkMod){
-
-                r.style.setProperty('--light-backgroundcolor', '--dark-backgroundcolor');
-                element.classList.body('colormod');
+            else if(!DarkMod){
+                eheader.classList.remove("header-light"); 
+                eheader.classList.add("header-dark");
+                ebody.classList.remove("body-light"); 
+                ebody.classList.add("body-dark");
                 DarkMod = true;
-                console.log("else " + DarkMod);
-
-            }   
+            }
         }
+       
         </script>
 </body>
 </html>
