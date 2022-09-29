@@ -23,16 +23,16 @@ function ColorMod() {
 }
 
 var LPO = false; console.log("var LPO = " + LPO); //Login Panel Open ?
-var elogin = document.getElementsByClassName("header-login-panel");
+var elogin = document.getElementsById("header-login-panel");
 
 function LoginPanel() {
     if(!LPO){
-        elogin.style.display = 'block';
-        LPO = true;
+        // elogin.style.display = 'block';
+        LPO = true; console.log("LPO = " + LPO);
     }
     else if(LPO){
-        elogin.style.display = 'none';
-        LPO = false;
+        // elogin.style.display = 'none';
+        LPO = false; console.log("LPO = " + LPO);
     }
 }
 const btn = document.getElementById('btn');
