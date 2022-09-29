@@ -24,34 +24,18 @@
         <ul>
             <li><a href="">contact</a></li>
             <li><a href="">informations</a></li>
-            <li><a href="" class="header-login">login</a></li>
-            <li><button onClick="myFunction()">lightmod</button></li>
+            <li><button onClick="LoginPanel()" class="login-checkbox">LOGIN</button>
+                <div class="header-login-panel">
+                </div>
+            </li>
+            <li><button onClick="ColorMod()">lightmod</button></li>
         </ul>
     </header>
+    <main>
 
-    <script>
-            
-        var DarkMod = true; console.log(DarkMod);
-        var ebody = document.getElementById("body");
-        var eheader = document.getElementById("header");
 
-        function myFunction() {
-            if(DarkMod){
-                eheader.classList.remove("header-dark"); 
-                eheader.classList.add("header-light");
-                ebody.classList.remove("body-dark"); 
-                ebody.classList.add("body-light");
-                DarkMod = false;
-            }
-            else if(!DarkMod){
-                eheader.classList.remove("header-light"); 
-                eheader.classList.add("header-dark");
-                ebody.classList.remove("body-light"); 
-                ebody.classList.add("body-dark");
-                DarkMod = true;
-            }
-        }
-       
-        </script>
+
+    </main>
+    <script type="text/javascript" src="app.js"></script>
 </body>
 </html>

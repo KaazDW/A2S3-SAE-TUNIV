@@ -64,3 +64,25 @@ header .header-login{
     text-transform: uppercase;
     letter-spacing: 2px;
 }
+
+.header-login-panel{
+    position: absolute;
+    display: none;
+    height: 500px;
+    width: 500px;
+    background-color: green;
+}
+.login-checkbox{
+    content: "LOGIN";
+
+}
+.login-checkbox :checked .header-login-panel{
+    visibility: visible;
+    
+    
+}
+.header-login-panel{
+    height: 500px;
+    width: 500px;
+    background-color: green;
+}
