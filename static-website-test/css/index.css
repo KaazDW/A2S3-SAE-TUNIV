@@ -49,6 +49,7 @@ header div h1{
 }
 header ul{
     display: flex;
+    align-items: center;
 }
 header ul li{
     margin: 10px;
@@ -58,11 +59,14 @@ header ul li a{
 
 }
 header #header-login{
+    color: white;
     background-color: #FF3A3A;
     padding: 5px 15px;
     border-radius: 20px;
     text-transform: uppercase;
     letter-spacing: 2px;
+    /* outline: 3px solid red;
+    outline-offset: 3px; */
 }
 #header-login-panel{
     height: 50px;
