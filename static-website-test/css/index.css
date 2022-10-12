@@ -27,7 +27,26 @@
     background-color: #161B22;
 }
 
+.aside-dark{
+    background-color: #0D1117;
 
+}
+.aside-light{
+    background-color: #605858;
+}
+aside{
+    height: 94vh;
+    width: 200px;
+    color: rgba(255, 255, 255, 0);
+    -webkit-text-stroke: 1px rgb(255, 255, 255);
+    font-size: 53px;
+}
+aside h1{
+    /* position: absolute; */
+    rotate: -90deg;
+    margin-right:0px;
+    padding-top: 150px;
+}
 
 
 body{
