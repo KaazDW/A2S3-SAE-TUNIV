@@ -24,8 +24,18 @@
         <ul>
             <li><a href="">contact</a></li>
             <li><a href="">informations</a></li>
-            <li><button onClick="LoginPanel()" id="header-login">LOGIN</button>
-            <div id="header-login-panel"></div></li>
+            <li><input type="checkbox" id="header-login" onclick="checkboxLogin()">
+                <label for="header-login" class="header-loginlabel">LOGIN</label>
+            <div id="header-login-panel">
+                <h1>CONNECTEZ-VOUS</h1>
+                <form>
+                    <input id="login-user" placeholder="USER_ID">
+                    <input type="password" id="login-password" placeholder="PASSWORD">
+                    <button>SE CONNECTER</button>
+                </form> 
+
+            </div>
+        </li>
             <li><button onClick="ColorMod()">lightmod</button></li>
         </ul>
     </header>

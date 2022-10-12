@@ -58,7 +58,11 @@ header ul li a{
     color: white;
 
 }
-header #header-login{
+#header-login{
+    display:none;
+}
+.header-loginlabel{
+    user-select: none;
     color: white;
     background-color: #FF3A3A;
     padding: 5px 15px;
@@ -68,9 +72,32 @@ header #header-login{
     /* outline: 3px solid red;
     outline-offset: 3px; */
 }
+#header-login:checked > #header-login-panel{
+    display: block;
+
+}
 #header-login-panel{
-    height: 50px;
+    user-select: none;
     display: none;
-    width: 50px;
-    background-color: green;
+    position: absolute;
+    height: 350px;
+    width: 350px;
+    margin-top: 15px;
+    margin-left: calc(-350px /2 + 55px);
+    /* background-color: rgba(117, 117, 117, 0.26); */
+    backdrop-filter: blur(4px);
+    border-radius: 5px;
+    border: 1px solid white;
+    text-align: center;
+}
+#header-login-panel h1{
+    margin-top: 35px;
+    margin-bottom: 15px;
+}
+#header-login-panel input{
+    width: 70%;
+    /* height: 10%; */
+    margin: 5px;
+    border-radius: 5px;
+    padding: 12px 10px;
 }
