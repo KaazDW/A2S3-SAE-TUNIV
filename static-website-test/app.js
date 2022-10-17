@@ -25,26 +25,7 @@ function ColorMod() {
 var LPO = false; console.log("var LPO = " + LPO); //Login Panel Open ?
 var elogin = document.getElementsById("header-login-panel");
 
-function LoginPanel() {
-    if(!LPO){
-        // elogin.style.display = 'block';
-        LPO = true; console.log("LPO = " + LPO);
-    }
-    else if(LPO){
-        // elogin.style.display = 'none';
-        LPO = false; console.log("LPO = " + LPO);
-    }
-}
-const btn = document.getElementById('btn');
 
-btn.addEventListener('click', () => {
-  // 👇️ hide button
-  btn.style.display = 'none';
-
-  // 👇️ show div
-  const box = document.getElementById('box');
-  box.style.display = 'block';
-});
 
 function checkboxLogin() {
     var checkBox = document.getElementById("header-login");

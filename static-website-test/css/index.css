@@ -35,6 +35,7 @@
     background-color: #605858;
 }
 aside{
+    position: fixed;
     height: 94vh;
     width: 200px;
     color: rgba(255, 255, 255, 0);
@@ -43,9 +44,9 @@ aside{
 }
 aside h1{
     /* position: absolute; */
-    rotate: -90deg;
-    margin-right:0px;
-    padding-top: 150px;
+    transform: rotate(-90deg);
+    background-color: #0D1117;
+    padding: 50px;
 }
 
 
@@ -57,6 +58,8 @@ header{
     justify-content: space-around;
     color: white;
     align-items: center;
+    /* width: 70%; */
+    /* margin-left: 150px; */
 }
 header div{
     display: flex;
@@ -75,7 +78,14 @@ header ul li{
 }
 header ul li a{
     color: white;
-
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: .4s;
+    /* border-bottom: 5px solid rgba(128, 128, 128, 0); */
+}
+header ul li a:hover{
+    background-color: rgb(63, 63, 63);
+    /* border-bottom: 3px solid grey; */
 }
 #header-login{
     display:none;
@@ -90,6 +100,7 @@ header ul li a{
     letter-spacing: 2px;
     /* outline: 3px solid red;
     outline-offset: 3px; */
+    transition: 0.5s;
 }
 #header-login:checked > #header-login-panel{
     display: block;
@@ -108,6 +119,15 @@ header ul li a{
     border-radius: 5px;
     border: 1px solid white;
     text-align: center;
+    animation: loginpanAnim 1s;
+}
+@keyframes loginpanAnim{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
 }
 #header-login-panel h1{
     margin-top: 35px;
@@ -119,4 +139,42 @@ header ul li a{
     margin: 5px;
     border-radius: 5px;
     padding: 12px 10px;
+}
+
+.main-home{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 350px;
+    color: white;
+    
+}
+.main-home section:first-child{
+    text-align: center;
+}
+.main-home h1{
+    font-size: 60px;
+}
+.main-home a{
+    display: flex;
+    align-items: center;
+    color: white;
+    background-color: #FF3A3A;
+    padding: 5px 20px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    transition: 0.5s;
+}
+.main-home a svg{
+    /* margin: 10px; */
+    padding: 10px;
+    /* border-radius: 50px; */
+}
+.main a div:first-child{
+    background-color: white;
+    height: 50px;;
+    width: 50px;
+}
+.main-home a:hover, .header-loginlabel:hover{
+    background-color: #c72c2c;
 }
