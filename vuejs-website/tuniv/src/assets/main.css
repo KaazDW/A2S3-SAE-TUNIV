@@ -107,9 +107,9 @@ header ul li{
 header ul li a{
     color: white;
     border-radius: 2px;
-    transition: .4s;
+    transition: .2s;
     padding: 10px 15px;
-    border-right: 5px solid rgba(128, 128, 128, 0);
+    border-right: 3px solid rgba(128, 128, 128, 0);
 }
 header ul li label{
     /* margin-left: 20px;
@@ -211,3 +211,80 @@ header ul li a:hover{
     background-color: #c72c2c;
 }
  */
+
+
+ /* MAIN PAGE */
+ .main-page, .apropos-page{
+    display: flex;
+    justify-content: center;
+
+    /* background-color: yellow; */
+    height: calc( 100vh - 70px);
+ }
+ .main-page{
+    align-items: center;
+ }
+ .main-page div:first-child{
+    text-align: center;
+    /* background-color: green; */
+    margin-top: -250px;
+ }
+ .main-page div:first-child h1{
+    color: white;
+    font-size: 45px;
+ }
+ .main-page .main-page-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--red);
+    width: 355px;
+    height: 55px;
+    margin: auto;
+    border-radius: 3px;
+    transition: ease .4s;
+ }
+ .main-page .main-page-button:hover{
+    background-color: var(--red2);
+    /* box-shadow: 0px 0px 15px 0px rgba(255, 255, 255, 0.253); */
+ }
+ .main-page a{
+    color: white;
+ }
+ .main-page .main-page-button svg{
+    margin: 15px;
+    /* border : 1px solid white; */
+    /* padding: 10px; */
+    /* border-radius: 25px; */
+    /* background-color: white; */
+ }
+
+
+
+ /* A PROPOS PAGE */
+ .apropos-page{
+
+ }
+ .apropos-container-card{
+    display:flex;
+ }
+ .apropos-container-card .apropos-card{
+    margin: 25px;
+    text-align: center;
+ }
+ .apropos-container-card .apropos-card img{
+    height: 80px;
+    margin: 20px;
+    border-radius: 50px;
+}
+.apropos-container-card .apropos-card h1{
+    color: rgb(199, 199, 199);
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.apropos-container-card .apropos-card span{
+    font-weight: 300;
+    color: white;
+}
+
