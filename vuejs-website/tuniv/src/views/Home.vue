@@ -2,7 +2,7 @@
 import TheWelcome from '../components/TheWelcome.vue'
 </script> -->
 
-<template class="main-page">
+<template>
     <section class="main-page">
         <div>
             <h1>TUNIV.</h1>

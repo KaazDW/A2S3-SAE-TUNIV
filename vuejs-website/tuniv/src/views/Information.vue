@@ -1,6 +1,8 @@
 <template>
   <div class="information-page">
     <h1>This is the information page</h1>
+    <pre id="readme-text"></pre> <!-- "<pre>" preserves line breaks -->
+
   </div>
 </template>
 

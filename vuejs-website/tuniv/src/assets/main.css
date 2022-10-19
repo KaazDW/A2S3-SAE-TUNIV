@@ -84,6 +84,7 @@ header{
     align-items: center;
     font-family: Poppins;
     /* width: 70%; */
+    min-width: 500px;
     /* margin-left: 150px; */
 }
 header div a:first-child{
@@ -174,6 +175,28 @@ header ul li a:hover{
     border-radius: 5px;
     padding: 12px 10px;
 }
+@media  (max-width: 500px) {
+    header{
+        justify-content: center;
+        display: block;
+        text-align: center;
+        height: 130px;
+    }
+    header div:first-child, ul{
+        display: flex;
+        justify-content: center;
+    }
+    header ul{
+        margin-top: 10px;
+    }
+    /* header li{
+        display: none;
+    } */
+    .main-page{
+        margin-right: -80px;
+    }
+}
+
 /* 
 .main-home{
     display:flex;

@@ -35,25 +35,35 @@
           }
       }
 
-      var LPO = false; console.log("var LPO = " + LPO); //Login Panel Open ?
-      var elogin = document.getElementsById("header-login-panel");
-
-
-
       function checkboxLogin() {
           var checkBox = document.getElementById("header-login");
           var div = document.getElementById("header-login-panel");
           if (checkBox.checked == true){
             div.style.display = "block";
+            console.log("> login-panel display : block");
           } else {
             div.style.display = "none";
+            console.log("> login-panel display : none");
           }
       }
       function soundEffect(){
-        var audio = new Audio('sound.mp3');
+        var audio = new Audio('click1.mp3');
         audio.play();
-        console.log("audioplaying")
+        console.log("> audioSound = done")
       }
+
+
+      function getReadme() {
+    fetch(`https://raw.githubusercontent.com/KaazDW/A2S3-SAE-WEB/main/README.md`) // Fetch the file from GitHub's api
+        .then(response => response.json())
+        .then(data => {
+            const content = atob(data.content); // Convert from base64 to readable text
+                  document.getElementById("readme-text").textContent = content; // Apply content to the document
+            console.log(content); // Log the content to the console
+        })
+        .catch(error => console.log(error)); // Catch any errors
+    }
+    getReadme();
 
 </script>
   </body>
