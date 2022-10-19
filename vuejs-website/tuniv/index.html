@@ -9,7 +9,6 @@
   <body class="body-dark">
     <div id="app"></div>
     <script type="module" src="/src/main.js"></script>
-		<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/showdown/0.3.1/showdown.min.js"></script>
     <script>
       //JavaScript here
       var darkmod = true; console.log("var darkmod = " + darkmod);
@@ -48,30 +47,11 @@
           }
       }
       function soundEffect(){
-        var audio = new Audio('click1.mp3');
+        var audio = new Audio('./src/assets/pop.mp3');
         audio.play();
         console.log("> audioSound = done")
       }
 
-
-      window.onload=function(){
-				// this function is the reverse version of escapeHTML found at 
-				// https://github.com/evilstreak/markdown-js/blob/master/src/render_tree.js
-				function unescapeHTML( text ) {
-				    return text.replace( /&amp;/g, "&" )
-				               .replace( /&lt;/g, "<" )
-				               .replace( /&gt;/g, ">" )
-				               .replace( /&quot;/g, "\"" )
-				               .replace( /&#39;/g, "'" );
-				  }
-
-				// based on https://gist.github.com/paulirish/1343518
-				(function(){
-					[].forEach.call( document.querySelectorAll('[data-markdown]'), function fn(elem){
-						elem.innerHTML = (new Showdown.converter()).makeHtml(unescapeHTML(elem.innerHTML));
-					});
-				}());
-			}
 </script>
   </body>
 </html>
