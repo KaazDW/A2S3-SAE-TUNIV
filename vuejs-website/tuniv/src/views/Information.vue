@@ -1,7 +1,22 @@
 <template>
   <div class="information-page">
     <h1>This is the information page</h1>
-    <pre id="readme-text"></pre> <!-- "<pre>" preserves line breaks -->
+    <div data-markdown>
+#Hello
+
+sdf
+
+sdf asdf asdf sdf
+
+
+	var x=1;
+	entry.forEach(function(item){
+		x=x++;
+	})
+
+
+## sdfsdfdf
+		</div>
 
   </div>
 </template>

@@ -180,7 +180,7 @@ header ul li a:hover{
         justify-content: center;
         display: block;
         text-align: center;
-        height: 130px;
+        height: 120px;
     }
     header div:first-child, ul{
         display: flex;
