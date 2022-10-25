@@ -285,17 +285,35 @@ header ul li a:hover{
 
 
  /* A PROPOS PAGE */
- .apropos-page{
-
- }
- .apropos-container-card{
+.apropos-page{
+    color: white;
+}
+.apropos-page > section{
+    width: 40%;
+}
+.apropos-page > section > h1{
+    margin-top: 30px;
+    margin-bottom: 5px;
+    margin-left: -25px;
+    font-size: 25px;
+    color: var(--red);
+    /* text-align: center; */
+}
+.apropos-page > section > h1 span{
+    font-weight: 400;
+}
+.apropos-page > section > p{
+    text-align: center;
+}
+.apropos-container-card{
     display:flex;
- }
- .apropos-container-card .apropos-card{
+    justify-content: center;
+}
+.apropos-container-card .apropos-card{
     margin: 25px;
     text-align: center;
- }
- .apropos-container-card .apropos-card img{
+}
+.apropos-container-card .apropos-card img{
     height: 80px;
     margin: 20px;
     border-radius: 50px;
