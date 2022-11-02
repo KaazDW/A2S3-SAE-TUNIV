@@ -47,10 +47,10 @@ Celle que répond le mieux à nos objectif et nos besoins est la méthode ***Agi
 
 D'après l'"agile manifesto" datant de 2001, cette méthode de management d'organisation applique 4 valeurs essentiels, qui sont : <br>
 
-> - Valoriser les individus et leurs interactions plus que les processus et les outils
-> - Valoriser des logiciels opérationnels plus qu’une documentation exhaustive
-> - Valoriser la collaboration avec les clients plus que la négociation contractuelle
-> - Valoriser l’adaptation au changement plus que le suivi d’un plan
+> - **Valoriser les individus et leurs interactions** *plus que les processus et les outils*
+> - **Valoriser des logiciels opérationnels plus** *qu’une documentation exhaustive*
+> - **Valoriser la collaboration avec les clients plus** *que la négociation contractuelle*
+> - **Valoriser l’adaptation au changement** *plus que le suivi d’un plan*
 
 
 
