@@ -47,7 +47,7 @@ Ainsi, en liens avec le cours de Management des Sytèmes Informatique, tenus par
 Pour définir de quelle façon notre tri-nôme allait s'organiser par la suite il a fallut apprendre et comparer les différentes méthodes déjà existantes et misent en place au sein de réels entreprises afin pouvoir les intégrer ou les adapter.
 Celle que répond le mieux à nos objectif et nos besoins est la méthode ***Agile***.
 
-D'après l'[*agile manifesto*](http://agilemanifesto.org/iso/fr/manifesto.html) datant de 2001, cette méthode de management relative aux organisations informatique applique 4 valeurs essentiels : <br>
+D'après l'[*agile manifesto*](http://agilemanifesto.org/iso/fr/manifesto.html) datant de 2001, cette méthode de management relative aux organisations informatique applique 4 valeurs essentielles : <br>
 
 > - **Valoriser les individus et leurs interactions** *plus que les processus et les outils*
 > - **Valoriser des logiciels opérationnels plus** *qu’une documentation exhaustive*
@@ -71,19 +71,17 @@ Ainsi, en application de cette méthode agile, nos rôles se sont répartis de c
   </tr>
 </table>
 
+Concernant l'organisation temporelle du projet : 
+> - 15min en début de chaque séances en présentiel afin de communiquer sur l'avancement du projet et l'organisation de la séance.
+> - 10 à 30min après chaque [....] avec le tuteur de notre projet Monsieur Lionel BUATHIER.
+> - 
 
 
 
 
 
 
-
-
-
-
-
-
-
+<!-- Remerciement à MR Emillien Nicolas pour les conseils et réponses apportés ayant fortement contribué à développement de ce projet. -->
 
 <h1 align=center><br><br><br><br>ReadME en cours d'écriture...</h1>
 
