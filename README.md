@@ -1,5 +1,5 @@
 # TUNIV'S REPOSITORY on GITHUB
-This template should help get you started developing with Vue 3 in Vite.
+<!-- This template should help get you started developing with Vue 3 in Vite.
 
 ### Recommended IDE Setup
 
@@ -26,6 +26,8 @@ npm run dev
 ```sh
 npm run build
 ```
+--> 
+
 <!-- https://www.notion.so/c03fb4345a5240639c676005b6aec94f?v=c5031c7a331d45e58a7899a58b5aff25 -->
 
 <br><br><br>
