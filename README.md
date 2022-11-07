@@ -34,7 +34,7 @@ npm run build
 
 Comme tout projet informatique, la mise en place de ce projet nécessite une organisation précise et définis au préalable. Ayant été témoin de soucis claires de communications et d'organisations au sein de notre groupe lors des débuts de la phase de développement, il s'est avéré primordiale d'effectuer une profonde remise en question de celui-ci afin d'assurer le bon déroulement du projet.
 
-Ainsi, en liens avec le cours de Management des Sytèmes Informatique, tenus par Monsieur Quentin Veyret pendant ce mois d'octobre 2022, nous avons communement définis la marche à suivre ainsi que les rôle de chacun des membres du groupe, qui sont pour rappel : 
+Ainsi, en liens avec le cours de Management des Sytèmes Informatique, tenus par Monsieur Quentin Veyret pendant ce mois d'octobre 2022, nous avons communement définis la marche à suivre ainsi que les rôles de chacun des membres du groupe, qui sont pour rappel : 
 <p align=center>
 - Gaël JOURNET  <br>
 - Nathan OZIMEK  <br>
