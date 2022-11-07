@@ -31,7 +31,7 @@ npm run build
 <!-- https://www.notion.so/c03fb4345a5240639c676005b6aec94f?v=c5031c7a331d45e58a7899a58b5aff25 -->
 
 <br><br><br>
-# Tunvi Project ReadMe
+## 💻 Tunvi Project ReadMe
 ## Organisation du projet (en liens avec la **MSI**)
 
 Comme tout projet informatique, la mise en place de ce projet nécessite une organisation précise et définis au préalable. Ayant été témoin de soucis claires de communications et d'organisations au sein de notre groupe lors des débuts de la phase de développement, il s'est avéré primordiale d'effectuer une profonde remise en question de celui-ci afin d'assurer le bon déroulement du projet.
