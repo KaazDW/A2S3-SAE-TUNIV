@@ -76,7 +76,16 @@ Concernant l'organisation temporelle du projet :
 > - 10 à 30min après chaque [....] avec le tuteur de notre projet Monsieur Lionel BUATHIER.
 > - 
 
+### Brouillon de page "à propos" (sans mise en forme pour le moment)
 
+- Qui sommes-nous ? <br>
+Nous sommes une équipe de 3 étudiants en section informatique à l'IUT Claude Bernard Lyon 1 de Bourg-en-Bresse, composée de Gael JOURNET, Jean-François MARCOURT et Nathan OZIMEK. Nous avons développé Tuniv entre septembre 2022 et avril 2023, dans le cadre d'un projet semestriel.
+
+- Qu'est-ce que Tuniv ? <br>
+Tuniv est une application disponible sur navigateur et téléphone permettant la gestion de tournois de sport universitaires à l'aide d'un affichage en temps réel des matchs et tournois passés et présents.
+
+- Pourquoi Tuniv ? <br>
+L'objectif de l'application est de centraliser la pratique sportive universitaire à l'aide d'un outil développé par des étudiants, pour des étudiants. Tuniv héberge déjà [nombre d'équipes] équipes ayant joué [nombre de matchs] matchs dans [nombre de tournois] tournois parmi [nombre de sports] différents.
 
 
 
