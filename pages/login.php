@@ -1,23 +1,14 @@
-<?php session_start(); 
-
-if (empty($_SESSION["admin"])) {
-    $_SESSION["admin"] = false;
-  };
- ?>
- 
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <?php include '../modules/head.php'; ?>
+    <?php include '../modules/head.php'; ?>    
 </head>
 <body>
-    <!-- HEADER IMPORT MODULE -->
-    <?php include '../modules/header.php'; ?>
-    
-    <div class="margin-header"></div> <!-- issu with margin-top under the fixed header -->
+    <header>
+        <?php include '../modules/header.php'; ?>     
+    </header>
     <main class="main-login">
-
-        <!-- <h1>LOGIN-PAGE</h1> -->
+        <h2>LOGIN PAGE</h2>
         <form class="center" action="../config/login.php" method="POST">
             <!-- <div> -->
                 <label for="login-input">Login</label>
@@ -27,9 +18,13 @@ if (empty($_SESSION["admin"])) {
                 <label for="mot-de-passe-input">Password</label>
                 <input type="password" name="password" id="password-input">
             <!-- </div> -->
-            <button type="submit">Envoyer</button>
+            <button type="submit">Se Connecter</button>
         </form>
     </main>
+    <footer>
+        <!-- <h3>footer</h5> -->
+        <a href="">©TUNIV</a>
+    </footer>
+    <script src="/app.js"></script>
 </body>
-<script src="../app.js"></script>
 </html>

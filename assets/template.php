@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <?php include 'modules/head.php'; ?>    
+    <?php include '../modules/head.php'; ?>    
 </head>
 <body>
     <header>
-        <?php include 'modules/header.php'; ?>     
+        <?php include '../modules/header.php'; ?>     
     </header>
     <main class="main-home">
         <section class="main-content">
