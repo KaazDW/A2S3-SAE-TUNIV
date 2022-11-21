@@ -34,27 +34,27 @@ npm run build
 <h2 align=center>  💻 TUNIV Project ReadMe</h1>
 <h3> Organisation du projet (en liens avec la **MSI**)</h3>
 
-Comme tout projet informatique, la mise en place de ce projet nécessite une organisation précise et définis au préalable. <br><br>
-Ayant été témoin de soucis claires de communications et d'organisations au sein de notre groupe lors des débuts de la phase de développement, il s'est avéré primordiale d'effectuer une profonde remise en question de celui-ci afin d'assurer le bon déroulement du projet.
+Comme tout projet informatique, la mise en place de ce projet nécessite une organisation précise et définie au préalable. <br><br>
+Ayant été témoin de soucis clairs de communication et d'organisation au sein de notre groupe lors des débuts de la phase de développement, il s'est avéré primordial d'effectuer une profonde remise en question de celui-ci afin d'assurer le bon déroulement du projet.
 
-Ainsi, en liens avec le cours de Management des Sytèmes Informatique, tenus par Monsieur Quentin Veyret pendant ce mois d'octobre 2022, nous avons communement définis la marche à suivre ainsi que les rôles de chacun des membres du groupe, qui sont pour rappel : 
+Ainsi, en lien avec le cours de Management des Sytèmes Informatique, tenu par Monsieur Quentin Veyret pendant ce mois d'octobre 2022, nous avons communément défini la marche à suivre ainsi que les rôles de chacun des membres du groupe, qui sont pour rappel : 
 <p align=center>
 - Gaël JOURNET  <br>
 - Nathan OZIMEK  <br>
 - Jean-François MARCOURT 
 </p>
 
-Pour définir de quelle façon notre tri-nôme allait s'organiser par la suite il a fallut apprendre et comparer les différentes méthodes déjà existantes et misent en place au sein de réels entreprises afin pouvoir les intégrer ou les adapter.
-Celle que répond le mieux à nos objectif et nos besoins est la méthode ***Agile***.
+Pour définir de quelle façon notre tri-nôme allait s'organiser par la suite il a fallu apprendre et comparer les différentes méthodes déjà existantes et mises en place au sein de réelles entreprises afin pouvoir les intégrer ou les adapter.
+Celle qui répond le mieux à nos objectifs et nos besoins est la méthode ***Agile***.
 
-D'après l'[*agile manifesto*](http://agilemanifesto.org/iso/fr/manifesto.html) datant de 2001, cette méthode de management relative aux organisations informatique applique 4 valeurs essentielles : <br>
+D'après l'[*agile manifesto*](http://agilemanifesto.org/iso/fr/manifesto.html) datant de 2001, cette méthode de management relative aux organisations informatiques applique 4 valeurs essentielles : <br>
 
 > - **Valoriser les individus et leurs interactions** *plus que les processus et les outils*
 > - **Valoriser des logiciels opérationnels plus** *qu’une documentation exhaustive*
 > - **Valoriser la collaboration avec les clients plus** *que la négociation contractuelle*
 > - **Valoriser l’adaptation au changement** *plus que le suivi d’un plan*
 
-Au dela de ces valeurs, la méthode agile se résume par la **Transparence**, la **Flexibilité** et l'**Implication** au sein du système organisationnel concerné définis par 12 principes consultable ci-dessous : <p align=center>[http://agilemanifesto.org/iso/fr/principles.html](http://agilemanifesto.org/iso/fr/principles.html).</p>
+Au-delà de ces valeurs, la méthode agile se résume par la **Transparence**, la **Flexibilité** et l'**Implication** au sein du système organisationnel concerné défini par 12 principes consultables ci-dessous : <p align=center>[http://agilemanifesto.org/iso/fr/principles.html](http://agilemanifesto.org/iso/fr/principles.html).</p>
 
 <br><br>
 Ainsi, en application de cette méthode agile, nos rôles se sont répartis de cette façon :<br>
@@ -73,7 +73,7 @@ Ainsi, en application de cette méthode agile, nos rôles se sont répartis de c
 
 Concernant l'organisation temporelle du projet : 
 > - 15min en début de chaque séances en présentiel afin de communiquer sur l'avancement du projet et l'organisation de la séance.
-> - 10 à 30min après chaque [....] avec le tuteur de notre projet Monsieur Lionel BUATHIER.
+> - 10 à 30min chaque une à deux semaines avec le tuteur de notre projet Monsieur Lionel BUATHIER.
 > - 
 
 ### Brouillon de page "à propos" (sans mise en forme pour le moment)
