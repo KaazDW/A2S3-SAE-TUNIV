@@ -12,7 +12,12 @@
     --colorc: #272932;
     --colord: #F2F7F2;
     --colore: #d33636;
+
+
+    --color-blue1: #1a202c;
+    --color-blue2: rgba(0, 0, 0, 0.24);
 }
+
 
 body{
     font-family: 'Raleway', sans-serif;
@@ -88,20 +93,7 @@ body{
             background-color: yellow;
             position: absolute;
         }
-    }
-    
-    //div for fixed margin-top issu w header
-    div.margin-header{background-color: var(--colorc); height: 70px;}
-    main{
-        background-color: var(--colorb);
-        border-radius: 5px;
-    }
-    main.main-index{
-        height: 100vh;
-        margin-top: 15px;
-
-    }
-    
+    }    
 }
 
 @media (max-width: 850px) { 
@@ -119,5 +111,47 @@ body{
         }
     }
 
+
+}
+
+
+// MAIN STYLE
+//div for fixed margin-top issu w header
+div.margin-header{background-color: var(--colorc); height: 70px;}
+main{
+    background-color: var(--colorb);
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+// INDEX STYLE
+main.main-index{
+    height: 100vh;
+}
+
+//LOGIN PAGE STYLE
+.main-login{
+    height: 80vh;
+form {
+    color: white;
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    // background-color: yellow;.
+    text-align: center;
+    label{
+        margin: 15px;
+    }
+    input{
+        width: 100px;
+        margin: auto;
+    }
+    button{
+        width: 100px;
+        margin: auto;
+        margin-top: 50px;
+    }
+}
 
 }

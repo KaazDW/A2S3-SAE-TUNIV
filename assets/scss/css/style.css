@@ -81,18 +81,6 @@ body header .mobilemenu-open {
   background-color: yellow;
   position: absolute;
 }
-body div.margin-header {
-  background-color: var(--colorc);
-  height: 70px;
-}
-body main {
-  background-color: var(--colorb);
-  border-radius: 5px;
-}
-body main.main-index {
-  height: 100vh;
-  margin-top: 15px;
-}
 
 @media (max-width: 850px) {
   body {
@@ -108,6 +96,44 @@ body main.main-index {
   body header .mobile-menu {
     display: flex;
   }
+}
+div.margin-header {
+  background-color: var(--colorc);
+  height: 70px;
+}
+
+main {
+  background-color: var(--colorb);
+  border-radius: 5px;
+  margin-top: 15px;
+}
+
+main.main-index {
+  height: 100vh;
+}
+
+.main-login {
+  height: 80vh;
+}
+.main-login form {
+  color: white;
+  padding-top: 50px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+.main-login form label {
+  margin: 15px;
+}
+.main-login form input {
+  width: 100px;
+  margin: auto;
+}
+.main-login form button {
+  width: 100px;
+  margin: auto;
+  margin-top: 50px;
 }
 
 /*# sourceMappingURL=style.css.map */

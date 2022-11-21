@@ -3,8 +3,18 @@
     <ul class="nav">
         <li><a href="../pages/informations.php">Informations</a></li>
         <li><a href="">A propos</a></li>
-        <p style="color: grey;">|</p>
-        <li><a href="">LOGIN</a></li>
+            <p style="color: grey;">|</p>
+        <li><a href="../pages/login-page.php">LOGIN</a></li>
+        <li><a href="../config/logout.php">LOGOUT</a></li>
+        
+        <li>          <?php
+          if ($_SESSION["admin"]) {
+            echo ("<a class ='nav-link' href='../config/logout.php'>Bienvenue, " . $_SESSION["user"] . ". Cliquez ici pour vous déconnecter.</a>");
+          } else {
+            echo ("<a class='nav-link' href='/login.php'>Connexion</a>");
+          }
+          ?></li>
+        
     </ul>
     <div class="mobile-menu">
         <input type="checkbox" id="mobile-menu-id" onclick="MobileMenu()">
