@@ -13,10 +13,10 @@
             <a href="">Accéder aux matchs</a>
         </section>
     </main>
-    <footer>
-        <!-- <h3>footer</h5> -->
+    <!-- <footer>
+        <h3>footer</h5>
         <a href="">©TUNIV</a>
-    </footer>
+    </footer> -->
     <script src="/app.js"></script>
 </body>
 </html>
