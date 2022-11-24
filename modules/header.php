@@ -1,3 +1,8 @@
+<?php if (empty($_SESSION["admin"])) {
+    $_SESSION["admin"] = false;
+}
+?>
+
 <a href="../index.php">
     <h1>🏆 TUNIV</h1>
     <a onClick="mobilemenu()" class="icon">
@@ -7,9 +12,13 @@
 <ul class="nav nonactive" id="nav">
     <li><a href="">Informations</a></li>
     <li><a href="">A propos</a></li>
-        <span>|</span> 
-    <li class="login-link"><a href="../pages/login.php"><img onClick="" src="/assets/img/pp-blanc.png"></a></li>
-        <span>|</span> 
+    <span>|</span>
+    <li class="login-link"><a href="../pages/login.php"><img src=<?php if ($_SESSION["admin"]) {
+                                                                        echo ("'/assets/img/pp-blanc2.png'");
+                                                                    } else {
+                                                                        echo ("'/assets/img/pp-blanc.png'");
+                                                                    } ?>></a></li>
+    <span>|</span>
     <li><a href="">JOUR</a></li>
     <!-- <li class="nav-element"><a href="/pages/blog.html">Blog</a>
         <ul>
