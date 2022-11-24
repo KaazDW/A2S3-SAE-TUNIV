@@ -62,7 +62,7 @@ header .icon{
 }
 /* HEADER NAV DIV */
 header .nav{
-    /* display: flex; */
+    display: flex;
     align-items: center;
 }
 header .nav span{
@@ -86,9 +86,6 @@ header .nav .login-link a:hover{ /*Hover issu so disable it ftm*/
 }
 header .nav .login-link img{
     height: 35px;
-}
-header .nav li ul{ /* FOR DROPDOWN MENU*/
-    display: none;
 }
 
 
@@ -166,7 +163,6 @@ footer{
 /* RESPONSIVE STYLE SETTINGS */
 @media (max-width: 700px) {
     header{
-        /* background-color: green; */
         width: 90vw;
         min-width: 0vh;
     }
@@ -175,6 +171,7 @@ footer{
         height: 50px;
     }
     header .nav{
+        display: none;
         background-color: var(--color-element);
         backdrop-filter: blur(50em);
         width: 90vw;
@@ -184,11 +181,10 @@ footer{
         top: 80px;
         left: 0;
     }
-}
-
-.nonactive{
-    display: flex;
-}
-.active{
-    display: flex;
+    .active{
+        display: flex;
+    }
+    .nonactive{
+        display: none;
+    }
 }

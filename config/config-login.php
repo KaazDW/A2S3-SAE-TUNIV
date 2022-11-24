@@ -5,5 +5,4 @@ $password = $_POST["password"];
 if ($id == "admin" && $password == "admin") {
     $_SESSION["admin"] = true;
 }
-
-header("Location : ../index.php");
+header("Location: ../index.php");
