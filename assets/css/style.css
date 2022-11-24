@@ -46,7 +46,7 @@ header{
     align-items: center;
     width: 55vw;
     padding: 7px 0px;
-    min-width: 520px;
+    min-width: 590px;
     backdrop-filter: blur(50px);
 }
 main{
@@ -55,13 +55,14 @@ main{
 /* HEADER TITLE DIV */
 header h1{
     margin-top: -5px;
+    letter-spacing: 3px;
 }
 header .icon{
     display: none;
 }
 /* HEADER NAV DIV */
 header .nav{
-    display: flex;
+    /* display: flex; */
     align-items: center;
 }
 header .nav span{
@@ -90,6 +91,8 @@ header .nav li ul{ /* FOR DROPDOWN MENU*/
     display: none;
 }
 
+
+
 /* INDEX PAGE STYLE */
 .main-home{
     display: flex;
@@ -115,7 +118,8 @@ header .nav li ul{ /* FOR DROPDOWN MENU*/
 
 /* LOGIN PAGE STYLE */
 .main-login{
-    height: 100vh;
+    /* height: 100vh; */
+    margin-bottom: 50vh;
 }
 .main-login form{
     display: flex;
@@ -137,6 +141,20 @@ header .nav li ul{ /* FOR DROPDOWN MENU*/
     border: 1px solid rgba(255, 255, 255, 0);
     border-radius: 5px;
 }
+.main-login .logout-button{
+    background-color: var(--red);
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: .2s;
+}
+.main-login .logout-button:hover{
+    background-color: rgb(147, 41, 41);
+}
+.logout-div{
+    display: flex;
+    justify-content: center ;
+    margin-top: 250px;
+}
 
 /* FOOTER STYLE */
 footer{
@@ -146,6 +164,31 @@ footer{
 }
 
 /* RESPONSIVE STYLE SETTINGS */
-@media (max-width: 1000px) {
+@media (max-width: 700px) {
+    header{
+        /* background-color: green; */
+        width: 90vw;
+        min-width: 0vh;
+    }
+    header .icon{
+        display: flex;
+        height: 50px;
+    }
+    header .nav{
+        background-color: var(--color-element);
+        backdrop-filter: blur(50em);
+        width: 90vw;
+        height: 90vh;
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        left: 0;
+    }
+}
 
+.nonactive{
+    display: flex;
+}
+.active{
+    display: flex;
 }

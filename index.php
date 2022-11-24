@@ -14,7 +14,7 @@
     <main class="main-home">
         <section class="main-content">
             <h1>TUNIV.</h1>
-            <a href="">Accéder aux matchs</a>
+            <a href="/pages/tournois.php">Accéder aux tournois</a>
         </section>
     </main>
     <!-- <footer>
