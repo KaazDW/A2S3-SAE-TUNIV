@@ -1,6 +1,6 @@
 <?php session_start();
-if (empty($_SESSION["admin"])) {
-    $_SESSION["admin"] = false;
+if (empty($_SESSION["loggedIn"])) {
+    $_SESSION["loggedIn"] = false;
 }
 ?>
 

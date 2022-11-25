@@ -1,6 +1,10 @@
 <?php session_start();
-if (empty($_SESSION["admin"])) {
-    $_SESSION["admin"] = false;
+if (empty($_SESSION["loggedIn"])) {
+    $_SESSION["loggedIn"] = false;
+}
+
+if (empty($_SESSION["type"])) {
+    $_SESSION["type"] = null;
 }
 ?>
 
@@ -12,18 +16,29 @@ if (empty($_SESSION["admin"])) {
 </head>
 
 <body>
-        <?php include '../modules/header.php'; ?>
+
+    <?php include '../modules/header.php'; ?>
 
     <main class="main-login">
 
         <?php
-            if ($_SESSION["admin"]) {
+            if ($_SESSION["loggedIn"]) {
                 echo("
-
                     <div class='logout-div'>
                         <div>
-                            <p>Connecté en tant que : [...]</p>
-                            <a href='../config/config-logout.php' class='logout-button'>Se déconnecter</a>
+                            <p>Connecté en tant "); 
+                            
+                if ($_SESSION["type"]=="administrateur"){
+                    echo("qu'administrateur.</p>");
+                }
+                else if ($_SESSION["type"]=="arbitre"){
+                    echo("qu'arbitre.</p>");
+                }
+                else {
+                    echo("que capitaine.</p>");
+                }
+
+                echo("      <a href='../config/config-logout.php' class='logout-button'>Se déconnecter</a>
                         </div>
                     </div>
                 ");
