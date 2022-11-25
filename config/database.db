@@ -61,10 +61,9 @@ CONSTRAINT fk_Participer_Tournoi FOREIGN KEY (ID_Tournoi) REFERENCES Tournoi(ID_
 CONSTRAINT fk_Participer_Equipe FOREIGN KEY (ID_Equipe) REFERENCES Equipe(ID_Equipe) ON DELETE RESTRICT ON UPDATE RESTRICT);
  
  -- Tests
-INSERT INTO Utilisateurs VALUES(0,"iden","mdp","nom","prenom","email",0);
-INSERT INTO Utilisateurs VALUES(0,"iden2","mdp","nom","prenom","email",1);
-INSERT INTO Utilisateurs VALUES(0,"iden3","mdp","nom","prenom","email",2);
-INSERT INTO Utilisateurs VALUES(0,"iden4","mdp","nom","prenom","email",3);
+INSERT INTO Utilisateurs VALUES(0,"admin","admin","nom","prenom","email",0);
+INSERT INTO Utilisateurs VALUES(0,"arbitre","arbitre","nom","prenom","email",1);
+INSERT INTO Utilisateurs VALUES(0,"capitaine","capitaine","nom","prenom","email",2);
 
 INSERT INTO Tournoi VALUES(0,"volley","Championnat de volley 2022","2023-12-24 08:30:00","2023-12-31 18:30:00");
 

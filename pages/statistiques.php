@@ -1,9 +1,9 @@
 <?php session_start();
-if (empty($_SESSION["admin"])) {
-    $_SESSION["admin"] = false;
+if (empty($_SESSION["loggedIn"])) {
+    $_SESSION["loggedIn"] = false;
 }
 
-if ($_SESSION["admin"]) {
+if ($_SESSION["loggedIn"]) {
 
 }else{
     header("Location: ../index.php");

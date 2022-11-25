@@ -1,6 +1,11 @@
-<?php if (empty($_SESSION["admin"])) {
-    $_SESSION["admin"] = false;
+<?php if (empty($_SESSION["loggedIn"])) {
+    $_SESSION["loggedIn"] = false;
 }
+
+if (empty($_SESSION["type"])) {
+    $_SESSION["type"] = null;
+}
+
 ?>
 <header>
     <a href="../index.php">
@@ -14,7 +19,7 @@
         <li><a href="../pages/apropos.php">A propos</a></li>
     </ul>
     <ul class="nav-icon">
-        <li class="login-link"><a href="../pages/login.php"><img src=<?php if ($_SESSION["admin"]) {
+        <li class="login-link"><a href="../pages/login.php"><img src=<?php if ($_SESSION["loggedIn"]) {
                                                                             echo ("'/assets/img/pp-blanc2.png'");
                                                                         } else {
                                                                             echo ("'/assets/img/pp-blanc.png'");
@@ -23,7 +28,7 @@
     </ul>
 </header>
 <?php 
-if ($_SESSION["admin"]) {
+if ($_SESSION["type"]=="administrateur") {
     echo (" 
     <section class='admin-header'>
                 <ul>
