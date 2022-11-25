@@ -6,7 +6,7 @@ try {
     echo 'Connexion échouée : ' . $e->getMessage();
 }
 
-$sql = "SELECT Sport, Nom, DateDebut, DateFin FROM Tournoi;";
+$sql = "SELECT ID_Tournoi,Sport, Nom, DateDebut, DateFin FROM Tournoi;";
 $listeTournois = $pdo->query($sql);
 
 ?>
@@ -24,8 +24,10 @@ $listeTournois = $pdo->query($sql);
     <main class="main-informations">
         <h2 class="title">Tournois</h2>
             <h3>
+                <a href="match-tournois.php">
                 <?php $tournoi = $listeTournois->fetch();
-                echo($tournoi[0] . " " . $tournoi[1] . $tournoi[2] . $tournoi[3]); ?>
+                echo($tournoi[0] . " " . $tournoi[1] ." ". $tournoi[2] . $tournoi[3].$tournoi[4]); ?>
+                </a>
             </h3>
 
     </main>
