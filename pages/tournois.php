@@ -12,15 +12,13 @@ if (empty($_SESSION["admin"])) {
 </head>
 
 <body>
-    <header>
         <?php include '../modules/header.php'; ?>
-    </header>
 
     <main class="main-informations">
-        <h2>Tournois</h2>
+        <h2 class="title">Tournois</h2>
+
 
     </main>
-        <?php include '../config/db.php'; ?>
 
     <footer>
         <!-- <h3>footer</h5> -->

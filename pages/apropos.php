@@ -12,12 +12,10 @@ if (empty($_SESSION["admin"])) {
 </head>
 
 <body>
-    <header>
         <?php include '../modules/header.php'; ?>
-    </header>
 
     <main class="main-informations">
-        <h2>A propos</h2>
+        <h2 class="title">A propos</h2>
 
     </main>
 

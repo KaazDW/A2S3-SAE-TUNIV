@@ -12,18 +12,20 @@ if (empty($_SESSION["admin"])) {
 </head>
 
 <body>
-    <header>
         <?php include '../modules/header.php'; ?>
-    </header>
 
     <main class="main-login">
 
         <?php
             if ($_SESSION["admin"]) {
                 echo("
-                <div class='logout-div'>
-                    <a href='../config/config-logout.php' class='logout-button'>Se déconnecter</a>
-                </div>
+
+                    <div class='logout-div'>
+                        <div>
+                            <p>Connecté en temps que : [...]</p>
+                            <a href='../config/config-logout.php' class='logout-button'>Se déconnecter</a>
+                        </div>
+                    </div>
                 ");
             } else {
                 echo ("<h2>LOGIN PAGE</h2>

@@ -8,9 +8,7 @@
 </head>
 
 <body>
-    <header>
         <?php include 'modules/header.php'; ?>
-    </header>
     <main class="main-home">
         <section class="main-content">
             <h1>TUNIV.</h1>
