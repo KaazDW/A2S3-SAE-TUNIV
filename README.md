@@ -1,38 +1,18 @@
-<!-- # TUNIV'S REPOSIT;j,hgORY on GITHUB
-This template should help get you started developing with Vue 3 in Vite.
-
-### Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-### Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-### Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
---> 
-
+<!-- # TUNIV'S REPOSITORY on GITHUB -->
 <!-- https://www.notion.so/c03fb4345a5240639c676005b6aec94f?v=c5031c7a331d45e58a7899a58b5aff25 -->
 
 <br><br><br>
 <h2 align=center>  💻 TUNIV Project ReadMe</h1>
-<h3> Organisation du projet (en liens avec la **MSI**)</h3>
+
+
+## SOMMAIRE
+> [Organisation](#organisation)
+> [Tutoriel Page Informations](#tutoinformation)
+> [Brouillon](#brouillon)
+> [Another paragraph](#paragraph2)
+
+#1
+<h3> Organisation du projet (en liens avec la **MSI**) <a name="organisation"></a></h3>
 
 Comme tout projet informatique, la mise en place de ce projet nécessite une organisation précise et définie au préalable. <br><br>
 Ayant été témoin de soucis clairs de communication et d'organisation au sein de notre groupe lors des débuts de la phase de développement, il s'est avéré primordial d'effectuer une profonde remise en question de celui-ci afin d'assurer le bon déroulement du projet.
@@ -66,17 +46,28 @@ Ainsi, en application de cette méthode agile, nos rôles se sont répartis de c
   </tr>
   <tr>
     <td align=center>Product Owner <br> Développeur SQL et PHP</td>
-    <td align=center>Product Owner <br> Développeur SQL</td>
+    <td align=center>Product Owner <br> Développeur SQL et PHP</td>
     <td align=center>Scrum Master <br> Développeur HTML, SCSS, JS et PHP</td>
   </tr>
 </table>
 
 Concernant l'organisation temporelle du projet : 
 > - 15min en début de chaque séances en présentiel afin de communiquer sur l'avancement du projet et l'organisation de la séance.
-> - 10 à 30min chaque une à deux semaines avec le tuteur de notre projet Monsieur Lionel BUATHIER.
-> - 
+> - 30min chaque une à deux semaines avec le tuteur de notre projet Monsieur Lionel BUATHIER.
 
-### Brouillon de page "à propos" (sans mise en forme pour le moment)
+
+
+
+
+
+### Tutoriel pour la modification de la page "Information"<a name="tutoinformation">
+https://www.lambdatest.com/free-online-tools/markdown-to-html-converter
+
+
+
+
+
+### Brouillon de page "à propos" (sans mise en forme pour le moment)<a name="brouillon"></a>
 
 - Qui sommes-nous ? <br>
 Nous sommes une équipe de 3 étudiants en section informatique à l'IUT Claude Bernard Lyon 1 de Bourg-en-Bresse, composée de Gael JOURNET, Jean-François MARCOURT et Nathan OZIMEK. Nous avons développé Tuniv entre septembre 2022 et avril 2023, dans le cadre d'un projet semestriel.
@@ -87,10 +78,6 @@ Tuniv est une application disponible sur navigateur et téléphone permettant la
 - Pourquoi Tuniv ? <br>
 L'objectif de l'application est de centraliser la pratique sportive universitaire à l'aide d'un outil développé par des étudiants, pour des étudiants. Tuniv héberge déjà [nombre d'équipes] équipes ayant joué [nombre de matchs] matchs dans [nombre de tournois] tournois parmi [nombre de sports] différents.
 
-https://www.lambdatest.com/free-online-tools/markdown-to-html-converter
-
-
-<!-- Remerciement à MR Emillien Nicolas pour les conseils et réponses apportés ayant fortement contribué à développement de ce projet. -->
 
 <h1 align=center><br><br><br><br>ReadME en cours d'écriture...</h1>
 
