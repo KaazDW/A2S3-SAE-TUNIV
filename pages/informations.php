@@ -17,6 +17,8 @@ if (empty($_SESSION["admin"])) {
     <main class="main-informations">
         <h2 class="title">Informations</h2>
         <section class="information-content">
+            <!-- CONTENU DE LA PAGE INFORMATION -->
+            
             <h1>Magnis et haec Aurorae</h1>
             <h2>Urbis secundas frenisque confusa ferebat contingere tecti</h2>
             <p>Lorem markdownum laquei armis, capillis, et his torsit et excipit flamma quantus
@@ -69,6 +71,8 @@ if (empty($_SESSION["admin"])) {
             sorores <em>me temptare membra</em>: antro erat nomen. Ab regia; iaculum falsaque
             probat! Mihi cum multis latitantia illa <em>Pleuron</em> cervix dignamque libera et
             postquam, at regna ducimus.</p>
+
+            <!-- CONTENU DE LA PAGE INFORMATION -->
         </section>
     </main>
 

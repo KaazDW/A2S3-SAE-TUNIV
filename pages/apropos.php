@@ -14,10 +14,12 @@ if (empty($_SESSION["admin"])) {
 <body>
         <?php include '../modules/header.php'; ?>
 
-    <main class="main-informations">
+    <main class="main-apropos">
         <h2 class="title">A propos</h2>
-
-    </main>
+        <section>
+            
+        </section>
+    </main> 
 
 
     <footer>
