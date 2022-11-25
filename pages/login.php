@@ -22,7 +22,7 @@ if (empty($_SESSION["admin"])) {
 
                     <div class='logout-div'>
                         <div>
-                            <p>Connecté en temps que : [...]</p>
+                            <p>Connecté en tant que : [...]</p>
                             <a href='../config/config-logout.php' class='logout-button'>Se déconnecter</a>
                         </div>
                     </div>
