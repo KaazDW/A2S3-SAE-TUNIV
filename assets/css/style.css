@@ -238,9 +238,6 @@ section.information-content pre{
     padding: 10px 15px;
     margin: 15px;
 }
-section.information-content img{
-}
-
 
 /* STATISTIQUES PAGE STYLE */
 section.stats-section{
@@ -288,6 +285,10 @@ section.stats-section div.file-counter div p:hover{
     border-radius: 5px;
 }
 
+/* A PROPOS PAGE STYLE */
+.main-apropos .apropos-content{
+
+}
 
 
 /* FOOTER STYLE */

@@ -1,8 +1,12 @@
 <?php session_start();
-if (empty($_SESSION["loggedIn"])) {
-    $_SESSION["loggedIn"] = false;
+if (empty($_SESSION["admin"])) {
+    $_SESSION["admin"] = false;
 }
+
+
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -14,11 +18,9 @@ if (empty($_SESSION["loggedIn"])) {
 <body>
         <?php include '../modules/header.php'; ?>
 
-    <main class="main-apropos">
-        <h2 class="title">A propos</h2>
-        <section>
-            
-        </section>
+    <main class="main-matchtournois">
+        <h2 class="title">Match</h2>
+
     </main> 
 
 
