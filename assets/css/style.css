@@ -55,7 +55,7 @@ header{
     padding-bottom: 10px;
     min-width: 590px;
     backdrop-filter: blur(20px);
-    z-index: 2;
+    z-index: 2  ;
 }
 main{
     margin-top: 150px;
@@ -136,6 +136,7 @@ header .nav-icon li a:hover{
     align-items: center;
     background-color: var(--color-element-full);
     backdrop-filter: blur(10px);
+    z-index: 2;
 }
 .admin-header ul{
     color: grey;
@@ -154,12 +155,12 @@ header .nav-icon li a:hover{
 .admin-header ul{
     display: flex;
 }
-
 .title{
     border-bottom: 1px solid rgb(73, 73, 73);
     padding-bottom: 3px;
     margin-bottom: 25px;
 }
+
 /* INDEX PAGE STYLE */
 .main-home{
     display: flex;
@@ -230,6 +231,16 @@ section.information-content{
     margin-left: 20px;
     line-height: 29px;
 }
+section.information-content pre{
+    background-color: rgb(52, 52, 52);
+    color: white;
+    border-radius: 5px;
+    padding: 10px 15px;
+    margin: 15px;
+}
+section.information-content img{
+}
+
 
 /* STATISTIQUES PAGE STYLE */
 section.stats-section{
