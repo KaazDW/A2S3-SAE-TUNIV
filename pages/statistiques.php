@@ -1,9 +1,9 @@
 <?php session_start();
-if (empty($_SESSION["admin"])) {
-    $_SESSION["admin"] = false;
+if (empty($_SESSION["loggedIn"])) {
+    $_SESSION["loggedIn"] = false;
 }
 
-if ($_SESSION["admin"]) {
+if ($_SESSION["loggedIn"]) {
 
 }else{
     header("Location: ../index.php");
@@ -19,22 +19,6 @@ if ($_SESSION["admin"]) {
 
 <body>
         <?php include '../modules/header.php'; ?>
-        <?php 
-if ($_SESSION["admin"]) {
-    echo (" 
-    <section class='admin-header'>
-                <ul>
-                    <li><a href=''>DASHBOARD</a></li>|
-                    <li><a href=''>STATISTIQUES</a></li>|
-                    <li><a href=''>MATCH</a></li>
-                </ul>
-            </section>
-
-    ");
-} else {
-    echo ("");
-} 
-?>
     <main class="main-informations">
         <h2 class="title">Statistiques</h2>
         <section class="stats-section">
@@ -65,7 +49,7 @@ if ($_SESSION["admin"]) {
 
     <footer>
         <!-- <h3>footer</h5> -->
-        <a href="">©TUNIV</a>
+        <a href="">©TUNIV <a href="https://google.fr" style="color: rgb(26, 24, 24); cursor: default;">yest</a>
     </footer>
     <script src="/app.js"></script>
 </body>
