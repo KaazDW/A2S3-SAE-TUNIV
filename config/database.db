@@ -19,6 +19,7 @@ Type_user INT);
 CREATE TABLE IF NOT EXISTS Tournoi (
 ID_Tournoi INT PRIMARY KEY AUTO_INCREMENT,
 Sport VARCHAR(50),
+Nom VARCHAR(255),
 DateDebut DATETIME,
 DateFin DATETIME);
 
@@ -65,7 +66,7 @@ INSERT INTO Utilisateurs VALUES(0,"iden2","mdp","nom","prenom","email",1);
 INSERT INTO Utilisateurs VALUES(0,"iden3","mdp","nom","prenom","email",2);
 INSERT INTO Utilisateurs VALUES(0,"iden4","mdp","nom","prenom","email",3);
 
-INSERT INTO Tournoi VALUES(0,"volley","2023-12-24 08:30:00","2023-12-31 18:30:00");
+INSERT INTO Tournoi VALUES(0,"volley","Championnat de volley 2022","2023-12-24 08:30:00","2023-12-31 18:30:00");
 
 INSERT INTO Equipe VALUES(0,"Volley_bourg","volley");
 INSERT INTO Equipe VALUES(0,"Volley_saint-denis","volley");
