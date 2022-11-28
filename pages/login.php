@@ -10,17 +10,12 @@ if (empty($_SESSION["type"])) {
 
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <?php include '../modules/head.php'; ?>
 </head>
-
 <body>
-
     <?php include '../modules/header.php'; ?>
-
     <main class="main-login">
-
         <?php
             if ($_SESSION["loggedIn"]) {
                 echo("
@@ -59,8 +54,5 @@ if (empty($_SESSION["type"])) {
         ?>
     </main>
     <?php include '../modules/footer.php'; ?>
-
-    <script src="/app.js"></script>
 </body>
-
 </html>

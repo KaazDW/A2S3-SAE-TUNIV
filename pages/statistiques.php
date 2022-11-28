@@ -12,11 +12,9 @@ if ($_SESSION["loggedIn"]) {
 
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <?php include '../modules/head.php'; ?>
 </head>
-
 <body>
         <?php include '../modules/header.php'; ?>
     <main class="main-informations">
@@ -45,13 +43,6 @@ if ($_SESSION["loggedIn"]) {
             <div></div>
         </section>
     </main>
-
-
-    <footer>
-        <!-- <h3>footer</h5> -->
-        <a href="">©TUNIV <a href="https://google.fr" style="color: rgb(26, 24, 24); cursor: default;">yest</a>
-    </footer>
-    <script src="/app.js"></script>
+    <?php include '../modules/footer.php'; ?>
 </body>
-
 </html>

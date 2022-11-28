@@ -6,14 +6,11 @@ if (empty($_SESSION["loggedIn"])) {
 
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <?php include '../modules/head.php'; ?>
 </head>
-
 <body>
-        <?php include '../modules/header.php'; ?>
-
+    <?php include '../modules/header.php'; ?>
     <main class="main-apropos">
         <h2 class="title">A propos</h2>
         <section class="apropos-content">
@@ -45,13 +42,6 @@ if (empty($_SESSION["loggedIn"])) {
             <p>Tuniv à déjà hébergé <span>00</span> tournois depuis son déployement le <span>00.00.2022</span>.</p>
         </section>
     </main> 
-
-
-    <footer>
-        <!-- <h3>footer</h5> -->
-        <a href="">©TUNIV</a>
-    </footer>
-    <script src="/app.js"></script>
+    <?php include '../modules/footer.php'; ?>
 </body>
-
 </html>
