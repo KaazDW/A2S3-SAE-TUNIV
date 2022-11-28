@@ -15,11 +15,6 @@
             <a href="/pages/tournois.php">Accéder aux tournois</a>
         </section>
     </main>
-    <!-- <footer>
-        <h3>footer</h5>
-        <a href="">©TUNIV</a>
-    </footer> -->
-    <script src="/app.js"></script>
+    <?php include '../modules/footer.php'; ?>
 </body>
-
 </html>
