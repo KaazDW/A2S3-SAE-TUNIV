@@ -1,29 +1,20 @@
 <?php
 
 // UTILISEZ LES COMMENTAIRES POUR APPELER LA BASE DE DONNÉE CORRESPONDANT AU SUPPORT UTILISÉ.
-    
-    DBconnectJF();
-    // DBconnectIUT();
 
-    function DBconnectJF(){
-        try {
-            $pdo = new PDO("mysql:dbname=tuniv_db;host=localhost", "root", "", [PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION]);
-        } catch (PDOException $e) {
-            die();
-            // echo "DB failed to connect";
-            // echo $e->getMessage(); 
-        }
+// DB connection JF()
+    try {
+        $pdo = new PDO("mysql:dbname=tuniv_db;host=localhost", "root", "", [PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION]);
+    } catch (PDOException $e) {
+        die();
     }
-    function DBconnectIUT(){
-        try{
-            $db = new PDO ("sqlite:database.db");//mettez ça à jour
-            // echo "DB correctly connected.<br>";
-        }catch(Exception $e){
-            die();
-            // echo "DB failed to connect";
-            // echo $e->getMessage(); 
-        }
-    }
+    
+// DB connection IUT
+    // try{
+    //     $pdo = new PDO ("sqlite:database.db");//mettez ça à jour
+    // }catch(Exception $e){
+    //     die();
+    // }
 
     // $sql = "SELECT * FROM tuniv_db.utilisateurs;";
     // $db->exec($sql);

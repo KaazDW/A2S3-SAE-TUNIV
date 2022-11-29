@@ -1,5 +1,7 @@
                                
 <?php
+
+// Fonction importée
 /*---------------------------------------------------------------*/
 /*
     Titre : Compte le nombre de fichiers d'un répertoire                                                                 
@@ -7,10 +9,7 @@
     URL   : https://phpsources.net/code_s.php?id=51
     Auteur           : R@f                                                                                                
     Date édition     : 01 Sept 2004                                                                                       
-    Date mise à jour : 13 Aout 2019                                                                                      
-    Rapport de la maj:                                                                                                    
-    - fonctionnement du code vérifié                                                                                    
-    - maintenance du code                                                                                                 
+    Date mise à jour : 13 Aout 2019                                                                                                                                                                                
 */
 /*---------------------------------------------------------------*/
 
@@ -19,12 +18,10 @@ function count_files($folder, $ext, $subfolders)
      // on rajoute le / à la fin du nom du dossier s'il ne l'est pas
      if(substr($folder, -1) != '/')
         $folder .= '/';
-     
      // $ext est un tableau?
      $array = 0;
      if(is_array($ext))
         $array = 1;
-
      // ouverture du répertoire
      $rep = @opendir($folder);
      if(!$rep)
@@ -37,7 +34,6 @@ function count_files($folder, $ext, $subfolders)
         // répertoires . et ..
         if($file == '.' || $file == '..')
          continue;
-        
         // si c'est un répertoire et qu'on peut le lister
         if(is_dir($folder . $file) && $subfolders)
             // on appelle la fonction
@@ -46,8 +42,7 @@ function count_files($folder, $ext, $subfolders)
         else if(!$array && substr($file, -strlen($ext))== $ext)
          $nb_files++;
         // vérification de l'extension avec $array = 1   
-        else if($array==1 && in_array(strtolower(substr(strrchr($file,"."),1)), 
-$ext))
+        else if($array==1 && in_array(strtolower(substr(strrchr($file,"."),1)), $ext))
          $nb_files++;
      }
      

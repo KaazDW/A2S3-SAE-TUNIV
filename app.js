@@ -8,6 +8,7 @@ window.addEventListener("scroll", function(){
 
 
 // MOIBLE RESPONSIV STYLE
+// not finished
 var nav = document.getElementById("nav");
 act = false;
 
@@ -26,6 +27,7 @@ function mobilemenu() {
 }
 
 // THEME MOD FUNCTION
+// not finished
 var isdark = true;
 var themeicon = document.getElementById("themebutton");
 function theme(){
@@ -39,6 +41,5 @@ function theme(){
         console.log("dark theme ON");
         themeicon.innerHTML="JOUR";
     }
-
 }
 

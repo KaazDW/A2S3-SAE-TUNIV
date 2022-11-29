@@ -314,19 +314,16 @@ section.stats-section div.file-counter div p:hover{
     animation: up1 4s;
     animation-iteration-count: infinite;
     animation-delay: 0s;
-
 }
 .main-apropos .apropos-content .apropos-title :nth-child(2){
     animation: up1 4s;
     animation-iteration-count: infinite;
     animation-delay: 0.5s;
-
 }
 .main-apropos .apropos-content .apropos-title :nth-child(3){
     animation: up1 4s;
     animation-iteration-count: infinite;
     animation-delay: 1s;
-
 }
 .main-apropos .apropos-content .apropos-title :nth-child(4){
     animation: up1 4s;
@@ -383,6 +380,18 @@ section.stats-section div.file-counter div p:hover{
     filter: grayscale(1);
 }
 
+/* TOURNOIS PAGE STYLE */
+.main-tournois .table-title td{
+    color: var(--red);
+    font-weight: 900;
+    font-size: 18px;
+}
+.main-tournois .tournois-encours{
+    width: 100%;
+    text-align: left;
+    margin-top: 50px;
+}
+
 
 /* FOOTER STYLE */
 footer{
@@ -413,10 +422,11 @@ footer{
         top: 80px;
         left: 0;
     }
-    .active{
+    /* PAS FONCTIONNEL POUR LE MOMENT, A FINIR */
+    /* .active{
         display: flex;
     }
     .nonactive{
         display: none;
-    }
+    } */
 }
