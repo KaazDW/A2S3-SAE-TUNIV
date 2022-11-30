@@ -16,8 +16,8 @@
         die();
     }
 
-    // $sql = "SELECT * FROM tuniv_db.utilisateurs;";
-    // $db->exec($sql);
-    // var_dump($db);
+    $sql = "SELECT * FROM tuniv_db.utilisateurs;";
+    $db->exec($sql);
+    var_dump($db);
 
 
