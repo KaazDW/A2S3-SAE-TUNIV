@@ -34,10 +34,10 @@ $listeTournois = $pdo->query($sql);
                 <td>LINK</td>
             </tr>
             <tr>
-                <th scope="col">
+                <th>
                     <?php echo($tournoi['Sport']) ?>
                 </th>
-                <th scope="col">
+                <th>
                     <?php echo($tournoi['Nom']) ?>
                 </th>
                 <th scope="col">
