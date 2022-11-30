@@ -4,11 +4,7 @@ if ($_SESSION["loggedIn"]){
     header("Location: /index.php");
 }
 
-try {
-    $pdo = new PDO("mysql:dbname=p2106229;host=iutbg-lamp.univ-lyon1.fr", "p2106229", "12106229", [PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION]);
-} catch (PDOException $e) {
-    echo 'Connexion échouée : ' . $e->getMessage();
-}
+include '../config/db.php';
 
 $login = $_POST["login"];
 $password = $_POST["password"];
