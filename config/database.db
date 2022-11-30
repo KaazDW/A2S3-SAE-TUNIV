@@ -65,10 +65,21 @@ INSERT INTO Utilisateurs VALUES(0,"admin","admin","nom","prenom","email",0);
 INSERT INTO Utilisateurs VALUES(0,"arbitre","arbitre","nom","prenom","email",1);
 INSERT INTO Utilisateurs VALUES(0,"capitaine","capitaine","nom","prenom","email",2);
 
-INSERT INTO Tournoi VALUES(0,"volley","Championnat de volley 2022","2023-12-24 08:30:00","2023-12-31 18:30:00");
+INSERT INTO Tournoi VALUES(0,"Volley","Championnat de volley 2022","2023-12-24 08:30:00","2023-12-31 18:30:00");
+INSERT INTO Tournoi VALUES(0,"Football","Coupe Du Monde 2022","2022-11-20 20:00:00","2022-12-18 20:30:00");
+INSERT INTO Tournoi VALUES(0,"Football","Champion's League 2022","2022-09-04 20:00:00","2023-03-14 20:30:00");
+INSERT INTO Tournoi VALUES(0,"Basketball","Jeux Olympiques","2022-11-20 20:00:00","2022-12-18 20:30:00");
+INSERT INTO Tournoi VALUES(0,"Hokey sur glace ","Ligue intercontinental de la mort","2022-11-20 20:00:00","2022-12-18 20:30:00");
+INSERT INTO Tournoi VALUES(0,"Trotinette freestyle","Coupe de Colombie de cocaïne et de PAblo Escobar","2022-11-20 20:00:00","2022-12-18 20:30:00");
+INSERT INTO Tournoi VALUES(0,"Tennis","Roland Garros","2022-11-20 20:00:00","2022-12-18 20:30:00");
 
 INSERT INTO Equipe VALUES(0,"Volley_bourg","volley");
 INSERT INTO Equipe VALUES(0,"Volley_saint-denis","volley");
+INSERT INTO Equipe VALUES(0,"Equipe de France","Football");
+INSERT INTO Equipe VALUES(0,"Squadra Azura","Football");
+INSERT INTO Equipe VALUES(0,"Manschaft","Footbal");
+INSERT INTO Equipe VALUES(0,"Les Lions","Football");
+
 
 SELECT * FROM Equipe;
 
@@ -77,17 +88,26 @@ INSERT INTO Joueur VALUES(0,"Jean-François","Marcourt",1);
 INSERT INTO Joueur VALUES(0,"Gaël","Journet",2);
 
 INSERT INTO MatchTournoi VALUES(0,"volley","2023-12-24 09:00:00","2023-12-24 10:00:00","stade de bourg",0,0,2,1);
+INSERT INTO MatchTournoi VALUES(0,"Football","2023-12-24 09:00:00","2023-12-24 10:00:00","Vélodrome",4,0,2,2);
+INSERT INTO MatchTournoi VALUES(0,"Football","2023-12-24 09:00:00","2023-12-24 10:00:00","Beaugoire",0,2,2,2);
+INSERT INTO MatchTournoi VALUES(0,"Football","2023-12-24 09:00:00","2023-12-24 10:00:00","Stade de la licorne",1,1,2,2);
+INSERT INTO MatchTournoi VALUES(0,"Football","2023-12-24 09:00:00","2023-12-24 10:00:00","Louis2",0,0,2,2);
+INSERT INTO MatchTournoi VALUES(0,"Football","2023-12-24 09:00:00","2023-12-24 10:00:00","Allianz Arena",5,6,2,2);
+
+Select * from MatchTournoi;
+Select * from Jouer;
+Select * from Tournoi;
 
 INSERT INTO Jouer VALUES(1,1);
 INSERT INTO Jouer VALUES(1,2);
+INSERT INTO Jouer VALUES(3,4);
+INSERT INTO Jouer VALUES(4,3);
+INSERT INTO Jouer VALUES(5,6);
+INSERT INTO Jouer VALUES(6,5);
 
 INSERT INTO Participer VALUES(1,1);
 INSERT INTO Participer VALUES(1,2);
-
-SELECT * FROM Utilisateurs;
-SELECT * FROM Tournoi;
-SELECT * FROM MatchTournoi;
-SELECT * FROM Equipe;
-SELECT * FROM Joueur;
-SELECT * FROM Jouer;
-SELECT * FROM Participer;
+INSERT INTO Participer VALUES(2,3);
+INSERT INTO Participer VALUES(2,4);
+INSERT INTO Participer VALUES(2,5);
+INSERT INTO Participer VALUES(2,6);
