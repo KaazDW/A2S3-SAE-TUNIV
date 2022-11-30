@@ -54,7 +54,7 @@ header{
     padding: 7px 0px;
     padding-bottom: 10px;
     min-width: 590px;
-    backdrop-filter: blur(20px);
+    /* backdrop-filter: blur(20px); */
     z-index: 2  ;
 }
 main{
@@ -117,9 +117,8 @@ header .nav-icon li a:hover{
 }
 .scroll-style{
     border: 2px solid var(--color-border);
-    /* background-color: var(--red); */
-    /* background-color: var(--color-body-background);
-    backdrop-filter: blur(10px); */
+    background-color: var(--color-body-background);
+    backdrop-filter: blur(10px);
 
 }
 .admin-header{
