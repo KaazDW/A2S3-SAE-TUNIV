@@ -379,7 +379,18 @@ section.stats-section div.file-counter div p:hover{
     margin: 10px auto;
     filter: grayscale(1);
 }
-
+section.test img{
+    height: 150px;
+    margin: 50px;
+    box-shadow: 0 0 2em rgba(255, 255, 255, 0.459);
+    transform: rotate(-10deg);
+    transition: ease-in-out .5s;
+    border-radius: 5px;
+}
+section.test img:hover{
+    height: 300px;
+    transform: rotate(0deg);
+}
 /* TOURNOIS PAGE STYLE */
 .main-tournois .table-title td{
     color: var(--red);

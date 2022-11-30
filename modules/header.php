@@ -27,6 +27,7 @@ if (empty($_SESSION["type"])) {
         <li><a onclick="theme()" id="themebutton">JOUR</a></li>
     </ul>
 </header>
+
 <?php 
 if ($_SESSION["type"]=="administrateur") {
     echo (" 
