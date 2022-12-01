@@ -242,7 +242,6 @@ section.information-content pre{
 section.stats-section{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 8px;
     margin-bottom: 151px;
 }
 section.stats-section div{
@@ -262,7 +261,7 @@ section.stats-section div.file-counter div{
     margin-top: 20px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 7px 20px;
+    /* grid-gap: 7px 20px; */
     border: none;
     background-color: rgba(255, 255, 255, 0);
     align-items: center;
@@ -405,7 +404,6 @@ section.test img:hover{
 .main-tournois .tournois-line{
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-gap: 0px;
     margin: 15px 0px;
     border : 1px solid var(--color-border);
     /* text-align: center; */
@@ -415,7 +413,6 @@ section.test img:hover{
 .main-tournois .title-grid{
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-gap: 0px;
     margin: 15px 0px;
     /* border : 1px solid var(--color-border); */
     text-align: center;
@@ -429,18 +426,13 @@ section.test img:hover{
 }
 .main-tournois .title-grid span:nth-child(2){
     grid-column: 2 / 4;
-
 }
 .main-tournois .tournois-line:hover{
     background-color: var(--color-hover);
 }
-
 .main-tournois .tournois-line span:nth-child(2){
     grid-column: 2 / 4;
-
 }
-
-
 .main-tournois .tournois-line span{
     /* background-color: green; */
     margin: 5px 10px;
