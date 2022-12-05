@@ -5,8 +5,15 @@ if (empty($_SESSION["admin"])) {
 
 include_once '../config/db.php';
 
-$sql = 'SELECT * FROM MatchTournoi where ' . $_GET["id"];
-$listeMatchs = $pdo->query($sql);
+$listematch = $pdo->prepare('SELECT * FROM MatchTournoi where ID_Tournoi =:varId');
+
+$listematch->execute(
+    [
+        'varId' =>$_GET["id"],
+    ]
+    );
+$matchs=$listematch->fetchAll();
+
 
 ?>
 
@@ -20,7 +27,7 @@ $listeMatchs = $pdo->query($sql);
     <main class="main-matchtournois">
         <h2 class="title">Match</h2>
         <?php
-        $matchs = $listeMatchs->fetchAll();
+
         foreach($matchs as $match):
             ?>
             <h3>
