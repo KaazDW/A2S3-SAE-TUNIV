@@ -8,18 +8,18 @@ if (empty($_SESSION["type"])) {
 
 ?>
 <header>
-    <a href="../index.php">
+    <a href="/index.php">
         <h1>🏆 TUNIV</h1>
         <a onClick="mobilemenu()" class="icon">
-            <img src="../assets/img/menu-icon.png">
+            <!-- <img src="../assets/img/menu-icon.png"> -->
         </a>
     </a>
     <ul class="link" id="nav">
-        <li><a href="../pages/tournois.php">Tournois</a></li>
-        <li><a href="../pages/apropos.php">A propos</a></li>
+        <li><a href="/pages/tournois.php">Tournois</a></li>
+        <li><a href="/pages/apropos.php">A propos</a></li>
     </ul>
     <ul class="nav-icon">
-        <li class="login-link"><a href="../pages/login.php"><img src=<?php if ($_SESSION["loggedIn"]) {
+        <li class="login-link"><a href="/pages/login.php"><img src=<?php if ($_SESSION["loggedIn"]) {
                                                                             echo ("'/assets/img/pp-blanc2.png'");
                                                                         } else {
                                                                             echo ("'/assets/img/pp-blanc.png'");
@@ -33,8 +33,8 @@ if ($_SESSION["type"]=="administrateur") {
     echo (" 
     <section class='admin-header'>
                 <ul>
-                    <li><a href=''>DASHBOARD</a></li>|
-                    <li><a href='../pages/statistiques.php'>STATISTIQUES</a></li>|
+                    <li><a href='/pages/dashboard/dashb-admin.php'>DASHBOARD</a></li>|
+                    <li><a href='/pages/statistiques.php'>STATISTIQUES</a></li>|
                     <li><a href=''>MATCH</a></li>
                 </ul>
             </section>

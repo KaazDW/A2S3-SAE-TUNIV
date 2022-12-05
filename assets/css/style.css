@@ -11,6 +11,7 @@ font-family: 'Roboto', sans-serif;
     list-style: none;
     color:white;
     letter-spacing: .6px;
+    /* border: 1px solid red; */
 }
 * a{ text-decoration: none; }
 
@@ -23,20 +24,25 @@ font-family: 'Roboto', sans-serif;
     --color-border: rgba(64, 68, 73, 0.5);
     --color-element: rgba(35, 39, 42, 0.6);
     --color-element-full:rgba(35, 39, 42, 0.822);
-    --color-body-background: rgb(26, 24, 24);
+    /* --color-body-background: rgb(26, 24, 24); */ /* Lastest background-color */
+    --color-body-background: #111;
     --color-hover: var(--color-border);
     
 }
 
 /* GLOBAL PAGES SETTINGS */
 body{
-    background-color: var(--color-body-background);
+    /* background-color: var(--color-body-background); */
+    /* background-image: linear-gradient( 94.3deg,  rgba(26,33,64,1) 10.9%, rgba(81,84,115,1) 87.1% ); */
+    
+    background: #1a1d22 ;  /* fallback for old browsers */
+    background: linear-gradient(to right, #1a1d22, #242e36); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
     font-family: 'Roboto', sans-serif;
-    width: 55vw;
+    width: 65vw;
     margin: auto;
     overflow-x: hidden;
     overflow-y: scroll;
-    
 }
 body::-webkit-scrollbar { width: 0 !important } /* Hide scroll bar*/
 header{
@@ -48,9 +54,9 @@ header{
     border: 1px solid rgba(255, 255, 255, 0);
     border-radius: 5px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    width: 55vw;
+    width: 65vw;
     padding: 7px 0px;
     padding-bottom: 10px;
     min-width: 590px;
@@ -76,6 +82,9 @@ main{
 /* HEADER TITLE DIV */
 header h1{
     letter-spacing: 3px;
+}   
+header > a, header .nav-icon{
+    margin: 0px 40px;
 }
 header .icon{
     display: none;
@@ -87,12 +96,12 @@ header li a{
     border: 1px solid rgba(255, 255, 255, 0);
     padding: 8px 12px;
     border-radius: 5px;
-    transition: .5s;
+    transition: .3s;
 }
 header .link{
     display: flex;
     align-items: center;
-    margin-top: 10px;
+    margin-top: 5px;
 }
 header .link li a:hover{
     background-color: var(--color-hover);
@@ -130,7 +139,7 @@ header .nav-icon li a:hover{
     left: 50%;
     transform: translate(-50%);
     top: 100px;
-    width: 55vw;
+    width: 65vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -244,6 +253,8 @@ section.stats-section{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     margin-bottom: 151px;
+    grid-gap: 7px;
+
 }
 section.stats-section div{
     border: 1px solid var(--color-border);
@@ -262,7 +273,7 @@ section.stats-section div.file-counter div{
     margin-top: 20px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    /* grid-gap: 7px 20px; */
+    grid-gap: 7px 20px;
     border: none;
     background-color: rgba(255, 255, 255, 0);
     align-items: center;
