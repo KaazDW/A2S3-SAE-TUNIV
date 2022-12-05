@@ -23,7 +23,7 @@ if (empty($_SESSION["loggedIn"])) {
                 <h1>.</h1>
             </div>    
         <!-- <h1>TUNIV.</h1> -->
-            <p>TUNIV est une application WEB développé par 3 étudiants dans le cadre de leur 2ème Année de BUT informatique :</p>
+            <p>TUNIV est une application WEB développée par 3 étudiants dans le cadre de leur deuxième année de BUT informatique :</p>
             <div class="card">
                 <div class="apropos-personnalcard">
                     <img src="../assets/img/account.png">
