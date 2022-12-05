@@ -14,7 +14,10 @@
             <h1>TUNIV.</h1>
             <a href="/pages/tournois.php">Accéder aux tournois</a>
         </section>
+        <section class="index-actu">
+
+        </section>
     </main>
-    <?php include '../modules/footer.php'; ?>
+    <?php include 'modules/footer.php'; ?>
 </body>
 </html>

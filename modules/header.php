@@ -15,7 +15,7 @@ if (empty($_SESSION["type"])) {
         </a>
     </a>
     <ul class="link" id="nav">
-        <li><a href="../pages/informations.php">Informations</a></li>
+        <li><a href="../pages/tournois.php">Tournois</a></li>
         <li><a href="../pages/apropos.php">A propos</a></li>
     </ul>
     <ul class="nav-icon">

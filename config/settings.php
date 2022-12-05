@@ -54,5 +54,6 @@ $totalfile = count_files('../','php',1) +
             count_files('../','db',1) +
             count_files('../','png',1)             
             ;
-?>
+
+
 
