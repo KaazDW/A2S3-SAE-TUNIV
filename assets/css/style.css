@@ -22,7 +22,8 @@ font-family: 'Roboto', sans-serif;
 
     --color-hover: rgb(36, 36, 36);
     --color-border: rgba(64, 68, 73, 0.5);
-    --color-element: rgba(35, 39, 42, 0.6);
+    /* --color-element: rgba(35, 39, 42, 0.6); */
+    --color-element: rgba(0, 0, 0, 0.6);
     --color-element-full:rgba(35, 39, 42, 0.822);
     /* --color-body-background: rgb(26, 24, 24); */ /* Lastest background-color */
     --color-body-background: #111;
@@ -449,6 +450,58 @@ section.test img:hover{
     /* background-color: green; */
     margin: 5px 10px;
 }
+
+/* DASHBOARD ADMIN */
+.main-dashboard .dashadmin-section .dashadmin-topgrid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 15px;
+    height: 200px;
+    text-align: center;
+    align-items: center;
+    margin: 15px 0px;
+}
+.main-dashboard .dashadmin-section .dashadmin-topmid{
+    /* background-color: green; */
+    /* height: 150px; */
+    display: flex;
+}
+.main-dashboard .dashadmin-section .dashadmin-topmid .display-tournaments{
+    width: 60%;
+    background-color: var(--color-element);
+}
+.main-dashboard .dashadmin-section .dashadmin-topmid .display-tournaments .tournois-line{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    margin: 5 15px;
+    border-radius: 2px;
+    border: 1px solid var(--color-border);
+}
+.main-dashboard .dashadmin-section .dashadmin-topmid .display-tournaments .tournois-line:nth-child(1){
+    margin-top: 15px;
+}
+.main-dashboard .dashadmin-section .dashadmin-topmid .display-tournaments .tournois-line:last-child{
+    margin-bottom: 15px;
+}
+
+.main-dashboard .dashadmin-section .dashadmin-topmid .display-tournaments .tournois-line span{
+    /* background-color: green;     */
+    margin: 2px;
+    padding: 5px;
+}
+.main-dashboard .dashadmin-section .dashadmin-topmid .display-tournaments .tournois-line span:nth-child(2){
+    grid-column: 2 / 4;
+}
+.main-dashboard .dashadmin-section .dashadmin-topmid .display-tournaments .tournois-line div{
+    grid-column: 4 / 7;
+}
+.main-dashboard .dashadmin-section .dashadmin-card{
+    background-color: var(--color-element);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    height: 100%;
+}
+
 
 /* FOOTER STYLE */
 footer{

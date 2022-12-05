@@ -7,6 +7,12 @@ if (!$_SESSION["type"]=="administrateur") {
     header("Location: ../../index.php");
 }
 
+include '../../config/db.php';
+
+$sql = "SELECT * FROM Tournoi;";
+$listeTournois = $pdo->query($sql);
+
+?>
 ?>
 
 <!DOCTYPE html>
@@ -16,12 +22,42 @@ if (!$_SESSION["type"]=="administrateur") {
     <link href="../../assets/css/style.css" rel="stylesheet">
 </head> 
 <body>
-        <?php include '../../modules/header.php'; ?>
-    <main class="main-informations">
+    <?php include '../../modules/header.php'; ?>
+    <main class="main-dashboard">
         <h2 class="title">Dashboard Admin</h2>
-        <section class="stats-section">
+        <section class="dashadmin-section">
+            <div class="dashadmin-topgrid">
+                <div class="dashadmin-topgrid-card dashadmin-card">
+                </div>
+                <div class="dashadmin-topgrid-card dashadmin-card">
+                </div>
+                <div class="dashadmin-topgrid-card dashadmin-card">
+                </div>
+            </div>
+            <div class="dashadmin-topmid">
+                <div class="display-tournaments dashadmin-card">
+                    <?php $tournois = $listeTournois->fetchAll();
+                        foreach($tournois as $tournoi):
+                    ?>
 
+                    <div class="tournois-line">
+                        <span><?php echo($tournoi['Sport']) ?></span>
+                        <span><?php echo($tournoi['Nom']) ?></span>
+                        <div>
+                            <!-- icons -->
+                        </div>
+                        </div>
+
+                    <?php
+                    endforeach;
+                    ?>
+                </div>
+                <div class="">
+
+                </div>
+            </div>
         </section>
+
     </main>
     <?php include '../../modules/footer.php'; ?>
 </body>

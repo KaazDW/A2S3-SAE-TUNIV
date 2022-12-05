@@ -35,7 +35,7 @@ if ($_SESSION["type"]=="administrateur") {
                 <ul>
                     <li><a href='/pages/dashboard/dashb-admin.php'>DASHBOARD</a></li>|
                     <li><a href='/pages/statistiques.php'>STATISTIQUES</a></li>|
-                    <li><a href=''>MATCH</a></li>
+                    <li><a href='/pages/dashboard/form-annonce.php'>ANNONCES</a></li>
                 </ul>
             </section>
 
