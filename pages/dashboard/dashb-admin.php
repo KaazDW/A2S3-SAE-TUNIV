@@ -14,7 +14,6 @@ $listeTournois = $pdo->query($sql);
 
 ?>
 
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>

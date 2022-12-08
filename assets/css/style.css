@@ -14,6 +14,8 @@ font-family: 'Roboto', sans-serif;
     /* border: 1px solid red; */
 }
 * a{ text-decoration: none; }
+input, textarea { color: black;}
+
 
 :root{
     /* color definition variable */

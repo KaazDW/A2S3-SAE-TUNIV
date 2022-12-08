@@ -45,8 +45,8 @@ if ($_SESSION["type"]=="administrateur") {
     <section class='admin-header'>
                 <ul>
                     <li><a href=''>DASHBOARD</a></li>|
-                    <li><a href='../pages/statistiques.php'>STATISTIQUES</a></li>|
-                    <li><a href='../pages/mon-equipe.php'>MON EQUIPE</a></li>
+                    <li><a href='/pages/statistiques.php'>STATISTIQUES</a></li>|
+                    <li><a href='/pages/dashboard/dashb-cap.php'>MON EQUIPE</a></li>
                 </ul>
             </section>");
 } 
