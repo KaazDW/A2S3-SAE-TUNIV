@@ -45,7 +45,7 @@ $listeTournois = $pdo->query($sql);
                         <span><?php echo($tournoi['Sport']) ?></span>
                         <span><?php echo($tournoi['Nom']) ?></span>
                         <div>
-                            <a class="edit" href="">
+                            <a class="edit" href="dashb-admin-editform.php?id=<?= $tournoi['ID_Tournoi'] ?>">
                                 <img src="../../assets/img/edit-blanc.png">
                             </a>
                             <a class="edit" href="">
