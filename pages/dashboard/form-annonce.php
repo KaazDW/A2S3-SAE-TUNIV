@@ -20,7 +20,12 @@ if (!$_SESSION["type"]=="administrateur") {
     <main class="main-informations">
         <h2 class="title">Annonce Pannel</h2>
         <section class="stats-section">
-
+            <div>
+                <form method="POST">
+                    <!-- form de génération d'annonce -->
+                    <!-- composé de 3 inputs d'un file selection et d'un textarea -->
+                </form>
+            </div>
         </section>
     </main>
     <?php include '../../modules/footer.php'; ?>
