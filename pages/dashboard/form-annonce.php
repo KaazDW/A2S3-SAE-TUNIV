@@ -17,7 +17,7 @@ if (!$_SESSION["type"]=="administrateur") {
 <body>
         <?php include '../../modules/header.php';?>
 
-    <main class="main-informations">
+    <main>
         <h2 class="title">Créer une annonce</h2>
         <section class="stats-section">
 
