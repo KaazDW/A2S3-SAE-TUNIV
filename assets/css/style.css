@@ -475,9 +475,9 @@ section.test img:hover{
 .main-dashboard .dashadmin-section .dashadmin-topmid .display-tournaments .tournois-line{
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    margin: 5 15px;
     border-radius: 2px;
     border: 1px solid var(--color-border);
+    margin: 3px 12px;
 }
 .main-dashboard .dashadmin-section .dashadmin-topmid .display-tournaments .tournois-line:nth-child(1){
     margin-top: 15px;
@@ -485,25 +485,112 @@ section.test img:hover{
 .main-dashboard .dashadmin-section .dashadmin-topmid .display-tournaments .tournois-line:last-child{
     margin-bottom: 15px;
 }
-
 .main-dashboard .dashadmin-section .dashadmin-topmid .display-tournaments .tournois-line span{
     /* background-color: green;     */
     margin: 2px;
     padding: 5px;
 }
 .main-dashboard .dashadmin-section .dashadmin-topmid .display-tournaments .tournois-line span:nth-child(2){
-    grid-column: 2 / 4;
+    grid-column: 2 / 5;
 }
 .main-dashboard .dashadmin-section .dashadmin-topmid .display-tournaments .tournois-line div{
-    grid-column: 4 / 7;
+    grid-column: 5 / 7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.main-dashboard .dashadmin-section .dashadmin-card{
+.main-dashboard .dashadmin-section .dashadmin-topmid .display-tournaments .tournois-line div a{
+    padding: 2px 10px;
+    /* width: 20px; */
+    margin-top: 2px;
+    margin-bottom: 2px;
+    transition: .2s;
+    cursor: pointer;
+    border-radius: 2px;
+}
+.main-dashboard .dashadmin-section .dashadmin-topmid .display-tournaments .tournois-line div a:hover{
+    background-color: var(--color-hover);
+}
+.main-dashboard .dashadmin-section .dashadmin-topmid .display-tournaments .tournois-line div a img{
+    height: 25px;
+}
+
+.main-dashboard .dashadmin-section .dashadmin-topmid .init-tourn{
+    /* background-color: ; */
+    /* width: 100%; */
+    width: 40%;
+    margin-left: 5px;
+    height: 300px;
+    /* background-color: gray; */
+    /* text-align: center; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.main-dashboard .dashadmin-section .dashadmin-topmid .init-tourn h3{
+    -webkit-text-stroke: 1px white;
+    color: transparent;
+    font-size: 55px;
+    text-transform: uppercase;
+}
+.main-dashboard .dashadmin-section .dashadmin-topmid .init-tourn a{
+width: 65px;
+height: 65px;
+transition: .3s;
+}
+.main-dashboard .dashadmin-section .dashadmin-topmid .init-tourn a:hover{
+    cursor: pointer;
+    background-color: var(--color-hover);
+    border-radius: 50%;
+}
+
+.main-dashboard .dashadmin-section .dashadmin-topmid .init-tourn a img{
+    height: 55px;
+    width: 55px;
+    margin: 3px 3px;
+}
+
+.dashadmin-card{
     background-color: var(--color-element);
     border: 1px solid var(--color-border);
     border-radius: 6px;
     height: 100%;
 }
-
+.main-dashboard .dashadmin-section .dashadmin-topmid #tcreationmenu{
+    position: absolute;
+    backdrop-filter: blur(12px);
+    top: 15vh;
+    left: 10vw;
+    height: 80vh;
+    width: 80vw;
+    background-color: rgba(35, 94, 107, 0.345);
+    animation: editableanim .5s;
+}
+@keyframes editableanim {
+    from {
+        opacity: 0;
+        transform: translate(105px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(0px);
+    }
+}
+.main-dashboard .dashadmin-section .dashadmin-topmid #tcreationmenu header{
+    /* background-color: green; */
+    height: 25px;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.main-dashboard .dashadmin-section .dashadmin-topmid #tcreationmenu header img{
+    margin-top: 5px;
+    margin-right: -30px;
+    height: 35px;
+}
 
 /* FOOTER STYLE */
 footer{

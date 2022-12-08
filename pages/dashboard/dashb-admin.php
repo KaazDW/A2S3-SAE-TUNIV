@@ -27,10 +27,13 @@ $listeTournois = $pdo->query($sql);
         <section class="dashadmin-section">
             <div class="dashadmin-topgrid">
                 <div class="dashadmin-topgrid-card dashadmin-card">
+
                 </div>
                 <div class="dashadmin-topgrid-card dashadmin-card">
+
                 </div>
                 <div class="dashadmin-topgrid-card dashadmin-card">
+                    
                 </div>
             </div>
             <div class="dashadmin-topmid">
@@ -38,24 +41,38 @@ $listeTournois = $pdo->query($sql);
                     <?php $tournois = $listeTournois->fetchAll();
                         foreach($tournois as $tournoi):
                     ?>
-
                     <div class="tournois-line">
                         <span><?php echo($tournoi['Sport']) ?></span>
                         <span><?php echo($tournoi['Nom']) ?></span>
                         <div>
-                            <!-- icons -->
+                            <a class="edit" href="">
+                                <img src="../../assets/img/edit-blanc.png">
+                            </a>
+                            <a class="edit" href="">
+                                <img src="../../assets/img/delete-blanc.png">
+                            </a>
                         </div>
-                        </div>
-
+                    </div>
                     <?php
                     endforeach;
                     ?>
                 </div>
-                <div class="">
-
+                <div class="init-tourn dashadmin-card">
+                    <h3>tournois</h3>
+                    <a id="tcreate">
+                        <img src="../../assets/img/create.png">
+                    </a>
+                </div>
+                <div id="tcreationmenu">
+                    <header>
+                        <a id="creationmenuclose">
+                            <img src="../../assets/img/cross.png">
+                        </a>
+                    </header>
                 </div>
             </div>
         </section>
+
 
     </main>
     <?php include '../../modules/footer.php'; ?>
