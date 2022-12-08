@@ -10,8 +10,6 @@ if (!$_SESSION["type"]=="administrateur") {
 
 include("db.php");
 
-// echo ($_POST["content"]);
-
 if (!empty($_SESSION["annonceErreur"])) {
     unset($_SESSION["annonceErreur"]);
 }
@@ -40,13 +38,12 @@ if (empty($_POST["content"])){
 }
 $content = $pdo->quote($_POST["content"]);
 
-if (empty($_FILES["img"])){
-    $_SESSION["annonceErreur"] = "Image manquante";
-    header("Location: ../pages/dashboard/form-annonce.php");
+if (($_FILES["img"]['size']==0)){
+    $img = $pdo->quote('');
+} else {
+    $img = $pdo->quote("assets/img/" . basename($_FILES["img"]["name"]));
+    move_uploaded_file($_FILES["img"]["tmp_name"], "../assets/img/" . basename($_FILES["img"]["name"]));
 }
-$img = $pdo->quote("assets/img/" . basename($_FILES["img"]["name"]));
-
-move_uploaded_file($_FILES["img"]["tmp_name"], "../assets/img/" . basename($_FILES["img"]["name"]));
 
 $sql = "INSERT INTO Annonces VALUES (0, $title, now(), $author, $role, $content, $img);";
 $res = $pdo->exec($sql);
@@ -55,5 +52,17 @@ if (!$res) {
     header("Location: ../pages/dashboard/form-annonce.php");
 }
 else {
+    $sql = "SELECT count(*) FROM Annonces;";
+    $res = $pdo->query($sql)->fetch()[0];
+    if ($res>30){
+        $sql = "CALL viderAnnonces();";
+        $res = $pdo->exec($sql);
+    }
+
+    if (($_FILES["img"]['size']==0)) {
+        $sql = "UPDATE Annonces SET Image=NULL WHERE Image='';";
+        $res = $pdo->exec($sql);
+    }
+
     header("Location: ../pages/dashboard/dashb-admin.php");
 }
