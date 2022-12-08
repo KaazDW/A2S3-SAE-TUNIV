@@ -126,3 +126,9 @@ INSERT INTO Participer VALUES(2,5);
 INSERT INTO Participer VALUES(2,6);
 
 INSERT INTO Annonces VALUES(0,"Titre", now(), "Auteur", "Rôle", "Je viens de créer cette annonce pour faire un test.", NULL);
+
+INSERT INTO Utilisateurs VALUES(0,"test1","test1","Sergio","Ramos","sergioramos@gmail.com",2);
+INSERT INTO Equipe VALUES(0,"Espana","Football",4);
+INSERT INTO Joueur VALUES(0,"Gerard","Pique",7);
+INSERT INTO Joueur VALUES(0,"David","De Gea",7);
+INSERT INTO Joueur VALUES(0,"Ped","Ri",7);
