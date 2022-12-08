@@ -13,7 +13,6 @@ $sql = "SELECT * FROM Tournoi;";
 $listeTournois = $pdo->query($sql);
 
 ?>
-?>
 
 <!DOCTYPE html>
 <html lang="fr">

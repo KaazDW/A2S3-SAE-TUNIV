@@ -1,4 +1,5 @@
 -- Création
+DROP TABLE IF EXISTS Annonces;
 DROP TABLE IF EXISTS Participer;
 DROP TABLE IF EXISTS Joueur;
 DROP TABLE IF EXISTS Jouer;
