@@ -1,0 +1,63 @@
+@include base.scss;
+
+
+body::-webkit-scrollbar { width: 0 !important } /* Hide scroll bar*/
+
+body{
+    /* background-color: var(--color-body-background); */
+    /* background-image: linear-gradient( 94.3deg,  rgba(26,33,64,1) 10.9%, rgba(81,84,115,1) 87.1% ); */
+    
+    background: #1a1d22 ;  /* fallback for old browsers */
+    background: linear-gradient(to right, #1a1d22, #242e36); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+    font-family: 'Roboto', sans-serif;
+    width: 75vw;
+    margin: auto;
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+    header{
+        position: fixed;
+        left: 50%;
+        transform: translate(-50%);
+        top: 15px;
+        /* background-color: var(--color-element); */
+        border: 1px solid rgba(255, 255, 255, 0);
+        border-radius: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 75vw;
+        padding: 7px 0px;
+        padding-bottom: 10px;
+        min-width: 590px;
+        backdrop-filter: blur(20px);
+        z-index: 2  ;
+        transition: .1s;
+        h1{
+            letter-spacing: 3px;
+        }   
+        > a, .nav-icon{
+            margin: 0px 40px;
+        }
+        .icon{
+            display: none;
+        }
+    }
+    main{
+        margin-top: 150px;
+        animation: openPage 2s;
+    }
+
+}
+
+@keyframes openPage {
+    from{
+        opacity: 0;
+        /* filter: blur(5px); */
+    }
+    to{
+        opacity: 1;
+        /* blur:(0px); */
+    }
+}

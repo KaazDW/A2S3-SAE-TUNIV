@@ -27,8 +27,7 @@ $listetournoi->execute(
     <link href="../../assets/css/style.css" rel="stylesheet">
 </head> 
 <body>
-        <?php include '../../modules/header.php';?>
-
+    <?php include '../../modules/header.php';?>
     <main class="main-editform-dashbadmin">
         <h2 class="title">Edit form</h2>
         <section class="stats-section">

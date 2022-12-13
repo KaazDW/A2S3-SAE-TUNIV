@@ -25,8 +25,8 @@ input, textarea { color: black;}
     --color-hover: rgb(36, 36, 36);
     --color-border: rgba(64, 68, 73, 0.5);
     /* --color-element: rgba(35, 39, 42, 0.6); */
-    --color-element: rgba(0, 0, 0, 0.6);
-    --color-element-full:rgba(35, 39, 42, 0.822);
+    --color-element: rgba(32, 28, 28, 0.6);
+    --color-element-full:rgba(32, 29, 29, 0.822);
     /* --color-body-background: rgb(26, 24, 24); */ /* Lastest background-color */
     --color-body-background: #111;
     --color-hover: var(--color-border);
@@ -38,15 +38,30 @@ body{
     /* background-color: var(--color-body-background); */
     /* background-image: linear-gradient( 94.3deg,  rgba(26,33,64,1) 10.9%, rgba(81,84,115,1) 87.1% ); */
     
-    background: #1a1d22 ;  /* fallback for old browsers */
-    background: linear-gradient(to right, #1a1d22, #242e36); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #1a1d22 ;
+    background: linear-gradient(to right, #14161a, #2d3b46);
     
-    font-family: 'Roboto', sans-serif;
-    width: 65vw;
+    /* background: linear-gradient(to right, #000000, #ffffff); */
+    /* background-size: 200% 200%; */
+    /* animation: gradient-animation 10s ease infinite; */
+
+    font-family: 'Poppins', sans-serif;
+    width: 75vw;
     margin: auto;
     overflow-x: hidden;
     overflow-y: scroll;
 }
+/* @keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  } */
 body::-webkit-scrollbar { width: 0 !important } /* Hide scroll bar*/
 header{
     position: fixed;
@@ -54,12 +69,12 @@ header{
     transform: translate(-50%);
     top: 15px;
     /* background-color: var(--color-element); */
-    border: 1px solid rgba(255, 255, 255, 0);
+    border: 2px solid rgba(255, 255, 255, 0);
     border-radius: 5px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 65vw;
+    width: 75vw;
     padding: 7px 0px;
     padding-bottom: 10px;
     min-width: 590px;
@@ -142,7 +157,7 @@ header .nav-icon li a:hover{
     left: 50%;
     transform: translate(-50%);
     top: 100px;
-    width: 65vw;
+    width: 75vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -175,10 +190,11 @@ header .nav-icon li a:hover{
 
 /* INDEX PAGE STYLE */
 .main-home{
-    display: flex;
+    display: flex; 
     justify-content: center;
     align-items: center;
-    height: 85vh;
+    height: 90vh;
+    /* padding-top: 150px; */
     text-align: center;
 }
 .main-home .main-content{
@@ -195,6 +211,52 @@ header .nav-icon li a:hover{
     padding: 10px 15px;
     border-radius: 5px;
 }
+/* INDEX ANNONCE SECTION */
+.index-actu h2{
+    text-align: center;
+    margin-bottom: 15px;
+}
+.index-actu .annonce-card{
+    /* background-color: green; */
+    width: 60%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid var(--color-border);   
+    margin-bottom: 15px;
+}
+.index-actu .annonce-card .text-field{
+    margin: 15px 0px;
+    margin-right: 10px;
+}
+
+.index-actu .annonce-card img{
+    height: 165px;
+    width: 165px;
+    border-radius: 5px; 
+    margin: 10px;
+
+}
+
+.index-actu .annonce-card .text-field p.date{
+    color: rgb(136, 133, 133);
+    font-style: oblique 20deg;
+}
+
+.index-actu .annonce-card .text-field span.role{
+    /* color: rgb(255, 255, 255); */
+}
+.index-actu .annonce-card .text-field p:last-child{
+    margin-top: 5px;
+    font-family: Roboto;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid var(--color-border);
+}
+
+
+
 
 /* LOGIN PAGE STYLE */
 .main-login{
@@ -386,36 +448,14 @@ section.stats-section div.file-counter div p:hover{
     cursor: pointer;
 }
 .main-apropos .apropos-content div.card .apropos-personnalcard img{
-    /* background-color: yellow; */
     width: 50px;
     border-radius: 50%;
     margin: 10px auto;
     filter: grayscale(1);
 }
-section.test img{
-    height: 150px;
-    margin: 50px;
-    box-shadow: 0 0 2em rgba(255, 255, 255, 0.459);
-    transform: rotate(-10deg);
-    transition: ease-in-out .5s;
-    border-radius: 5px;
-}
-section.test img:hover{
-    height: 300px;
-    transform: rotate(0deg);
-}
+
 /* TOURNOIS PAGE STYLE */
 
-/* .main-tournois .table-title td{
-    color: var(--red);
-    font-weight: 900;
-    font-size: 18px;
-}
-.main-tournois .tournois-encours{
-    width: 100%;
-    text-align: left;
-    margin-top: 50px;
-} */
 .main-tournois .tournois-line{
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -429,7 +469,6 @@ section.test img:hover{
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     margin: 15px 0px;
-    /* border : 1px solid var(--color-border); */
     text-align: center;
     margin-left: -55px;
     border-radius: 5px;
@@ -501,7 +540,6 @@ section.test img:hover{
 }
 .main-dashboard .dashadmin-section .dashadmin-topmid .display-tournaments .tournois-line div a{
     padding: 2px 10px;
-    /* width: 20px; */
     margin-top: 2px;
     margin-bottom: 2px;
     transition: .2s;
@@ -514,15 +552,10 @@ section.test img:hover{
 .main-dashboard .dashadmin-section .dashadmin-topmid .display-tournaments .tournois-line div a img{
     height: 25px;
 }
-
 .main-dashboard .dashadmin-section .dashadmin-topmid .init-tourn{
-    /* background-color: ; */
-    /* width: 100%; */
     width: 40%;
     margin-left: 5px;
     height: 300px;
-    /* background-color: gray; */
-    /* text-align: center; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -544,13 +577,11 @@ transition: .3s;
     background-color: var(--color-hover);
     border-radius: 50%;
 }
-
 .main-dashboard .dashadmin-section .dashadmin-topmid .init-tourn a img{
     height: 55px;
     width: 55px;
     margin: 3px 3px;
 }
-
 .dashadmin-card{
     background-color: var(--color-element);
     border: 1px solid var(--color-border);
@@ -595,6 +626,83 @@ transition: .3s;
     margin-right: -30px;
     height: 35px;
 }
+
+/* ANNONCES FORM STYLE */
+
+.main-admin-annonce-form .form{
+    display: flex;
+    justify-content: center;
+}
+.main-admin-annonce-form .form-parta{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 25px;
+}
+.main-admin-annonce-form .form-parta input{
+    margin-bottom: 5px;
+    padding: 5px 12px;
+}
+.main-admin-annonce-form .form .textarea{
+    margin: 0 25px;
+}
+.main-admin-annonce-form .form .textarea label{
+    line-height: 25px;
+}
+
+.main-admin-annonce-form .form textarea{
+    width: 80%;
+    min-width: 700px;
+    padding: 5px;
+    min-height: 120%;
+    resize: none;
+}
+.main-admin-annonce-form .form-button{
+    text-align: center;
+    margin-top: 20px;
+    width: 40%;
+}
+.main-admin-annonce-form form button{
+    background-color: var(--red);
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+}
+
+
+/* EDIT FORM TOURNOIS DASHBOARD ADMIN */
+.main-editform-dashbadmin .edit-form-section{
+    /* text-align: center; */
+}
+.main-editform-dashbadmin .edit-form-section form{
+    display: grid;
+    margin: auto;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    padding-top: 15px;
+    width: 40%;
+}
+.main-editform-dashbadmin .edit-form-section form input{
+    border-radius: 2px;
+    grid-column: 2 / 4;
+
+    border: none;
+    padding: 5px;
+}
+.main-editform-dashbadmin .edit-form-section form button{
+    grid-column: 2;
+    margin: auto;
+    background-color: var(--red);
+    border: none;
+    margin-top: 25px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: .3s;
+    cursor: pointer;
+}
+.main-editform-dashbadmin .edit-form-section form button:hover{
+    background-color: rgb(147, 41, 41);
+}
+
 
 /* FOOTER STYLE */
 footer{
