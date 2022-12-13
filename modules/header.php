@@ -34,7 +34,6 @@ if ($_SESSION["type"]=="administrateur") {
     <section class='admin-header'>
                 <ul>
                     <li><a href='/pages/dashboard/dashb-admin.php'>DASHBOARD</a></li>|
-                    <li><a href='/pages/statistiques.php'>STATISTIQUES</a></li>|
                     <li><a href='/pages/dashboard/form-annonce.php'>ANNONCES</a></li>
                 </ul>
             </section>
@@ -45,7 +44,6 @@ if ($_SESSION["type"]=="administrateur") {
     <section class='admin-header'>
                 <ul>
                     <li><a href=''>DASHBOARD</a></li>|
-                    <li><a href='/pages/statistiques.php'>STATISTIQUES</a></li>|
                     <li><a href='/pages/dashboard/dashb-cap.php'>MON EQUIPE</a></li>
                 </ul>
             </section>");

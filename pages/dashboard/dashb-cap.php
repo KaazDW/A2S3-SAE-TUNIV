@@ -3,7 +3,7 @@ if (empty($_SESSION["loggedIn"])) {
     $_SESSION["loggedIn"] = false;
 }
 
-if (!$_SESSION["type"]=="administrateur") {
+if (!$_SESSION["type"]=="capitaine") {
     header("Location: ../../index.php");
 }
 
@@ -27,19 +27,22 @@ $listeTournois = $pdo->query($sql);
 </head> 
 <body>
     <?php include '../../modules/header.php'; ?>
-    <main class="main-informations">
-        <h2 class="title"><?php  
-            $listematch = $pdo->prepare('SELECT Nom from Equipe where ID_Capitaine=:varId;');
-            $listematch->execute(
-                [
-                    'varId' =>$_SESSION["userId"],
-                ]
-                );
-            $equipe=$listematch->fetch();
-            echo $equipe[0]
-            ?></h2>
-        <section class="stats-section">
-
+    <main class="main-dashcap">
+        <h2 class="title">Affichage de l'équipe</h2>
+        <section class="dashcap-section">
+            <div class="nomequipe">
+                <h3>Nom de l'équipe</h3>
+                <?php  
+                    $listematch = $pdo->prepare('SELECT Nom from Equipe where ID_Capitaine=:varId;');
+                    $listematch->execute(
+                        [
+                            'varId' =>$_SESSION["userId"],
+                        ]
+                        );
+                    $equipe=$listematch->fetch();
+                    echo $equipe[0]
+                ?>
+            </div>
             <div class="title-grid">
                 <span>Prenom</span>
                 <span>Nom</span>
