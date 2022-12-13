@@ -13,4 +13,6 @@ foreach ($listeMdp as $mdp) {
     $pdo->exec($sql);
     $compteur++;
 }
-*/  
+*/ 
+
+header("Location: ../index.php");
