@@ -1,16 +1,16 @@
 <?php session_start();
-if (empty($_SESSION["loggedIn"])) {
-    $_SESSION["loggedIn"] = false;
-}
+    if (empty($_SESSION["loggedIn"])) {
+        $_SESSION["loggedIn"] = false;
+    }
 
-if ($_SESSION["type"]!="administrateur") {
-    header("Location: ../../index.php");
-}
+    if ($_SESSION["type"]!="administrateur") {
+        header("Location: ../../index.php");
+    }
 
-include '../../config/db.php';
+    include '../../config/db.php';
 
-$sql = "SELECT * FROM Annonces ORDER BY ID_Annonce DESC LIMIT 30;";
-$listeAnnonces = $pdo->query($sql);
+    $sql = "SELECT * FROM Annonces ORDER BY ID_Annonce DESC LIMIT 30;";
+    $listeAnnonces = $pdo->query($sql);
 ?>
 
 <!DOCTYPE html>
@@ -20,8 +20,7 @@ $listeAnnonces = $pdo->query($sql);
     <link href="../../assets/css/style.css" rel="stylesheet">
 </head> 
 <body>
-        <?php include '../../modules/header.php';?>
-
+    <?php include '../../modules/header.php';?>
     <main class="main-admin-annonce-form">
         <h2 class="title">Créer une nouvelle annonce</h2>
         <section class="form-annonce-section">
@@ -83,7 +82,6 @@ $listeAnnonces = $pdo->query($sql);
 
             <?php endforeach;?>
         </section>
-
     </main>
     <?php include '../../modules/footer.php'; ?>
 </body>

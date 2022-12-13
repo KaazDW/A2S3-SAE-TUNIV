@@ -74,7 +74,7 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 75vw;
+    width: 76vw;
     padding: 7px 0px;
     padding-bottom: 10px;
     min-width: 590px;
@@ -84,7 +84,7 @@ header{
 }
 main{
     margin-top: 150px;
-    animation: openPage 2s;
+    /* animation: openPage 2s; */
 }
 @keyframes openPage {
     from{
@@ -145,9 +145,6 @@ header .nav-icon li a:hover{
 }
 .scroll-style{
     border: 2px solid var(--color-border);
-    /* background-color: var(--color-body-background);
-    backdrop-filter: blur(10px); */
-
 }
 .admin-header{
     height: 30px;
@@ -165,7 +162,6 @@ header .nav-icon li a:hover{
     backdrop-filter: blur(10px);
     z-index: 2;
     padding: 2px 12px;
-
 }
 .admin-header ul{
     color: grey;
@@ -245,7 +241,7 @@ header .nav-icon li a:hover{
     font-style: oblique 20deg;
 }
 .index-actu .annonce-card .text-field span.role{
-    /* color: rgb(255, 255, 255); */
+    color: rgb(255, 255, 255);
 }
 .index-actu .annonce-card .text-field p:last-child{
     margin-top: 5px;
@@ -700,15 +696,17 @@ section.stats-section div.file-counter div p:hover{
 }
 .main-admin-annonce-form .form .textarea{
     margin: 0 25px;
+    width: 50%;
 }
 .main-admin-annonce-form .form .textarea label{
     line-height: 25px;
 }
 .main-admin-annonce-form .form textarea{
-    width: 80%;
+    width: 100%;
     min-width: 700px;
     padding: 5px;
     min-height: 120%;
+    font-size: 16px;
     resize: none;
 }
 .main-admin-annonce-form .form-button{
@@ -739,7 +737,6 @@ section.stats-section div.file-counter div p:hover{
 .main-editform-dashbadmin .edit-form-section form input{
     border-radius: 2px;
     grid-column: 2 / 4;
-
     border: none;
     padding: 5px;
 }
