@@ -72,6 +72,15 @@ CREATE TABLE IF NOT EXISTS Annonces (
     Contenu VARCHAR(255) NOT NULL,
     Image TEXT
 );
+
+ DROP PROCEDURE IF EXISTS viderAnnonces;
+ DELIMITER $
+ CREATE PROCEDURE viderAnnonces()
+ BEGIN
+	DELETE FROM Annonces WHERE ID_Annonce=(SELECT min(ID_Annonce) FROM Annonces);
+ END
+ $
+ DELIMITER ;
  
  -- Tests
 INSERT INTO Utilisateurs VALUES(0,"admin","admin","nom","prenom","email",0);

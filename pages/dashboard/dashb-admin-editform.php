@@ -6,7 +6,19 @@ if (empty($_SESSION["loggedIn"])) {
 if (!$_SESSION["type"]=="administrateur") {
     header("Location: ../../index.php");
 }
+
+include '../../config/db.php';
+
+$listetournoi = $pdo->prepare('SELECT * FROM Tournoi where ID_Tournoi =:varId');
+
+$listetournoi->execute(
+    [
+        'varId' =>$_GET["id"],
+    ]
+    );
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -20,8 +32,39 @@ if (!$_SESSION["type"]=="administrateur") {
     <main class="main-editform-dashbadmin">
         <h2 class="title">Edit form</h2>
         <section class="stats-section">
+        <?php $tournois = $listetournoi->fetchAll();
+            foreach($tournois as $tournoi):
+        ?>
+        
+        <form action="../../config/config-annonce.php" method="POST" enctype="multipart/form-data">
+                <!-- Champ Sport -->
+                <label for="sport">Sport</label>
+                <input name="sport" type="text" id="sport" value="<?php echo($tournoi['Sport']) ?>" required="required">
+                <br>
 
-        <!-- met ton form et tout ici -->
+                <!-- Nom Tournoi -->
+                <label for="nom">Nom Tournoi</label>
+                <input name="nom" type="text" id="nom" value="<?php echo($tournoi['Nom']) ?>"required="required">
+                <br>
+
+                <!-- Date début -->
+                <label for="date-debut">Date Debut</label>
+                <input name="date-debut" type="text" id="date-debut" value="<?php echo($tournoi['DateDebut']) ?>" required="required">
+                <br>
+
+                <!-- Date fin -->
+                <label for="date-fin">Date Fin</label>
+                <input name="date-fin" type="text" id="date-fin" value="<?php echo($tournoi['DateFin']) ?>" required="required">
+                <br>
+
+
+                <button type="submit">Modifier</button>
+        </form>
+        
+
+        <?php
+        endforeach;
+        ?>
 
         </section>
     </main>
