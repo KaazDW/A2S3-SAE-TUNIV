@@ -42,7 +42,7 @@ body{
     background: linear-gradient(to right, #1a1d22, #242e36); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     
     font-family: 'Roboto', sans-serif;
-    width: 65vw;
+    width: 75vw;
     margin: auto;
     overflow-x: hidden;
     overflow-y: scroll;
@@ -59,7 +59,7 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 65vw;
+    width: 75vw;
     padding: 7px 0px;
     padding-bottom: 10px;
     min-width: 590px;
@@ -142,7 +142,7 @@ header .nav-icon li a:hover{
     left: 50%;
     transform: translate(-50%);
     top: 100px;
-    width: 65vw;
+    width: 75vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -386,36 +386,14 @@ section.stats-section div.file-counter div p:hover{
     cursor: pointer;
 }
 .main-apropos .apropos-content div.card .apropos-personnalcard img{
-    /* background-color: yellow; */
     width: 50px;
     border-radius: 50%;
     margin: 10px auto;
     filter: grayscale(1);
 }
-section.test img{
-    height: 150px;
-    margin: 50px;
-    box-shadow: 0 0 2em rgba(255, 255, 255, 0.459);
-    transform: rotate(-10deg);
-    transition: ease-in-out .5s;
-    border-radius: 5px;
-}
-section.test img:hover{
-    height: 300px;
-    transform: rotate(0deg);
-}
+
 /* TOURNOIS PAGE STYLE */
 
-/* .main-tournois .table-title td{
-    color: var(--red);
-    font-weight: 900;
-    font-size: 18px;
-}
-.main-tournois .tournois-encours{
-    width: 100%;
-    text-align: left;
-    margin-top: 50px;
-} */
 .main-tournois .tournois-line{
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -429,7 +407,6 @@ section.test img:hover{
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     margin: 15px 0px;
-    /* border : 1px solid var(--color-border); */
     text-align: center;
     margin-left: -55px;
     border-radius: 5px;
@@ -501,7 +478,6 @@ section.test img:hover{
 }
 .main-dashboard .dashadmin-section .dashadmin-topmid .display-tournaments .tournois-line div a{
     padding: 2px 10px;
-    /* width: 20px; */
     margin-top: 2px;
     margin-bottom: 2px;
     transition: .2s;
@@ -514,15 +490,10 @@ section.test img:hover{
 .main-dashboard .dashadmin-section .dashadmin-topmid .display-tournaments .tournois-line div a img{
     height: 25px;
 }
-
 .main-dashboard .dashadmin-section .dashadmin-topmid .init-tourn{
-    /* background-color: ; */
-    /* width: 100%; */
     width: 40%;
     margin-left: 5px;
     height: 300px;
-    /* background-color: gray; */
-    /* text-align: center; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -544,13 +515,11 @@ transition: .3s;
     background-color: var(--color-hover);
     border-radius: 50%;
 }
-
 .main-dashboard .dashadmin-section .dashadmin-topmid .init-tourn a img{
     height: 55px;
     width: 55px;
     margin: 3px 3px;
 }
-
 .dashadmin-card{
     background-color: var(--color-element);
     border: 1px solid var(--color-border);
@@ -595,6 +564,48 @@ transition: .3s;
     margin-right: -30px;
     height: 35px;
 }
+
+/* ANNONCES FORM STYLE */
+
+.main-admin-annonce-form .form{
+    display: flex;
+    justify-content: center;
+}
+.main-admin-annonce-form .form-parta{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 25px;
+}
+.main-admin-annonce-form .form-parta input{
+    margin-bottom: 5px;
+    padding: 5px 12px;
+}
+.main-admin-annonce-form .form .textarea{
+    margin: 0 25px;
+}
+.main-admin-annonce-form .form .textarea label{
+    line-height: 25px;
+}
+
+.main-admin-annonce-form .form textarea{
+    width: 80%;
+    min-width: 700px;
+    padding: 5px;
+    min-height: 120%;
+    resize: none;
+}
+.main-admin-annonce-form .form-button{
+    text-align: center;
+    margin-top: 20px;
+    width: 40%;
+}
+.main-admin-annonce-form form button{
+    background-color: var(--red);
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+}
+
 
 /* FOOTER STYLE */
 footer{

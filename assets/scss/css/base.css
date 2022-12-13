@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;600;700&family=Poppins:wght@100;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap");
+/*
+font-family: 'Comfortaa', cursive;
+font-family: 'Poppins', sans-serif;
+font-family: 'Roboto', sans-serif;
+*/
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  color: white;
+  letter-spacing: 0.6px;
+  /* border: 1px solid red; */
+}
+
+* a {
+  text-decoration: none;
+}
+
+input, textarea {
+  color: black;
+}
+
+:root {
+  /* color definition variable */
+  --blue: rgb(82,148,226);
+  --red: rgb(224, 78, 78);
+  --color-hover: rgb(36, 36, 36);
+  --color-border: rgba(64, 68, 73, 0.5);
+  /* --color-element: rgba(35, 39, 42, 0.6); */
+  --color-element: rgba(0, 0, 0, 0.6);
+  --color-element-full:rgba(35, 39, 42, 0.822);
+  /* --color-body-background: rgb(26, 24, 24); */ /* Lastest background-color */
+  --color-body-background: #111;
+  --color-hover: var(--color-border);
+}
+
+/*# sourceMappingURL=base.css.map */
