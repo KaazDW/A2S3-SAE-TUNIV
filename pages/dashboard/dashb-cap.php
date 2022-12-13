@@ -38,17 +38,13 @@ $listeTournois = $pdo->query($sql);
             $equipe=$listematch->fetch();
             echo $equipe[0]
             ?></h2>
-
-
         <section class="stats-section">
 
             <div class="title-grid">
                 <span>Prenom</span>
                 <span>Nom</span>
-                
             </div>
              
-            
             <?php
                 $listejoueur = $pdo->prepare('SELECT Joueur.Prenom, Joueur.Nom from Joueur inner join Equipe on Joueur.ID_Equipe=Equipe.ID_Equipe where Equipe.ID_Capitaine=:varId;');
                 $listejoueur->execute(
@@ -58,13 +54,12 @@ $listeTournois = $pdo->query($sql);
                     );
                 $joueurs=$listejoueur->fetchAll();
                 foreach($joueurs as $joueur):    
-                ?>
+            ?>
 
             
             <a href="match-tournois.php" class="tournois-line">
                 <span><?php echo($joueur['Prenom']) ?></span>
                 <span><?php echo($joueur['Nom']) ?></span>
-                
             </a>
 
             <?php
