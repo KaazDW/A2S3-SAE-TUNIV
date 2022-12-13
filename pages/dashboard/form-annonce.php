@@ -6,6 +6,11 @@ if (empty($_SESSION["loggedIn"])) {
 if (!$_SESSION["type"]=="administrateur") {
     header("Location: ../../index.php");
 }
+
+include '../../config/db.php';
+
+$sql = "SELECT * FROM Annonces ORDER BY ID_Annonce DESC LIMIT 30;";
+$listeAnnonces = $pdo->query($sql);
 ?>
 
 <!DOCTYPE html>
@@ -18,7 +23,7 @@ if (!$_SESSION["type"]=="administrateur") {
         <?php include '../../modules/header.php';?>
 
     <main class="main-admin-annonce-form">
-        <h2 class="title">Générer une nouvelle annonce</h2>
+        <h2 class="title">Créer une nouvelle annonce</h2>
         <section>
             <form action="../../config/config-annonce.php" method="POST" enctype="multipart/form-data">
                     <!-- Champ titre -->
@@ -55,6 +60,26 @@ if (!$_SESSION["type"]=="administrateur") {
                 unset($_SESSION["annonceErreur"]);
             } ?>
         </section>
+
+        <h2 class="title">Supprimer une annonce</h2>
+        <section class="index-actu">
+            <h2>Annonces</h2>
+
+            <?php $annonces = $listeAnnonces->fetchAll();
+            foreach($annonces as $annonce):?>
+
+            <div class=bloc-annonce>
+                <h3><?php echo($annonce['Titre'])?></h3>
+                <img src=<?php if($annonce['Image']!=NULL) {echo("../../" . $annonce['Image']);} else {echo("../../assets/img/pp-blanc.png");}?> alt="logo de l'annonce" >
+                <div class=date-annonce><?php echo($annonce['Date_annonce']) ?></div>
+                <div class=auteur-role-annonce><?php echo($annonce['Auteur']) ?>, <?php echo($annonce['Role'])?></div>
+                <div class=contenu-annonce><?php echo($annonce['Contenu'])?></div>
+                <a class="edit" href=""><img src='../../assets/img/delete-blanc.png' alt='logo suppression'></a>
+            </div>
+
+            <?php endforeach;?>
+        </section>
+
     </main>
     <?php include '../../modules/footer.php'; ?>
 </body>
