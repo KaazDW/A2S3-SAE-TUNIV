@@ -4,7 +4,7 @@ if (empty($_SESSION["loggedIn"])) {
     $_SESSION["loggedIn"] = false;
 }
 
-if (!$_SESSION["type"]=="administrateur") {
+if ($_SESSION["type"]!="administrateur") {
     header("Location: ../../index.php");
 }
 

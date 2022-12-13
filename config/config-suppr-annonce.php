@@ -1,6 +1,6 @@
 <?php session_start();
 
-if (!$_SESSION["type"]=="administrateur") {
+if ($_SESSION["type"]!="administrateur") {
     header("Location: ../../index.php");
 }
 

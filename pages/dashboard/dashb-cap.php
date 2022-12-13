@@ -3,7 +3,7 @@ if (empty($_SESSION["loggedIn"])) {
     $_SESSION["loggedIn"] = false;
 }
 
-if (!$_SESSION["type"]=="capitaine") {
+if ($_SESSION["type"]!="capitaine") {
     header("Location: ../../index.php");
 }
 
