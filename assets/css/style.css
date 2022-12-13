@@ -753,8 +753,19 @@ transition: .3s;
 }
 .main-dashcap .dashcap-section .joueurs-liste-section{
     display: flex;
+    justify-content: center;
 }
+.main-dashcap .dashcap-section .joueurs-liste-section div.ajout-joueurs{
+    /* background-color: green; */
+    margin-left: 5vw;
+    margin-top: 15px;
+}
+.main-dashcap .dashcap-section .joueurs-liste-section div.ajout-joueurs form div{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 5px;
 
+}
 
 
 
