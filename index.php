@@ -28,7 +28,7 @@ $listeAnnonces = $pdo->query($sql);
             <?php $annonces = $listeAnnonces->fetchAll();
             foreach($annonces as $annonce):?>
                 <div class="annonce-card">
-                    <img src=<?php if($annonce['Image']!=NULL) {echo($annonce['Image']);} else {echo("assets/img/pp-blanc.png");}?> alt="logo de l'annonce" >
+                    <img src=<?php if($annonce['Image']!=NULL) {echo($annonce['Image']);} else {echo("assets/img/annonce.png");}?> alt="logo de l'annonce" >
                     <div class="text-field">
                         <h3><?php echo($annonce['Titre'])?></h3>
                         <p class="date"><?php echo($annonce['Date_annonce']) ?></p>

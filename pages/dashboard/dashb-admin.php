@@ -48,7 +48,7 @@ $listeTournois = $pdo->query($sql);
                             <a class="edit" href="dashb-admin-editform.php?id=<?= $tournoi['ID_Tournoi'] ?>">
                                 <img src="../../assets/img/edit-blanc.png">
                             </a>
-                            <a class="edit" href="">
+                            <a class="edit" href="../../config/config-suppr-tournoi.php?id=<?= $tournoi['ID_Tournoi'] ?>">
                                 <img src="../../assets/img/delete-blanc.png">
                             </a>
                         </div>
