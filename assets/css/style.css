@@ -164,6 +164,8 @@ header .nav-icon li a:hover{
     background-color: var(--color-element-full);
     backdrop-filter: blur(10px);
     z-index: 2;
+    padding: 2px 12px;
+
 }
 .admin-header ul{
     color: grey;
@@ -236,14 +238,11 @@ header .nav-icon li a:hover{
     width: 165px;
     border-radius: 5px; 
     margin: 10px;
-
 }
-
 .index-actu .annonce-card .text-field p.date{
     color: rgb(136, 133, 133);
     font-style: oblique 20deg;
 }
-
 .index-actu .annonce-card .text-field span.role{
     /* color: rgb(255, 255, 255); */
 }
@@ -702,6 +701,11 @@ transition: .3s;
 .main-editform-dashbadmin .edit-form-section form button:hover{
     background-color: rgb(147, 41, 41);
 }
+
+
+/* CAPITAINE 'MON EQUIPE' STYLE */
+.main-dashcap
+
 
 
 /* FOOTER STYLE */

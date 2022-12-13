@@ -30,7 +30,7 @@ $listetournoi->execute(
     <?php include '../../modules/header.php';?>
     <main class="main-editform-dashbadmin">
         <h2 class="title">Edit form</h2>
-        <section class="stats-section">
+        <section class="edit-form-section">
         <?php $tournois = $listetournoi->fetchAll();
             foreach($tournois as $tournoi):
         ?>
@@ -39,22 +39,18 @@ $listetournoi->execute(
                 <!-- Champ Sport -->
                 <label for="sport">Sport</label>
                 <input name="sport" type="text" id="sport" value="<?php echo($tournoi['Sport']) ?>" required="required">
-                <br>
 
                 <!-- Nom Tournoi -->
                 <label for="nom">Nom Tournoi</label>
                 <input name="nom" type="text" id="nom" value="<?php echo($tournoi['Nom']) ?>"required="required">
-                <br>
 
                 <!-- Date début -->
                 <label for="date-debut">Date Debut</label>
-                <input name="date-debut" type="text" id="date-debut" value="<?php echo($tournoi['DateDebut']) ?>" required="required">
-                <br>
+                <input name="date-debut" type="text" id="date-debut" value="<?php echo($tournoi['DateDebut']) ?>" required="required" placeholder="AAAA-MM-JJ HH:MM:SS>
 
                 <!-- Date fin -->
                 <label for="date-fin">Date Fin</label>
-                <input name="date-fin" type="text" id="date-fin" value="<?php echo($tournoi['DateFin']) ?>" required="required">
-                <br>
+                <input name="date-fin" type="text" id="date-fin" value="<?php echo($tournoi['DateFin']) ?>" required="required" placeholder="AAAA-MM-JJ HH:MM:SS">
 
 
                 <button type="submit">Modifier</button>
