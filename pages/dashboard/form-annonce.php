@@ -24,7 +24,7 @@ $listeAnnonces = $pdo->query($sql);
 
     <main class="main-admin-annonce-form">
         <h2 class="title">Créer une nouvelle annonce</h2>
-        <section>
+        <section class="form-annonce-section">
             <form action="../../config/config-annonce.php" method="POST" enctype="multipart/form-data">
                     <!-- Champ titre -->
                     <div class="form">
@@ -68,15 +68,17 @@ $listeAnnonces = $pdo->query($sql);
             <?php $annonces = $listeAnnonces->fetchAll();
             foreach($annonces as $annonce):?>
 
-            <div class="annonce-card">
-                <img src=<?php if($annonce['Image']!=NULL) {echo("../../" . $annonce['Image']);} else {echo("../../assets/img/annonce.png");}?> alt="logo de l'annonce" >
+            <div class="annonce-card-admin">
+                <img class="img-cover" src=<?php if($annonce['Image']!=NULL) {echo("../../" . $annonce['Image']);} else {echo("../../assets/img/annonce.png");}?> alt="logo de l'annonce" >
                 <div class="text-field">
                     <h3><?php echo($annonce['Titre'])?></h3>
                     <p class="date"><?php echo($annonce['Date_annonce']) ?></p>
                     <p><?php echo($annonce['Auteur']) ?>, <span class="role"><?php echo($annonce['Role'])?></span></p>
                     <p><?php echo($annonce['Contenu'])?></p>
-                    <a class="edit" href="../../config/config-suppr-annonce.php?id=<?php echo($annonce['ID_Annonce']) ?>"><img src='../../assets/img/delete-blanc.png' alt='logo suppression'></a>
                 </div>
+                <a class="edit" href="../../config/config-suppr-annonce.php?id=<?php echo($annonce['ID_Annonce']) ?>">
+                    <img src='../../assets/img/delete-blanc.png' alt='logo suppression'>
+                </a>
             </div>
 
             <?php endforeach;?>
