@@ -221,12 +221,14 @@ header .nav-icon li a:hover{
     width: 60%;
     margin: auto;
     display: flex;
+    align-items: center;
     border-radius: 5px;
     border: 1px solid var(--color-border);   
     margin-bottom: 15px;
 }
 .index-actu .annonce-card .text-field{
-    margin-top: 15px;
+    margin: 15px 0px;
+    margin-right: 10px;
 }
 
 .index-actu .annonce-card img{
