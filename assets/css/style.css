@@ -45,7 +45,7 @@ body{
     /* background-size: 200% 200%; */
     /* animation: gradient-animation 10s ease infinite; */
 
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
     width: 75vw;
     margin: auto;
     overflow-x: hidden;
@@ -69,7 +69,7 @@ header{
     transform: translate(-50%);
     top: 15px;
     /* background-color: var(--color-element); */
-    border: 1px solid rgba(255, 255, 255, 0);
+    border: 2px solid rgba(255, 255, 255, 0);
     border-radius: 5px;
     display: flex;
     justify-content: space-between;
@@ -190,10 +190,11 @@ header .nav-icon li a:hover{
 
 /* INDEX PAGE STYLE */
 .main-home{
-    display: flex;
+    display: flex; 
     justify-content: center;
     align-items: center;
-    height: 85vh;
+    height: 90vh;
+    /* padding-top: 150px; */
     text-align: center;
 }
 .main-home .main-content{
@@ -210,6 +211,50 @@ header .nav-icon li a:hover{
     padding: 10px 15px;
     border-radius: 5px;
 }
+/* INDEX ANNONCE SECTION */
+.index-actu h2{
+    text-align: center;
+    margin-bottom: 15px;
+}
+.index-actu .annonce-card{
+    /* background-color: green; */
+    width: 60%;
+    margin: auto;
+    display: flex;
+    border-radius: 5px;
+    border: 1px solid var(--color-border);   
+    margin-bottom: 15px;
+}
+.index-actu .annonce-card .text-field{
+    margin-top: 15px;
+}
+
+.index-actu .annonce-card img{
+    height: 165px;
+    width: 165px;
+    border-radius: 5px; 
+    margin: 10px;
+
+}
+
+.index-actu .annonce-card .text-field p.date{
+    color: rgb(136, 133, 133);
+    font-style: oblique 20deg;
+}
+
+.index-actu .annonce-card .text-field span.role{
+    /* color: rgb(255, 255, 255); */
+}
+.index-actu .annonce-card .text-field p:last-child{
+    margin-top: 5px;
+    font-family: Roboto;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid var(--color-border);
+}
+
+
+
 
 /* LOGIN PAGE STYLE */
 .main-login{
