@@ -74,7 +74,7 @@ $listeAnnonces = $pdo->query($sql);
                 <div class=date-annonce><?php echo($annonce['Date_annonce']) ?></div>
                 <div class=auteur-role-annonce><?php echo($annonce['Auteur']) ?>, <?php echo($annonce['Role'])?></div>
                 <div class=contenu-annonce><?php echo($annonce['Contenu'])?></div>
-                <a class="edit" href=""><img src='../../assets/img/delete-blanc.png' alt='logo suppression'></a>
+                <a class="edit" href="../../config/config-suppr-annonce.php?id=<?php echo($annonce['ID_Annonce']) ?>"><img src='../../assets/img/delete-blanc.png' alt='logo suppression'></a>
             </div>
 
             <?php endforeach;?>
