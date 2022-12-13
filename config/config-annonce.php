@@ -64,5 +64,5 @@ else {
         $res = $pdo->exec($sql);
     }
 
-    header("Location: ../pages/dashboard/dashb-admin.php");
+    header("Location: ../pages/dashboard/form-annonce.php");
 }
