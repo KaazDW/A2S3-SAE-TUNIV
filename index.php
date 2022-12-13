@@ -2,7 +2,7 @@
 
 include 'config/db.php';
 
-$sql = "SELECT * FROM Annonces ORDER BY ID_Annonce LIMIT 30;";
+$sql = "SELECT * FROM Annonces ORDER BY ID_Annonce DESC LIMIT 30;";
 $listeAnnonces = $pdo->query($sql);
 ?>
 

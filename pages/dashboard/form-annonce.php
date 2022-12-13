@@ -68,13 +68,15 @@ $listeAnnonces = $pdo->query($sql);
             <?php $annonces = $listeAnnonces->fetchAll();
             foreach($annonces as $annonce):?>
 
-            <div class=bloc-annonce>
-                <h3><?php echo($annonce['Titre'])?></h3>
+            <div class="annonce-card">
                 <img src=<?php if($annonce['Image']!=NULL) {echo("../../" . $annonce['Image']);} else {echo("../../assets/img/pp-blanc.png");}?> alt="logo de l'annonce" >
-                <div class=date-annonce><?php echo($annonce['Date_annonce']) ?></div>
-                <div class=auteur-role-annonce><?php echo($annonce['Auteur']) ?>, <?php echo($annonce['Role'])?></div>
-                <div class=contenu-annonce><?php echo($annonce['Contenu'])?></div>
-                <a class="edit" href="../../config/config-suppr-annonce.php?id=<?php echo($annonce['ID_Annonce']) ?>"><img src='../../assets/img/delete-blanc.png' alt='logo suppression'></a>
+                <div class="text-field">
+                    <h3><?php echo($annonce['Titre'])?></h3>
+                    <p class="date"><?php echo($annonce['Date_annonce']) ?></p>
+                    <p><?php echo($annonce['Auteur']) ?>, <span class="role"><?php echo($annonce['Role'])?></span></p>
+                    <p><?php echo($annonce['Contenu'])?></p>
+                    <a class="edit" href="../../config/config-suppr-annonce.php?id=<?php echo($annonce['ID_Annonce']) ?>"><img src='../../assets/img/delete-blanc.png' alt='logo suppression'></a>
+                </div>
             </div>
 
             <?php endforeach;?>
