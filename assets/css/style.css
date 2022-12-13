@@ -704,7 +704,58 @@ transition: .3s;
 
 
 /* CAPITAINE 'MON EQUIPE' STYLE */
-.main-dashcap
+.main-dashcap .dashcap-section div.joueurs-liste{
+    margin-top: 25px;
+}
+.main-dashcap .dashcap-section div.nomequipe{
+    display: flex;
+    align-items: center;
+}
+.main-dashcap .dashcap-section div.nomequipe h3{
+    margin-right: 15px;
+}
+.main-dashcap .dashcap-section div.nomequipe p{
+    color: var(--red);
+    font-weight: 700;
+    font-size: 20px;
+}
+.main-dashcap .dashcap-section .joueurs-liste-section .joueurs-liste-div .joueur-line{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    width: 400px;
+    margin: 5px auto;
+    border-radius: 2px;
+    padding: 5px;
+    border: 1px solid var(--color-border);
+}
+.main-dashcap .dashcap-section .joueurs-liste-section .joueurs-liste-div .joueur-line div img{
+    height: 25px;
+    margin: 5px;
+    /* margin-top: 8px; */
+}
+.main-dashcap .dashcap-section .joueurs-liste-section .joueurs-liste-div .joueur-line div a{
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    margin: 0 8px
+}
+.main-dashcap .dashcap-section .joueurs-liste-section .joueurs-liste-div .joueur-line div a:hover{
+    background-color: var(--color-hover);
+}
+.main-dashcap .dashcap-section .joueurs-liste-section .joueurs-liste-div .joueur-line div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main-dashcap .dashcap-section .joueurs-liste-section .joueurs-liste-div .title{
+    font-weight: 700;
+    border: none;
+}
+.main-dashcap .dashcap-section .joueurs-liste-section{
+    display: flex;
+}
+
+
 
 
 
