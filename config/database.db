@@ -69,7 +69,7 @@ CREATE TABLE IF NOT EXISTS Annonces (
     Date_annonce DATETIME,
     Auteur VARCHAR(50) NOT NULL,
     Role VARCHAR(50) NOT NULL,
-    Contenu VARCHAR(255) NOT NULL,
+    Contenu VARCHAR(400) NOT NULL,
     Image TEXT
 );
 

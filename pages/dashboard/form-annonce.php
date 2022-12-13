@@ -48,7 +48,7 @@ $listeAnnonces = $pdo->query($sql);
                         <!-- Champ contenu -->
                         <div class="textarea">
                             <label for="content">Contenu de l'annonce</label>
-                            <textarea placeholder="255 caractères maximum" name="content" id="content" cols="30" rows="8" maxlength="255"></textarea>
+                            <textarea placeholder="400 caractères maximum" name="content" id="content" cols="30" rows="8" maxlength="400"></textarea>
                         </div>
                     </div>
                     <div class="form-button">
@@ -69,7 +69,7 @@ $listeAnnonces = $pdo->query($sql);
             foreach($annonces as $annonce):?>
 
             <div class="annonce-card">
-                <img src=<?php if($annonce['Image']!=NULL) {echo("../../" . $annonce['Image']);} else {echo("../../assets/img/pp-blanc.png");}?> alt="logo de l'annonce" >
+                <img src=<?php if($annonce['Image']!=NULL) {echo("../../" . $annonce['Image']);} else {echo("../../assets/img/annonce.png");}?> alt="logo de l'annonce" >
                 <div class="text-field">
                     <h3><?php echo($annonce['Titre'])?></h3>
                     <p class="date"><?php echo($annonce['Date_annonce']) ?></p>
