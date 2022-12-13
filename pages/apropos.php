@@ -35,7 +35,7 @@ if (empty($_SESSION["loggedIn"])) {
                 </div>
                 <div class="apropos-personnalcard">
                     <img src="../assets/img/account.png">
-                    <a href="" target="_blank">Nathan Ozimek</a>
+                    <a href="https://www.linkedin.com/in/nathan-ozimek/" target="_blank">Nathan Ozimek</a>
                 </div>
             </div>
             <p>L'objectif de l'application est de centraliser les différents tournois sportifs universitaire à l'aide d'un outil développé par des étudiants, pour des étudiants.</p>
