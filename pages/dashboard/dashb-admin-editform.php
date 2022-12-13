@@ -36,7 +36,7 @@ $listetournoi->execute(
             foreach($tournois as $tournoi):
         ?>
         
-        <form action="../../config/config-annonce.php" method="POST" enctype="multipart/form-data">
+        <form action="../../config/config-editform.php?id=<?= $tournoi['ID_Tournoi'] ?>" method="POST" enctype="multipart/form-data">
                 <!-- Champ Sport -->
                 <label for="sport">Sport</label>
                 <input name="sport" type="text" id="sport" value="<?php echo($tournoi['Sport']) ?>" required="required">

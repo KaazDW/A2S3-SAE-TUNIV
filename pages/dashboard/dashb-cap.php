@@ -26,7 +26,7 @@ $listeTournois = $pdo->query($sql);
     <link href="../../assets/css/style.css" rel="stylesheet">
 </head> 
 <body>
-        <?php include '../../modules/header.php'; ?>
+    <?php include '../../modules/header.php'; ?>
     <main class="main-informations">
         <h2 class="title"><?php  
             $listematch = $pdo->prepare('SELECT Nom from Equipe where ID_Capitaine=:varId;');
@@ -45,7 +45,6 @@ $listeTournois = $pdo->query($sql);
             <div class="title-grid">
                 <span>Prenom</span>
                 <span>Nom</span>
-                
             </div>
              
             
