@@ -69,6 +69,30 @@ $listeTournois = $pdo->query($sql);
                             <img src="../../assets/img/cross.png">
                         </a>
                     </header>
+
+                    <h3>Créer un nouveau tournoi</h3>
+                    <form action="../../config/config-crea-tournoi.php" method="POST">
+                        <div class="form">
+                            <div class="form-parta">
+                                <label for="name">Nom du tournoi</label>
+                                <input name="name" type="text" id="name" maxlength=255 required="required">
+
+                                <label for="sport">Sport</label>
+                                <input name="sport" type="text" id="sport" maxlength=50 required="required">
+
+                                <label for="dateDeb">Date de début du tournoi</label>
+                                <input name="dateDeb" type="datetime-local" id="dateDeb" required="required">
+
+                                <label for="dateFin">Date de fin du tournoi</label>
+                                <input name="dateFin" type="datetime-local" id="dateFin" required="required">
+                            </div>
+                        </div>
+
+                        <div class="form-button">
+                            <button type="submit">Créer le tournoi</button>
+                        </div>      
+                    </form>
+
                 </div>
             </div>
         </section>
