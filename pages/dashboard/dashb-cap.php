@@ -31,7 +31,8 @@ $listeTournois = $pdo->query($sql);
         <h2 class="title">Affichage de l'équipe</h2>
         <section class="dashcap-section">
             <div class="nomequipe">
-                <h3>Nom de l'équipe</h3>
+                <h3>Nom de l'équipe : </h3>
+                <p>
                 <?php  
                     $listematch = $pdo->prepare('SELECT Nom from Equipe where ID_Capitaine=:varId;');
                     $listematch->execute(
@@ -41,33 +42,55 @@ $listeTournois = $pdo->query($sql);
                         );
                     $equipe=$listematch->fetch();
                     echo $equipe[0]
-                ?>
+                ?></p>
             </div>
-            <div class="title-grid">
-                <span>Prenom</span>
-                <span>Nom</span>
-            </div>
-             
-            <?php
-                $listejoueur = $pdo->prepare('SELECT Joueur.Prenom, Joueur.Nom from Joueur inner join Equipe on Joueur.ID_Equipe=Equipe.ID_Equipe where Equipe.ID_Capitaine=:varId;');
-                $listejoueur->execute(
-                    [
-                        'varId' =>$_SESSION["userId"],
-                    ]
-                    );
-                $joueurs=$listejoueur->fetchAll();
-                foreach($joueurs as $joueur):    
-            ?>
-
             
-            <a href="match-tournois.php" class="tournois-line">
-                <span><?php echo($joueur['Prenom']) ?></span>
-                <span><?php echo($joueur['Nom']) ?></span>
-            </a>
+            <section class="joueurs-liste-section">
+                <div class="joueurs-liste-div">
+                    <div class="joueur-line title">
+                        <span>Prénom</span>
+                        <span>Nom</span>
+                    </div>
+                    <?php
+                        $listejoueur = $pdo->prepare('SELECT Joueur.Prenom, Joueur.Nom from Joueur inner join Equipe on Joueur.ID_Equipe=Equipe.ID_Equipe where Equipe.ID_Capitaine=:varId;');
+                        $listejoueur->execute(
+                            [
+                                'varId' =>$_SESSION["userId"],
+                            ]
+                            );
+                        $joueurs=$listejoueur->fetchAll();
+                        foreach($joueurs as $joueur):    
+                    ?>
 
-            <?php
-            endforeach;
-            ?>
+                    
+                    <div class="joueur-line">
+                        <span><?php echo($joueur['Prenom']) ?></span>
+                        <span><?php echo($joueur['Nom']) ?></span>
+                        <div>
+                            <a href=""><img src="/assets/img/edit-blanc.png"></a>
+                            <a href=""><img src="/assets/img/delete-blanc.png"></a>
+                        </div>
+                    </div>
+
+                    <?php
+                    endforeach;
+                    ?>
+                </div>
+                <div class="ajout-joueurs">
+                    <form>
+                        <h3>Ajouter un Joueurs</h3>
+                        <div>
+                            <label for="new-surname">Prénom</label>
+                            <input name="new-surname" id="new-surname">
+                        </div>
+                        <div>
+                            <label for="new-name">Nom</label>
+                            <input name="new-name" id="new-name">
+                        </div>
+                        <button>Ajouter</button>
+                    </form>
+                </div>
+            </section>
             
 
 

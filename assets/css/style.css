@@ -74,7 +74,7 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 75vw;
+    width: 76vw;
     padding: 7px 0px;
     padding-bottom: 10px;
     min-width: 590px;
@@ -84,7 +84,7 @@ header{
 }
 main{
     margin-top: 150px;
-    animation: openPage 2s;
+    /* animation: openPage 2s; */
 }
 @keyframes openPage {
     from{
@@ -145,9 +145,6 @@ header .nav-icon li a:hover{
 }
 .scroll-style{
     border: 2px solid var(--color-border);
-    /* background-color: var(--color-body-background);
-    backdrop-filter: blur(10px); */
-
 }
 .admin-header{
     height: 30px;
@@ -165,7 +162,6 @@ header .nav-icon li a:hover{
     backdrop-filter: blur(10px);
     z-index: 2;
     padding: 2px 12px;
-
 }
 .admin-header ul{
     color: grey;
@@ -213,6 +209,7 @@ header .nav-icon li a:hover{
     padding: 10px 15px;
     border-radius: 5px;
 }
+
 /* INDEX ANNONCE SECTION */
 .index-actu h2{
     text-align: center;
@@ -232,8 +229,8 @@ header .nav-icon li a:hover{
     margin: 15px 0px;
     margin-right: 10px;
 }
-
 .index-actu .annonce-card img{
+    object-fit: cover;
     height: 165px;
     width: 165px;
     border-radius: 5px; 
@@ -244,7 +241,7 @@ header .nav-icon li a:hover{
     font-style: oblique 20deg;
 }
 .index-actu .annonce-card .text-field span.role{
-    /* color: rgb(255, 255, 255); */
+    color: rgb(255, 255, 255);
 }
 .index-actu .annonce-card .text-field p:last-child{
     margin-top: 5px;
@@ -254,6 +251,63 @@ header .nav-icon li a:hover{
     border: 1px solid var(--color-border);
 }
 
+/* ADMIN CARD ANNONCE */
+.index-actu .annonce-card-admin{
+    /* background-color: green; */
+    width: 60%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid var(--color-border);   
+    margin-bottom: 15px;
+}
+.index-actu .annonce-card-admin a.edit{
+    margin: 0 50px;
+    border-radius: 50px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    transition: .3s;
+}
+.index-actu .annonce-card-admin a.edit:hover{
+    background-color: var(--red);
+
+}
+.index-actu .annonce-card-admin .edit img{
+    height: 50px;
+    /* width: 55px; */
+    /* background-color: green; */
+    /* object-fit: contain; */
+}
+
+.index-actu .annonce-card-admin .text-field{
+    margin: 15px 0px;
+    margin-right: 10px;
+    width: 100%;
+}
+.index-actu .annonce-card-admin .img-cover{
+    object-fit: cover;
+    height: 165px;
+    width: 165px;
+    border-radius: 5px; 
+    margin: 10px;
+}
+.index-actu .annonce-card-admin .text-field p.date{
+    color: rgb(136, 133, 133);
+    font-style: oblique 20deg;
+}
+.index-actu .annonce-card-admin .text-field span.role{
+    /* color: rgb(255, 255, 255); */
+}
+.index-actu .annonce-card-admin .text-field p:last-child{
+    margin-top: 5px;
+    font-family: Roboto;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid var(--color-border);
+}
 
 
 
@@ -502,8 +556,6 @@ section.stats-section div.file-counter div p:hover{
     margin: 15px 0px;
 }
 .main-dashboard .dashadmin-section .dashadmin-topmid{
-    /* background-color: green; */
-    /* height: 150px; */
     display: flex;
 }
 .main-dashboard .dashadmin-section .dashadmin-topmid .display-tournaments{
@@ -524,7 +576,6 @@ section.stats-section div.file-counter div p:hover{
     margin-bottom: 15px;
 }
 .main-dashboard .dashadmin-section .dashadmin-topmid .display-tournaments .tournois-line span{
-    /* background-color: green;     */
     margin: 2px;
     padding: 5px;
 }
@@ -567,9 +618,9 @@ section.stats-section div.file-counter div p:hover{
     text-transform: uppercase;
 }
 .main-dashboard .dashadmin-section .dashadmin-topmid .init-tourn a{
-width: 65px;
-height: 65px;
-transition: .3s;
+    width: 65px;
+    height: 65px;
+    transition: .3s;
 }
 .main-dashboard .dashadmin-section .dashadmin-topmid .init-tourn a:hover{
     cursor: pointer;
@@ -619,7 +670,6 @@ transition: .3s;
 .main-dashboard .dashadmin-section .dashadmin-topmid #tcreationmenu header a{
     cursor: pointer;
 }
-
 .main-dashboard .dashadmin-section .dashadmin-topmid #tcreationmenu header img{
     margin-top: 5px;
     margin-right: -30px;
@@ -628,6 +678,9 @@ transition: .3s;
 
 /* ANNONCES FORM STYLE */
 
+.main-admin-annonce-form{
+    padding-top: 15px;
+}
 .main-admin-annonce-form .form{
     display: flex;
     justify-content: center;
@@ -643,16 +696,17 @@ transition: .3s;
 }
 .main-admin-annonce-form .form .textarea{
     margin: 0 25px;
+    width: 50%;
 }
 .main-admin-annonce-form .form .textarea label{
     line-height: 25px;
 }
-
 .main-admin-annonce-form .form textarea{
-    width: 80%;
+    width: 100%;
     min-width: 700px;
     padding: 5px;
     min-height: 120%;
+    font-size: 16px;
     resize: none;
 }
 .main-admin-annonce-form .form-button{
@@ -666,12 +720,12 @@ transition: .3s;
     border: none;
     border-radius: 5px;
 }
-
+.main-admin-annonce-form .form-annonce-section{
+    margin-bottom: 100px;
+    margin-top: 50px;
+}
 
 /* EDIT FORM TOURNOIS DASHBOARD ADMIN */
-.main-editform-dashbadmin .edit-form-section{
-    /* text-align: center; */
-}
 .main-editform-dashbadmin .edit-form-section form{
     display: grid;
     margin: auto;
@@ -683,7 +737,6 @@ transition: .3s;
 .main-editform-dashbadmin .edit-form-section form input{
     border-radius: 2px;
     grid-column: 2 / 4;
-
     border: none;
     padding: 5px;
 }
@@ -704,9 +757,68 @@ transition: .3s;
 
 
 /* CAPITAINE 'MON EQUIPE' STYLE */
-.main-dashcap
+.main-dashcap .dashcap-section div.joueurs-liste{
+    margin-top: 25px;
+}
+.main-dashcap .dashcap-section div.nomequipe{
+    display: flex;
+    align-items: center;
+}
+.main-dashcap .dashcap-section div.nomequipe h3{
+    margin-right: 15px;
+}
+.main-dashcap .dashcap-section div.nomequipe p{
+    color: var(--red);
+    font-weight: 700;
+    font-size: 20px;
+}
+.main-dashcap .dashcap-section .joueurs-liste-section .joueurs-liste-div .joueur-line{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    width: 400px;
+    margin: 5px auto;
+    border-radius: 2px;
+    padding: 5px;
+    border: 1px solid var(--color-border);
+}
+.main-dashcap .dashcap-section .joueurs-liste-section .joueurs-liste-div .joueur-line div img{
+    height: 25px;
+    margin: 5px;
+    /* margin-top: 8px; */
+}
+.main-dashcap .dashcap-section .joueurs-liste-section .joueurs-liste-div .joueur-line div a{
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    margin: 0 8px
+}
+.main-dashcap .dashcap-section .joueurs-liste-section .joueurs-liste-div .joueur-line div a:hover{
+    background-color: var(--color-hover);
+}
+.main-dashcap .dashcap-section .joueurs-liste-section .joueurs-liste-div .joueur-line div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main-dashcap .dashcap-section .joueurs-liste-section .joueurs-liste-div .title{
+    font-weight: 700;
+    border: none;
+}
+.main-dashcap .dashcap-section .joueurs-liste-section{
+    display: flex;
+    justify-content: center;
+}
+.main-dashcap .dashcap-section .joueurs-liste-section div.ajout-joueurs{
+    /* background-color: green; */
+    margin-left: 5vw;
+    margin-top: 15px;
+}
+.main-dashcap .dashcap-section .joueurs-liste-section div.ajout-joueurs form div{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 5px;
 
-
+}
 
 /* FOOTER STYLE */
 footer{
