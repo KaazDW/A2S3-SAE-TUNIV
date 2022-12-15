@@ -43,11 +43,6 @@ function theme(){
     }
 }
 
-// DISPLAY TOURNAMENT CREATION MENU
-document.getElementById('tcreationmenu').style.display = "none";
-document.getElementById('tcreate').addEventListener("click", function(){
-    document.getElementById('tcreationmenu').style.display = "block";
-});
-document.getElementById('creationmenuclose').addEventListener("click", function(){
-    document.getElementById('tcreationmenu').style.display = "none";
-});
+
+
+

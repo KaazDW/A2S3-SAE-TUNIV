@@ -43,7 +43,6 @@ if ($_SESSION["type"]=="administrateur") {
     echo ("    
     <section class='admin-header'>
                 <ul>
-                    <li><a href=''>DASHBOARD</a></li>|
                     <li><a href='/pages/dashboard/dashb-cap.php'>MON EQUIPE</a></li>
                 </ul>
             </section>");

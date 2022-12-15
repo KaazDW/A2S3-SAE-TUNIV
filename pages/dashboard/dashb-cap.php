@@ -67,7 +67,7 @@ $listeTournois = $pdo->query($sql);
                         <span><?php echo($joueur['Prenom']) ?></span>
                         <span><?php echo($joueur['Nom']) ?></span>
                         <div>
-                            <a href=""><img src="/assets/img/edit-blanc.png"></a>
+                            <a onclick="openeditjoueurs()"><img src="/assets/img/edit-blanc.png"></a>
                             <a href=""><img src="/assets/img/delete-blanc.png"></a>
                         </div>
                     </div>
@@ -87,15 +87,37 @@ $listeTournois = $pdo->query($sql);
                             <label for="new-name">Nom</label>
                             <input name="new-name" id="new-name">
                         </div>
-                        <button>Ajouter</button>
+                        <button>Valider</button>
                     </form>
                 </div>
             </section>
-            
-
-
+            <section id="joueur-edit">
+                    <header>
+                        <button onclick="closeeditjoueurs()">Annuler</button>
+                    </header>
+                    <div class="content">
+                        <!-- CONTENU DU MENU D'EDITION D'UN JOUEURS -->
+                    </div>
+            </section>
         </section>
     </main>
     <?php include '../../modules/footer.php'; ?>
+    <script>
+        
+        // DISPLAY JOUEURS EDIT MENU
+        document.getElementById('joueur-edit').style.display = "none";
+
+        function openeditjoueurs(){
+            document.getElementById('joueur-edit').style.display = "block";  
+        }
+
+        function closeeditjoueurs(){
+            document.getElementById('joueur-edit').style.display = "none";
+        }
+        document.getElementById('closebtneditjoueurs').addEventListener("click", function(){
+            document.getElementById('joueur-edit').style.display = "none";
+        });
+
+    </script>
 </body>
 </html>
