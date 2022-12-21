@@ -41,6 +41,7 @@
                 background-color: rgb(40, 40, 40);
                 padding: 15px 0;
                 flex-direction: column;
+                // border: 1px solid white;
                 li{
                     margin: 10px;
                     border-left: 1px solid white;
@@ -55,6 +56,17 @@
                     img{
                         height: 50px;
                     }
+                }
+            }
+        }
+        main.main-apropos{
+            section.apropos-content{
+                div.card{
+                    flex-direction: column;
+                    text-align: center;
+                }
+                p{
+                    line-height: 30px;
                 }
             }
         }

@@ -45,6 +45,13 @@
   body header ul#mobilenav li.login-link img {
     height: 50px;
   }
+  body main.main-apropos section.apropos-content div.card {
+    flex-direction: column;
+    text-align: center;
+  }
+  body main.main-apropos section.apropos-content p {
+    line-height: 30px;
+  }
 }
 
 /*# sourceMappingURL=responsive.css.map */

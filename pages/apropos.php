@@ -41,7 +41,6 @@ if (empty($_SESSION["loggedIn"])) {
             <p>L'objectif de l'application est de centraliser les différents tournois sportifs universitaire à l'aide d'un outil développé par des étudiants, pour des étudiants.</p>
             <p>Tuniv à déjà hébergé <span>00</span> tournois depuis son déployement le <span>00.00.2022</span>.</p>
         </section>
-
     </main> 
     <?php include '../modules/footer.php'; ?>
 </body>
