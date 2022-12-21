@@ -40,6 +40,21 @@ if (empty($_SESSION["loggedIn"])) {
             </div>
             <p>L'objectif de l'application est de centraliser les différents tournois sportifs universitaire à l'aide d'un outil développé par des étudiants, pour des étudiants.</p>
             <p>Tuniv à déjà hébergé <span>00</span> tournois depuis son déployement le <span>00.00.2022</span>.</p>
+            <div class="navcompa">
+                <p>Tuniv est un une web app développé pour être compatible avec les dernieres versions des navigateurs en date :</p>
+                <div class="table">
+                    <span>Navigateur</span>
+                    <span>Version</span>
+                    <span class="name">OpéraGX</span>
+                    <span class="version">LVL 4 (core: 93.0.4585.72)</span>
+                    <span class="name">Firefox</span>
+                    <span class="version">108.0.1</span>
+                    <span class="name">Chrome</span>
+                    <span class="version">Version 108.0.5359.125</span>
+                    <span class="name">Safari</span>
+                    <span class="version">N/A</span>
+                </div>
+            </div>
         </section>
     </main> 
     <?php include '../modules/footer.php'; ?>
