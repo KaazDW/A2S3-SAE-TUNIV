@@ -10,13 +10,23 @@ if (empty($_SESSION["type"])) {
 <header>
     <a href="/index.php">
         <h1>🏆 TUNIV</h1>
-        <a onClick="mobilemenu()" class="icon">
-            <!-- <img src="../assets/img/menu-icon.png"> -->
-        </a>
     </a>
+    <a onClick="mobilemenu()" class="icon">
+        <img src="../assets/img/menu-icon.png">
+    </a>
+    <ul id="mobilenav">
+        <li><a href="/pages/tournois.php">Tournois</a></li>
+        <li><a href="/pages/apropos.php">A propos</a></li>
+        <li class="login-link"><a href="/pages/login.php"><img src=<?php if ($_SESSION["loggedIn"]) {
+                                                                            echo ("'/assets/img/pp-blanc2.png'");
+                                                                        } else {
+                                                                            echo ("'/assets/img/pp-blanc.png'");
+                                                                        } ?>></a></li>
+    </ul>
     <ul class="link" id="nav">
         <li><a href="/pages/tournois.php">Tournois</a></li>
         <li><a href="/pages/apropos.php">A propos</a></li>
+        
     </ul>
     <ul class="nav-icon">
         <li class="login-link"><a href="/pages/login.php"><img src=<?php if ($_SESSION["loggedIn"]) {

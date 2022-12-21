@@ -1,0 +1,50 @@
+:root {
+  /* color definition variable */
+  --blue: rgb(82,148,226);
+  --red: rgb(224, 78, 78);
+  --color-hover: rgb(36, 36, 36);
+  --color-border: rgba(64, 68, 73, 0.5);
+  /* --color-element: rgba(35, 39, 42, 0.6); */
+  --color-element: rgba(32, 28, 28, 0.6);
+  --color-element-full:rgba(32, 29, 29, 0.822);
+  /* --color-body-background: rgb(26, 24, 24); */ /* Lastest background-color */
+  --color-body-background: #111;
+  --color-hover: var(--color-border);
+}
+
+@media (max-width: 900px) {
+  body header ul.link, body header ul.nav-icon {
+    display: none;
+  }
+  body header h1 {
+    width: 150%;
+  }
+  body header a.icon {
+    display: flex;
+    height: 50px;
+  }
+  body header ul#mobilenav {
+    position: absolute;
+    left: 0;
+    top: 75px;
+    width: 90vw;
+    border-radius: 2px;
+    text-align: center;
+    background-color: rgb(40, 40, 40);
+    padding: 15px 0;
+    flex-direction: column;
+  }
+  body header ul#mobilenav li {
+    margin: 10px;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+  }
+  body header ul#mobilenav li a {
+    border-radius: 0;
+  }
+  body header ul#mobilenav li.login-link img {
+    height: 50px;
+  }
+}
+
+/*# sourceMappingURL=responsive.css.map */

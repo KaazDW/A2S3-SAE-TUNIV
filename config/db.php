@@ -4,9 +4,9 @@
 
 // // DB connection JF()
     try {
-        $pdo = new PDO("mysql:dbname=tuniv_db;host=localhost", "root", "", [PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION]);
+        $pdo = new PDO("mysql:dbname=tuniv_db_rework;host=localhost", "root", "", [PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION]);
     } catch (PDOException $e) {
-        die();
+        // die();
     }
     
 // DB connection IUT

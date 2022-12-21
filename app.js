@@ -8,21 +8,21 @@ window.addEventListener("scroll", function(){
 
 
 // MOIBLE RESPONSIV STYLE
-// not finished
-var nav = document.getElementById("nav");
+
+var nav = document.getElementById("mobilenav");
 act = false;
+nav.style.display = 'none'
+
 
 function mobilemenu() {
     if (act === false){
-        nav.classList.remove("nonactive");
-        nav.classList.add("active");
+        nav.style.display = 'flex'
         act = true;
-        console.log("menu : " + act);
+        console.log("menu open ", act);
     } else{
-        nav.classList.remove("active");
-        nav.classList.add("nonactive");
+        nav.style.display = 'none'
         act = false;
-        console.log("menu : " + act);
+        console.log("menu close ", act);
     }
 }
 
