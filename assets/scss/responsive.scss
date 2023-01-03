@@ -69,6 +69,27 @@
                 }
             }
         }
+        main.main-tournois{
+            div.title-grid{
+                margin: 0;
+                width: 60%;
+                margin: auto;
+                grid-template-columns: repeat(2, 1fr);
+                // display: none;
+                span:nth-child(3), span:nth-child(4){
+                    color: rgb(138, 138, 138);
+                    font-size: 13px;
+                }
+            }
+            a.tournois-line{
+                // margin:
+                grid-template-columns: repeat(3, 1fr);
+                span:nth-child(3), span:nth-child(4){
+                    color: rgb(138, 138, 138);
+                    font-size: 13px;
+                }
+            }
+        }
         main.main-apropos{
             section.apropos-content{
                 div.card{
