@@ -474,13 +474,14 @@ section.stats-section div.file-counter div p:hover{
     width: 30%;
     margin: 35px auto;
     /* margin: auto; */
-    border: 1px solid grey;
+    border: 1px solid var(--color-hover);
+    background-color: rgba(19, 19, 19, 0.295);
     padding: 15px;
     border-radius: 8px;
 }
 .main-apropos .apropos-content .navcompa div.table span{
     font-weight: 700;
-    border-bottom: 1px solid grey;
+    border-bottom: 1px solid var(--color-hover);
     padding-bottom: 10px;
     margin-bottom: 10px;
 }
@@ -516,7 +517,7 @@ section.stats-section div.file-counter div p:hover{
     margin: 15px;
 }
 .main-apropos .apropos-content div.card .apropos-personnalcard{
-    background-color: var(--color-element-full);
+    background-color: rgba(19, 19, 19, 0.295);
     margin: 15px;
     border-radius: 5px;
     border: 1px solid var(--color-border);
@@ -524,9 +525,11 @@ section.stats-section div.file-counter div p:hover{
     display: flex;
     justify-content: center;
     flex-direction: column;
+    /* transition: .1s; */
 }
 .main-apropos .apropos-content div.card .apropos-personnalcard:hover{
-    background-color: var(--color-hover);
+    /* background-color: var(--color-hover); */
+    border: 1px solid grey;
     cursor: pointer;
 }
 .main-apropos .apropos-content div.card .apropos-personnalcard img{

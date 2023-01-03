@@ -45,6 +45,14 @@
   body header ul#mobilenav li.login-link img {
     height: 50px;
   }
+  body section.index-actu div.annonce-card {
+    width: 100%;
+  }
+  body section.index-actu div.annonce-card img {
+    height: 30px;
+    width: 30px;
+    margin: 0 15px;
+  }
   body main.main-apropos section.apropos-content div.card {
     flex-direction: column;
     text-align: center;
