@@ -77,6 +77,9 @@
   body main.main-apropos section.apropos-content p {
     line-height: 30px;
   }
+  body main.main-apropos section.apropos-content div.navcompa div.table {
+    width: 100%;
+  }
 }
 
 /*# sourceMappingURL=responsive.css.map */

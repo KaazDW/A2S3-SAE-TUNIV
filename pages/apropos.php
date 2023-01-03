@@ -40,6 +40,7 @@ if (empty($_SESSION["loggedIn"])) {
             </div>
             <p>L'objectif de l'application est de centraliser les différents tournois sportifs universitaire à l'aide d'un outil développé par des étudiants, pour des étudiants.</p>
             <p>Tuniv à déjà hébergé <span>00</span> tournois depuis son déployement le <span>00.00.2022</span>.</p>
+            
             <div class="navcompa">
                 <p>Tuniv est un une web app développé pour être compatible avec les dernieres versions des navigateurs en date :</p>
                 <div class="table">
