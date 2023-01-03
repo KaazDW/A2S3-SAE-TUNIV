@@ -1,6 +1,7 @@
 <?php session_start();
-if (empty($_SESSION["loggedIn"])) {
-    $_SESSION["loggedIn"] = false;
+
+if (empty($_SESSION["type"])) {
+    $_SESSION["type"] = false;
 }
 
 if ($_SESSION["type"]!="administrateur") {
