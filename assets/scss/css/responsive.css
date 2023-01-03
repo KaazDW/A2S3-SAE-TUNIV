@@ -23,7 +23,7 @@
     display: flex;
     height: 50px;
   }
-  body header ul#mobilenav {
+  body header div#mobilenav {
     position: absolute;
     left: 0;
     top: 75px;
@@ -36,17 +36,17 @@
     padding: 15px 0;
     flex-direction: column;
   }
-  body header ul#mobilenav a {
+  body header div#mobilenav a {
     margin: 5px;
     padding: 15px 0;
     border-radius: 5px;
     border: 1px solid white;
     width: 250px;
   }
-  body header ul#mobilenav a:nth-child(1) {
+  body header div#mobilenav a:nth-child(1) {
     margin-top: 250px;
   }
-  body header ul#mobilenav a.login-link img {
+  body header div#mobilenav a.login-link img {
     height: 50px;
   }
   body section.index-actu div.annonce-card {

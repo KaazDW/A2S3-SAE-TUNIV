@@ -14,20 +14,19 @@ if (empty($_SESSION["type"])) {
     <a onClick="mobilemenu()" class="icon">
         <img src="../assets/img/menu-icon.png">
     </a>
-    <ul id="mobilenav">
+    <div id="mobilenav">
         <a href="/pages/tournois.php">Tournois</a>
         <a href="/pages/apropos.php">A propos</a>
         <a href="/pages/login.php" class="login-link"><img src=<?php if ($_SESSION["loggedIn"]) {
                                                                             echo ("'/assets/img/pp-blanc2.png'");
                                                                         } else {
                                                                             echo ("'/assets/img/pp-blanc.png'");
-                                                                        } ?>
+                                                                        } ?>>
                                                                         </a>
-    </ul>
+    </div>
     <ul class="link" id="nav">
         <li><a href="/pages/tournois.php">Tournois</a></li>
         <li><a href="/pages/apropos.php">A propos</a></li>
-        
     </ul>
     <ul class="nav-icon">
         <li class="login-link"><a href="/pages/login.php"><img src=<?php if ($_SESSION["loggedIn"]) {
