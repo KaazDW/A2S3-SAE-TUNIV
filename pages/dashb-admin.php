@@ -5,10 +5,10 @@ if (empty($_SESSION["type"])) {
 }
 
 if ($_SESSION["type"]!="administrateur") {
-    header("Location: ../../index.php");
+    header("Location: ../index.php");
 }
 
-include '../../config/db.php';
+include '../config/db.php';
 
 $sql = "SELECT * FROM Tournoi;";
 $listeTournois = $pdo->query($sql);
@@ -18,15 +18,14 @@ $listeTournois = $pdo->query($sql);
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <?php include '../../modules/head.php'; ?>
-    <link href="../../assets/css/style.css" rel="stylesheet">
+    <?php include '../modules/head.php'; ?>
 </head> 
 <body>
-    <?php include '../../modules/header.php'; ?>
+    <?php include '../modules/header.php'; ?>
     <main class="main-dashboard">
         <h2 class="title">Dashboard Admin</h2>
         <section class="dashadmin-section">
-            <div class="dashadmin-topgrid">
+            <!-- <div class="dashadmin-topgrid">
                 <div class="dashadmin-topgrid-card dashadmin-card">
 
                 </div>
@@ -36,7 +35,7 @@ $listeTournois = $pdo->query($sql);
                 <div class="dashadmin-topgrid-card dashadmin-card">
                     
                 </div>
-            </div>
+            </div> -->
             <div class="dashadmin-topmid">
                 <div class="display-tournaments dashadmin-card">
                     <?php $tournois = $listeTournois->fetchAll();
@@ -47,10 +46,10 @@ $listeTournois = $pdo->query($sql);
                         <span><?php echo($tournoi['Nom']) ?></span>
                         <div>
                             <a class="edit" href="dashb-admin-editform.php?id=<?= $tournoi['ID_Tournoi'] ?>">
-                                <img src="../../assets/img/edit-blanc.png">
+                                <img src="../assets/img/edit-blanc.png">
                             </a>
-                            <a class="edit" href="../../config/config-suppr-tournoi.php?id=<?= $tournoi['ID_Tournoi'] ?>">
-                                <img src="../../assets/img/delete-blanc.png">
+                            <a class="edit" href="../config/config-suppr-tournoi.php?id=<?= $tournoi['ID_Tournoi'] ?>">
+                                <img src="../assets/img/delete-blanc.png">
                             </a>
                         </div>
                     </div>
@@ -61,18 +60,18 @@ $listeTournois = $pdo->query($sql);
                 <div class="init-tourn dashadmin-card">
                     <h3>tournois</h3>
                     <a id="tcreate">
-                        <img src="../../assets/img/create.png">
+                        <img src="../assets/img/create.png">
                     </a>
                 </div>
                 <div id="tcreationmenu">
                     <header>
                         <a id="creationmenuclose">
-                            <img src="../../assets/img/cross.png">
+                            <img src="../assets/img/cross.png">
                         </a>
                     </header>
 
                     <h3>Créer un nouveau tournoi</h3>
-                    <form action="../../config/config-crea-tournoi.php" method="POST">
+                    <form action="../config/config-crea-tournoi.php" method="POST">
                         <div class="form">
                             <div class="form-parta">
                                 <label for="name">Nom du tournoi</label>
@@ -100,7 +99,7 @@ $listeTournois = $pdo->query($sql);
 
 
     </main>
-    <?php include '../../modules/footer.php'; ?>
+    <?php include '../modules/footer.php'; ?>
     <script>
         // DISPLAY TOURNAMENT CREATION MENU
         document.getElementById('tcreationmenu').style.display = "none";

@@ -1,7 +1,7 @@
 <?php session_start();
 
 if ($_SESSION["type"]!="administrateur") {
-    header("Location: ../../index.php");
+    header("Location: ../index.php");
 }
 
     include 'db.php';
@@ -18,7 +18,7 @@ if ($_SESSION["type"]!="administrateur") {
             );
         
 
-            header("Location: /../pages/dashboard/dashb-admin.php");
+            header("Location: /../pages/dashb-admin.php");
         
         
 ?>

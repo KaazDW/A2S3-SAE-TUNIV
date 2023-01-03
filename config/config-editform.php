@@ -25,7 +25,7 @@ if ($_SESSION["type"]!="administrateur") {
             );
         
 
-            header("Location: /../pages/dashboard/dashb-admin.php");
+            header("Location: /../pages/dashb-admin.php");
         
         
 ?>

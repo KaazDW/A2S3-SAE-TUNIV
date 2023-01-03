@@ -40,8 +40,10 @@ body{
     /* background-color: var(--color-body-background); */
     /* background-image: linear-gradient( 94.3deg,  rgba(26,33,64,1) 10.9%, rgba(81,84,115,1) 87.1% ); */
     
-    background: #1a1d22 ;
-    background: linear-gradient(to right, #14161a, #2d3b46);
+    background: #2f3339 ;
+
+    /* background: #1a1d22 ; */
+    /* background: linear-gradient(to right, #14161a, #2d3b46); */
     
     /* background: linear-gradient(to right, #000000, #ffffff); */
     /* background-size: 200% 200%; */

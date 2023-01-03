@@ -4,10 +4,10 @@
     }
 
     if ($_SESSION["type"]!="administrateur") {
-        header("Location: ../../index.php");
+        header("Location: ../index.php");
     }
 
-    include '../../config/db.php';
+    include '../config/db.php';
 
     // $sql = "SELECT Titre, Date_annonce, Auteur, Role, Contenu, Image FROM Annonces ORDER BY ID_Annonce DESC LIMIT 30;";
     $sql = "SELECT * FROM Annonces ORDER BY ID_Annonce DESC LIMIT 30;";
@@ -17,15 +17,14 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <?php include '../../modules/head.php'; ?>
-    <link href="../../assets/css/style.css" rel="stylesheet">
+    <?php include '../modules/head.php'; ?>
 </head> 
 <body>
-    <?php include '../../modules/header.php';?>
+    <?php include '../modules/header.php';?>
     <main class="main-admin-annonce-form">
         <h2 class="title">Créer une nouvelle annonce</h2>
         <section class="form-annonce-section">
-            <form action="../../config/config-annonce.php" method="POST" enctype="multipart/form-data">
+            <form action="../config/config-annonce.php" method="POST" enctype="multipart/form-data">
                     <!-- Champ titre -->
                     <div class="form">
                         <div class="form-parta">
@@ -76,14 +75,14 @@
                     <p><?php echo($annonce['Auteur']) ?>, <span class="role"><?php echo($annonce['Role'])?></span></p>
                     <p><?php echo($annonce['Contenu'])?></p>
                 </div>
-                <a class="edit" href="../../config/config-suppr-annonce.php?id=<?php echo($annonce['ID_Annonce']) ?>">
-                    <img src='../../assets/img/delete-blanc.png' alt='logo suppression'>
+                <a class="edit" href="../config/config-suppr-annonce.php?id=<?php echo($annonce['ID_Annonce']) ?>">
+                    <img src='../assets/img/delete-blanc.png' alt='logo suppression'>
                 </a>
             </div>
 
             <?php endforeach;?>
         </section>
     </main>
-    <?php include '../../modules/footer.php'; ?>
+    <?php include '../modules/footer.php'; ?>
 </body>
 </html>

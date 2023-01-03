@@ -84,6 +84,38 @@
   body main.main-apropos section.apropos-content div.navcompa div.table {
     width: 100%;
   }
+  body main.main-admin-annonce-form section.form-annonce-section form div.form {
+    flex-direction: column;
+  }
+  body main.main-admin-annonce-form section.form-annonce-section form div.form div.form-parta {
+    gap: 10px;
+  }
+  body main.main-admin-annonce-form section.form-annonce-section form div.form div.textarea {
+    margin: 0;
+    margin-top: 25px;
+    width: 100%;
+  }
+  body main.main-admin-annonce-form section.form-annonce-section form div.form div.textarea textarea {
+    min-width: 100%;
+  }
+  body main.main-admin-annonce-form section.form-annonce-section form div.form-button {
+    margin: auto;
+    margin-top: 15px;
+  }
+  body main.main-admin-annonce-form section.index-actu div.annonce-card-admin {
+    width: 100%;
+  }
+  body main.main-admin-annonce-form section.index-actu div.annonce-card-admin img {
+    height: 30px;
+    width: 30px;
+    margin: 0 15px;
+  }
+  body main.main-admin-annonce-form section.index-actu div.annonce-card-admin div.text-field p {
+    width: 150px;
+  }
+  body main.main-admin-annonce-form section.index-actu div.annonce-card-admin a.edit {
+    margin: 0;
+  }
 }
 
 /*# sourceMappingURL=responsive.css.map */

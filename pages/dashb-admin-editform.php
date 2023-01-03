@@ -4,10 +4,10 @@ if (empty($_SESSION["loggedIn"])) {
 }
 
 if ($_SESSION["type"]!="administrateur") {
-    header("Location: ../../index.php");
+    header("Location: ../index.php");
 }
 
-include '../../config/db.php';
+include '../config/db.php';
 
 $listetournoi = $pdo->prepare('SELECT * FROM Tournoi where ID_Tournoi =:varId');
 
@@ -23,11 +23,11 @@ $listetournoi->execute(
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <?php include '../../modules/head.php'; ?>
-    <link href="../../assets/css/style.css" rel="stylesheet">
+    <?php include '../modules/head.php'; ?>
+    <link href="../assets/css/style.css" rel="stylesheet">
 </head> 
 <body>
-    <?php include '../../modules/header.php';?>
+    <?php include '../modules/header.php';?>
     <main class="main-editform-dashbadmin">
         <h2 class="title">Edit form</h2>
         <section class="edit-form-section">
@@ -35,7 +35,7 @@ $listetournoi->execute(
             foreach($tournois as $tournoi):
         ?>
         
-        <form action="../../config/config-editform.php?id=<?= $tournoi['ID_Tournoi'] ?>" method="POST" enctype="multipart/form-data">
+        <form action="../config/config-editform.php?id=<?= $tournoi['ID_Tournoi'] ?>" method="POST" enctype="multipart/form-data">
                 <!-- Champ Sport -->
                 <label for="sport">Sport</label>
                 <input name="sport" type="text" id="sport" value="<?php echo($tournoi['Sport']) ?>" required="required">
@@ -63,6 +63,6 @@ $listetournoi->execute(
 
         </section>
     </main>
-    <?php include '../../modules/footer.php'; ?>
+    <?php include '../modules/footer.php'; ?>
 </body>
 </html>

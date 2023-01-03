@@ -15,9 +15,9 @@
 }
 
 @media (max-width: 900px) {
-    *{
+    // *{
         // border: 1px solid red;
-    }
+    // }
     body{
         header{
             // border: 1px solid rgb(148, 148, 148);
@@ -104,6 +104,56 @@
                 div.navcompa{
                     div.table{
                         width: 100%;
+                    }
+                }
+            }
+        }
+        // main.main-dashboard{
+        //     section.dashadmin-section{
+        //         div.dashadmin-topmid{
+
+        //         }
+        //     }
+        // }
+
+        main.main-admin-annonce-form{
+            section.form-annonce-section{
+                form{
+                    div.form{
+                        flex-direction: column;
+                        div.form-parta{
+                            gap: 10px;
+                        }
+                        div.textarea{
+                            margin: 0;
+                            margin-top: 25px;
+                            width: 100%;
+                            textarea{
+                                min-width: 100%;
+                            }
+                        }
+                    }
+                    div.form-button{
+                        margin: auto;
+                        margin-top: 15px;
+                    }
+                }
+            }
+            section.index-actu{
+                div.annonce-card-admin{
+                    width: 100%;
+                    img{
+                        height: 30px;
+                        width: 30px;
+                        margin: 0 15px;
+                    }
+                    div.text-field{
+                        p{
+                            width: 150px;
+                        }
+                    }
+                    a.edit{
+                        margin: 0;
                     }
                 }
             }

@@ -4,12 +4,12 @@ if (empty($_SESSION["loggedIn"])) {
 }
 
 if ($_SESSION["type"]!="capitaine") {
-    header("Location: ../../index.php");
+    header("Location: ../index.php");
 }
 
 
 
-include '../../config/db.php';
+include '../config/db.php';
 
 $sql = "SELECT * FROM Tournoi;";
 $listeTournois = $pdo->query($sql);
@@ -22,11 +22,10 @@ $listeTournois = $pdo->query($sql);
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <?php include '../../modules/head.php'; ?>
-    <link href="../../assets/css/style.css" rel="stylesheet">
+    <?php include '../modules/head.php'; ?>
 </head> 
 <body>
-    <?php include '../../modules/header.php'; ?>
+    <?php include '../modules/header.php'; ?>
     <main class="main-dashcap">
         <h2 class="title">Affichage de l'équipe</h2>
         <section class="dashcap-section">
@@ -101,7 +100,7 @@ $listeTournois = $pdo->query($sql);
             </section>
         </section>
     </main>
-    <?php include '../../modules/footer.php'; ?>
+    <?php include '../modules/footer.php'; ?>
     <script>
         
         // DISPLAY JOUEURS EDIT MENU
@@ -114,10 +113,6 @@ $listeTournois = $pdo->query($sql);
         function closeeditjoueurs(){
             document.getElementById('joueur-edit').style.display = "none";
         }
-        document.getElementById('closebtneditjoueurs').addEventListener("click", function(){
-            document.getElementById('joueur-edit').style.display = "none";
-        });
-
     </script>
 </body>
 </html>
