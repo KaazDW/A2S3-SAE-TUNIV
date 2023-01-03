@@ -28,21 +28,25 @@
     left: 0;
     top: 75px;
     width: 90vw;
+    height: 85vh;
+    align-items: center;
     border-radius: 2px;
     text-align: center;
     background-color: rgb(40, 40, 40);
     padding: 15px 0;
     flex-direction: column;
   }
-  body header ul#mobilenav li {
-    margin: 10px;
-    border-left: 1px solid white;
-    border-right: 1px solid white;
+  body header ul#mobilenav a {
+    margin: 5px;
+    padding: 15px 0;
+    border-radius: 5px;
+    border: 1px solid white;
+    width: 250px;
   }
-  body header ul#mobilenav li a {
-    border-radius: 0;
+  body header ul#mobilenav a:nth-child(1) {
+    margin-top: 250px;
   }
-  body header ul#mobilenav li.login-link img {
+  body header ul#mobilenav a.login-link img {
     height: 50px;
   }
   body section.index-actu div.annonce-card {

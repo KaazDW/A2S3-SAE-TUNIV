@@ -36,27 +36,29 @@
                 left: 0;
                 top: 75px;
                 width: 90vw;
+                height: 85vh;
+                align-items: center;
                 border-radius: 2px;
                 text-align: center;
                 background-color: rgb(40, 40, 40);
                 padding: 15px 0;
                 flex-direction: column;
-                // border: 1px solid white;
-                li{
-                    margin: 10px;
-                    border-left: 1px solid white;
-                    border-right: 1px solid white;
+                // backdrop-filter: blur(20px);
                     a{
-                        // color: black;
-                        // border-bottom: 2px solid black;
-                        border-radius: 0;
+                        margin: 5px;
+                        padding: 15px 0;
+                        border-radius: 5px;
+                        border: 1px solid white;
+                        width: 250px;
                     }
-                }
-                li.login-link{
-                    img{
-                        height: 50px;
+                    a:nth-child(1){
+                        margin-top: 250px;
                     }
-                }
+                    a.login-link{
+                        img{
+                            height: 50px;
+                        }
+                    }
             }
         }
         section.index-actu{
