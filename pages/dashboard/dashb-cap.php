@@ -78,7 +78,7 @@ $listeTournois = $pdo->query($sql);
                 </div>
                 <div class="ajout-joueurs">
                     <form>
-                        <h3>Ajouter un Joueurs</h3>
+                        <h3>Ajouter un joueur</h3>
                         <div>
                             <label for="new-surname">Prénom</label>
                             <input name="new-surname" id="new-surname">
