@@ -5,6 +5,8 @@ font-family: 'Poppins', sans-serif;
 font-family: 'Roboto', sans-serif;
 */
 
+
+
 *{
     padding: 0;
     margin: 0;
@@ -84,7 +86,7 @@ header{
 }
 main{
     margin-top: 150px;
-    /* animation: openPage 2s; */
+    /* animation: openPage 1s; */
 }
 @keyframes openPage {
     from{
@@ -142,6 +144,9 @@ header .nav-icon .login-link img{
 header .nav-icon li a:hover{
     background-color: var(--color-hover);
     border: 1px solid var(--color-border);
+}
+header ul.mobilenav{
+    /* display: none; */
 }
 .scroll-style{
     border: 2px solid var(--color-border);
@@ -231,10 +236,11 @@ header .nav-icon li a:hover{
 }
 .index-actu .annonce-card img{
     object-fit: cover;
-    height: 165px;
-    width: 165px;
+    height: 105px;
+    width: 105px;
     border-radius: 5px; 
-    margin: 10px;
+    margin: 10px 30px;
+    margin-right: 35px;
 }
 .index-actu .annonce-card .text-field p.date{
     color: rgb(136, 133, 133);
@@ -281,7 +287,6 @@ header .nav-icon li a:hover{
     /* background-color: green; */
     /* object-fit: contain; */
 }
-
 .index-actu .annonce-card-admin .text-field{
     margin: 15px 0px;
     margin-right: 10px;
@@ -289,8 +294,8 @@ header .nav-icon li a:hover{
 }
 .index-actu .annonce-card-admin .img-cover{
     object-fit: cover;
-    height: 165px;
-    width: 165px;
+    height: 105px;
+    width: 105px;
     border-radius: 5px; 
     margin: 10px;
 }
@@ -463,6 +468,30 @@ section.stats-section div.file-counter div p:hover{
     animation-iteration-count: infinite;
     animation-delay: 2s;
 }
+.main-apropos .apropos-content .navcompa div.table{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 30%;
+    margin: 35px auto;
+    /* margin: auto; */
+    border: 1px solid grey;
+    padding: 15px;
+    border-radius: 8px;
+}
+.main-apropos .apropos-content .navcompa div.table span{
+    font-weight: 700;
+    border-bottom: 1px solid grey;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+.main-apropos .apropos-content .navcompa div.table span.name{
+    font-weight: 400;
+    color: var(--red);
+}
+.main-apropos .apropos-content .navcompa div.table span.version{
+    font-weight: 400;
+}
+
 @keyframes up1{
     0%{
         transform: translateY(0px);
@@ -755,7 +784,6 @@ section.stats-section div.file-counter div p:hover{
     background-color: rgb(147, 41, 41);
 }
 
-
 /* CAPITAINE 'MON EQUIPE' STYLE */
 .main-dashcap .dashcap-section div.joueurs-liste{
     margin-top: 25px;
@@ -763,6 +791,7 @@ section.stats-section div.file-counter div p:hover{
 .main-dashcap .dashcap-section div.nomequipe{
     display: flex;
     align-items: center;
+    margin-bottom: 20px;
 }
 .main-dashcap .dashcap-section div.nomequipe h3{
     margin-right: 15px;
@@ -813,12 +842,56 @@ section.stats-section div.file-counter div p:hover{
     margin-left: 5vw;
     margin-top: 15px;
 }
+.main-dashcap .dashcap-section .joueurs-liste-section div.ajout-joueurs form h3{
+    margin-bottom: 15px;
+}
 .main-dashcap .dashcap-section .joueurs-liste-section div.ajout-joueurs form div{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     margin: 5px;
-
 }
+.main-dashcap .dashcap-section .joueurs-liste-section div.ajout-joueurs form button{
+    /* color: black; */
+    padding: 5px 12px;
+    margin-top: 15px;
+    background-color: var(--red);
+    border: none;
+    border-radius: 3px;
+}
+/* dashcap-section open menu EDIT JOUEURS */
+
+.main-dashcap .dashcap-section #joueur-edit{
+    position: absolute;
+    backdrop-filter: blur(12px);
+    border-radius: 5px;
+    top: 20vh;
+    left: 10vw;
+    height: 50vh;
+    width: 80vw;
+    background-color: rgba(35, 94, 107, 0.345);
+    animation: editableanim .5s;
+}
+.main-dashcap .dashcap-section #joueur-edit header{
+    /* background-color: green; */
+    height: 25px;
+    top: 0;
+    width: 99.8%;
+    border-radius: 5px 5px 0 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.main-dashcap .dashcap-section #joueur-edit header button{
+    cursor: pointer;
+    background-color: var(--red);
+    border: none;
+    padding: 5px 8px;
+    margin-right: 15px;
+}
+
+
+
+
 
 /* FOOTER STYLE */
 footer{
@@ -834,10 +907,10 @@ footer{
         width: 90vw;
         min-width: 0vh;
     }
-    header .icon{
+    /* header .icon{
         display: flex;
         height: 50px;
-    }
+    } */
     header .nav{
         display: none;
         background-color: var(--color-element);
@@ -855,5 +928,6 @@ footer{
     }
     .nonactive{
         display: none;
-    } */
+    }*/
 }
+

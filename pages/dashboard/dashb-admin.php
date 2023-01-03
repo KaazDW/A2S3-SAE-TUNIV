@@ -101,5 +101,15 @@ $listeTournois = $pdo->query($sql);
 
     </main>
     <?php include '../../modules/footer.php'; ?>
+    <script>
+        // DISPLAY TOURNAMENT CREATION MENU
+        document.getElementById('tcreationmenu').style.display = "none";
+        document.getElementById('tcreate').addEventListener("click", function(){
+            document.getElementById('tcreationmenu').style.display = "block";
+        });
+        document.getElementById('creationmenuclose').addEventListener("click", function(){
+            document.getElementById('tcreationmenu').style.display = "none";
+        });
+    </script>
 </body>
 </html>

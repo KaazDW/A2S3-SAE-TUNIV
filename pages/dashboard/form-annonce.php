@@ -9,6 +9,7 @@
 
     include '../../config/db.php';
 
+    // $sql = "SELECT Titre, Date_annonce, Auteur, Role, Contenu, Image FROM Annonces ORDER BY ID_Annonce DESC LIMIT 30;";
     $sql = "SELECT * FROM Annonces ORDER BY ID_Annonce DESC LIMIT 30;";
     $listeAnnonces = $pdo->query($sql);
 ?>
