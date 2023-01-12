@@ -23,6 +23,7 @@ $listeTournois = $pdo->query($sql);
 <html lang="fr">
 <head>
     <?php include '../modules/head.php'; ?>
+    <link href="../assets/css/style.css" rel="stylesheet">
 </head> 
 <body>
     <?php include '../modules/header.php'; ?>
@@ -33,14 +34,16 @@ $listeTournois = $pdo->query($sql);
                 <h3>Nom de l'équipe : </h3>
                 <p>
                 <?php  
-                    $listematch = $pdo->prepare('SELECT Nom from Equipe where ID_Capitaine=:varId;');
+                    $listematch = $pdo->prepare('SELECT Nom, ID_Equipe from Equipe where ID_Capitaine=:varId;');
                     $listematch->execute(
                         [
                             'varId' =>$_SESSION["userId"],
                         ]
                         );
                     $equipe=$listematch->fetch();
-                    echo $equipe[0]
+                    echo $equipe[0];
+                    $_SESSION["actuel"]=$equipe[1];
+                    
                 ?></p>
             </div>
             
@@ -51,7 +54,7 @@ $listeTournois = $pdo->query($sql);
                         <span>Nom</span>
                     </div>
                     <?php
-                        $listejoueur = $pdo->prepare('SELECT Joueur.Prenom, Joueur.Nom from Joueur inner join Equipe on Joueur.ID_Equipe=Equipe.ID_Equipe where Equipe.ID_Capitaine=:varId;');
+                        $listejoueur = $pdo->prepare('SELECT Joueur.Prenom, Joueur.Nom, Joueur.ID_Joueur from Joueur inner join Equipe on Joueur.ID_Equipe=Equipe.ID_Equipe where Equipe.ID_Capitaine=:varId;');
                         $listejoueur->execute(
                             [
                                 'varId' =>$_SESSION["userId"],
@@ -65,39 +68,38 @@ $listeTournois = $pdo->query($sql);
                     <div class="joueur-line">
                         <span><?php echo($joueur['Prenom']) ?></span>
                         <span><?php echo($joueur['Nom']) ?></span>
+                        
                         <div>
-                            <a onclick="openeditjoueurs()"><img src="/assets/img/edit-blanc.png"></a>
-                            <a href=""><img src="/assets/img/delete-blanc.png"></a>
+                            <a class="edit" href="dashb-cap-edit.php?id=<?= $joueur['ID_Joueur'] ?>"><img src="/assets/img/edit-blanc.png" ></a>
+                            <a class="edit" href="../config/config-suppr-joueur.php?id=<?= $joueur['ID_Joueur'] ?>"><img src="/assets/img/delete-blanc.png"></a>
                         </div>
                     </div>
-
                     <?php
                     endforeach;
                     ?>
+
+
+
+
                 </div>
                 <div class="ajout-joueurs">
-                    <form>
-                        <h3>Ajouter un joueur</h3>
+                    <form action="../config/config-add-joueur.php" method="POST" enctype="multipart/form-data">
+
+                        <h3>Ajouter un Joueur</h3>
                         <div>
-                            <label for="new-surname">Prénom</label>
-                            <input name="new-surname" id="new-surname">
+                            <label for="new-surname2">Prénom</label>
+                            <input name="new-surname2" type='text' id="new-surname2" required="required">
                         </div>
                         <div>
-                            <label for="new-name">Nom</label>
-                            <input name="new-name" id="new-name">
+                            <label for="new-name2">Nom</label>
+                            <input name="new-name2" type='text' id="new-name2" required="required">
                         </div>
-                        <button>Valider</button>
+                        <button type ='submit'>Valider</button>
                     </form>
                 </div>
             </section>
-            <section id="joueur-edit">
-                    <header>
-                        <button onclick="closeeditjoueurs()">Annuler</button>
-                    </header>
-                    <div class="content">
-                        <!-- CONTENU DU MENU D'EDITION D'UN JOUEURS -->
-                    </div>
-            </section>
+            
+        
         </section>
     </main>
     <?php include '../modules/footer.php'; ?>
@@ -113,6 +115,11 @@ $listeTournois = $pdo->query($sql);
         function closeeditjoueurs(){
             document.getElementById('joueur-edit').style.display = "none";
         }
+        
+        document.getElementById('closebtneditjoueurs').addEventListener("click", function(){
+            document.getElementById('joueur-edit').style.display = "none";
+        });
+
     </script>
 </body>
 </html>

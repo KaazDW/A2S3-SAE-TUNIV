@@ -7,7 +7,7 @@ if ($_SESSION["type"]!="administrateur") {
     header("Location: ../index.php");
 }
 
-include '../config/db.php';
+include '../../config/db.php';
 
 $listetournoi = $pdo->prepare('SELECT * FROM Tournoi where ID_Tournoi =:varId');
 
@@ -46,7 +46,7 @@ $listetournoi->execute(
 
                 <!-- Date début -->
                 <label for="date-debut">Date Debut</label>
-                <input name="date-debut" type="text" id="date-debut" value="<?php echo($tournoi['DateDebut']) ?>" required="required" placeholder="AAAA-MM-JJ HH:MM:SS>
+                <input name="date-debut" type="text" id="date-debut" value="<?php echo($tournoi['DateDebut']) ?>" required="required" placeholder="AAAA-MM-JJ HH:MM:SS">
 
                 <!-- Date fin -->
                 <label for="date-fin">Date Fin</label>
