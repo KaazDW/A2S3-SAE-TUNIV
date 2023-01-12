@@ -21,20 +21,14 @@ https://trello.com/invite/b/hhlgxmGt/ATTIc3bb7049e5ce444a478c72781a1cd0c69077F4D
 > [Brouillon](#brouillon)
 > [Another paragraph](#paragraph2)
 
-#1
-<h3> Organisation du projet (en liens avec la **MSI**) <a name="organisation"></a></h3>
+<h3> Organisation du projet (en liens avec la MSI) <a name="organisation"></a></h3>
 
 Comme tout projet informatique, la mise en place de ce projet nécessite une organisation précise et définie au préalable. <br><br>
 Ayant été témoin de soucis clairs de communication et d'organisation au sein de notre groupe lors des débuts de la phase de développement, il s'est avéré primordial d'effectuer une profonde remise en question de celui-ci afin d'assurer le bon déroulement du projet.
 
-Ainsi, en lien avec le cours de Management des Sytèmes Informatique, tenu par Monsieur Quentin Veyret pendant ce mois d'octobre 2022, nous avons communément défini la marche à suivre ainsi que les rôles de chacun des membres du groupe, qui sont pour rappel : 
-<p align=center>
-- Gaël JOURNET  <br>
-- Nathan OZIMEK  <br>
-- Jean-François MARCOURT 
-</p>
+Ainsi, en lien avec le cours de Management des Sytèmes Informatique, tenu par Monsieur Quentin Veyret pendant ce mois d'octobre 2022, nous avons communément défini la marche à suivre ainsi que les rôles de chacun des membres du groupe.
 
-Pour définir de quelle façon notre tri-nôme allait s'organiser par la suite il a fallu apprendre et comparer les différentes méthodes déjà existantes et mises en place au sein de réelles entreprises afin pouvoir les intégrer ou les adapter.
+Pour définir de quelle façon notre tri-nôme allait s'organiser par la suite il a fallu observer et comparer les différentes méthodes déjà existantes et mises en place au sein de réelles entreprises afin pouvoir les intégrer ou les adapter.
 Celle qui répond le mieux à nos objectifs et nos besoins est la méthode ***Agile***.
 
 D'après l'[*agile manifesto*](http://agilemanifesto.org/iso/fr/manifesto.html) datant de 2001, cette méthode de management relative aux organisations informatiques applique 4 valeurs essentielles : <br>
@@ -46,7 +40,6 @@ D'après l'[*agile manifesto*](http://agilemanifesto.org/iso/fr/manifesto.html) 
 
 Au-delà de ces valeurs, la méthode agile se résume par la **Transparence**, la **Flexibilité** et l'**Implication** au sein du système organisationnel concerné défini par 12 principes consultables ci-dessous : <p align=center>[http://agilemanifesto.org/iso/fr/principles.html](http://agilemanifesto.org/iso/fr/principles.html).</p>
 
-<br><br>
 Ainsi, en application de cette méthode agile, nos rôles se sont répartis de cette façon :<br>
 <table align=center>
   <tr>
@@ -59,19 +52,17 @@ Ainsi, en application de cette méthode agile, nos rôles se sont répartis de c
     <td align=center>Product Owner <br> Développeur SQL et PHP</td>
     <td align=center>Scrum Master <br> Développeur HTML, SCSS, JS et PHP</td>
   </tr>
-</table>
+</table><br>
 
 Concernant l'organisation temporelle du projet : 
-> - 15min en début de chaque séances en présentiel afin de communiquer sur l'avancement du projet et l'organisation de la séance.
-> - 30min chaque une à deux semaines avec le tuteur de notre projet Monsieur Lionel BUATHIER.
+> - rdv 15min chaque '2 heures' lors des séances en présentiel afin de communiquer sur l'avancement du projet et l'organisation de la séance.
+> - rdv 30min chaque réel avancé avec le tuteur de notre projet Monsieur Lionel BUATHIER.
 
 
 
 
 
 
-### Tutoriel pour la modification de la page "Information"<a name="tutoinformation">
-https://www.lambdatest.com/free-online-tools/markdown-to-html-converter
 
 
 
@@ -91,4 +82,6 @@ L'objectif de l'application est de centraliser la pratique sportive universitair
 
 <h1 align=center><br><br><br><br>ReadME en cours d'écriture...</h1>
 
-
+<!-- ### Tutoriel pour la modification de la page "Information"<a name="tutoinformation">
+https://www.lambdatest.com/free-online-tools/markdown-to-html-converter
+ -->
