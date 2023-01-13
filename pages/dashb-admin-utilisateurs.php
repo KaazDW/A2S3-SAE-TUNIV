@@ -40,10 +40,10 @@ $listeUtilisateurs = $pdo->query($sql);
                                 ?></span>
                         <span><?php echo($utilisateur['Email']) ?></span>
                         <div>
-                            <a class="edit" href="dashb-admin-editform-tournoi.php?id=<?= $tournoi['ID_Tournoi'] ?>">
+                            <a class="edit" href="dashb-admin-editform-user.php?id=<?= $utilisateur['ID_User'] ?>">
                                 <img src="../assets/img/edit-blanc.png">
                             </a>
-                            <a class="edit" href="../config/config-suppr-tournoi.php?id=<?= $tournoi['ID_Tournoi'] ?>">
+                            <a class="edit" href="../config/config-suppr-user.php?id=<?= $utilisateur['ID_User'] ?>">
                                 <img src="../assets/img/delete-blanc.png">
                             </a>
                         </div>
@@ -54,7 +54,7 @@ $listeUtilisateurs = $pdo->query($sql);
                 </div>
 
                 <div class="init-tourn dashadmin-card">
-                    <h3>Utilisateurs</h3>
+                    <h3>Utilisateur</h3>
                     <a id="tcreate">
                         <img src="../assets/img/create.png">
                     </a>
@@ -66,7 +66,7 @@ $listeUtilisateurs = $pdo->query($sql);
                         </a>
                     </header>
 
-                    <h3>Créer un nouvel utiilisateur</h3>
+                    <h3>Créer un nouvel utilisateur</h3>
                     <form action="../config/config-crea-user.php" method="POST">
                         <div class="form">
                             <div class="form-parta">
@@ -80,10 +80,10 @@ $listeUtilisateurs = $pdo->query($sql);
                                 <input name="login" type="text" id="login" maxlength=25 required="required">
 
                                 <label for="password">Mot de passe</label>
-                                <input name="password" type="text" id="password" maxlength=25 required="required">
+                                <input name="password" type="password" id="password" maxlength=25 required="required">
 
                                 <label for="passwordConfirm">Confirmer le mot de passe</label>
-                                <input name="passwordConfirm" type="text" id="passwordConfirm" maxlength=25 required="required">
+                                <input name="passwordConfirm" type="password" id="passwordConfirm" maxlength=25 required="required">
 
                                 <label for="email">Email</label>
                                 <input name="email" type="email" id="email" maxlength=50 required="required">
