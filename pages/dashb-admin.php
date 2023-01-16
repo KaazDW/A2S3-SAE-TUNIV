@@ -33,7 +33,7 @@ $listeEquipes = $pdo->query($sql);
         <section class="dashadmin-section">
             <div class="dashadmin-topgrid">
                 <div class="dashadmin-topgrid-card dashadmin-card">
-                    <form action="../config/config-crea-tournoi.php" method="POST">
+                    <form action="../config/config-admin-crea-equipe.php" method="POST">
                         <div class="form">
                             <div class="form-parta">
                                 <label for="name">Nom</label>
@@ -42,19 +42,16 @@ $listeEquipes = $pdo->query($sql);
                                 <label for="sport">Sport</label>
                                 <input name="sport" type="text" id="sport" maxlength=50 required="required">
 
-                                <label for="dateDeb">Date de début du tournoi</label>
-                                <input name="dateDeb" type="datetime-local" id="dateDeb" required="required">
+                                <label for="name-capitaine">Nom capitaine</label>
+                                <input name="name-capitaine" type="name-capitaine" id="name-capitaine" required="required">
 
-                                <label for="dateFin">Date de fin du tournoi</label>
-                                <input name="dateFin" type="datetime-local" id="dateFin" required="required">
-
-                                <label for="teams">Nombre maximum d'équipes participant au tournoi</label>
-                                <input name="teams" type="integer" id="teams" required="required">
+                                <label for="firstname-capitaine">Prenom Capitaine</label>
+                                <input name="firstname-capitaine" type="firstname-capitaine" id="firstname-capitaine" required="required">
                             </div>
                         </div>
 
                         <div class="form-button">
-                            <button type="submit">Créer le tournoi</button>
+                            <button type="submit">Créer l'équipe</button>
                         </div>
                     </form>
 
@@ -100,7 +97,7 @@ $listeEquipes = $pdo->query($sql);
                                 <a class="edit" href="dashb-admin-editform-equipe.php?id=<?= $equipe['ID_Equipe'] ?>">
                                     <img src="../assets/img/edit-blanc.png">
                                 </a>
-                                <a class="edit" href="../config/config-suppr-tournoi.php?id=<?= $tournoi['ID_Equipe'] ?>">
+                                <a class="edit" href="../config/config-suppr-tournoi.php?id=<?= $equipe['ID_Equipe'] ?>">
                                     <img src="../assets/img/delete-blanc.png">
                                 </a>
                             </div>
