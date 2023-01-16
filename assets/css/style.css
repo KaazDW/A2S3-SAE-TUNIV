@@ -42,8 +42,8 @@ body{
     
     background: #2f3339 ;
 
-    /* background: #1a1d22 ; */
-    /* background: linear-gradient(to right, #14161a, #2d3b46); */
+    background: #1a1d22 ;
+    background: linear-gradient(to right, #14161a, #2d3b46);
     
     /* background: linear-gradient(to right, #000000, #ffffff); */
     /* background-size: 200% 200%; */
@@ -88,7 +88,7 @@ header{
 }
 main{
     margin-top: 150px;
-    /* animation: openPage 1s; */
+    animation: openPage 1s;
 }
 @keyframes openPage {
     from{
@@ -808,7 +808,7 @@ section.stats-section div.file-counter div p:hover{
 .main-dashcap .dashcap-section .joueurs-liste-section .joueurs-liste-div .joueur-line{
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    width: 400px;
+    width: 480px;
     margin: 5px auto;
     border-radius: 2px;
     padding: 5px;
@@ -892,10 +892,6 @@ section.stats-section div.file-counter div p:hover{
     padding: 5px 8px;
     margin-right: 15px;
 }
-
-
-
-
 
 /* FOOTER STYLE */
 footer{
