@@ -46,5 +46,8 @@ if (!$res) {
     $_SESSION["tournoiErreur"] = "La création du tournoi a échoué, veuillez réessayer. Si l\'erreur persiste, contactez le support.";
     header("Location: ../pages/dashb-admin.php");
 } else {
-    header("Location: ../pages/dashb-admin.php");
+    $sql = "SELECT max(ID_Tournoi) FROM Tournoi;";
+    $id = $pdo->query(($sql))->fetch()[0];
+    
+    header("Location: ../pages/match-tournois.php?id=$id");
 }

@@ -89,13 +89,13 @@ INSERT INTO Utilisateurs VALUES(0,"admin","admin","nom","prenom","email",0);
 INSERT INTO Utilisateurs VALUES(0,"arbitre","arbitre","nom","prenom","email",1);
 INSERT INTO Utilisateurs VALUES(0,"capitaine","capitaine","nom","prenom","email",2);
 
-INSERT INTO Tournoi VALUES(0,"Volley","Championnat de volley 2022","2023-12-24 08:30:00","2023-12-31 18:30:00");
-INSERT INTO Tournoi VALUES(0,"Football","Coupe Du Monde 2022","2022-11-20 20:00:00","2022-12-18 20:30:00");
-INSERT INTO Tournoi VALUES(0,"Football","Champion's League 2022","2022-09-04 20:00:00","2023-03-14 20:30:00");
-INSERT INTO Tournoi VALUES(0,"Basketball","Jeux Olympiques","2022-11-20 20:00:00","2022-12-18 20:30:00");
-INSERT INTO Tournoi VALUES(0,"Hokey sur glace ","Ligue intercontinental de la mort","2022-11-20 20:00:00","2022-12-18 20:30:00");
-INSERT INTO Tournoi VALUES(0,"Trotinette freestyle","Coupe de Colombie de cocaïne et de PAblo Escobar","2022-11-20 20:00:00","2022-12-18 20:30:00");
-INSERT INTO Tournoi VALUES(0,"Tennis","Roland Garros","2022-11-20 20:00:00","2022-12-18 20:30:00");
+INSERT INTO Tournoi VALUES(0,"Volley","Championnat de volley 2022","2023-12-24 08:30:00","2023-12-31 18:30:00", 12, 0);
+INSERT INTO Tournoi VALUES(0,"Football","Coupe Du Monde 2022","2022-11-20 20:00:00","2022-12-18 20:30:00", 12, 0);
+INSERT INTO Tournoi VALUES(0,"Football","Champion's League 2022","2022-09-04 20:00:00","2023-03-14 20:30:00", 12, 0);
+INSERT INTO Tournoi VALUES(0,"Basketball","Jeux Olympiques","2022-11-20 20:00:00","2022-12-18 20:30:00", 12, 0);
+INSERT INTO Tournoi VALUES(0,"Hokey sur glace ","Ligue intercontinental de la mort","2022-11-20 20:00:00","2022-12-18 20:30:00", 12, 0);
+INSERT INTO Tournoi VALUES(0,"Trotinette freestyle","Coupe de Colombie de cocaïne et de PAblo Escobar","2022-11-20 20:00:00","2022-12-18 20:30:00", 12, 0);
+INSERT INTO Tournoi VALUES(0,"Tennis","Roland Garros","2022-11-20 20:00:00","2022-12-18 20:30:00", 12, 0);
 
 INSERT INTO Equipe VALUES(0,"Volley_bourg","volley",3);
 INSERT INTO Equipe VALUES(0,"Volley_saint-denis","volley",1);
