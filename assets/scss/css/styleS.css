@@ -1,0 +1,48 @@
+:root {
+  /* color definition variable */
+  --blue: rgb(82,148,226);
+  --red: rgb(224, 78, 78);
+  --color-hover: rgb(36, 36, 36);
+  --color-border: rgba(64, 68, 73, 0.5);
+  /* --color-element: rgba(35, 39, 42, 0.6); */
+  --color-element: rgba(32, 28, 28, 0.6);
+  --color-element-full:rgba(32, 29, 29, 0.822);
+  /* --color-body-background: rgb(26, 24, 24); */ /* Lastest background-color */
+  --color-body-background: #111;
+  --color-hover: var(--color-border);
+}
+
+main.user-dash-main section.dashadmin-section div.dashadmin-topmid div.display-tournaments div.tournois-line-user {
+  display: grid;
+  text-align: center;
+  gap: 0px;
+  grid-template-columns: repeat(8, 1fr);
+  margin: 20px 10px;
+}
+main.user-dash-main section.dashadmin-section div.dashadmin-topmid div.display-tournaments div.tournois-line-user span {
+  padding: 0 15px;
+}
+main.user-dash-main section.dashadmin-section div.dashadmin-topmid div.display-tournaments div.tournois-line-user span:nth-child(3) {
+  grid-column: 3/5;
+  width: 80%;
+}
+main.user-dash-main section.dashadmin-section div.dashadmin-topmid div.display-tournaments div.tournois-line-user span:nth-child(4) {
+  grid-column: 5/7;
+}
+main.user-dash-main section.dashadmin-section div.dashadmin-topmid div.display-tournaments div.tournois-line-user a.edit {
+  width: 50%;
+  margin: auto;
+  padding: 8px 0px;
+  text-align: centers;
+}
+main.user-dash-main section.dashadmin-section div.dashadmin-topmid div.display-tournaments div.tournois-line-user a img {
+  height: 25px;
+}
+main.user-dash-main section.dashadmin-section div.dashadmin-topmid div.display-tournaments div.tournois-line-user span, main.user-dash-main section.dashadmin-section div.dashadmin-topmid div.display-tournaments div.tournois-line-user a {
+  border-radius: 5px;
+}
+main.user-dash-main section.dashadmin-section div.dashadmin-topmid div.display-tournaments div.tournois-line-user a:hover {
+  background-color: var(--color-hover);
+}
+
+/*# sourceMappingURL=styleS.css.map */

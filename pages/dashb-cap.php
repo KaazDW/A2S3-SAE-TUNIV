@@ -86,10 +86,6 @@ $listeTournois = $pdo->query($sql);
                     <?php
                     endforeach;
                     ?>
-
-
-
-
                 </div>
                 <div class="ajout-joueurs">
                     <form action="../config/config-add-joueur.php" method="POST" enctype="multipart/form-data">
