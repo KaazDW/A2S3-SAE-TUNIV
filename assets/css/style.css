@@ -588,6 +588,9 @@ section.stats-section div.file-counter div p:hover{
     align-items: center;
     margin: 15px 0px;
 }
+.main-dashboard .dashadmin-section .dashadmin-topgrid div:nth-child(1){
+    grid-column: 1/3;
+}
 .main-dashboard .dashadmin-section .dashadmin-topmid{
     display: flex;
 }
