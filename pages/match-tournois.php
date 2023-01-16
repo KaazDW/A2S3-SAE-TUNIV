@@ -12,6 +12,7 @@ $matchs=$listematch->fetchAll();
 
 $tournoi = $pdo->prepare('SELECT * FROM Tournoi WHERE ID_Tournoi =:varId');
 $tournoi->execute(['varId' =>$_GET["id"]]);
+$tournoi=$tournoi->fetchAll();
 
 ?>
 
@@ -25,10 +26,12 @@ $tournoi->execute(['varId' =>$_GET["id"]]);
     <main class="main-matchtournois">
 
         <h2 class="title">
-            <?php $nom = $tournoi->fetch()["Nom"];
+            <?php $nom = $tournoi[0]["Nom"];
             echo($nom);?>
         </h2>
-        <h3>Sport :</h3><span><?php $sport = $tournoi->fetch()["Sport"]; var_dump($sport); echo $sport;?></span>
+        <h3>Sport :</h3><span><?php $sport = $tournoi[0]["Sport"]; echo $sport;?></span>
+        <h3>Date de début :</h3><span><?php $dateDeb = $tournoi[0]["DateDebut"]; echo $dateDeb;?></span>
+        <h3>Sport :</h3><span><?php $dateFin = $tournoi[0]["DateFin"]; echo $dateFin;?></span>
 
         <h2 class="title">Match</h2>
         <?php
