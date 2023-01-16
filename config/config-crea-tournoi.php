@@ -34,7 +34,13 @@ if (empty($_POST["dateFin"])){
 }
 $dateFin = $pdo->quote($_POST["dateFin"]);
 
-$sql = "INSERT INTO Tournoi VALUES (0, $sport, $name, $dateDeb, $dateFin);";
+if (empty($_POST["teams"])){
+    $_SESSION["tournoiErreur"] = "Nombre maximum d'équipes manquant";
+    header("Location: ../pages/dashb-admin.php");
+}
+$teams = $pdo->quote($_POST["teams"]);
+
+$sql = "INSERT INTO Tournoi VALUES (0, $sport, $name, $dateDeb, $dateFin, $teams, 0);";
 $res = $pdo->exec($sql);
 if (!$res) {
     $_SESSION["tournoiErreur"] = "La création du tournoi a échoué, veuillez réessayer. Si l\'erreur persiste, contactez le support.";
