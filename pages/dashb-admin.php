@@ -29,13 +29,35 @@ $listeEquipes = $pdo->query($sql);
 <body>
     <?php include '../modules/header.php'; ?>
     <main class="main-dashboard">
-        <h2 class="title">Dashboard Admin</h2>
+        <h2 class="title">Ajouter une equipe</h2>
         <section class="dashadmin-section">
             <div class="dashadmin-topgrid">
                 <div class="dashadmin-topgrid-card dashadmin-card">
+                    <form action="../config/config-crea-tournoi.php" method="POST">
+                        <div class="form">
+                            <div class="form-parta">
+                                <label for="name">Nom</label>
+                                <input name="name" type="text" id="name" maxlength=255 required="required">
 
-                </div>
-                <div class="dashadmin-topgrid-card dashadmin-card">
+                                <label for="sport">Sport</label>
+                                <input name="sport" type="text" id="sport" maxlength=50 required="required">
+
+                                <label for="dateDeb">Date de début du tournoi</label>
+                                <input name="dateDeb" type="datetime-local" id="dateDeb" required="required">
+
+                                <label for="dateFin">Date de fin du tournoi</label>
+                                <input name="dateFin" type="datetime-local" id="dateFin" required="required">
+
+                                <label for="teams">Nombre maximum d'équipes participant au tournoi</label>
+                                <input name="teams" type="integer" id="teams" required="required">
+                            </div>
+                        </div>
+
+                        <div class="form-button">
+                            <button type="submit">Créer le tournoi</button>
+                        </div>
+                    </form>
+
 
                 </div>
                 <div class="dashadmin-topgrid-card dashadmin-card">
