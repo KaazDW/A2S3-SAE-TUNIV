@@ -3,7 +3,7 @@ if (empty($_SESSION["loggedIn"])) {
     $_SESSION["loggedIn"] = false;
 }
 
-if ($_SESSION["type"]!="capitaine") {
+if ($_SESSION["type"] != "capitaine") {
     header("Location: ../index.php");
 }
 
@@ -21,10 +21,12 @@ $listeTournois = $pdo->query($sql);
 
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <?php include '../modules/head.php'; ?>
     <link href="../assets/css/style.css" rel="stylesheet">
-</head> 
+</head>
+
 <body>
     <?php include '../modules/header.php'; ?>
     <main class="main-dashcap">
@@ -33,20 +35,27 @@ $listeTournois = $pdo->query($sql);
             <div class="nomequipe">
                 <h3>Nom de l'équipe : </h3>
                 <p>
-                <?php  
+                    <?php
                     $listematch = $pdo->prepare('SELECT Nom, ID_Equipe from Equipe where ID_Capitaine=:varId;');
                     $listematch->execute(
                         [
-                            'varId' =>$_SESSION["userId"],
+                            'varId' => $_SESSION["userId"],
                         ]
-                        );
-                    $equipe=$listematch->fetch();
-                    echo $equipe[0];
-                    $_SESSION["actuel"]=$equipe[1];
-                    
-                ?></p>
+                    );
+                    $equipe = $listematch->fetch();
+                    $_SESSION["actuel"] = $equipe[1];
+                    ?>
+                <form action="../config/config-cap-edit-team.php" method="POST" enctype="multipart/form-data">
+                    <div>
+                        <label for="new-name-team"></label>
+                        <input name="new-name-team" type='text' value=<?php echo $equipe[0] ?> id="new-name-team" required="required">
+                    </div>
+                    <button type='submit'>Valider</button>
+                </form>
+                </p>
+
             </div>
-            
+
             <section class="joueurs-liste-section">
                 <div class="joueurs-liste-div">
                     <div class="joueur-line title">
@@ -54,26 +63,26 @@ $listeTournois = $pdo->query($sql);
                         <span>Nom</span>
                     </div>
                     <?php
-                        $listejoueur = $pdo->prepare('SELECT Joueur.Prenom, Joueur.Nom, Joueur.ID_Joueur from Joueur inner join Equipe on Joueur.ID_Equipe=Equipe.ID_Equipe where Equipe.ID_Capitaine=:varId;');
-                        $listejoueur->execute(
-                            [
-                                'varId' =>$_SESSION["userId"],
-                            ]
-                            );
-                        $joueurs=$listejoueur->fetchAll();
-                        foreach($joueurs as $joueur):    
+                    $listejoueur = $pdo->prepare('SELECT Joueur.Prenom, Joueur.Nom, Joueur.ID_Joueur from Joueur inner join Equipe on Joueur.ID_Equipe=Equipe.ID_Equipe where Equipe.ID_Capitaine=:varId;');
+                    $listejoueur->execute(
+                        [
+                            'varId' => $_SESSION["userId"],
+                        ]
+                    );
+                    $joueurs = $listejoueur->fetchAll();
+                    foreach ($joueurs as $joueur) :
                     ?>
 
-                    
-                    <div class="joueur-line">
-                        <span><?php echo($joueur['Prenom']) ?></span>
-                        <span><?php echo($joueur['Nom']) ?></span>
-                        
-                        <div>
-                            <a class="edit" href="dashb-cap-edit.php?id=<?= $joueur['ID_Joueur'] ?>"><img src="/assets/img/edit-blanc.png" ></a>
-                            <a class="edit" href="../config/config-suppr-joueur.php?id=<?= $joueur['ID_Joueur'] ?>"><img src="/assets/img/delete-blanc.png"></a>
+
+                        <div class="joueur-line">
+                            <span><?php echo ($joueur['Prenom']) ?></span>
+                            <span><?php echo ($joueur['Nom']) ?></span>
+
+                            <div>
+                                <a class="edit" href="dashb-cap-edit.php?id=<?= $joueur['ID_Joueur'] ?>"><img src="/assets/img/edit-blanc.png"></a>
+                                <a class="edit" href="../config/config-suppr-joueur.php?id=<?= $joueur['ID_Joueur'] ?>"><img src="/assets/img/delete-blanc.png"></a>
+                            </div>
                         </div>
-                    </div>
                     <?php
                     endforeach;
                     ?>
@@ -90,32 +99,31 @@ $listeTournois = $pdo->query($sql);
                             <label for="new-name2">Nom</label>
                             <input name="new-name2" type='text' id="new-name2" required="required">
                         </div>
-                        <button type ='submit'>Valider</button>
+                        <button type='submit'>Valider</button>
                     </form>
                 </div>
             </section>
-            
-        
+
+
         </section>
     </main>
     <?php include '../modules/footer.php'; ?>
     <script>
-        
         // DISPLAY JOUEURS EDIT MENU
         document.getElementById('joueur-edit').style.display = "none";
 
-        function openeditjoueurs(){
-            document.getElementById('joueur-edit').style.display = "block";  
+        function openeditjoueurs() {
+            document.getElementById('joueur-edit').style.display = "block";
         }
 
-        function closeeditjoueurs(){
+        function closeeditjoueurs() {
             document.getElementById('joueur-edit').style.display = "none";
         }
-        
-        document.getElementById('closebtneditjoueurs').addEventListener("click", function(){
+
+        document.getElementById('closebtneditjoueurs').addEventListener("click", function() {
             document.getElementById('joueur-edit').style.display = "none";
         });
-
     </script>
 </body>
+
 </html>

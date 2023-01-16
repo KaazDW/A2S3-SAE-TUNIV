@@ -112,6 +112,9 @@ $listeEquipes = $pdo->query($sql);
 
                                 <label for="dateFin">Date de fin du tournoi</label>
                                 <input name="dateFin" type="datetime-local" id="dateFin" required="required">
+
+                                <label for="teams">Nombre maximum d'équipes participant au tournoi</label>
+                                <input name="teams" type="integer" id="teams" required="required">
                             </div>
                         </div>
 
