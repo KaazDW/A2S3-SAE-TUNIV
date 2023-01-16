@@ -23,7 +23,7 @@ $listeUtilisateurs = $pdo->query($sql);
 </head> 
 <body>
     <?php include '../modules/header.php'; ?>
-    <main class="main-dashboard">
+    <main class="main-dashboard user-dash-main">
         <h2 class="title">Utilisateurs</h2>
         <section class="dashadmin-section">
             <div class="dashadmin-topmid">
@@ -31,7 +31,7 @@ $listeUtilisateurs = $pdo->query($sql);
                     <?php $utilisateurs = $listeUtilisateurs->fetchAll();
                         foreach($utilisateurs as $utilisateur):
                     ?>
-                    <div class="tournois-line">
+                    <div class="tournois-line-user">
                         <span><?php echo($utilisateur['Prenom']) ?></span>
                         <span><?php echo($utilisateur['Nom']) ?></span>
                         <span><?php if ($utilisateur['Type_user']==0) {echo('Administrateur');}
@@ -39,14 +39,12 @@ $listeUtilisateurs = $pdo->query($sql);
                                     else {echo('Capitaine');}
                                 ?></span>
                         <span><?php echo($utilisateur['Email']) ?></span>
-                        <div>
-                            <a class="edit" href="dashb-admin-editform-tournoi.php?id=<?= $tournoi['ID_Tournoi'] ?>">
-                                <img src="../assets/img/edit-blanc.png">
-                            </a>
-                            <a class="edit" href="../config/config-suppr-tournoi.php?id=<?= $tournoi['ID_Tournoi'] ?>">
-                                <img src="../assets/img/delete-blanc.png">
-                            </a>
-                        </div>
+                        <a class="edit" href="dashb-admin-editform-tournoi.php?id=<?= $tournoi['ID_Tournoi'] ?>">
+                            <img src="../assets/img/edit-blanc.png">
+                        </a>
+                        <a class="edit" href="../config/config-suppr-tournoi.php?id=<?= $tournoi['ID_Tournoi'] ?>">
+                            <img src="../assets/img/delete-blanc.png">
+                        </a>
                     </div>
                     <?php
                     endforeach;
