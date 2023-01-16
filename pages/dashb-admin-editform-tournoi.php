@@ -40,7 +40,7 @@ include '../config/db.php';
                     $tournoi = $listetournoi->fetch();
                     ?>
                 </p>
-                <form action="../config/config-editform.php?id=<?php echo ($_GET["id"]) ?>" method="POST" enctype="multipart/form-data">
+                <form action="../config/config-editform-tournoi.php?id=<?php echo ($_GET["id"]) ?>" method="POST" enctype="multipart/form-data">
                     <h3>Modifier un tournoi</h3>
                     <div>
                         <label for="new-sport">Sport</label>

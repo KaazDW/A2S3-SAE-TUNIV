@@ -7,13 +7,11 @@ include_once '../config/db.php';
 
 $listematch = $pdo->prepare('SELECT * FROM MatchTournoi where ID_Tournoi =:varId');
 
-$listematch->execute(
-    [
-        'varId' =>$_GET["id"],
-    ]
-    );
+$listematch->execute(['varId' =>$_GET["id"]]);
 $matchs=$listematch->fetchAll();
 
+$tournoi = $pdo->prepare('SELECT * FROM Tournoi WHERE ID_Tournoi =:varId');
+$tournoi->execute(['varId' =>$_GET["id"]]);
 
 ?>
 
@@ -25,6 +23,13 @@ $matchs=$listematch->fetchAll();
 <body>
     <?php include '../modules/header.php'; ?>
     <main class="main-matchtournois">
+
+        <h2 class="title">
+            <?php $nom = $tournoi->fetch()["Nom"];
+            echo($nom);?>
+        </h2>
+        <h3>Sport :</h3><span><?php $sport = $tournoi->fetch()["Sport"]; var_dump($sport); echo $sport;?></span>
+
         <h2 class="title">Match</h2>
         <?php
 
