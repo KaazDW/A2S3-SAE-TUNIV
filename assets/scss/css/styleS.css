@@ -41,7 +41,7 @@ main.user-dash-main section.dashadmin-section div.dashadmin-topmid div.display-t
 main.user-dash-main section.dashadmin-section div.dashadmin-topmid div.display-tournaments div.tournois-line-user span, main.user-dash-main section.dashadmin-section div.dashadmin-topmid div.display-tournaments div.tournois-line-user a {
   border-radius: 5px;
 }
-main.user-dash-main section.dashadmin-section div.dashadmin-topmid div.display-tournaments div.tournois-line-user span:hover, main.user-dash-main section.dashadmin-section div.dashadmin-topmid div.display-tournaments div.tournois-line-user a:hover {
+main.user-dash-main section.dashadmin-section div.dashadmin-topmid div.display-tournaments div.tournois-line-user a:hover {
   background-color: var(--color-hover);
 }
 
