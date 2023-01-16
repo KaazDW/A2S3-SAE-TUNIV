@@ -4,7 +4,7 @@ if (empty($_SESSION["type"])) {
     $_SESSION["type"] = false;
 }
 
-if ($_SESSION["type"]!="administrateur") {
+if ($_SESSION["type"] != "administrateur") {
     header("Location: ../index.php");
 }
 
@@ -20,10 +20,12 @@ $listeEquipes = $pdo->query($sql);
 
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <?php include '../modules/head.php'; ?>
     <link href="../assets/css/style.css" rel="stylesheet">
-</head> 
+</head>
+
 <body>
     <?php include '../modules/header.php'; ?>
     <main class="main-dashboard">
@@ -37,49 +39,50 @@ $listeEquipes = $pdo->query($sql);
 
                 </div>
                 <div class="dashadmin-topgrid-card dashadmin-card">
-                    
+
                 </div>
             </div>
+            <!-- Affichage Tournoi -->
             <div class="dashadmin-topmid">
                 <div class="display-tournaments dashadmin-card">
                     <h3>Tournois</h3>
                     <?php $tournois = $listeTournois->fetchAll();
-                        foreach($tournois as $tournoi):
+                    foreach ($tournois as $tournoi) :
                     ?>
-                    <div class="tournois-line">
-                        <span><?php echo($tournoi['Sport']) ?></span>
-                        <span><?php echo($tournoi['Nom']) ?></span>
-                        <div>
-                            <a class="edit" href="dashb-admin-editform-tournoi.php?id=<?= $tournoi['ID_Tournoi'] ?>">
-                                <img src="../assets/img/edit-blanc.png">
-                            </a>
-                            <a class="edit" href="../config/config-suppr-tournoi.php?id=<?= $tournoi['ID_Tournoi'] ?>">
-                                <img src="../assets/img/delete-blanc.png">
-                            </a>
+                        <div class="tournois-line">
+                            <span><?php echo ($tournoi['Sport']) ?></span>
+                            <span><?php echo ($tournoi['Nom']) ?></span>
+                            <div>
+                                <a class="edit" href="dashb-admin-editform-tournoi.php?id=<?= $tournoi['ID_Tournoi'] ?>">
+                                    <img src="../assets/img/edit-blanc.png">
+                                </a>
+                                <a class="edit" href="../config/config-suppr-tournoi.php?id=<?= $tournoi['ID_Tournoi'] ?>">
+                                    <img src="../assets/img/delete-blanc.png">
+                                </a>
+                            </div>
                         </div>
-                    </div>
                     <?php
                     endforeach;
                     ?>
                 </div>
-
+                <!-- Affichage Equipe -->
                 <div class="display-tournaments dashadmin-card">
                     <h3>Équipes</h3>
                     <?php $equipes = $listeEquipes->fetchAll();
-                        foreach($equipes as $equipe):
+                    foreach ($equipes as $equipe) :
                     ?>
-                    <div class="tournois-line">
-                        <span><?php echo($equipe['Sport']) ?></span>
-                        <span><?php echo($equipe['Nom']) ?></span>
-                        <div>
-                            <a class="edit" href="dashb-admin-editform-equipe.php?id=<?= $equipe['ID_Equipe'] ?>">
-                                <img src="../assets/img/edit-blanc.png">
-                            </a>
-                            <a class="edit" href="../config/config-suppr-tournoi.php?id=<?= $tournoi['ID_Equipe'] ?>">
-                                <img src="../assets/img/delete-blanc.png">
-                            </a>
+                        <div class="tournois-line">
+                            <span><?php echo ($equipe['Sport']) ?></span>
+                            <span><?php echo ($equipe['Nom']) ?></span>
+                            <div>
+                                <a class="edit" href="dashb-admin-editform-equipe.php?id=<?= $equipe['ID_Equipe'] ?>">
+                                    <img src="../assets/img/edit-blanc.png">
+                                </a>
+                                <a class="edit" href="../config/config-suppr-tournoi.php?id=<?= $tournoi['ID_Equipe'] ?>">
+                                    <img src="../assets/img/delete-blanc.png">
+                                </a>
+                            </div>
                         </div>
-                    </div>
                     <?php
                     endforeach;
                     ?>
@@ -120,7 +123,7 @@ $listeEquipes = $pdo->query($sql);
 
                         <div class="form-button">
                             <button type="submit">Créer le tournoi</button>
-                        </div>      
+                        </div>
                     </form>
 
                 </div>
@@ -133,12 +136,13 @@ $listeEquipes = $pdo->query($sql);
     <script>
         // DISPLAY TOURNAMENT CREATION MENU
         document.getElementById('tcreationmenu').style.display = "none";
-        document.getElementById('tcreate').addEventListener("click", function(){
+        document.getElementById('tcreate').addEventListener("click", function() {
             document.getElementById('tcreationmenu').style.display = "block";
         });
-        document.getElementById('creationmenuclose').addEventListener("click", function(){
+        document.getElementById('creationmenuclose').addEventListener("click", function() {
             document.getElementById('tcreationmenu').style.display = "none";
         });
     </script>
 </body>
+
 </html>
