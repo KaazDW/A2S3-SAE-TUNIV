@@ -2,6 +2,12 @@
 if (empty($_SESSION["loggedIn"])) {
     $_SESSION["loggedIn"] = false;
 }
+
+include '../config/db.php';
+
+$sql = $pdo->prepare("SELECT COUNT(DISTINCT ID_Tournoi) FROM Tournoi;");
+$sql->execute();
+
 ?>
 
 <!DOCTYPE html>
@@ -39,7 +45,7 @@ if (empty($_SESSION["loggedIn"])) {
                 </div>
             </div>
             <p>L'objectif de l'application est de centraliser les différents tournois sportifs universitaire à l'aide d'un outil développé par des étudiants, pour des étudiants.</p>
-            <p>Tuniv à déjà hébergé <span>00</span> tournois depuis son déployement le <span>00.00.2022</span>.</p>
+            <p>Tuniv à déjà hébergé <span><?php echo($sql->fetch()[0]);?></span> tournois depuis son déployement le <span>00.00.2022</span>.</p>
             
             <div class="navcompa">
                 <p>Tuniv est un une web app développé pour être compatible avec les dernieres versions des navigateurs en date :</p>
