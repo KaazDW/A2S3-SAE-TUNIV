@@ -39,10 +39,10 @@ $listeUtilisateurs = $pdo->query($sql);
                                     else {echo('Capitaine');}
                                 ?></span>
                         <span><?php echo($utilisateur['Email']) ?></span>
-                        <a class="edit" href="dashb-admin-editform-tournoi.php?id=<?= $tournoi['ID_Tournoi'] ?>">
+                        <a class="edit" href="dashb-admin-editform-user.php?id=<?= $utilisateur['ID_User'] ?>">
                             <img src="../assets/img/edit-blanc.png">
                         </a>
-                        <a class="edit" href="../config/config-suppr-tournoi.php?id=<?= $tournoi['ID_Tournoi'] ?>">
+                        <a class="edit" href="../config/config-suppr-user.php?id=<?= $utilisateur['ID_User'] ?>">
                             <img src="../assets/img/delete-blanc.png">
                         </a>
                     </div>

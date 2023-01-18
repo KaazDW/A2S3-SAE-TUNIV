@@ -31,7 +31,7 @@ $tournoi=$tournoi->fetchAll();
         </h2>
         <h3>Sport :</h3><span><?php $sport = $tournoi[0]["Sport"]; echo $sport;?></span>
         <h3>Date de début :</h3><span><?php $dateDeb = $tournoi[0]["DateDebut"]; echo $dateDeb;?></span>
-        <h3>Sport :</h3><span><?php $dateFin = $tournoi[0]["DateFin"]; echo $dateFin;?></span>
+        <h3>Date de fin :</h3><span><?php $dateFin = $tournoi[0]["DateFin"]; echo $dateFin;?></span>
 
         <h2 class="title">Match</h2>
         <?php

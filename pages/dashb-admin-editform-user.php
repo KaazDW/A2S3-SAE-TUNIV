@@ -35,15 +35,37 @@ $user->execute(['varId' =>$_GET["id"]]);
                     <?php
                         $utilisateur = $pdo->prepare('SELECT Prenom, Nom from Utilisateur  where ID_User=:varId;');
                         $utilisateur->execute(['varId' =>$_GET["id"]]);
+                        $joueurs=$listejoueur->fetchAll();
+                        foreach($joueurs as $joueur):    
                     ?>
+
+                    
                     <div class="joueur-line">
-                        <span><?php echo($utilisateur['Prenom']) ?></span>
-                        <span><?php echo($utilisateur['Nom']) ?></span>
+                        <span><?php echo($joueur['Prenom']) ?></span>
+                        <span><?php echo($joueur['Nom']) ?></span>
                         <div>
                             <a onclick="openeditjoueurs()"><img src="/assets/img/edit-blanc.png"></a>
                             <a href=""><img src="/assets/img/delete-blanc.png"></a>
                         </div>
                     </div>
+
+                    <?php
+                    endforeach;
+                    ?>
+                </div>
+                <div class="ajout-joueurs">
+                    <form action="../config/config-add-joueur-admin.php?id=<?php echo ($_GET["id"])?>&new-surname=<?php  ?>">
+                        <h3>Ajouter un joueur</h3>
+                        <div>
+                            <label for="new-surname">Prénom</label>
+                            <input name="new-surname" id="new-surname">
+                        </div>
+                        <div>
+                            <label for="new-name">Nom</label>
+                            <input name="new-name" id="new-name">
+                        </div>
+                        <button>Valider</button>
+                    </form>
                 </div>
             </section>
             <section id="joueur-edit">
