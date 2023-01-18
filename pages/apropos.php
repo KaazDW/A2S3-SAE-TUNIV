@@ -44,11 +44,11 @@ $sql->execute();
                     <a href="https://www.linkedin.com/in/nathan-ozimek/" target="_blank">Nathan Ozimek</a>
                 </div>
             </div>
-            <p>L'objectif de l'application est de centraliser les différents tournois sportifs universitaire à l'aide d'un outil développé par des étudiants, pour des étudiants.</p>
-            <p>Tuniv à déjà hébergé <span><?php echo($sql->fetch()[0]);?></span> tournois depuis son déployement le <span>00.00.2022</span>.</p>
+            <p>L'objectif de l'application est de centraliser les différents tournois sportifs universitaires à l'aide d'un outil développé par des étudiants, pour des étudiants.</p>
+            <p>Tuniv a déjà hébergé <span><?php echo($sql->fetch()[0]);?></span> tournois depuis son déployement le <span>00.00.2022</span>.</p>
             
             <div class="navcompa">
-                <p>Tuniv est un une web app développé pour être compatible avec les dernieres versions des navigateurs en date :</p>
+                <p>Tuniv est une web app développée pour être compatible avec les dernières versions des navigateurs en date :</p>
                 <div class="table">
                     <span>Navigateur</span>
                     <span>Version</span>
