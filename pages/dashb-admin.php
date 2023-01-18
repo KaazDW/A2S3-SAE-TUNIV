@@ -28,42 +28,57 @@ $listeEquipes = $pdo->query($sql);
 
 <body>
     <?php include '../modules/header.php'; ?>
-    <main class="main-dashboard">
+    <main class="real-main-dashboard">
         <h2 class="title">Ajouter une equipe</h2>
         <section class="dashadmin-section">
-            <div class="dashadmin-topgrid">
-                <div class="dashadmin-topgrid-card dashadmin-card">
-                    <form action="../config/config-admin-crea-equipe.php" method="POST">
-                        <div class="form">
-                            <div class="form-parta">
-                                <label for="name">Nom</label>
-                                <input name="name" type="text" id="name" maxlength=255 required="required">
+            <div class="form-tournois ffield">
+                <h3>Créer un nouveau tournoi</h3>
+                <form action="../config/config-crea-tournoi.php" method="POST">
+                    <div class="form-button">
+                        <button type="submit">Créer le tournoi</button>
+                    </div>    
+                    <div class="form">
+                        <label for="name">Nom du tournoi</label>
+                        <input name="name" type="text" id="name" maxlength=255 required="required">
 
-                                <label for="sport">Sport</label>
-                                <input name="sport" type="text" id="sport" maxlength=50 required="required">
+                        <label for="sport">Sport</label>
+                        <input name="sport" type="text" id="sport" maxlength=50 required="required">
 
-                                <label for="name-capitaine">Nom capitaine</label>
-                                <input name="name-capitaine" type="name-capitaine" id="name-capitaine" required="required">
+                        <label for="dateDeb">Date de début du tournoi</label>
+                        <input name="dateDeb" type="datetime-local" id="dateDeb" required="required">
 
-                                <label for="firstname-capitaine">Prenom Capitaine</label>
-                                <input name="firstname-capitaine" type="firstname-capitaine" id="firstname-capitaine" required="required">
-                            </div>
-                        </div>
+                        <label for="dateFin">Date de fin du tournoi</label>
+                        <input name="dateFin" type="datetime-local" id="dateFin" required="required">
 
-                        <div class="form-button">
-                            <button type="submit">Créer l'équipe</button>
-                        </div>
-                    </form>
-
-
-                </div>
-                <div class="dashadmin-topgrid-card dashadmin-card">
-
-                </div>
+                        <label for="teams">Nb° équipes max</label>
+                        <input name="teams" type="integer" id="teams" required="required">
+                    </div>
+                </form>
             </div>
-            <!-- Affichage Tournoi -->
-            <div class="dashadmin-topmid">
-                <div class="display-tournaments dashadmin-card">
+            <div class="form-equipe ffield">
+                <h3>Cree une nouvelle équipe</h3>
+                <form action="../config/config-admin-crea-equipe.php" method="POST">
+                    <div class="form-button">
+                            <button type="submit">Créer l'équipe</button>
+                    </div>    
+                    <div class="form">
+                        <label for="name">Nom</label>
+                        <input name="name" type="text" id="name" maxlength=255 required="required">
+
+                        <label for="sport">Sport</label>
+                        <input name="sport" type="text" id="sport" maxlength=50 required="required">
+
+                        <label for="name-capitaine">Nom capitaine</label>
+                        <input name="name-capitaine" type="name-capitaine" id="name-capitaine" required="required">
+
+                        <label for="firstname-capitaine">Prenom Capitaine</label>
+                        <input name="firstname-capitaine" type="firstname-capitaine" id="firstname-capitaine" required="required">
+                    </div>
+
+
+                </form>
+            </div>
+            <div class="display-t">
                     <h3>Tournois</h3>
                     <?php $tournois = $listeTournois->fetchAll();
                     foreach ($tournois as $tournoi) :
@@ -84,8 +99,7 @@ $listeEquipes = $pdo->query($sql);
                     endforeach;
                     ?>
                 </div>
-                <!-- Affichage Equipe -->
-                <div class="display-tournaments dashadmin-card">
+            <div class="display-t">
                     <h3>Équipes</h3>
                     <?php $equipes = $listeEquipes->fetchAll();
                     foreach ($equipes as $equipe) :
@@ -97,7 +111,7 @@ $listeEquipes = $pdo->query($sql);
                                 <a class="edit" href="dashb-admin-editform-equipe.php?id=<?= $equipe['ID_Equipe'] ?>">
                                     <img src="../assets/img/edit-blanc.png">
                                 </a>
-                                <a class="edit" href="../config/config-suppr-equipe.php?id=<?= $equipe['ID_Equipe'] ?>">
+                                <a class="edit" href="../config/config-suppr-tournoi.php?id=<?= $equipe['ID_Equipe'] ?>">
                                     <img src="../assets/img/delete-blanc.png">
                                 </a>
                             </div>
@@ -106,47 +120,6 @@ $listeEquipes = $pdo->query($sql);
                     endforeach;
                     ?>
                 </div>
-                <div class="init-tourn dashadmin-card">
-                    <h3>tournois</h3>
-                    <a id="tcreate">
-                        <img src="../assets/img/create.png">
-                    </a>
-                </div>
-                <div id="tcreationmenu">
-                    <header>
-                        <a id="creationmenuclose">
-                            <img src="../assets/img/cross.png">
-                        </a>
-                    </header>
-
-                    <h3>Créer un nouveau tournoi</h3>
-                    <form action="../config/config-crea-tournoi.php" method="POST">
-                        <div class="form">
-                            <div class="form-parta">
-                                <label for="name">Nom du tournoi</label>
-                                <input name="name" type="text" id="name" maxlength=255 required="required">
-
-                                <label for="sport">Sport</label>
-                                <input name="sport" type="text" id="sport" maxlength=50 required="required">
-
-                                <label for="dateDeb">Date de début du tournoi</label>
-                                <input name="dateDeb" type="datetime-local" id="dateDeb" required="required">
-
-                                <label for="dateFin">Date de fin du tournoi</label>
-                                <input name="dateFin" type="datetime-local" id="dateFin" required="required">
-
-                                <label for="teams">Nombre maximum d'équipes participant au tournoi</label>
-                                <input name="teams" type="integer" id="teams" required="required">
-                            </div>
-                        </div>
-
-                        <div class="form-button">
-                            <button type="submit">Créer le tournoi</button>
-                        </div>
-                    </form>
-
-                </div>
-            </div>
         </section>
 
 
