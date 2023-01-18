@@ -582,7 +582,7 @@ section.stats-section div.file-counter div p:hover{
 .real-main-dashboard .dashadmin-section{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
+    gap: 10px;
 }
 .real-main-dashboard .dashadmin-section div{ 
     background-color: var(--color-element-full);
@@ -590,9 +590,34 @@ section.stats-section div.file-counter div p:hover{
     border: 1px solid var(--color-border);
     padding: 5px;
 }
-.real-main-dashboard .dashadmin-section .display-t{
-    /* background-color: green; */
+.real-main-dashboard .dashadmin-section .ffield h3{
+    margin: 5px;
 }
+.real-main-dashboard .dashadmin-section .ffield form .form{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 2px 15px;
+}
+.real-main-dashboard .dashadmin-section .ffield form .form input, label{
+    margin: 5px;
+}
+.real-main-dashboard .dashadmin-section .ffield form .form input{
+    height: 30px;
+}
+.real-main-dashboard .dashadmin-section .ffield form .form-button{
+    display: flex;
+    justify-content: center;
+    margin: 5px 15px;
+    margin-top: 15px;
+
+}
+.real-main-dashboard .dashadmin-section .ffield form .form-button button{
+    background-color: var(--red);
+    border: none;
+    padding: 10px 15px;
+    text-transform: uppercase;
+}
+
 .real-main-dashboard .dashadmin-section .display-t .tournois-line{
     display: flex;
     align-items: center;
