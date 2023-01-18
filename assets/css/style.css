@@ -579,9 +579,35 @@ section.stats-section div.file-counter div p:hover{
 }
 
 /* DASHBOARD ADMIN */
+.real-main-dashboard .dashadmin-section{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+.real-main-dashboard .dashadmin-section div{ 
+    background-color: var(--color-element-full);
+    border-radius: 5px;
+    border: 1px solid var(--color-border);
+    padding: 5px;
+}
+.real-main-dashboard .dashadmin-section .display-t{
+    /* background-color: green; */
+}
+.real-main-dashboard .dashadmin-section .display-t .tournois-line{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 5px 0;
+}
+.real-main-dashboard .dashadmin-section .display-t .tournois-line img{
+    height: 25px;;
+}
+
+/* THE OTHER DASH */
+
 .main-dashboard .dashadmin-section .dashadmin-topgrid{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     column-gap: 15px;
     height: 200px;
     text-align: center;
@@ -668,7 +694,7 @@ section.stats-section div.file-counter div p:hover{
     width: 55px;
     margin: 3px 3px;
 }
-.dashadmin-card{
+.main-dashboard .dashadmin-card{
     background-color: var(--color-element);
     border: 1px solid var(--color-border);
     border-radius: 6px;
@@ -695,7 +721,6 @@ section.stats-section div.file-counter div p:hover{
     }
 }
 .main-dashboard .dashadmin-section .dashadmin-topmid #tcreationmenu header{
-    /* background-color: green; */
     height: 25px;
     top: 0;
     width: 100%;
