@@ -97,7 +97,7 @@ $listeEquipes = $pdo->query($sql);
                                 <a class="edit" href="dashb-admin-editform-equipe.php?id=<?= $equipe['ID_Equipe'] ?>">
                                     <img src="../assets/img/edit-blanc.png">
                                 </a>
-                                <a class="edit" href="../config/config-suppr-tournoi.php?id=<?= $equipe['ID_Equipe'] ?>">
+                                <a class="edit" href="../config/config-suppr-equipe.php?id=<?= $equipe['ID_Equipe'] ?>">
                                     <img src="../assets/img/delete-blanc.png">
                                 </a>
                             </div>
