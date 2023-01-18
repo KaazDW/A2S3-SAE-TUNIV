@@ -19,15 +19,18 @@ $users->execute(
     [
         'varnom' => $nom_cap,
         'varprenom' => $prenom_cap,
-
     ]
 );
 $user = $users->fetch();
-$id_user = $user[0];
+
+if($user){
+    $id_user = $user[0];
+} else{
+    $id_user = NULL;
+}
 
 
 $add = $pdo->prepare('INSERT into Equipe Values(0,:varnom, :varsport, :varid);');
-
 
 $add->execute(
     [
@@ -40,3 +43,4 @@ $add->execute(
 
 
 header("Location: /../pages/dashb-admin.php");
+    
