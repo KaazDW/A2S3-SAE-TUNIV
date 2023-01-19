@@ -49,6 +49,9 @@
   body header div#mobilenav a.login-link img {
     height: 50px;
   }
+  body section.admin-header {
+    width: 90vw;
+  }
   body section.index-actu div.annonce-card {
     width: 100%;
   }
@@ -83,6 +86,40 @@
   }
   body main.main-apropos section.apropos-content div.navcompa div.table {
     width: 100%;
+  }
+  body main.real-main-dashboard section.dashadmin-section {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  body main.user-dash-main section.users-resp div.dashadmin-topmid {
+    flex-direction: column;
+  }
+  body main.user-dash-main section.users-resp div.dashadmin-topmid .display-tournaments {
+    width: 75vw;
+  }
+  body main.user-dash-main section.users-resp div.dashadmin-topmid .display-tournaments div.tournois-line-user {
+    border: 1px solid var(--color-border);
+    border-radius: 5px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+  }
+  body main.user-dash-main section.users-resp div.dashadmin-topmid .display-tournaments div.tournois-line-user div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 5px;
+  }
+  body main.user-dash-main section.users-resp div.dashadmin-topmid .display-tournaments div.tournois-line-user div a {
+    border: 1px solid var(--color-border);
+    margin: 5px;
+  }
+  body main.user-dash-main section.users-resp div.dashadmin-topmid .init-tourn {
+    width: 75vw;
+    margin-left: 0;
+    margin-top: 20px;
+  }
+  body main.user-dash-main section.users-resp div.dashadmin-topmid .init-tourn h3 {
+    font-size: 40px;
   }
   body main.main-admin-annonce-form section.form-annonce-section form div.form {
     flex-direction: column;
