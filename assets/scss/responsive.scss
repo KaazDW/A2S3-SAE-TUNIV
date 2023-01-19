@@ -61,6 +61,9 @@
                     }
             }
         }
+        section.admin-header{
+            width: 90vw;
+        }
         section.index-actu{
             div.annonce-card{
                 width: 100%;
@@ -108,14 +111,46 @@
                 }
             }
         }
-        // main.main-dashboard{
-        //     section.dashadmin-section{
-        //         div.dashadmin-topmid{
-
-        //         }
-        //     }
-        // }
-
+        main.real-main-dashboard{
+            section.dashadmin-section{
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+        main.user-dash-main{
+            section.users-resp{
+                div.dashadmin-topmid{
+                    flex-direction: column;
+                    .display-tournaments{
+                        width: 75vw;
+                        div.tournois-line-user{
+                            border: 1px solid var(--color-border);
+                            border-radius: 5px;
+                            padding: 5px;
+                            display: flex;
+                            flex-direction: column;
+                            div{
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-between;
+                                margin-top: 5px;
+                                a{
+                                    border: 1px solid var(--color-border);
+                                    margin: 5px;
+                                }
+                            }
+                        }
+                    }
+                    .init-tourn{
+                        width: 75vw;
+                        margin-left: 0;
+                        margin-top: 20px;
+                        h3{
+                            font-size: 40px;
+                        }
+                    }
+                }
+            }
+        }
         main.main-admin-annonce-form{
             section.form-annonce-section{
                 form{

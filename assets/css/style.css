@@ -591,7 +591,7 @@ section.stats-section div.file-counter div p:hover{
     padding: 5px;
 }
 .real-main-dashboard .dashadmin-section .ffield h3{
-    margin: 5px;
+    margin: 5px;    
 }
 .real-main-dashboard .dashadmin-section .ffield form .form{
     display: grid;
@@ -609,7 +609,7 @@ section.stats-section div.file-counter div p:hover{
     justify-content: center;
     margin: 5px 15px;
     margin-top: 15px;
-
+    border: none;
 }
 .real-main-dashboard .dashadmin-section .ffield form .form-button button{
     background-color: var(--red);
@@ -617,7 +617,9 @@ section.stats-section div.file-counter div p:hover{
     padding: 10px 15px;
     text-transform: uppercase;
 }
-
+.real-main-dashboard .dashadmin-section .display-t{
+    padding: 15px;
+}
 .real-main-dashboard .dashadmin-section .display-t .tournois-line{
     display: flex;
     align-items: center;

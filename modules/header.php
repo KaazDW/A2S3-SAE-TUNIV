@@ -42,12 +42,12 @@ if (empty($_SESSION["type"])) {
 if ($_SESSION["type"]=="administrateur") {
     echo (" 
     <section class='admin-header'>
-                <ul>
-                    <li><a href='/pages/dashb-admin.php'>DASHBOARD</a></li>|
-                    <li><a href='/pages/form-annonce.php'>ANNONCES</a></li>|
-                    <li><a href='/pages/dashb-admin-utilisateurs.php'>UTILISATEURS</a></li>
-                </ul>
-            </section>
+        <ul>
+            <li><a href='/pages/dashb-admin.php'>DASHBOARD</a></li>|
+            <li><a href='/pages/form-annonce.php'>ANNONCES</a></li>|
+            <li><a href='/pages/dashb-admin-utilisateurs.php'>UTILISATEURS</a></li>
+        </ul>
+    </section>
 
     ");
 } else if(($_SESSION["type"]=="capitaine")){

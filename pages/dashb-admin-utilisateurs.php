@@ -19,13 +19,13 @@ $listeUtilisateurs = $pdo->query($sql);
 <html lang="fr">
 <head>
     <?php include '../modules/head.php'; ?>
-    <link href="../assets/css/style.css" rel="stylesheet">
+    <!-- <link href="../assets/css/style.css" rel="stylesheet"> -->
 </head> 
 <body>
     <?php include '../modules/header.php'; ?>
     <main class="main-dashboard user-dash-main">
         <h2 class="title">Utilisateurs</h2>
-        <section class="dashadmin-section">
+        <section class="dashadmin-section users-resp">
             <div class="dashadmin-topmid">
                 <div class="display-tournaments dashadmin-card">
                     <?php $utilisateurs = $listeUtilisateurs->fetchAll();
@@ -39,12 +39,14 @@ $listeUtilisateurs = $pdo->query($sql);
                                     else {echo('Capitaine');}
                                 ?></span>
                         <span><?php echo($utilisateur['Email']) ?></span>
-                        <a class="edit" href="dashb-admin-editform-user.php?id=<?= $utilisateur['ID_User'] ?>">
-                            <img src="../assets/img/edit-blanc.png">
-                        </a>
-                        <a class="edit" href="../config/config-suppr-user.php?id=<?= $utilisateur['ID_User'] ?>">
-                            <img src="../assets/img/delete-blanc.png">
-                        </a>
+                        <div>
+                            <a class="edit" href="dashb-admin-editform-user.php?id=<?= $utilisateur['ID_User'] ?>">
+                                <img src="../assets/img/edit-blanc.png">
+                            </a>
+                            <a class="edit" href="../config/config-suppr-user.php?id=<?= $utilisateur['ID_User'] ?>">
+                                <img src="../assets/img/delete-blanc.png">
+                            </a>
+                        </div>
                     </div>
                     <?php
                     endforeach;
