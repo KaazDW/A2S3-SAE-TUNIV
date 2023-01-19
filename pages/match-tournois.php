@@ -14,6 +14,10 @@ $tournoi = $pdo->prepare('SELECT * FROM Tournoi WHERE ID_Tournoi =:varId');
 $tournoi->execute(['varId' =>$_GET["id"]]);
 $tournoi=$tournoi->fetchAll();
 
+$listeequipe = $pdo->prepare('SELECT Nom FROM Participer natural join Equipe WHERE ID_Tournoi =:varId');
+$listeequipe->execute(['varId' =>$_GET["id"]]);
+$equipes=$listeequipe->fetchAll();
+
 ?>
 
 <!DOCTYPE html>
@@ -50,6 +54,18 @@ $tournoi=$tournoi->fetchAll();
             echo($sql->fetch()[0]);
             ?>/<?php $nbMax = $tournoi[0]["Nb_Equipe"]; echo($nbMax);?>
         </span>
+        <!-- Affichage Equipe inscrites -->
+        <h2 class="title">Equipes Inscrites</h2>
+            <?php   
+            foreach($equipes as $equipe):
+            ?> 
+            <h3>
+                <?php echo($equipe['Nom']) ?>
+            </h3>    
+            <?php
+            endforeach;
+            ?>
+        <!-- Fin -->
 
         <h2 class="title">Matchs</h2>
         <?php
@@ -66,6 +82,7 @@ $tournoi=$tournoi->fetchAll();
             <?php
             endforeach;
             ?>
+            
 
 
     </main> 

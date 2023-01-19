@@ -23,38 +23,26 @@ $user->execute(['varId' =>$_GET["id"]]);
 <body>
     <?php include '../modules/header.php';?>
     <main class="main-dashcap">
-        <h2 class="title">Affichage de l'utilisateur</h2>
+        <h2 class="title">Modifier l'utilisateur</h2>
         <section class="dashcap-section">
             
             <section class="joueurs-liste-section">
                 <div class="joueurs-liste-div">
-                    <div class="joueur-line title">
-                        <span>Prénom</span>
-                        <span>Nom</span>
-                    </div>
+                    
+<!-- Problème foreach et form -->
                     <?php
                         $utilisateur = $pdo->prepare('SELECT Prenom, Nom from Utilisateur  where ID_User=:varId;');
                         $utilisateur->execute(['varId' =>$_GET["id"]]);
-                        $joueurs=$listejoueur->fetchAll();
+                        $joueurs=$utilisateur->fetchAll();
                         foreach($joueurs as $joueur):    
                     ?>
-
-                    
-                    <div class="joueur-line">
-                        <span><?php echo($joueur['Prenom']) ?></span>
-                        <span><?php echo($joueur['Nom']) ?></span>
-                        <div>
-                            <a onclick="openeditjoueurs()"><img src="/assets/img/edit-blanc.png"></a>
-                            <a href=""><img src="/assets/img/delete-blanc.png"></a>
-                        </div>
-                    </div>
 
                     <?php
                     endforeach;
                     ?>
-                </div>
+                    
                 <div class="ajout-joueurs">
-                    <form action="../config/config-add-joueur-admin.php?id=<?php echo ($_GET["id"])?>&new-surname=<?php  ?>">
+                    <form action="../config/config-add-joueur-admin.php?id=<?php echo ($_GET['id'])?>" method='POST' enctype='multipart/form-data'>
                         <h3>Ajouter un joueur</h3>
                         <div>
                             <label for="new-surname">Prénom</label>
@@ -67,6 +55,11 @@ $user->execute(['varId' =>$_GET["id"]]);
                         <button>Valider</button>
                     </form>
                 </div>
+                    
+
+
+                </div>
+               
             </section>
             <section id="joueur-edit">
                     <header>
