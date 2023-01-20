@@ -28,20 +28,20 @@ function mobilemenu() {
 
 // THEME MOD FUNCTION
 // not finished
-var isdark = true;
-var themeicon = document.getElementById("themebutton");
-function theme(){
-    if(isdark){
-        isdark = false;
-        console.log("dark theme OFF");
-        themeicon.innerHTML="NUIT";
+// var isdark = true;
+// var themeicon = document.getElementById("themebutton");
+// function theme(){
+//     if(isdark){
+//         isdark = false;
+//         console.log("dark theme OFF");
+//         themeicon.innerHTML="NUIT";
 
-    } else{
-        isdark = true;
-        console.log("dark theme ON");
-        themeicon.innerHTML="JOUR";
-    }
-}
+//     } else{
+//         isdark = true;
+//         console.log("dark theme ON");
+//         themeicon.innerHTML="JOUR";
+//     }
+// }
 
 
 
