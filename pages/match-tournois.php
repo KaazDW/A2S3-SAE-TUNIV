@@ -57,10 +57,10 @@ $tournoi=$tournoi->fetchAll();
         foreach($matchs as $match):
             ?>
             <h3>
-                <a href="match-tournois.php?id=<?= $match['ID_Match'] ?>">
+                <span>
                 <?php 
-                echo($match['Sport'] ." ". $match['DateDebut'] ."  ". $match['DateFin']." ".$match['Stade']." ". $match['ScoreEquipe1']." - ". $match['ScoreEquipe2']   ) ?>
-                </a>
+                echo($match['Sport'] ." ". $match['DateDebut'] ."  ". $match['DateFin']." ".$match['Stade']   ) ?>
+                </span>
             </h3>
 
             <?php
