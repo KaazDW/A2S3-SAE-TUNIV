@@ -9,6 +9,9 @@ if ($_SESSION["type"] != "administrateur") {
 
 include '../config/db.php';
 
+$listeequipe = $pdo->prepare('SELECT Nom FROM Participer natural join Equipe WHERE ID_Tournoi =:varId');
+$listeequipe->execute(['varId' =>$_GET["id"]]);
+$equipes=$listeequipe->fetchAll();
 
 
 ?>
@@ -23,7 +26,7 @@ include '../config/db.php';
 <body>
     <?php include '../modules/header.php'; ?>
     <main class="main-dashcap">
-        <h2 class="title">Modifier l'équipe</h2>
+        <h2 class="title">Modifier le tournoi</h2>
         <section class="dashcap-section">
             <div class="ajout-joueurs">
                 <p>
@@ -69,7 +72,19 @@ include '../config/db.php';
 
                     <button>Valider</button>
                 </form>
+                    <!-- input select  -->
+
             </div>
+            <h2 class="title">Equipes Inscrites</h2>
+            <?php   
+            foreach($equipes as $equipe):
+            ?> 
+            <h3>
+                <?php echo($equipe['Nom']) ?>
+            </h3>    
+            <?php
+            endforeach;
+            ?>
         </section>
         <section id="joueur-edit">
             <header>
