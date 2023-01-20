@@ -121,8 +121,6 @@ $listeEquipes = $pdo->query($sql);
                     ?>
                 </div>
         </section>
-
-
     </main>
     <?php include '../modules/footer.php'; ?>
     <script>

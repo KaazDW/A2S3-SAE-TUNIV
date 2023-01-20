@@ -23,7 +23,7 @@ include '../config/db.php';
 <body>
     <?php include '../modules/header.php'; ?>
     <main class="main-dashcap">
-        <h2 class="title">Modifier l'équipe</h2>
+        <h2 class="title">Modifier le tournoi</h2>
         <section class="dashcap-section">
             <div class="ajout-joueurs">
                 <p>
