@@ -154,6 +154,15 @@ main.main-matchtournois div.forequipediv a {
 main.main-matchtournois div.forequipediv a img {
   height: 35px;
 }
+main.main-matchtournois section.display-poule {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+main.main-matchtournois section.display-poule div.line-poule {
+  padding: 5px;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+}
 
 main.main-edit-tournois section.dashcap-section {
   display: flex;

@@ -110,21 +110,19 @@ $equipes=$listeequipe->fetchAll();
         <!-- Fin -->
 
         <h2 class="title">Matchs</h2>
-        <?php
+        <section class="display-poule">
+            <?php foreach($matchs as $match): ?>
+                <div class="line-poule">
+                    <h3>
+                        <span>
+                        <?php 
+                        echo($match['Sport'] ." ". $match['DateDebut'] ."  ". $match['DateFin']." ".$match['Stade']   ) ?>
+                        </span>
+                    </h3>
+                </div>
+            <?php endforeach; ?>
 
-        foreach($matchs as $match):
-            ?>
-            <h3>
-                <span>
-                <?php 
-                echo($match['Sport'] ." ". $match['DateDebut'] ."  ". $match['DateFin']." ".$match['Stade']   ) ?>
-                </span>
-            </h3>
-
-            <?php
-            endforeach;
-            ?>
-            
+        </section>
 
 
     </main> 
