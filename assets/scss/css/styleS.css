@@ -95,4 +95,52 @@ main.main-matchtournois div.forequipediv a img {
   height: 35px;
 }
 
+main.main-edit-tournois section.dashcap-section {
+  display: flex;
+  justify-content: center;
+  border: 1px solid var(--color-hover);
+  border-radius: 5px;
+  padding: 15px;
+  width: 70%;
+  margin: auto;
+}
+main.main-edit-tournois section.dashcap-section div.ajout-joueurs {
+  margin: 0 25px;
+}
+main.main-edit-tournois section.dashcap-section div.ajout-joueurs form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 15px 0;
+}
+main.main-edit-tournois section.dashcap-section div.ajout-joueurs form input {
+  height: 18px;
+}
+main.main-edit-tournois section.dashcap-section div.ajout-joueurs form button {
+  background-color: var(--red);
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  transition: 0.2s;
+}
+main.main-edit-tournois section.dashcap-section div.ajout-joueurs form button:hover {
+  cursor: pointer;
+  background-color: rgb(182, 45, 45);
+}
+main.main-edit-tournois section.dashcap-section div.equinscr {
+  border-left: 1px solid var(--color-hover);
+  padding-left: 25px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+main.main-edit-tournois section.dashcap-section div.equinscr p {
+  border: 1px solid var(--color-hover);
+  border-radius: 5px;
+  background-color: var(--color-hover);
+  padding: 10px;
+  margin: 5px;
+  width: 100%;
+}
+
 /*# sourceMappingURL=styleS.css.map */

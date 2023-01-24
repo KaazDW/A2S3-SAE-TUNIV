@@ -25,66 +25,52 @@ $equipes=$listeequipe->fetchAll();
 
 <body>
     <?php include '../modules/header.php'; ?>
-    <main class="main-dashcap">
+    <main class="main-edit-tournois">
         <h2 class="title">Modifier le tournoi</h2>
         <section class="dashcap-section">
             <div class="ajout-joueurs">
-                <p>
-                    <?php
-                    $listetournoi = $pdo->prepare('SELECT *  FROM Tournoi where ID_Tournoi =:varId');
+                <?php
+                $listetournoi = $pdo->prepare('SELECT *  FROM Tournoi where ID_Tournoi =:varId');
 
 
-                    $listetournoi->execute(
-                        [
+                $listetournoi->execute(
+                    [
 
-                            'varId' => $_GET["id"],
-                        ]
-                    );
-                    $tournoi = $listetournoi->fetch();
-                    ?>
-                </p>
+                        'varId' => $_GET["id"],
+                    ]
+                );
+                $tournoi = $listetournoi->fetch();
+                ?>
+                <h3>Modifier un tournoi</h3>
                 <form action="../config/config-editform-tournoi.php?id=<?php echo ($_GET["id"]) ?>" method="POST" enctype="multipart/form-data">
-                    <h3>Modifier un tournoi</h3>
-                    <div>
-                        <label for="new-sport">Sport</label>
-                        <input name="new-sport" value=<?php echo $tournoi[1] ?> id="new-sport">
-                    </div>
-                    <div>
-                        <label for="new-name">Nom</label>
-                        <input name="new-name" value=<?php echo $tournoi[2] ?> id="new-name">
-                    </div>
-                    <div>
-                        <label for="new-date-debut">Date-Début</label>
-                        <input name="new-date-debut" value=<?php echo $tournoi[3] ?> id="new-date-debut">
-                    </div>
-                    <div>
-                        <label for="new-date-fin">Date-Fin</label>
-                        <input name="new-date-fin" value=<?php echo $tournoi[4] ?> id="new-date-fin">
-                    </div>
-                    <div>
-                        <label for="new-nb-equipe">Nombres Equipes</label>
-                        <input name="new-nb-equipe" value=<?php echo $tournoi[5] ?> id="new-nb-equipe">
-                    </div>
-                    <div>
-                        <label for="new-etape">Etape</label>
-                        <input name="new-etape" value=<?php echo $tournoi[6] ?> id="new-etape">
-                    </div>
-
+                    <label for="new-sport">Sport</label>
+                    <input name="new-sport" value=<?php echo $tournoi[1] ?> id="new-sport">
+                    <label for="new-name">Nom</label>
+                    <input name="new-name" value=<?php echo $tournoi[2] ?> id="new-name">
+                    <label for="new-date-debut">Date-Début</label>
+                    <input name="new-date-debut" value=<?php echo $tournoi[3] ?> id="new-date-debut">
+                    <label for="new-date-fin">Date-Fin</label>
+                    <input name="new-date-fin" value=<?php echo $tournoi[4] ?> id="new-date-fin">
+                    <label for="new-nb-equipe">Nombres Equipes</label>
+                    <input name="new-nb-equipe" value=<?php echo $tournoi[5] ?> id="new-nb-equipe">
+                    <label for="new-etape">Etape</label>
+                    <input name="new-etape" value=<?php echo $tournoi[6] ?> id="new-etape">
+                    <span></span>
                     <button>Valider</button>
                 </form>
-                    <!-- input select  -->
-
             </div>
-            <h2 class="title">Equipes Inscrites</h2>
-            <?php   
-            foreach($equipes as $equipe):
-            ?> 
-            <h3>
-                <?php echo($equipe['Nom']) ?>
-            </h3>    
-            <?php
-            endforeach;
-            ?>
+            <div class="equinscr">
+                <h2 class="title">Equipes Inscrites</h2>
+                <?php   
+                foreach($equipes as $equipe):
+                ?> 
+                <p>
+                    <?php echo($equipe['Nom']) ?>
+                </p>    
+                <?php
+                endforeach;
+                ?>
+            </div>
         </section>
         <section id="joueur-edit">
             <header>
