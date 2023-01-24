@@ -93,7 +93,11 @@ $equipes=$listeequipe->fetchAll();
 
             <div class="forequipediv">
                 <h3>
-                    <?php echo($equipe['Nom']) ?>
+                    <?php $nomCapitaine = $pdo->prepare("SELECT Prenom, Nom FROM Utilisateurs WHERE ID_User = (SELECT ID_Capitaine FROM Equipe WHERE ID_Equipe = :varEquipe);");
+                    $nomCapitaine->execute(['varEquipe' => $equipe['ID_Equipe']]);
+                    $nomCapitaine = $nomCapitaine->fetch();
+                    
+                    echo($equipe['Nom'] . " " . $nomCapitaine["Prenom"] . " " . $nomCapitaine["Nom"]) ?>
                 </h3> 
                 <?php if ($_SESSION["type"] == "administrateur") {
                     echo (" 
