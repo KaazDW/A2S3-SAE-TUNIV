@@ -53,7 +53,6 @@ $listeTournois = $pdo->query($sql);
                     <button type='submit'>Valider</button>
                 </form>
                 </p>
-
             </div>
 
             <section class="joueurs-liste-section">
@@ -72,7 +71,6 @@ $listeTournois = $pdo->query($sql);
                     $joueurs = $listejoueur->fetchAll();
                     foreach ($joueurs as $joueur) :
                     ?>
-
 
                         <div class="joueur-line">
                             <span><?php echo ($joueur['Prenom']) ?></span>

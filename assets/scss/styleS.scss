@@ -59,4 +59,107 @@ main.user-dash-main{
         }
     }
 }
+main.main-matchtournois{
+    section.topsec{
+        border: 1px solid var(--color-hover);
+        border-radius: 5px;
+        padding: 15px;
+        margin-bottom: 15px;
+        text-align: center;
+        h2.title{
+            text-align: center;
+            font-size: 28px;
+        }
+        span.sub{
+            text-align: center;
+        }
+        div.grid{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            text-align: left;
+            border: 1px solid var(--color-hover);
+            border-radius: 5px;
+            padding: 5px;
+            width: 70%;
+            margin: auto;
+            margin-top: 15px;
+            h3{
+                color: lightgrey;
+                font-weight: 400;
+            }
+            span{
+                font-weight: 700;
+                font-size: 18px;
+                letter-spacing: 1px;
+            }
+        }
+    }
+    div.forequipediv{
+        display: grid;
+        align-items: center;
+        grid-template-columns: repeat(3, 1fr);
+        width: 30%;
+        // border: 1px solid white;
+        h3{
+            grid-column: 1/3;
+        }
+        a{
+            grid-column: 3;
+            img{
+                height: 35px;
+            }
+        }
+    }
+}
+main.main-edit-tournois{
+    section.dashcap-section{
+        display: flex;
+        justify-content: center;
+        // background-color: green;
+        border: 1px solid var(--color-hover);
+        border-radius: 5px;
+        padding: 15px;
+        width: 70%;
+        margin: auto;
 
+        div.ajout-joueurs{
+            margin: 0 25px;
+            form{
+                display: grid;
+                grid-template-columns: repeat(2,1fr);
+                // background-color: green;
+                margin: 15px 0;
+                input{
+                    height: 18px;
+                }
+                button{
+                    background-color: var(--red);
+                    border: none;
+                    border-radius: 5px;
+                    padding: 5px;
+                    transition: .2s;
+                }
+                button:hover{
+                    cursor: pointer;
+                    background-color: rgb(182, 45, 45);
+                }
+            }
+        }
+        div.equinscr{
+            border-left: 1px solid var(--color-hover);
+            padding-left: 25px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            p{
+                border: 1px solid var(--color-hover);
+                border-radius: 5px;
+                background-color: var(--color-hover);
+                padding: 10px;
+                margin: 5px;
+                width: 100%;
+            }
+        }
+    }
+}
