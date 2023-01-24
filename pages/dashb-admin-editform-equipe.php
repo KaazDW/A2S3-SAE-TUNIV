@@ -83,7 +83,7 @@ $listeEquipe->execute(['varId' =>$_GET["id"]]);
                         <button onclick="closeeditjoueurs()">Annuler</button>
                     </header>
                     <div class="content">
-                        <!-- CONTENU DU MENU D'EDITION D'UN JOUEURS -->
+                        <!-- CONTENU DU MENU D'EDITION D'UN JOUEUR -->
                     </div>
             </section>
         </section>
