@@ -58,6 +58,31 @@ $equipes=$listeequipe->fetchAll();
                             ?>/<?php $nbMax = $tournoi[0]["Nb_Equipe"]; echo($nbMax);?>
                         </span>
             </div>
+            <?php if ($_SESSION["type"] == "administrateur") {
+                    echo (" 
+                    <section class='bottom-top'>
+                        <div class='addt'>
+                            <label for='pet-select'>Ajouter une équipe</label>
+                            <div>
+                                <select name='pets' id='pet-select'>
+                                    <option value=''>--Please choose an option--</option>
+                                    <option value='dog'>Dog</option>
+                                    <option value='cat'>Cat</option>
+                                    <option value='hamster'>Hamster</option>
+                                    <option value='parrot'>Parrot</option>
+                                    <option value='spider'>Spider</option>
+                                    <option value='goldfish'>Goldfish</option>
+                                </select>
+                                <a href=''>Ajouter</a> 
+                            </div>
+                        </div>
+                        <div class='generationdiv'>
+                            <a href='../config/config-poules-tournoi.php?id=". $_GET['id'] . "'><img src='../assets/img/reload.png'>Generer les poules</a>
+                        </div>
+                    </section>    
+                    ");
+                };
+                ?> 
         </section>
 
         <!-- Affichage Equipe inscrites -->

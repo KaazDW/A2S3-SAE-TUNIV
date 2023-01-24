@@ -46,7 +46,7 @@ main.user-dash-main section.dashadmin-section div.dashadmin-topmid div.display-t
 }
 
 main.main-matchtournois section.topsec {
-  border: 1px solid var(--color-hover);
+  border: 1px solid rgb(73, 73, 73);
   border-radius: 5px;
   padding: 15px;
   margin-bottom: 15px;
@@ -63,7 +63,7 @@ main.main-matchtournois section.topsec div.grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   text-align: left;
-  border: 1px solid var(--color-hover);
+  border: 1px solid rgb(73, 73, 73);
   border-radius: 5px;
   padding: 5px;
   width: 70%;
@@ -79,6 +79,66 @@ main.main-matchtournois section.topsec div.grid span {
   font-size: 18px;
   letter-spacing: 1px;
 }
+main.main-matchtournois section.topsec section.bottom-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+main.main-matchtournois section.topsec section.bottom-top div.addt {
+  border: 1px solid rgb(73, 73, 73);
+  border-radius: 5px;
+  padding: 5px;
+}
+main.main-matchtournois section.topsec section.bottom-top div.addt div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main.main-matchtournois section.topsec section.bottom-top div.addt div select, main.main-matchtournois section.topsec section.bottom-top div.addt div option {
+  color: black;
+  padding: 4px;
+  margin: 5px;
+  width: 70%;
+  border-radius: 3px;
+}
+main.main-matchtournois section.topsec section.bottom-top div.addt div select:focus {
+  outline: none;
+}
+main.main-matchtournois section.topsec section.bottom-top div.addt div a {
+  background-color: var(--red);
+  padding: 2px 9px;
+  border: 1px solid var(--red);
+  border-radius: 3px;
+  text-transform: uppercase;
+  font-size: 14px;
+  transition: 0.2s;
+  width: 20%;
+}
+main.main-matchtournois section.topsec section.bottom-top div.addt div a:hover {
+  cursor: pointer;
+  background-color: rgb(182, 45, 45);
+  border: 1px solid rgb(182, 45, 45);
+}
+main.main-matchtournois section.topsec section.bottom-top div.generationdiv {
+  margin: 0 25px;
+}
+main.main-matchtournois section.topsec section.bottom-top div.generationdiv a {
+  background-color: var(--blue);
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  text-transform: uppercase;
+  padding-right: 15px;
+  transition: 0.2s;
+}
+main.main-matchtournois section.topsec section.bottom-top div.generationdiv a img {
+  height: 45px;
+  margin: 5px;
+}
+main.main-matchtournois section.topsec section.bottom-top div.generationdiv a:hover {
+  background-color: rgb(54, 107, 171);
+}
 main.main-matchtournois div.forequipediv {
   display: grid;
   align-items: center;
@@ -93,6 +153,54 @@ main.main-matchtournois div.forequipediv a {
 }
 main.main-matchtournois div.forequipediv a img {
   height: 35px;
+}
+
+main.main-edit-tournois section.dashcap-section {
+  display: flex;
+  justify-content: center;
+  border: 1px solid var(--color-hover);
+  border-radius: 5px;
+  padding: 15px;
+  width: 70%;
+  margin: auto;
+}
+main.main-edit-tournois section.dashcap-section div.ajout-joueurs {
+  margin: 0 25px;
+}
+main.main-edit-tournois section.dashcap-section div.ajout-joueurs form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 15px 0;
+}
+main.main-edit-tournois section.dashcap-section div.ajout-joueurs form input {
+  height: 18px;
+}
+main.main-edit-tournois section.dashcap-section div.ajout-joueurs form button {
+  background-color: var(--red);
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  transition: 0.2s;
+}
+main.main-edit-tournois section.dashcap-section div.ajout-joueurs form button:hover {
+  cursor: pointer;
+  background-color: rgb(182, 45, 45);
+}
+main.main-edit-tournois section.dashcap-section div.equinscr {
+  border-left: 1px solid var(--color-hover);
+  padding-left: 25px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+main.main-edit-tournois section.dashcap-section div.equinscr p {
+  border: 1px solid var(--color-hover);
+  border-radius: 5px;
+  background-color: var(--color-hover);
+  padding: 10px;
+  margin: 5px;
+  width: 100%;
 }
 
 /*# sourceMappingURL=styleS.css.map */
