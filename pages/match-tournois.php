@@ -1,6 +1,6 @@
 <?php session_start();
 if (empty($_SESSION["admin"])) {
-    $_SESSION["admin"] = false;
+    $_SESSION["admin"] = false; 
 }
 
 include_once '../config/db.php';
@@ -14,7 +14,7 @@ $tournoi = $pdo->prepare('SELECT * FROM Tournoi WHERE ID_Tournoi =:varId');
 $tournoi->execute(['varId' =>$_GET["id"]]);
 $tournoi=$tournoi->fetchAll();
 
-$listeequipe = $pdo->prepare('SELECT Nom FROM Participer natural join Equipe WHERE ID_Tournoi =:varId');
+$listeequipe = $pdo->prepare('SELECT Nom, ID_Equipe FROM Participer natural join Equipe WHERE ID_Tournoi =:varId');
 $listeequipe->execute(['varId' =>$_GET["id"]]);
 $equipes=$listeequipe->fetchAll();
 
@@ -90,13 +90,14 @@ $equipes=$listeequipe->fetchAll();
         <?php   
         foreach($equipes as $equipe):
         ?>
+
             <div class="forequipediv">
                 <h3>
                     <?php echo($equipe['Nom']) ?>
                 </h3> 
                 <?php if ($_SESSION["type"] == "administrateur") {
                     echo (" 
-                        <a href=''>
+                        <a  href='../config/config-delete-team-inscrit.php?id=" .  $equipe['ID_Equipe'] .  "'>
                             <img src='../assets/img/delete-blanc.png'>
                         </a>
                     ");
