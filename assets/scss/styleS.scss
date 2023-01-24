@@ -93,45 +93,67 @@ main.main-matchtournois{
                 letter-spacing: 1px;
             }
         }
-        div.addt{
-            border: 1px solid rgb(73, 73, 73);
-            width: 30%;
-            margin: auto;
-            margin-top: 15px;
-            border-radius: 5px;
-            padding: 5px;
-            div{
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                select, option{
-                    color: black;
-                    padding: 4px;
-                    margin: 5px;
-                    width: 70%;
-                    border-radius: 3px;
+        section.bottom-top{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 30px;
+            div.addt{
+                border: 1px solid rgb(73, 73, 73);
+                // margin-top: 15px;
+                border-radius: 5px;
+                padding: 5px;
+                div{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    select, option{
+                        color: black;
+                        padding: 4px;
+                        margin: 5px;
+                        width: 70%;
+                        border-radius: 3px;
+                    }
+                    select:focus{
+                        outline: none;
+                    }
+                    a{
+                        background-color: var(--red);
+                        padding: 2px 9px;
+                        border: 1px solid var(--red);
+                        border-radius: 3px;
+                        text-transform: uppercase;
+                        font-size: 14px;
+                        transition: .2s;
+                        width: 20%;
+                    }
+                    a:hover{
+                        cursor: pointer;
+                        background-color: rgb(182, 45, 45);
+                        border: 1px solid rgb(182, 45, 45);
+                    }
                 }
-                select:focus{
-                    outline: none;
-                }
+            }
+            div.generationdiv{
+                margin: 0 25px; 
                 a{
-                    background-color: var(--red);
-                    padding: 2px 9px;
-                    border: 1px solid var(--red);
-                    border-radius: 3px;
+                    background-color: var(--blue);
+                    display: flex;
+                    align-items: center;
+                    border-radius: 5px;
                     text-transform: uppercase;
-                    font-size: 14px;
+                    padding-right: 15px;
                     transition: .2s;
-                    width: 20%;
+                    img{
+                        height: 45px;
+                        margin: 5px;
+                    }
                 }
                 a:hover{
-                    cursor: pointer;
-                    background-color: rgb(182, 45, 45);
-                    border: 1px solid rgb(182, 45, 45);
+                    background-color: rgb(54, 107, 171);
                 }
-
             }
-        }
+        }        
     }
     div.forequipediv{
         display: grid;
