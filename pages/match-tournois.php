@@ -77,7 +77,7 @@ $equipes=$listeequipe->fetchAll();
                             </div>
                         </div>
                         <div class='generationdiv'>
-                            <a href=''><img src='../assets/img/reload.png'>Generer les poules</a>
+                            <a href='../config/config-poules-tournoi.php?id=". $_GET['id'] . "'><img src='../assets/img/reload.png'>Generer les poules</a>
                         </div>
                     </section>    
                     ");
