@@ -28,43 +28,60 @@ $equipes=$listeequipe->fetchAll();
 <body>
     <?php include '../modules/header.php'; ?>
     <main class="main-matchtournois">
+        <section class="topsec">
+                <h2 class="title">
+                    <?php $nom = $tournoi[0]["Nom"];
+                    echo($nom);?>
+                </h2>
+                <span class="sub"><?php $etape = $tournoi[0]["Etape"];
+                    if ($etape==0){
+                        echo("Ce tournoi n'a pas encore commencé.");
+                    }
+                    else if ($etape==1){
+                        echo("Ce tournoi est en cours.");
+                    }
+                    else {
+                        echo("Ce tournoi est terminé.");
+                    }
+                    ?>
+                </span>
+            <div class="grid">
 
-        <h2 class="title">
-            <?php $nom = $tournoi[0]["Nom"];
-            echo($nom);?>
-        </h2>
-        <span><?php $etape = $tournoi[0]["Etape"];
-        if ($etape==0){
-            echo("Ce tournoi n'a pas encore commencé.");
-        }
-        else if ($etape==1){
-            echo("Ce tournoi est en cours.");
-        }
-        else {
-            echo("Ce tournoi est terminé.");
-        }
-        ?>
-        </span>
-        <h3>Sport :</h3><span><?php $sport = $tournoi[0]["Sport"]; echo $sport;?></span>
-        <h3>Date de début :</h3><span><?php $dateDeb = $tournoi[0]["DateDebut"]; echo $dateDeb;?></span>
-        <h3>Date de fin :</h3><span><?php $dateFin = $tournoi[0]["DateFin"]; echo $dateFin;?></span>
-        <h3>Nombre d'équipes inscrites :</h3> <span>
-            <?php $sql = $pdo->prepare('SELECT COUNT(DISTINCT ID_Equipe) FROM Participer WHERE ID_Tournoi =:varId');
-            $sql->execute(['varId' =>$_GET["id"]]);
-            echo($sql->fetch()[0]);
-            ?>/<?php $nbMax = $tournoi[0]["Nb_Equipe"]; echo($nbMax);?>
-        </span>
+                    <h3>Sport :</h3><span><?php $sport = $tournoi[0]["Sport"]; echo $sport;?></span>
+                    <h3>Date de début :</h3><span><?php $dateDeb = $tournoi[0]["DateDebut"]; echo $dateDeb;?></span>
+                    <h3>Date de fin :</h3><span><?php $dateFin = $tournoi[0]["DateFin"]; echo $dateFin;?></span>
+                    <h3>Equipes inscrites :</h3> 
+                        <span>
+                            <?php $sql = $pdo->prepare('SELECT COUNT(DISTINCT ID_Equipe) FROM Participer WHERE ID_Tournoi =:varId');
+                            $sql->execute(['varId' =>$_GET["id"]]);
+                            echo($sql->fetch()[0]);
+                            ?>/<?php $nbMax = $tournoi[0]["Nb_Equipe"]; echo($nbMax);?>
+                        </span>
+            </div>
+        </section>
+
         <!-- Affichage Equipe inscrites -->
         <h2 class="title">Equipes Inscrites</h2>
-            <?php   
-            foreach($equipes as $equipe):
-            ?> 
-            <h3>
-                <?php echo($equipe['Nom']) ?>
-            </h3>    
-            <?php
-            endforeach;
-            ?>
+        <?php   
+        foreach($equipes as $equipe):
+        ?>
+            <div class="forequipediv">
+                <h3>
+                    <?php echo($equipe['Nom']) ?>
+                </h3> 
+                <?php if ($_SESSION["type"] == "administrateur") {
+                    echo (" 
+                        <a href=''>
+                            <img src='../assets/img/delete-blanc.png'>
+                        </a>
+                    ");
+                };
+                ?> 
+            </div>
+
+        <?php
+        endforeach;
+        ?>
         <!-- Fin -->
 
         <h2 class="title">Matchs</h2>
