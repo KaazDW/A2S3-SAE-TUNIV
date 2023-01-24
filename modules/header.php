@@ -34,7 +34,7 @@ if (empty($_SESSION["type"])) {
                                                                         } else {
                                                                             echo ("'/assets/img/pp-blanc.png'");
                                                                         } ?>></a></li>
-        <li><a onclick="theme()" id="themebutton">JOUR</a></li>
+        <!-- <li><a onclick="theme()" id="themebutton">JOUR</a></li> -->
     </ul>
 </header>
 
