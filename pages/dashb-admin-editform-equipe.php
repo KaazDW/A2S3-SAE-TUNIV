@@ -43,7 +43,7 @@ $listeEquipe->execute(['varId' =>$_GET["id"]]);
                         <span>Nom</span>
                     </div>
                     <?php
-                        $listejoueur = $pdo->prepare('SELECT Joueur.Prenom, Joueur.Nom from Joueur inner join Equipe on Joueur.ID_Equipe=Equipe.ID_Equipe where Equipe.ID_Equipe=:varId;');
+                        $listejoueur = $pdo->prepare('SELECT Joueur.Prenom, Joueur.Nom, Joueur.ID_Joueur, Equipe.ID_Equipe from Joueur inner join Equipe on Joueur.ID_Equipe=Equipe.ID_Equipe where Equipe.ID_Equipe=:varId;');
                         $listejoueur->execute(['varId' =>$_GET["id"]]);
                         $joueurs=$listejoueur->fetchAll();
                         foreach($joueurs as $joueur):    
@@ -55,7 +55,7 @@ $listeEquipe->execute(['varId' =>$_GET["id"]]);
                         <span><?php echo($joueur['Nom']) ?></span>
                         <div>
                             <a onclick="openeditjoueurs()"><img src="/assets/img/edit-blanc.png"></a>
-                            <a href=""><img src="/assets/img/delete-blanc.png"></a>
+                            <a href="../config/config-admin-suppr-joueur.php?id=<?= $joueur['ID_Joueur']?>&amp;id2=<?= $joueur['ID_Equipe']?>"><img src="/assets/img/delete-blanc.png"></a>
                         </div>
                     </div>
 
@@ -64,7 +64,7 @@ $listeEquipe->execute(['varId' =>$_GET["id"]]);
                     ?>
                 </div>
                 <div class="ajout-joueurs">
-                    <form action="../config/config-add-joueur-admin.php?id=<?php echo ($_GET["id"])?>&new-surname=<?php  ?>">
+                    <form action="../config/config-add-joueur-admin.php?id=<?php echo ($_GET["id"])?>" method='POST' enctype='multipart/form-data'>
                         <h3>Ajouter un joueur</h3>
                         <div>
                             <label for="new-surname">Prénom</label>
