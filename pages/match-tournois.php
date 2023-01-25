@@ -101,11 +101,9 @@ $equipes=$listeequipe->fetchAll();
                         <h3><?php echo($equipe['Nom']);?></h3>
                         <span><?php echo($nomCapitaine["Prenom"]); echo $nomCapitaine["Nom"] ?>
                         <?php if ($_SESSION["type"] == "administrateur") {
-                            echo (" 
-                                <a  href='../config/config-delete-team-inscrit.php?id=" .  $equipe['ID_Equipe'] .  "'>
+                            echo (" <a  href='../config/config-delete-team-inscrit.php?idEquipe=" .  $equipe['ID_Equipe'] . "&amp;idTournoi=" . $_GET['id'] . "'>
                                     <img src='../assets/img/delete-blanc.png'>
-                                </a>
-                            ");
+                                </a>");
                         };
                         ?> 
                     </div> 

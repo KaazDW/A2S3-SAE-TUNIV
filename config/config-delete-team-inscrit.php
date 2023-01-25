@@ -1,7 +1,4 @@
 <?php session_start();
-if (empty($_SESSION["loggedIn"])) {
-    $_SESSION["loggedIn"] = false;
-}
 
 if ($_SESSION["type"]!="administrateur") {
     header("Location: ../index.php");
@@ -9,21 +6,11 @@ if ($_SESSION["type"]!="administrateur") {
 
 include '../config/db.php';
 
+$inscrit = $pdo->prepare('DELETE from Participer where ID_Equipe = :varEquipe AND ID_Tournoi= :varTournoi');
+$inscrit->execute(['varEquipe' =>$_GET["idEquipe"], 'varTournoi' => $_GET['idTournoi']]);    
 
+$inscrit = $pdo->prepare('DELETE FROM MatchTournoi WHERE ID_Match in (SELECT ID_Match FROM MatchTournoi WHERE ID_Tournoi = :varTournoi) AND ');
 
- 
-        $inscrit = $pdo->prepare('DELETE from Participer where ID_Equipe = :varId');
-
-        
-        $inscrit->execute(
-            [
-
-                'varId' =>$_GET["id"],
-            ]
-            );
-        
-
-             header("Location: ../pages/match-tournois.php");
-        
-        
+header("Location: ../pages/match-tournois.php?id=" . $_GET['idTournoi']);
+     
 ?>
