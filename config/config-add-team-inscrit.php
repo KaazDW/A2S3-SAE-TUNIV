@@ -6,21 +6,9 @@ if ($_SESSION["type"]!="administrateur") {
 
     include 'db.php';
 
-    $name = $_POST["selectid"];
+    $id = $_POST["selectid"];
 
 
-
-
-    $idequipe = $pdo->prepare('SELECT ID_Equipe from  Equipe where Nom =:varnom');
-
-
-    $idequipe->execute(
-        [
-
-            'varnom' =>  $name,
-        ]
-    );
-    $id = $idequipe->fetch();
 
 
 // echo $id[0];
@@ -41,5 +29,5 @@ if ($_SESSION["type"]!="administrateur") {
     );
         
 
-            header("Location: /../pages/match-tournois.php");
+            header("Location: /../pages/match-tournois.php?id=" . $_GET["id"]);
     

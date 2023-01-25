@@ -64,7 +64,7 @@ $equipes=$listeequipe->fetchAll();
                         </span>
             </div>
             <?php 
-            $reponse = $pdo->query('SELECT Nom FROM Equipe;');
+            $reponse = $pdo->query('SELECT Nom, ID_Equipe FROM Equipe;');
             $reponses=$reponse->fetchAll();
 
 
@@ -78,7 +78,7 @@ $equipes=$listeequipe->fetchAll();
                                  <form name='store' id='store' method='POST' action='../config/config-add-team-inscrit.php?id=". $_GET['id'] . "'>
                                     <select name='selectid' id='selectid' >");
                                     foreach($reponses as $value):
-                                        echo "<option value=" . $value['Nom'] . ">" . $value['Nom'] . " </option>";
+                                        echo "<option value=" . $value['ID_Equipe'] . ">" . $value['Nom'] . " </option>";
                                     endforeach;
                                 echo ("</select>
                                 <button>Ajouter</button>
