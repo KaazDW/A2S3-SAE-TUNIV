@@ -17,7 +17,7 @@ if ($_SESSION["type"]!="administrateur") {
 
 
  
-    $edit = $pdo->prepare('INSERT into Participer Values(:varidt,:varide )');
+    $edit = $pdo->prepare('INSERT into Participer Values(:varidt,:varide,0)');
 
         
     $edit->execute(
