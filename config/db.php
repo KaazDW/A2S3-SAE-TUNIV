@@ -3,11 +3,11 @@
 // UTILISEZ LES COMMENTAIRES POUR APPELER LA BASE DE DONNÉE CORRESPONDANT AU SUPPORT UTILISÉ.
 
 // // DB connection JF()
-// try {
-//    $pdo = new PDO("mysql:dbname=db_tuniv;host=localhost", "root", "", [PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION]);
-// } catch (PDOException $e) {
-//     die();
-// }
+try {
+   $pdo = new PDO("mysql:dbname=db_tuniv;host=localhost", "root", "", [PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION]);
+} catch (PDOException $e) {
+    die();
+}
 
 // DB connection IUT
 // try{
