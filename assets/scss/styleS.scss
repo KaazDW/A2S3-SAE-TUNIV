@@ -155,19 +155,42 @@ main.main-matchtournois{
             }
         }        
     }
-    div.forequipediv{
-        display: grid;
-        align-items: center;
-        grid-template-columns: repeat(3, 1fr);
-        width: 30%;
-        // border: 1px solid white;
-        h3{
-            grid-column: 1/3;
-        }
-        a{
-            grid-column: 3;
-            img{
-                height: 35px;
+    section.forequipesection{
+        height: 120px;
+        overflow-y: scroll;
+        border: 1px solid rgb(73, 73, 73);
+        padding: 15px;
+        border-radius: 5px;
+        margin-bottom: 30px;
+        div.forequipediv{
+            padding-left: 55px;
+            display: grid;
+            align-items: center;
+            width: 60%;
+            margin: auto;
+            // border: 1px solid white;
+            div{
+                display: grid;
+                width: 100%;
+                grid-template-columns: repeat(5, 1fr);
+                align-items: center;
+                h3{
+                    margin: 0 5px;
+                    grid-template-columns: 1/3;
+                }
+                span{
+                    grid-template-columns: 2/4;
+                }
+                a{
+                    grid-template-columns: 5;
+                }
+            }
+            
+            a{
+                grid-column: 3;
+                img{
+                    height: 35px;
+                }
             }
         }
     }

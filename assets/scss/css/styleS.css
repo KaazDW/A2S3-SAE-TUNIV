@@ -139,19 +139,41 @@ main.main-matchtournois section.topsec section.bottom-top div.generationdiv a im
 main.main-matchtournois section.topsec section.bottom-top div.generationdiv a:hover {
   background-color: rgb(54, 107, 171);
 }
-main.main-matchtournois div.forequipediv {
+main.main-matchtournois section.forequipesection {
+  height: 120px;
+  overflow-y: scroll;
+  border: 1px solid rgb(73, 73, 73);
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 30px;
+}
+main.main-matchtournois section.forequipesection div.forequipediv {
+  padding-left: 55px;
   display: grid;
   align-items: center;
-  grid-template-columns: repeat(3, 1fr);
-  width: 30%;
+  width: 60%;
+  margin: auto;
 }
-main.main-matchtournois div.forequipediv h3 {
-  grid-column: 1/3;
+main.main-matchtournois section.forequipesection div.forequipediv div {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(5, 1fr);
+  align-items: center;
 }
-main.main-matchtournois div.forequipediv a {
+main.main-matchtournois section.forequipesection div.forequipediv div h3 {
+  margin: 0 5px;
+  grid-template-columns: 1/3;
+}
+main.main-matchtournois section.forequipesection div.forequipediv div span {
+  grid-template-columns: 2/4;
+}
+main.main-matchtournois section.forequipesection div.forequipediv div a {
+  grid-template-columns: 5;
+}
+main.main-matchtournois section.forequipesection div.forequipediv a {
   grid-column: 3;
 }
-main.main-matchtournois div.forequipediv a img {
+main.main-matchtournois section.forequipesection div.forequipediv a img {
   height: 35px;
 }
 main.main-matchtournois section.display-poule {

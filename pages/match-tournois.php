@@ -87,31 +87,35 @@ $equipes=$listeequipe->fetchAll();
 
         <!-- Affichage Equipe inscrites -->
         <h2 class="title">Equipes Inscrites</h2>
-        <?php   
-        foreach($equipes as $equipe):
-        ?>
+        <section class="forequipesection">
+            <?php   
+            foreach($equipes as $equipe):
+            ?>
 
-            <div class="forequipediv">
-                <h3>
-                    <?php $nomCapitaine = $pdo->prepare("SELECT Prenom, Nom FROM Utilisateurs WHERE ID_User = (SELECT ID_Capitaine FROM Equipe WHERE ID_Equipe = :varEquipe);");
-                    $nomCapitaine->execute(['varEquipe' => $equipe['ID_Equipe']]);
-                    $nomCapitaine = $nomCapitaine->fetch();
+                <div class="forequipediv">
+                    <div>
+                        <?php $nomCapitaine = $pdo->prepare("SELECT Prenom, Nom FROM Utilisateurs WHERE ID_User = (SELECT ID_Capitaine FROM Equipe WHERE ID_Equipe = :varEquipe);");
+                        $nomCapitaine->execute(['varEquipe' => $equipe['ID_Equipe']]);
+                        $nomCapitaine = $nomCapitaine->fetch();
+                        ?>
+                        <h3><?php echo($equipe['Nom']);?></h3>
+                        <span><?php echo($nomCapitaine["Prenom"]); echo $nomCapitaine["Nom"] ?>
+                        <?php if ($_SESSION["type"] == "administrateur") {
+                            echo (" 
+                                <a  href='../config/config-delete-team-inscrit.php?id=" .  $equipe['ID_Equipe'] .  "'>
+                                    <img src='../assets/img/delete-blanc.png'>
+                                </a>
+                            ");
+                        };
+                        ?> 
+                    </div> 
                     
-                    echo($equipe['Nom'] . " " . $nomCapitaine["Prenom"] . " " . $nomCapitaine["Nom"]) ?>
-                </h3> 
-                <?php if ($_SESSION["type"] == "administrateur") {
-                    echo (" 
-                        <a  href='../config/config-delete-team-inscrit.php?id=" .  $equipe['ID_Equipe'] .  "'>
-                            <img src='../assets/img/delete-blanc.png'>
-                        </a>
-                    ");
-                };
-                ?> 
-            </div>
+                </div>
 
-        <?php
-        endforeach;
-        ?>
+            <?php
+            endforeach;
+            ?>
+        </section>
         <!-- Fin -->
 
         <h2 class="title">Matchs</h2>
