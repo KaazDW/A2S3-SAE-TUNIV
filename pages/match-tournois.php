@@ -24,11 +24,16 @@ $equipes=$listeequipe->fetchAll();
 <html lang="fr">
 <head>
     <?php include '../modules/head.php'; ?>
+
 </head>
 <body>
     <?php include '../modules/header.php'; ?>
+
     <main class="main-matchtournois">
-        <section class="topsec">
+        <!-- <div id="loaderdiv">
+            <div class="loader"></div>  
+        </div> -->
+        <section id="el1" class="topsec">
                 <h2 class="title">
                     <?php $nom = $tournoi[0]["Nom"];
                     echo($nom);?>
@@ -86,8 +91,8 @@ $equipes=$listeequipe->fetchAll();
         </section>
 
         <!-- Affichage Equipe inscrites -->
-        <h2 class="title">Equipes Inscrites</h2>
-        <section class="forequipesection">
+        <h2 id="el2" class="title">Equipes Inscrites</h2>
+        <section id="el3" class="forequipesection">
             <?php   
             foreach($equipes as $equipe):
             ?>
@@ -98,14 +103,26 @@ $equipes=$listeequipe->fetchAll();
                         $nomCapitaine->execute(['varEquipe' => $equipe['ID_Equipe']]);
                         $nomCapitaine = $nomCapitaine->fetch();
                         ?>
-                        <h3><?php echo($equipe['Nom']);?></h3>
-                        <span><?php echo($nomCapitaine["Prenom"]); echo $nomCapitaine["Nom"] ?>
+                        <article>
+                            <h3><?php echo($equipe['Nom']);?></h3>
+                            <span><?php echo ($nomCapitaine["Prenom"]); echo " ", $nomCapitaine["Nom"] ?></span>
+                        </article>
                         <?php if ($_SESSION["type"] == "administrateur") {
+<<<<<<< HEAD
                             echo (" <a  href='../config/config-delete-team-inscrit.php?idEquipe=" .  $equipe['ID_Equipe'] . "&amp;idTournoi=" . $_GET['id'] . "'>
                                     <img src='../assets/img/delete-blanc.png'>
                                 </a>");
                         };
                         ?> 
+=======
+                                echo (" 
+                                    <a  href='../config/config-delete-team-inscrit.php?id=" .  $equipe['ID_Equipe'] .  "'>
+                                        <img src='../assets/img/delete-blanc.png'>
+                                    </a>
+                                ");
+                            };
+                            ?> 
+>>>>>>> 79c0da8e9a2991c321c2e2afe22da6657f627d89
                     </div> 
                     
                 </div>
@@ -116,8 +133,8 @@ $equipes=$listeequipe->fetchAll();
         </section>
         <!-- Fin -->
 
-        <h2 class="title">Matchs</h2>
-        <section class="display-poule">
+        <h2 id="el4" class="title">Matchs</h2>
+        <section id="el5" class="display-poule">
             <?php foreach($matchs as $match): ?>
                 <div class="line-poule">
                     <h3>
@@ -141,9 +158,30 @@ $equipes=$listeequipe->fetchAll();
             <?php endforeach; ?>
 
         </section>
-
-
     </main> 
     <?php include '../modules/footer.php'; ?>
+    <script>
+        // console.log('ahahahahaha');
+        // el1 = document.getElementById('el1')
+        // el2 = document.getElementById('el2')
+        // el3 = document.getElementById('el3')
+        // el4 = document.getElementById('el4')
+        // el5 = document.getElementById('el5')
+        // load = document.getElementById('loaderdiv')
+        // load.style.display = 'flex'
+        // el1.style.display = 'none'
+        // el2.style.display = 'none'
+        // el3.style.display = 'none'
+        // el4.style.display = 'none'
+        // el5.style.display = 'none'
+        // setTimeout(() => { 
+        //     load.style.display = 'none'
+        //     el1.style.display = 'block'
+        //     el2.style.display = 'block'
+        //     el3.style.display = 'block'
+        //     el4.style.display = 'block'
+        //     el5.style.display = 'block'
+        // }, 1000);
+    </script>
 </body>
 </html>

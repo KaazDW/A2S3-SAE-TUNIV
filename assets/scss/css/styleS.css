@@ -45,6 +45,33 @@ main.user-dash-main section.dashadmin-section div.dashadmin-topmid div.display-t
   background-color: var(--color-hover);
 }
 
+main.main-matchtournois #loaderdiv {
+  width: 75vw;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}
+main.main-matchtournois #loaderdiv .loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  animation: spin 2s linear infinite;
+  position: absolute;
+  margin-left: 150px;
+  margin: auto;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 main.main-matchtournois section.topsec {
   border: 1px solid rgb(73, 73, 73);
   border-radius: 5px;
@@ -140,35 +167,29 @@ main.main-matchtournois section.topsec section.bottom-top div.generationdiv a:ho
   background-color: rgb(54, 107, 171);
 }
 main.main-matchtournois section.forequipesection {
-  height: 120px;
-  overflow-y: scroll;
+  display: flex;
   border: 1px solid rgb(73, 73, 73);
   padding: 15px;
   border-radius: 5px;
   margin-bottom: 30px;
 }
 main.main-matchtournois section.forequipesection div.forequipediv {
-  padding-left: 55px;
-  display: grid;
   align-items: center;
-  width: 60%;
-  margin: auto;
+  width: 30%;
+  margin: 5px;
+  border: 1px solid rgb(73, 73, 73);
+  border-radius: 5px;
 }
 main.main-matchtournois section.forequipesection div.forequipediv div {
-  display: grid;
-  width: 100%;
-  grid-template-columns: repeat(5, 1fr);
-  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  padding-bottom: 15px;
 }
-main.main-matchtournois section.forequipesection div.forequipediv div h3 {
-  margin: 0 5px;
-  grid-template-columns: 1/3;
-}
-main.main-matchtournois section.forequipesection div.forequipediv div span {
-  grid-template-columns: 2/4;
-}
-main.main-matchtournois section.forequipesection div.forequipediv div a {
-  grid-template-columns: 5;
+main.main-matchtournois section.forequipesection div.forequipediv div article span {
+  color: lightgrey;
+  padding-left: 10px;
+  border-left: 1px solid rgb(73, 73, 73);
 }
 main.main-matchtournois section.forequipesection div.forequipediv a {
   grid-column: 3;
