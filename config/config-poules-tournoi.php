@@ -12,11 +12,11 @@ $listeEquipesSql->execute(['varTournoi' => $_GET["id"]]);
 $listeEquipesSql = $listeEquipesSql->fetchAll();
 
 $listeEquipes = [];
-$i = 0;
+$nbEquipes = 0;
 
 foreach ($listeEquipesSql as $equipe){
-    $listeEquipes[$i]=$equipe;
-    $i++;
+    $listeEquipes[$nbEquipes]=$equipe;
+    $nbEquipes++;
 }
 
 // On récupère les informations du tournoi
@@ -28,20 +28,19 @@ $sport = $pdo->quote($sport);
 $creerMatch = $pdo->prepare("INSERT INTO MatchTournoi VALUES(0, $sport, now(), now(), 'A_définir', 1, :varTournoi);");
 
 // On crée les matchs de poules entre toutes les équipes participantes
-for ($j=1; $j<$i; $j++) {
-    for ($k=$j+1;$k<=$i; $k++){
+for ($i=0; $i<$nbEquipes; $i++) {
+    for ($j=$i+1;$j<$nbEquipes; $j++){
         $creerMatch->execute(['varTournoi' => $_GET["id"]]);
         $numMatch = $pdo->query("SELECT max(ID_Match) FROM MatchTournoi;");
         $numMatch = $numMatch->fetch()[0];
 
-        $creerParticiper = $pdo->query("INSERT INTO Jouer VALUES($numMatch, $j,0);");
-        $creerParticiper = $pdo->query("INSERT INTO Jouer VALUES($numMatch, $k,0);");
+
+        $creerParticiper = $pdo->query("INSERT INTO Jouer VALUES($numMatch," . $listeEquipes[$i][0] . ",0);");
+        $creerParticiper = $pdo->query("INSERT INTO Jouer VALUES($numMatch," . $listeEquipes[$j][0] . ",0);");
     }
 }
 
 $changerStatut = $pdo->prepare("UPDATE Tournoi SET Etape = 1 WHERE ID_Tournoi = :varTournoi;");
 $changerStatut->execute(['varTournoi' => $_GET["id"]]);
 
-$id = $_GET["id"];
-
-header("Location: ../pages/match-tournois.php?id=$id");
+header("Location: ../pages/match-tournois.php?id=" . $_GET["id"]);

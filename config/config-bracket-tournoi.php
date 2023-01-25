@@ -16,38 +16,37 @@ while ($nbFinalistes*2<$nbEquipes){
     $nbFinalistes = $nbFinalistes*2;
 }
 
-// Construction du tableau des équipes présentes dans le bracket
-
-$listeFinalistes = $pdo->prepare("SELECT ID_Equipe, Score FROM Participer WHERE ID_Tournoi = :varId ORDER BY Score DESC");
+// Création du tableau des équipes finalistes
+$listeFinalistes = $pdo->prepare("SELECT ID_Equipe FROM Participer WHERE ID_Tournoi = :varId ORDER BY Score DESC");
 $listeFinalistes->execute(['varId' => $_GET['id']]);
 $listeFinalistes = $listeFinalistes->fetchAll();
 
 $tabFinalistes = [];
 
-$scoreTotal = $pdo->prepare("SELECT sum(Score) FROM Jouer WHERE ID_Equipe = :varEquipe AND ID_Match IN (SELECT ID_Match FROM MatchTournoi WHERE ID_Tournoi = :varTournoi);");
-
 for ($i=0; $i<$nbFinalistes; $i++){
-    if ($listeFinalistes[$i]["Score"]>$listeFinalistes[$i+1]["Score"]){
-        $tabFinalistes[$i] = $listeFinalistes[$i];
-    }
-    else {
-        $scoreTotal->execute(['varTournoi' => $_GET['id'], 'varEquipe' => $listeFinalistes[$i]["ID_Equipe"]]);
-        $scoreT1 = $scoreTotal->fetch()[0];
-        var_dump($scoreT1);
-        $scoreTotal->execute(['varTournoi' => $_GET['id'], 'varEquipe' => $listeFinalistes[$i+1]["ID_Equipe"]]);
-        $scoreT2 = $scoreTotal->fetch()[0];
-        var_dump($scoreT1);
+    $tabFinalistes[$i] = $listeFinalistes[$i];
+}
 
-        if ($scoreT1>=$scoreT2){
-            $tabFinalistes[$i] = $listeFinalistes[$i];
-        }
-        else {
-            $tabFinalistes[$i] = $listeFinalistes[$i+1]["ID_Equipe"];
-            $listeFinalistes[$i+1]=$listeFinalistes[$i]["ID_Equipe"];
-        }
+//Création des matchs
+$sport = $pdo->prepare("SELECT Sport FROM Tournoi WHERE ID_Tournoi = :varTournoi;");
+$sport->execute(['varTournoi' => $_GET["id"]]);
+$sport = $sport->fetch()[0];
+$sport = $pdo->quote($sport);
+$creerMatch = $pdo->prepare("INSERT INTO MatchTournoi VALUES(0, $sport, now(), now(), 'A_définir', 1, :varTournoi);");
+
+for ($i=0; $i<$nbFinalistes; $i++) {
+    for ($j=$i+1;$j<$nbFinalistes; $j++){
+        $creerMatch->execute(['varTournoi' => $_GET["id"]]);
+        $numMatch = $pdo->query("SELECT max(ID_Match) FROM MatchTournoi;");
+        $numMatch = $numMatch->fetch()[0];
+
+
+        $creerParticiper = $pdo->query("INSERT INTO Jouer VALUES($numMatch," . $tabFinalistes[$i][0] . ",0);");
+        $creerParticiper = $pdo->query("INSERT INTO Jouer VALUES($numMatch," . $tabFinalistes[$j][0] . ",0);");
     }
 }
 
-var_dump($tabFinalistes);
+$changerStatut = $pdo->prepare("UPDATE Tournoi SET Etape = 1 WHERE ID_Tournoi = :varTournoi;");
+$changerStatut->execute(['varTournoi' => $_GET["id"]]);
 
-// 
+header("Location: ../pages/match-tournois.php?id=" . $_GET["id"]);
