@@ -54,7 +54,6 @@ $listeEquipe->execute(['varId' =>$_GET["id"]]);
                         <span><?php echo($joueur['Prenom']) ?></span>
                         <span><?php echo($joueur['Nom']) ?></span>
                         <div>
-                            <a onclick="openeditjoueurs()"><img src="/assets/img/edit-blanc.png"></a>
                             <a href="../config/config-admin-suppr-joueur.php?id=<?= $joueur['ID_Joueur']?>&amp;id2=<?= $joueur['ID_Equipe']?>"><img src="/assets/img/delete-blanc.png"></a>
                         </div>
                     </div>
@@ -77,14 +76,6 @@ $listeEquipe->execute(['varId' =>$_GET["id"]]);
                         <button>Valider</button>
                     </form>
                 </div>
-            </section>
-            <section id="joueur-edit">
-                    <header>
-                        <button onclick="closeeditjoueurs()">Annuler</button>
-                    </header>
-                    <div class="content">
-                        <!-- CONTENU DU MENU D'EDITION D'UN JOUEUR -->
-                    </div>
             </section>
         </section>
     </main>
