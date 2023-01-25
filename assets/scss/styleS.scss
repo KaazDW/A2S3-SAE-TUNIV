@@ -252,15 +252,40 @@ main.main-matchtournois{
     section.display-poule{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        div.line-poule:nth-child(2n){
-            // background-color: red;
-        }
         div.line-poule{
-            padding: 5px;
-            border-top: 1px solid white;
-            border-bottom: 1px solid white;
+            padding: 10px;
+            border: 1px solid white;
+            border-radius: 5px;
+            margin: 5px;
+            // width: 80%;
+            h3{
+                text-align: center;
+                // border: 1px solid var(--red);
+                border-radius: 5px;
+                background-color: var(--color-hover);
+                padding: 3px;
+                span{
+                    background-color: var(--red);
+                    border-radius: 5px;
+                    margin: 5px 10px;
+                }
+            }
+            p{
+                display: flex;
+                width: 40%;
+                margin: auto;
+                justify-content: space-between;
+                span{
+                    color: lightgrey;
+                }
+            }
+            p:nth-child(4){
+                span{
+                    font-weight: 500;
+                }
+                font-weight: 700;
+            }
         }
-
     }
 }
 main.main-edit-tournois{

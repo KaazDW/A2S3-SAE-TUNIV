@@ -202,9 +202,36 @@ main.main-matchtournois section.display-poule {
   grid-template-columns: repeat(2, 1fr);
 }
 main.main-matchtournois section.display-poule div.line-poule {
-  padding: 5px;
-  border-top: 1px solid white;
-  border-bottom: 1px solid white;
+  padding: 10px;
+  border: 1px solid white;
+  border-radius: 5px;
+  margin: 5px;
+}
+main.main-matchtournois section.display-poule div.line-poule h3 {
+  text-align: center;
+  border-radius: 5px;
+  background-color: var(--color-hover);
+  padding: 3px;
+}
+main.main-matchtournois section.display-poule div.line-poule h3 span {
+  background-color: var(--red);
+  border-radius: 5px;
+  margin: 5px 10px;
+}
+main.main-matchtournois section.display-poule div.line-poule p {
+  display: flex;
+  width: 40%;
+  margin: auto;
+  justify-content: space-between;
+}
+main.main-matchtournois section.display-poule div.line-poule p span {
+  color: lightgrey;
+}
+main.main-matchtournois section.display-poule div.line-poule p:nth-child(4) {
+  font-weight: 700;
+}
+main.main-matchtournois section.display-poule div.line-poule p:nth-child(4) span {
+  font-weight: 500;
 }
 
 main.main-edit-tournois section.dashcap-section {

@@ -24,11 +24,9 @@ $equipes=$listeequipe->fetchAll();
 <html lang="fr">
 <head>
     <?php include '../modules/head.php'; ?>
-
 </head>
 <body>
     <?php include '../modules/header.php'; ?>
-
     <main class="main-matchtournois">
         <!-- <div id="loaderdiv">
             <div class="loader"></div>  
@@ -133,23 +131,26 @@ $equipes=$listeequipe->fetchAll();
         <section id="el5" class="display-poule">
             <?php foreach($matchs as $match): ?>
                 <div class="line-poule">
-                    <h3>
-                        <span>
-                        <?php $idEquipes = $pdo->prepare("SELECT ID_Equipe FROM Jouer WHERE ID_Match= :varMatch;");
-                        $idEquipes->execute(['varMatch' => $match['ID_Match']]);
-                        $idEquipes = $idEquipes->fetchAll();
+                    <?php $idEquipes = $pdo->prepare("SELECT ID_Equipe FROM Jouer WHERE ID_Match= :varMatch;");
+                    $idEquipes->execute(['varMatch' => $match['ID_Match']]);
+                    $idEquipes = $idEquipes->fetchAll();
 
-                        $nomsEquipes = $pdo->prepare("SELECT Nom FROM Equipe WHERE ID_Equipe = :varEquipe");
+                    $nomsEquipes = $pdo->prepare("SELECT Nom FROM Equipe WHERE ID_Equipe = :varEquipe");
 
-                        $nomsEquipes->execute(['varEquipe' => $idEquipes[0][0]]);
-                        $nomEquipe1 = $nomsEquipes->fetch();
-                        
-                        $nomsEquipes->execute(['varEquipe' => $idEquipes[1][0]]);
-                        $nomEquipe2 = $nomsEquipes->fetch();
-
-                        echo($nomEquipe1[0] ." contre ". $nomEquipe2[0] . " Début à " . $match['DateDebut'] ." Fin à ". $match['DateFin']." Stade : ".$match['Stade']   ) ?>
-                        </span>
-                    </h3>
+                    $nomsEquipes->execute(['varEquipe' => $idEquipes[0][0]]);
+                    $nomEquipe1 = $nomsEquipes->fetch();
+                    
+                    $nomsEquipes->execute(['varEquipe' => $idEquipes[1][0]]);
+                    $nomEquipe2 = $nomsEquipes->fetch();
+                ?>
+                <h3>
+                    <?php echo $nomEquipe1[0]; ?><span> VS </span> <?php echo $nomEquipe2[0];?>
+                </h3>
+                <p><?php echo "<span>> Fin : </span>" . $match['DateDebut'];?></p>
+                <p><?php echo "<span>> Debut : </span>" . $match['DateFin'];?></p>
+                <p><?php echo "<span>> Stade : </span>" . $match['Stade'];?></p>
+                <?php
+                    // echo($nomEquipe1[0] ." contre ". $nomEquipe2[0] . " Début à " . $match['DateDebut'] ." Fin à ". $match['DateFin']." Stade : ".$match['Stade']   ) ?>
                 </div>
             <?php endforeach; ?>
 
