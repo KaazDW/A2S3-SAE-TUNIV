@@ -29,6 +29,7 @@ $equipes=$listeequipe->fetchAll();
         <h2 class="title">Modifier le tournoi</h2>
         <section class="dashcap-section">
             <div class="ajout-joueurs">
+                <pre>
                 <?php
                 $listetournoi = $pdo->prepare('SELECT *  FROM Tournoi where ID_Tournoi =:varId');
 
@@ -40,21 +41,23 @@ $equipes=$listeequipe->fetchAll();
                     ]
                 );
                 $tournoi = $listetournoi->fetch();
+
                 ?>
+                </pre>
                 <h3>Modifier un tournoi</h3>
                 <form action="../config/config-editform-tournoi.php?id=<?php echo ($_GET["id"]) ?>" method="POST" enctype="multipart/form-data">
                     <label for="new-sport">Sport</label>
-                    <input name="new-sport" value=<?php echo $tournoi[1] ?> id="new-sport">
+                    <input name="new-sport" value="<?php echo $tournoi['Sport'] ?>" id="new-sport">
                     <label for="new-name">Nom</label>
-                    <input name="new-name" value=<?php echo $tournoi[2] ?> id="new-name">
+                    <input name="new-name" value="<?php echo $tournoi['Nom'] ?>" id="new-name">
                     <label for="new-date-debut">Date-Début</label>
-                    <input name="new-date-debut" value=<?php echo $tournoi[3] ?> id="new-date-debut">
+                    <input name="new-date-debut" value="<?php echo $tournoi['DateDebut'] ?>" id="new-date-debut">
                     <label for="new-date-fin">Date-Fin</label>
-                    <input name="new-date-fin" value=<?php echo $tournoi[4] ?> id="new-date-fin">
+                    <input name="new-date-fin" value="<?php echo $tournoi['DateFin'] ?>" id="new-date-fin">
                     <label for="new-nb-equipe">Nombres Equipes</label>
-                    <input name="new-nb-equipe" value=<?php echo $tournoi[5] ?> id="new-nb-equipe">
+                    <input name="new-nb-equipe" value="<?php echo $tournoi['Nb_Equipe'] ?>" id="new-nb-equipe">
                     <label for="new-etape">Etape</label>
-                    <input name="new-etape" value=<?php echo $tournoi[6] ?> id="new-etape">
+                    <input name="new-etape" value="<?php echo $tournoi['Etape'] ?>" id="new-etape">
                     <span></span>
                     <button>Valider</button>
                 </form>
