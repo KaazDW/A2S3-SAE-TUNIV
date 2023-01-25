@@ -25,29 +25,40 @@ $listeFinalistes = $listeFinalistes->fetchAll();
 $tabFinalistes = [];
 
 $scoreTotal = $pdo->prepare("SELECT sum(Score) FROM Jouer WHERE ID_Equipe = :varEquipe AND ID_Match IN (SELECT ID_Match FROM MatchTournoi WHERE ID_Tournoi = :varTournoi);");
+$tabScores = [];
+$index = 0;
+
+foreach ($listeFinalistes as $finaliste){
+    $scoreTotal->execute(['varTournoi' => $_GET['id'], 'varEquipe' => $finaliste[0]]);
+    $scoreTotal = $scoreTotal->fetch()[0];
+    $tabScores[$index] = $scoreTotal;
+    $index++;
+}
+
+var_dump($tabScores);
 
 for ($i=0; $i<$nbFinalistes; $i++){
-    if ($listeFinalistes[$i]["Score"]>$listeFinalistes[$i+1]["Score"]){
+    if ($listeFinalistes[$i][1]>$listeFinalistes[$i+1][1]){
         $tabFinalistes[$i] = $listeFinalistes[$i];
     }
     else {
-        $scoreTotal->execute(['varTournoi' => $_GET['id'], 'varEquipe' => $listeFinalistes[$i]["ID_Equipe"]]);
+        $scoreTotal->execute(['varTournoi' => $_GET['id'], 'varEquipe' => $listeFinalistes[$i][0]]);
         $scoreT1 = $scoreTotal->fetch()[0];
-        var_dump($scoreT1);
-        $scoreTotal->execute(['varTournoi' => $_GET['id'], 'varEquipe' => $listeFinalistes[$i+1]["ID_Equipe"]]);
+        $scoreTotal->execute(['varTournoi' => $_GET['id'], 'varEquipe' => $listeFinalistes[$i+1][0]]);
         $scoreT2 = $scoreTotal->fetch()[0];
-        var_dump($scoreT1);
 
         if ($scoreT1>=$scoreT2){
+            echo("T1>=T2");
             $tabFinalistes[$i] = $listeFinalistes[$i];
         }
         else {
-            $tabFinalistes[$i] = $listeFinalistes[$i+1]["ID_Equipe"];
-            $listeFinalistes[$i+1]=$listeFinalistes[$i]["ID_Equipe"];
+            echo("T1<T2");
+            $tabFinalistes[$i] = $listeFinalistes[$i+1][0];
+            $listeFinalistes[$i+1]=$listeFinalistes[$i][0];
         }
     }
 }
-
+echo("Tableau final : \n");
 var_dump($tabFinalistes);
 
 // 
