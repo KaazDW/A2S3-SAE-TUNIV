@@ -98,16 +98,18 @@ $equipes=$listeequipe->fetchAll();
                         $nomCapitaine->execute(['varEquipe' => $equipe['ID_Equipe']]);
                         $nomCapitaine = $nomCapitaine->fetch();
                         ?>
-                        <h3><?php echo($equipe['Nom']);?></h3>
-                        <span><?php echo($nomCapitaine["Prenom"]); echo $nomCapitaine["Nom"] ?>
+                        <article>
+                            <h3><?php echo($equipe['Nom']);?></h3>
+                            <span><?php echo ($nomCapitaine["Prenom"]); echo " ", $nomCapitaine["Nom"] ?></span>
+                        </article>
                         <?php if ($_SESSION["type"] == "administrateur") {
-                            echo (" 
-                                <a  href='../config/config-delete-team-inscrit.php?id=" .  $equipe['ID_Equipe'] .  "'>
-                                    <img src='../assets/img/delete-blanc.png'>
-                                </a>
-                            ");
-                        };
-                        ?> 
+                                echo (" 
+                                    <a  href='../config/config-delete-team-inscrit.php?id=" .  $equipe['ID_Equipe'] .  "'>
+                                        <img src='../assets/img/delete-blanc.png'>
+                                    </a>
+                                ");
+                            };
+                            ?> 
                     </div> 
                     
                 </div>
