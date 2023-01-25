@@ -81,7 +81,6 @@ $equipes=$listeequipe->fetchAll();
                                 echo ("</select>
                                 <button>Ajouter</button>
                                </form>
-
                             </div>
                         </div>
                         <div class='generationdiv'>
