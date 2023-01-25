@@ -57,4 +57,11 @@ if ($_SESSION["type"]=="administrateur") {
                     <li><a href='/pages/dashb-cap.php'>MON EQUIPE</a></li>
                 </ul>
             </section>");
+} else if(($_SESSION["type"]=="arbitre")){
+    echo ("    
+    <section class='admin-header'>
+                <ul>
+                    <li><a href='/pages/dashb-arbitre.php'>MATCH</a></li>
+                </ul>
+            </section>");
 } 

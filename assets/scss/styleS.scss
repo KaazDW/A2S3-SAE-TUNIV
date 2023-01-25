@@ -143,7 +143,7 @@ main.main-matchtournois{
                     select:focus{
                         outline: none;
                     }
-                    a{
+                    button{
                         background-color: var(--red);
                         padding: 2px 9px;
                         border: 1px solid var(--red);
@@ -151,9 +151,9 @@ main.main-matchtournois{
                         text-transform: uppercase;
                         font-size: 14px;
                         transition: .2s;
-                        width: 20%;
+                        // width: 20%;
                     }
-                    a:hover{
+                    button:hover{
                         cursor: pointer;
                         background-color: rgb(182, 45, 45);
                         border: 1px solid rgb(182, 45, 45);
@@ -209,38 +209,7 @@ main.main-matchtournois{
                         border-left: 1px solid rgb(73, 73, 73);
                     }
                 }
-                // display: grid;
-                // width: 100%;
-                // grid-template-columns: repeat(5, 1fr);
-                // align-items: center;
-                // margin: 5px;
-                // h3{
-                //     grid-column: 1/3;
-                // }
-                // span{
-                //     margin-left: 15px;
-                //     display: flex;
-                //     width: 150px;
-                //     grid-column: 3/5;
-                // }
-                // span, a{
-                //     align-items: center;
-                //     display: flex;
-                // }
-                // a{
-                //     padding-left: 15px;
-                // }
-                //         margin: 0 5px;
-            //         grid-template-columns: 1/3;
-            //     }
-            //     span{
-            //         grid-template-columns: 2/4;
-            //     }
-            //     a{
-            //         grid-template-columns: 5;
-            //     }
             }
-            
             a{
                 grid-column: 3;
                 img{
@@ -283,7 +252,7 @@ main.main-matchtournois{
                 span{
                     font-weight: 500;
                 }
-                font-weight: 700;
+                font-weight: 700; 
             }
         }
     }

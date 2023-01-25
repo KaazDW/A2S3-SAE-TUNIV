@@ -31,7 +31,7 @@ $equipes=$listeequipe->fetchAll();
         <!-- <div id="loaderdiv">
             <div class="loader"></div>  
         </div> -->
-        <section id="el1" class="topsec">
+        <section class="topsec">
                 <h2 class="title">
                     <?php $nom = $tournoi[0]["Nom"];
                     echo($nom);?>
@@ -81,7 +81,6 @@ $equipes=$listeequipe->fetchAll();
                                 echo ("</select>
                                 <button>Ajouter</button>
                                </form>
-
                             </div>
                         </div>
                         <div class='generationdiv'>
@@ -95,12 +94,11 @@ $equipes=$listeequipe->fetchAll();
         </section>
 
         <!-- Affichage Equipe inscrites -->
-        <h2 id="el2" class="title">Equipes Inscrites</h2>
-        <section id="el3" class="forequipesection">
+        <h2 class="title">Equipes Inscrites</h2>
+        <section class="forequipesection">
             <?php   
             foreach($equipes as $equipe):
             ?>
-
                 <div class="forequipediv">
                     <div>
                         <?php $nomCapitaine = $pdo->prepare("SELECT Prenom, Nom FROM Utilisateurs WHERE ID_User = (SELECT ID_Capitaine FROM Equipe WHERE ID_Equipe = :varEquipe);");
@@ -118,9 +116,7 @@ $equipes=$listeequipe->fetchAll();
                         };
                         ?> 
                     </div> 
-                    
                 </div>
-
             <?php
             endforeach;
             ?>
