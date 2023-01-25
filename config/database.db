@@ -85,9 +85,9 @@ CREATE TABLE IF NOT EXISTS Annonces (
  DELIMITER ;
  
  -- Tests
-INSERT INTO Utilisateurs VALUES(0,"admin","admin","nom","prenom","email",0);
-INSERT INTO Utilisateurs VALUES(0,"arbitre","arbitre","nom","prenom","email",1);
-INSERT INTO Utilisateurs VALUES(0,"capitaine","capitaine","nom","prenom","email",2);
+INSERT INTO Utilisateurs VALUES(0,"admin","admin","nomAdmin","prenomAdmin","email",0);
+INSERT INTO Utilisateurs VALUES(0,"arbitre","arbitre","nomArbitre","prenomArbitre","email",1);
+INSERT INTO Utilisateurs VALUES(0,"capitaine","capitaine","nomCapitaine","prenomCapitaine","email",2);
 
 INSERT INTO Tournoi VALUES(0,"Volley","Championnat de volley 2022","2023-12-24 08:30:00","2023-12-31 18:30:00",12,0);
 INSERT INTO Tournoi VALUES(0,"Football","Coupe Du Monde 2022","2022-11-20 20:00:00","2022-12-18 20:30:00",12,0);
