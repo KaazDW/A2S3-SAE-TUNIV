@@ -120,8 +120,19 @@ $equipes=$listeequipe->fetchAll();
                 <div class="line-poule">
                     <h3>
                         <span>
-                        <?php 
-                        echo($match['Sport'] ." ". $match['DateDebut'] ."  ". $match['DateFin']." ".$match['Stade']   ) ?>
+                        <?php $idEquipes = $pdo->prepare("SELECT ID_Equipe FROM Jouer WHERE ID_Match= :varMatch;");
+                        $idEquipes->execute(['varMatch' => $match['ID_Match']]);
+                        $idEquipes = $idEquipes->fetchAll();
+
+                        $nomsEquipes = $pdo->prepare("SELECT Nom FROM Equipe WHERE ID_Equipe = :varEquipe");
+
+                        $nomsEquipes->execute(['varEquipe' => $idEquipes[0][0]]);
+                        $nomEquipe1 = $nomsEquipes->fetch();
+                        
+                        $nomsEquipes->execute(['varEquipe' => $idEquipes[1][0]]);
+                        $nomEquipe2 = $nomsEquipes->fetch();
+
+                        echo($nomEquipe1[0] ." contre ". $nomEquipe2[0] . " Début à " . $match['DateDebut'] ." Fin à ". $match['DateFin']." Stade : ".$match['Stade']   ) ?>
                         </span>
                     </h3>
                 </div>
