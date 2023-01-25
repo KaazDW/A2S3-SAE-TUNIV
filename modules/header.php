@@ -61,7 +61,7 @@ if ($_SESSION["type"]=="administrateur") {
     echo ("    
     <section class='admin-header'>
                 <ul>
-                    <li><a href='/pages/dashb-cap.php'>MATCH</a></li>
+                    <li><a href='/pages/dashb-arbitre.php'>MATCH</a></li>
                 </ul>
             </section>");
 } 
