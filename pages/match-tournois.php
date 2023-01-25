@@ -63,30 +63,36 @@ $equipes=$listeequipe->fetchAll();
                             ?>/<?php $nbMax = $tournoi[0]["Nb_Equipe"]; echo($nbMax);?>
                         </span>
             </div>
-            <?php if ($_SESSION["type"] == "administrateur") {
+            <?php 
+            $reponse = $pdo->query('SELECT Nom, ID_Equipe FROM Equipe;');
+            $reponses=$reponse->fetchAll();
+
+
+                if ($_SESSION["type"] == "administrateur") {
+
                     echo (" 
                     <section class='bottom-top'>
                         <div class='addt'>
                             <label for='pet-select'>Ajouter une équipe</label>
                             <div>
-                                <select name='pets' id='pet-select'>
-                                    <option value=''>--Please choose an option--</option>
-                                    <option value='dog'>Dog</option>
-                                    <option value='cat'>Cat</option>
-                                    <option value='hamster'>Hamster</option>
-                                    <option value='parrot'>Parrot</option>
-                                    <option value='spider'>Spider</option>
-                                    <option value='goldfish'>Goldfish</option>
-                                </select>
-                                <a href=''>Ajouter</a> 
+                                 <form name='store' id='store' method='POST' action='../config/config-add-team-inscrit.php?id=". $_GET['id'] . "'>
+                                    <select name='selectid' id='selectid' >");
+                                    foreach($reponses as $value):
+                                        echo "<option value=" . $value['ID_Equipe'] . ">" . $value['Nom'] . " </option>";
+                                    endforeach;
+                                echo ("</select>
+                                <button>Ajouter</button>
+                               </form>
+
                             </div>
                         </div>
                         <div class='generationdiv'>
                             <a href='../config/config-poules-tournoi.php?id=". $_GET['id'] . "'><img src='../assets/img/reload.png'>Generer les poules</a>
                         </div>
                     </section>    
-                    ");
+                        ");
                 };
+                
                 ?> 
         </section>
 
