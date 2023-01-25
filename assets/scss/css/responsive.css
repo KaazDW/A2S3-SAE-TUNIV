@@ -153,6 +153,29 @@
   body main.main-admin-annonce-form section.index-actu div.annonce-card-admin a.edit {
     margin: 0;
   }
+  body main.main-matchtournois section.topsec div.grid {
+    text-align: center;
+    grid-template-columns: none;
+  }
+  body main.main-matchtournois section.topsec section.bottom-top {
+    flex-direction: column;
+  }
+  body main.main-matchtournois section.topsec section.bottom-top div.generationdiv {
+    margin-top: 15px;
+  }
+  body main.main-matchtournois section.display-poule {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  body main.main-matchtournois section.display-poule div.line-poule p {
+    width: 100%;
+  }
+  body main.main-matchtournois section.forequipesection {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  body main.main-matchtournois section.forequipesection div.forequipediv {
+    width: 100%;
+  }
 }
 
 /*# sourceMappingURL=responsive.css.map */
