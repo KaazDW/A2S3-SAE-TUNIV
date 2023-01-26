@@ -6,10 +6,32 @@ if ($_SESSION["type"] != "administrateur") {
 
 include 'db.php';
 
-$nom = $_POST["name"];
-$sport = $_POST["sport"];
-$nom_cap = $_POST["name-capitaine"];
-$prenom_cap = $_POST["firstname-capitaine"];
+
+if (empty($_POST["name"])){
+    $_SESSION["equipeErreur"] = "Nom de l'équipe manquant";
+    header("Location: ../pages/dashb-admin.php");
+}
+$nom = $pdo->quote($_POST["name"]);
+
+if (empty($_POST["sport"])){
+    $_SESSION["equipeErreur"] = "Sport de l'équipe manquant";
+    header("Location: ../pages/dashb-admin.php");
+}
+$sport = $pdo->quote($_POST["sport"]);
+
+
+if (empty($_POST["name-capitaine"])){
+    $_SESSION["equipeErreur"] = "Nom du capitaine manquant";
+    header("Location: ../pages/dashb-admin.php");
+}
+$nom_cap = $pdo->quote($_POST["name-capitaine"]);
+
+if (empty($_POST["firstname-capitaine"])){
+    $_SESSION["equipeErreur"] = "Prenom du capitaine manquant";
+    header("Location: ../pages/dashb-admin.php");
+}
+$prenom = $pdo->quote($_POST["firstname-capitaine"]);
+
 
 
 $users = $pdo->prepare('SELECT ID_User from Utilisateurs where Nom =:varnom and Prenom=:varprenom');
@@ -18,7 +40,7 @@ $users = $pdo->prepare('SELECT ID_User from Utilisateurs where Nom =:varnom and 
 $users->execute(
     [
         'varnom' => $nom_cap,
-        'varprenom' => $prenom_cap,
+        'varprenom' => $prenom,
     ]
 );
 $user = $users->fetch();
@@ -26,21 +48,23 @@ $user = $users->fetch();
 if($user){
     $id_user = $user[0];
 } else{
-    $id_user = NULL;
+    $id_user = 1;
 }
 
+$id_user=$pdo->quote($id_user);
 
-$add = $pdo->prepare('INSERT into Equipe Values(0,:varnom, :varsport, :varid);');
 
-$add->execute(
-    [
-        'varnom' => $nom,
-        'varsport' => $sport,
-        'varid' => $id_user
 
-    ]
-);
 
+$sql = "INSERT INTO Equipe VALUES (0, $nom, $sport, $id_user);";
+$res = $pdo->exec($sql);
+if (!$res) {
+    $_SESSION["equipeErreur"] = "La création de l'équipe a échoué, veuillez réessayer. Si l\'erreur persiste, contactez le support.";
+    header("Location: ../pages/dashb-admin.php");
+} else {
+    $sql = "SELECT max(ID_Tournoi) FROM Tournoi;";
+    $id = $pdo->query(($sql))->fetch()[0];
+}
 
 header("Location: /../pages/dashb-admin.php");
     

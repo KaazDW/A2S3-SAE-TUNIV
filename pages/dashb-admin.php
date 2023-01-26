@@ -29,13 +29,19 @@ $listeEquipes = $pdo->query($sql);
 <body>
     <?php include '../modules/header.php'; ?>
     <main class="real-main-dashboard">
-        <h2 class="title">Ajouter une équipe</h2>
+        <h2 class="title">DASHBOARD Administrateur</h2>
         <?php 
         if (!empty($_SESSION["tournoiErreur"])){
             echo("<div>" . $_SESSION["tournoiErreur"] . "</div>");
             unset($_SESSION["tournoiErreur"]);
         }
+        
+        if (!empty($_SESSION["equipeErreur"])){
+            echo("<div>" . $_SESSION["equipeErreur"] . "</div>");
+            unset($_SESSION["equipeErreur"]);
+        }
         ?>
+        
         <section class="dashadmin-section">
             <div class="form-tournois ffield">
                 <h3>Créer un nouveau tournoi</h3>
