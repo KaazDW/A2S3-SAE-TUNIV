@@ -65,7 +65,7 @@ $scoreEquipe2 = $scoresEquipes->fetch()[0];
 
 <body>
     <?php include '../modules/header.php'; ?>
-    <main>
+    <main class="main-dash-editform-match">
         <h2 class="title">Modifier le match <?php echo ($nomEquipe1 . " VS " . $nomEquipe2)?></h2>
         <section>
             <div>
@@ -85,6 +85,7 @@ $scoreEquipe2 = $scoresEquipes->fetch()[0];
                     
                     <label for="new-score-equipe2">Score <?php echo $nomEquipe2 ?></label>
                     <input name="new-score-equipe2" value="<?php echo $scoreEquipe2 ?>" id="new-score-equipe2">
+                    <p></p>
                     <button>Valider</button>
                 </form>
             </div>
@@ -93,14 +94,10 @@ $scoreEquipe2 = $scoresEquipes->fetch()[0];
 
                 if ($_SESSION["type"] == "administrateur") {
                     echo "<h3>Modifier l'arbitre du match</h3>";
-                    echo "<div>";
-                }
                     $reponse = $pdo->query('SELECT Prenom, Nom, ID_User FROM Utilisateurs WHERE Type_user<=1;');
                     $reponses=$reponse->fetchAll();
 
-                if ($_SESSION["type"] == "administrateur") {
                     echo (" 
-                    <section class='bottom-top'>
                         <div class='addt'>
                             <label for='pet-select'>Modifier l'arbitre du match</label>
                             <div>
@@ -109,20 +106,13 @@ $scoreEquipe2 = $scoresEquipes->fetch()[0];
                                     foreach($reponses as $value):
                                         echo "<option value=" . $value['ID_User'] . ">" . $value['Prenom'] . " " . $value['Nom'] . " </option>";
                                     endforeach;
-                                echo ("</select>
-                                <button>Ajouter</button>
-                            </form>
-
+                                    echo ("</select>
+                                    <button>Ajouter</button>
+                                </form>
                             </div>
                         </div>
-                    </section>    
                         ");
-                };
-
-                if ($_SESSION["type"] == "administrateur") {
-                    echo "</div>";
-                }
-                    
+                };  
             ?> 
 
         </section>
