@@ -43,6 +43,9 @@ $equipes=$listeequipe->fetchAll();
                     else if ($etape==1){
                         echo("Ce tournoi est en cours.");
                     }
+                    else if ($etape==2) {
+                        echo("Ce tournoi est en phase finale.");
+                    }
                     else {
                         echo("Ce tournoi est terminé.");
                     }
