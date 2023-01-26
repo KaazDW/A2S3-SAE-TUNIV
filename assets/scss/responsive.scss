@@ -227,15 +227,10 @@
                 div{
                     form{
                         margin: 0;
-                        input{
-                        }
-                        button{
-                        }
                     }
                 }
                 div.addt{
                     form{
-
                         flex-direction: column;
                         margin: 20px auto;
                         select, option{
@@ -243,7 +238,7 @@
                             width: 130px;
                         }
                     }
-                }
+                } 
             }
         }
     }
