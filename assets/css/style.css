@@ -763,6 +763,27 @@ section.stats-section div.file-counter div p:hover{
     margin-right: -30px;
     height: 35px;
 }
+.main-dashboard .dashadmin-section .dashadmin-topmid #tcreationmenu form .form{
+    width: 50%;
+    margin: auto;
+    display: grid;
+    margin-top: 35px;
+    grid-template-columns: repeat(2, 1fr);
+}
+.main-dashboard .dashadmin-section .dashadmin-topmid #tcreationmenu form .form input{
+    margin: 1px;
+}
+.main-dashboard .dashadmin-section .dashadmin-topmid #tcreationmenu form .form-button {
+    text-align: center;
+    margin-top :50px;
+}
+.main-dashboard .dashadmin-section .dashadmin-topmid #tcreationmenu form .form-button button{
+    background-color: var(--red);
+    border: none;
+    padding: 8px;
+}
+
+
 
 /* ANNONCES FORM STYLE */
 
