@@ -91,7 +91,7 @@ $scoreEquipe2 = $scoresEquipes->fetch()[0];
                     
                     <label for="new-score-equipe2">Score <?php echo $nomEquipe2 ?></label>
                     <input name="new-score-equipe2" value="<?php echo $scoreEquipe2 ?>" id="new-score-equipe2">
-                    <p></p>
+                    <button style="background-color: var(--blue)">VEROUILLER LE MATCH</button>
                     <button>Valider</button>
                 </form>
             </div>
