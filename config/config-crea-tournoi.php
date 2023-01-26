@@ -43,7 +43,7 @@ $teams = $pdo->quote($_POST["teams"]);
 $sql = "INSERT INTO Tournoi VALUES (0, $sport, $name, $dateDeb, $dateFin, $teams, 0);";
 $res = $pdo->exec($sql);
 if (!$res) {
-    $_SESSION["tournoiErreur"] = "La création du tournoi a échoué, veuillez réessayer. Si l\'erreur persiste, contactez le support.";
+    $_SESSION["tournoiErreur"] = "La création du tournoi a échoué, veuillez réessayer. Si l'erreur persiste, contactez le support.";
     header("Location: ../pages/dashb-admin.php");
 } else {
     $sql = "SELECT max(ID_Tournoi) FROM Tournoi;";
