@@ -46,7 +46,7 @@ for ($i=0; $i<$nbFinalistes; $i++) {
     }
 }
 
-$changerStatut = $pdo->prepare("UPDATE Tournoi SET Etape = 1 WHERE ID_Tournoi = :varTournoi;");
+$changerStatut = $pdo->prepare("UPDATE Tournoi SET Etape = 2 WHERE ID_Tournoi = :varTournoi;");
 $changerStatut->execute(['varTournoi' => $_GET["id"]]);
 
 header("Location: ../pages/match-tournois.php?id=" . $_GET["id"]);
