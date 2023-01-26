@@ -96,10 +96,14 @@ $listeUtilisateurs = $pdo->query($sql);
                                 <label for="email">Email</label>
                                 <input name="email" type="email" id="email" maxlength=50 required="required">
 
-                                <label for="role">Rôle</label>
-                                <input name="role" type="radio" value="0"> Administrateur
-                                <input name="role" type="radio" value="1"> Arbitre
-                                <input name="role" type="radio" value="2"> Capitaine
+                                <label for='role'>Choisir un role</label>
+                                    <select name='role' id='role' >;
+
+                                        <option value="0">Administrateur</option>
+                                        <option value="1">Capitaine</option>
+                                        <option value="2">Arbitre</option>
+
+                                    </select>
 
                             </div>
                         </div>
