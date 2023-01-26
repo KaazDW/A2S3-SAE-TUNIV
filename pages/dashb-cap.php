@@ -48,7 +48,7 @@ $listeTournois = $pdo->query($sql);
                 <form action="../config/config-cap-edit-team.php" method="POST" enctype="multipart/form-data">
                     <div>
                         <label for="new-name-team"></label>
-                        <input name="new-name-team" type='text' value=<?php echo $equipe[0] ?> id="new-name-team" required="required">
+                        <input name="new-name-team" type='text' value="<?php echo $equipe[0] ?>" id="new-name-team" required="required">
                     </div>
                     <button type='submit'>Valider</button>
                 </form>
