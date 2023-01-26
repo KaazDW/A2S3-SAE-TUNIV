@@ -94,7 +94,7 @@ $equipes=$listeequipe->fetchAll();
                 } else if ($_SESSION["type"] == "administrateur" && $tournoi[0]["Etape"]==1) {
                     echo("<section class='bottom-top'>
                         <div class='generationdiv'>
-                            <a href='../config/config-bracket.php?id=". $_GET['id'] . "'><img src='../assets/img/reload.png'>Generer l'arbre final</a>
+                            <a href='../config/config-bracket-tournoi.php?id=". $_GET['id'] . "'><img src='../assets/img/reload.png'>Generer l'arbre final</a>
                         </div>
                         </section>");
                 }

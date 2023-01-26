@@ -36,4 +36,4 @@ $changerScore = $pdo->prepare("UPDATE Jouer SET Score = :varScore WHERE ID_Equip
 $changerScore->execute(['varScore' => $score1, 'varEquipe' => $listeIds[0], 'varMatch' => $_GET["id"]]);
 $changerScore->execute(['varScore' => $score2, 'varEquipe' => $listeIds[1], 'varMatch' => $_GET["id"]]);
 
-header("Location: /../pages/dashb-editform-match.php?id=" . $_GET["id"]);
+header("Location: /../pages/match-tournois.php?id=" . $_GET["id"]);
