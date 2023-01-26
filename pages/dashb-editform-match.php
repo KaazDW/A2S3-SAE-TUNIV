@@ -97,9 +97,8 @@ $scoreEquipe2 = $scoresEquipes->fetch()[0];
             </div>
             
             <?php 
-
                 if ($_SESSION["type"] == "administrateur") {
-                    echo "<h3>Modifier l'arbitre du match</h3>";
+                    echo ("<h3>Modifier l'arbitre du match (arbitre actuel : " . $prenomArbitre . " " . $nomArbitre . ") </h3>");
                     $reponse = $pdo->query('SELECT Prenom, Nom, ID_User FROM Utilisateurs WHERE Type_user<=1;');
                     $reponses=$reponse->fetchAll();
 
