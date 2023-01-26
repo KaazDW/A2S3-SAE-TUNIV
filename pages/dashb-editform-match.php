@@ -105,7 +105,7 @@ $scoreEquipe2 = $scoresEquipes->fetch()[0];
                     <button>Valider</button>
                 </form>
 
-                <a style="background-color: var(--blue)" href="../config/config-verrouillage-match.php?id=<?php echo($_GET["id"]);?>">VEROUILLER LE MATCH</a>
+                <a style="background-color: var(--blue)" href="../config/config-verrouillage-match.php?id=<?php echo($_GET["id"]);?>">VERROUILLER LE MATCH</a>
             </div>
             
             <?php 
