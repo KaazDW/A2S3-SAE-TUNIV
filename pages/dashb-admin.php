@@ -35,7 +35,13 @@ $listeEquipes = $pdo->query($sql);
             echo("<div>" . $_SESSION["tournoiErreur"] . "</div>");
             unset($_SESSION["tournoiErreur"]);
         }
+        
+        if (!empty($_SESSION["equipeErreur"])){
+            echo("<div>" . $_SESSION["equipeErreur"] . "</div>");
+            unset($_SESSION["equipeErreur"]);
+        }
         ?>
+        
         <section class="dashadmin-section">
             <div class="form-tournois ffield">
                 <h3>Créer un nouveau tournoi</h3>
