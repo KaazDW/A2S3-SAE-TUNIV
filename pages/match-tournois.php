@@ -65,7 +65,8 @@ $equipes=$listeequipe->fetchAll();
                         </span>
             </div>
             <?php 
-            $reponse = $pdo->query('SELECT Nom, ID_Equipe FROM Equipe;');
+            $reponse = $pdo->prepare('SELECT Nom, ID_Equipe FROM Equipe WHERE ID_Equipe NOT IN (SELECT ID_Equipe FROM Participer WHERE ID_Tournoi = :varId);');
+            $reponse->execute(['varId' => $_GET["id"]]);
             $reponses=$reponse->fetchAll();
 
 
