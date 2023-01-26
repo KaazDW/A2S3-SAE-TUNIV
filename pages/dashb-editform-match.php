@@ -12,6 +12,17 @@ if ($_SESSION["type"]!="administrateur") {
     }
 }
 
+$matchFini = $pdo->prepare("SELECT Etat FROM MatchTournoi WHERE ID_Match = :varId");
+$matchFini->execute(['varId' => $_GET["id"]]);
+$matchFini = $matchFini->fetch()[0];
+
+if ($matchFini==1) {
+    $tournoi = $pdo->prepare("SELECT ID_Tournoi FROM MatchTournoi WHERE ID_Match = :varId");
+    $tournoi->execute(['varId' => $_GET["id"]]);
+    $tournoi = $tournoi->fetch()[0];
+    header("Location: ../pages/match-tournois.php?id=" . $tournoi);
+}
+
 $dateDebut = $pdo->prepare("SELECT DateDebut FROM MatchTournoi WHERE ID_Match = :varId;");
 $dateDebut->execute(['varId' => $_GET['id']]);
 $dateDebut = $dateDebut->fetch()[0];
@@ -91,9 +102,10 @@ $scoreEquipe2 = $scoresEquipes->fetch()[0];
                     
                     <label for="new-score-equipe2">Score <?php echo $nomEquipe2 ?></label>
                     <input name="new-score-equipe2" value="<?php echo $scoreEquipe2 ?>" id="new-score-equipe2">
-                    <button style="background-color: var(--blue)">VEROUILLER LE MATCH</button>
                     <button>Valider</button>
                 </form>
+
+                <a style="background-color: var(--blue)" href="../config/config-verrouillage-match.php?id=<?php echo($_GET["id"]);?>">VEROUILLER LE MATCH</a>
             </div>
             
             <?php 

@@ -25,7 +25,7 @@ $sport->execute(['varTournoi' => $_GET["id"]]);
 $sport = $sport->fetch()[0];
 $sport = $pdo->quote($sport);
 
-$creerMatch = $pdo->prepare("INSERT INTO MatchTournoi VALUES(0, $sport, now(), now(), 'A_définir', 1, :varTournoi);");
+$creerMatch = $pdo->prepare("INSERT INTO MatchTournoi VALUES(0, $sport, now(), now(), 'A_définir', 1, :varTournoi, 0);");
 
 // On crée les matchs de poules entre toutes les équipes participantes
 for ($i=0; $i<$nbEquipes; $i++) {

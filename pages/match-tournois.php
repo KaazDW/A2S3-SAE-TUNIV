@@ -14,7 +14,7 @@ $tournoi = $pdo->prepare('SELECT * FROM Tournoi WHERE ID_Tournoi =:varId');
 $tournoi->execute(['varId' =>$_GET["id"]]);
 $tournoi=$tournoi->fetchAll();
 
-$listeequipe = $pdo->prepare('SELECT Nom, ID_Equipe FROM Participer natural join Equipe WHERE ID_Tournoi =:varId');
+$listeequipe = $pdo->prepare('SELECT Nom, ID_Equipe, Score FROM Participer natural join Equipe WHERE ID_Tournoi =:varId ORDER BY Score DESC');
 $listeequipe->execute(['varId' =>$_GET["id"]]);
 $equipes=$listeequipe->fetchAll();
 
@@ -118,6 +118,7 @@ $equipes=$listeequipe->fetchAll();
                         <article>
                             <h3><?php echo($equipe['Nom']);?></h3>
                             <span><?php echo ($nomCapitaine["Prenom"]); echo " ", $nomCapitaine["Nom"] ?></span>
+                            <span><?php echo ($equipe["Score"]) ?></span>
                         </article>
                         <?php if ($_SESSION["type"] == "administrateur" && $tournoi[0]["Etape"]==0) {
                             echo (" <a  href='../config/config-delete-team-inscrit.php?idEquipe=" .  $equipe['ID_Equipe'] . "&amp;idTournoi=" . $_GET['id'] . "'>
@@ -160,7 +161,7 @@ $equipes=$listeequipe->fetchAll();
                     <p><?php echo "<span>> Fin : </span>" . $match['DateDebut'];?></p>
                     <p><?php echo "<span>> Debut : </span>" . $match['DateFin'];?></p>
                     <p><?php echo "<span>> Stade : </span>" . $match['Stade'];?></p>
-                    <?php if ($_SESSION["type"] == "administrateur") {
+                    <?php if (($_SESSION["type"] == "administrateur" || ($_SESSION["type"]==arbitre && $match["ID_User"]==$_SESSION["userId"])) && $match["Etat"]==0) {
                                 echo (" <a  href='dashb-editform-match.php?id=" . $match['ID_Match'] . "'>
                                         <img src='../assets/img/edit-blanc.png'>
                                     </a>");

@@ -32,7 +32,7 @@ $sport = $pdo->prepare("SELECT Sport FROM Tournoi WHERE ID_Tournoi = :varTournoi
 $sport->execute(['varTournoi' => $_GET["id"]]);
 $sport = $sport->fetch()[0];
 $sport = $pdo->quote($sport);
-$creerMatch = $pdo->prepare("INSERT INTO MatchTournoi VALUES(0, $sport, now(), now(), 'A_définir', 1, :varTournoi);");
+$creerMatch = $pdo->prepare("INSERT INTO MatchTournoi VALUES(0, $sport, now(), now(), 'A_définir', 1, :varTournoi, 0);");
 
 for ($i=0; $i<$nbFinalistes; $i++) {
     for ($j=$i+1;$j<$nbFinalistes; $j++){

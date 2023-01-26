@@ -22,17 +22,6 @@ if ($matchFini==1) {
     header("Location: ../pages/match-tournois.php?id=" . $tournoi);
 }
 
-$dateDebut = $_POST["new-date-debut"];
-$dateFin = $_POST["new-date-fin"];
-$stade = $_POST["new-stade"];
-$score1 = $_POST["new-score-equipe1"];
-$score2 = $_POST["new-score-equipe2"];
-
-$edit = $pdo->prepare('UPDATE MatchTournoi  set DateDebut=:varDeb, DateFin=:varFin, Stade=:varStade where ID_Match = :varId');
-
-
-$edit->execute(['varDeb'=>$dateDebut,'varFin'=>$dateFin,'varStade'=>$stade, 'varId' =>$_GET["id"]]);
-
 $idsEquipes = $pdo->prepare("SELECT ID_Equipe FROM Jouer WHERE ID_Match = :varId;");
 $idsEquipes->execute(['varId' => $_GET['id']]);
 $idsEquipes = $idsEquipes->fetchAll();
@@ -44,8 +33,24 @@ foreach($idsEquipes as $idEquipe){
     $i++;
 }
 
-$changerScore = $pdo->prepare("UPDATE Jouer SET Score = :varScore WHERE ID_Equipe = :varEquipe AND ID_Match = :varMatch");
-$changerScore->execute(['varScore' => $score1, 'varEquipe' => $listeIds[0], 'varMatch' => $_GET["id"]]);
-$changerScore->execute(['varScore' => $score2, 'varEquipe' => $listeIds[1], 'varMatch' => $_GET["id"]]);
+$scoresEquipes = $pdo->prepare("SELECT Score FROM Jouer WHERE ID_Equipe = :varId");
+$scoresEquipes->execute(['varId' => $listeIds[0]]);
+$scoreEquipe1 = $scoresEquipes->fetch()[0];
+$scoresEquipes->execute(['varId' => $listeIds[1]]);
+$scoreEquipe2 = $scoresEquipes->fetch()[0];
 
-header("Location: /../pages/match-tournois.php?id=" . $tournoi);
+$majScore = $pdo->prepare("UPDATE Participer SET Score= Score+:varScore WHERE ID_Equipe= :varEquipe AND ID_Tournoi = :varTournoi");
+
+if ($scoreEquipe1>$scoreEquipe2){
+    $majScore->execute(['varScore' => 3, 'varEquipe' => $listeIds[0], 'varTournoi' => $tournoi]);
+} else if ($scoreEquipe2>$scoreEquipe1){
+    $majScore->execute(['varScore' => 3, 'varEquipe' => $listeIds[1], 'varTournoi' => $tournoi]);
+} else {
+    $majScore->execute(['varScore' => 1, 'varEquipe' => $listeIds[0], 'varTournoi' => $tournoi]);
+    $majScore->execute(['varScore' => 1, 'varEquipe' => $listeIds[1], 'varTournoi' => $tournoi]);
+}
+
+$verrouillage = $pdo->prepare("UPDATE MatchTournoi SET Etat = 1 WHERE ID_Match = :varId");
+$verrouillage->execute(['varId' => $_GET["id"]]);
+
+header("Location: ../pages/match-tournois.php?id=" . $tournoi);
