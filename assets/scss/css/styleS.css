@@ -232,6 +232,15 @@ main.main-matchtournois section.display-poule div.line-poule p:nth-child(4) {
 main.main-matchtournois section.display-poule div.line-poule p:nth-child(4) span {
   font-weight: 500;
 }
+main.main-matchtournois section.display-poule div.line-poule a {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+main.main-matchtournois section.display-poule div.line-poule a img {
+  height: 35px;
+  margin: auto;
+}
 
 main.main-edit-tournois section.dashcap-section {
   display: flex;
@@ -279,6 +288,39 @@ main.main-edit-tournois section.dashcap-section div.equinscr p {
   padding: 10px;
   margin: 5px;
   width: 100%;
+}
+
+main.main-dash-editform-match section div form {
+  display: grid;
+  width: 50%;
+  margin: auto;
+  grid-template-columns: repeat(2, 1fr);
+}
+main.main-dash-editform-match section div form input {
+  height: 30px;
+  margin: 2px;
+  padding: 2px 8px;
+}
+main.main-dash-editform-match section div form button {
+  background-color: var(--red);
+  border: none;
+  padding: 8px;
+  margin: 10px;
+  text-transform: uppercase;
+}
+main.main-dash-editform-match section div.addt form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid grey;
+  border-radius: 5px;
+  background-color: var(--color-hover);
+}
+main.main-dash-editform-match section div.addt form select, main.main-dash-editform-match section div.addt form option {
+  color: black;
+  padding: 0;
+  height: 30px;
+  width: 250px;
 }
 
 /*# sourceMappingURL=styleS.css.map */

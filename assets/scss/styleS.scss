@@ -254,6 +254,15 @@ main.main-matchtournois{
                 }
                 font-weight: 700; 
             }
+            a{
+                display: flex;
+                justify-content: center;
+                margin-top: 15px;
+                img{
+                    height: 35px;
+                    margin: auto;
+                }
+            }
         }
     }
 }
@@ -305,6 +314,46 @@ main.main-edit-tournois{
                 padding: 10px;
                 margin: 5px;
                 width: 100%;
+            }
+        }
+    }
+}
+main.main-dash-editform-match{
+    section{
+        div{
+            form{
+                display: grid;
+                width: 50%;
+                margin: auto;
+                grid-template-columns: repeat(2, 1fr);
+                input{
+                    height: 30px;
+                    margin: 2px;
+                    padding: 2px 8px;
+                }
+                button{
+                    background-color: var(--red);
+                    border: none;
+                    padding: 8px;
+                    margin: 10px;
+                    text-transform: uppercase;
+                }
+            }
+        }
+        div.addt{
+            form{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: 1px solid grey;
+                border-radius: 5px;
+                background-color: var(--color-hover);
+                select, option{
+                    color: black;
+                    padding: 0;
+                    height: 30px;
+                    width: 250px;
+                }
             }
         }
     }
