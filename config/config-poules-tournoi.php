@@ -6,6 +6,14 @@ if ($_SESSION["type"]!="administrateur") {
 
 include("db.php");
 
+$tournoi = $pdo->prepare('SELECT * FROM Tournoi WHERE ID_Tournoi =:varId');
+$tournoi->execute(['varId' =>$_GET["id"]]);
+$tournoi=$tournoi->fetchAll();
+
+if ($tournoi[0]["Etape"]!=0){
+    header("Location: ../pages/match-tournois.php?id=".$_GET["id"]);
+}
+
 // On construit une liste des équipes participant au tournoi
 $listeEquipesSql = $pdo->prepare("SELECT ID_Equipe FROM Participer WHERE ID_Tournoi= :varTournoi;");
 $listeEquipesSql->execute(['varTournoi' => $_GET["id"]]);

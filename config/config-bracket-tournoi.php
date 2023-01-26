@@ -6,6 +6,18 @@ if ($_SESSION["type"]!="administrateur") {
 
 include("db.php");
 
+$tournoi = $pdo->prepare('SELECT * FROM Tournoi WHERE ID_Tournoi =:varId');
+$tournoi->execute(['varId' =>$_GET["id"]]);
+$tournoi=$tournoi->fetchAll();
+
+if ($tournoi[0]["Etape"]!=1){
+    header("Location: ../pages/match-tournois.php?id=".$_GET["id"]);
+}
+
+// On bloque les matchs de poules
+$changerEtat = $pdo->prepare("UPDATE MatchTournoi SET Etat=1 WHERE ID_Tournoi = :varId;");
+$changerEtat->execute(['varId' => $_GET["id"]]);
+
 // Calcul du nombre d'équipes restantes
 $nbEquipes = $pdo->prepare("SELECT count(*) FROM Participer WHERE ID_Tournoi = :varId");
 $nbEquipes->execute(['varId' => $_GET['id']]);

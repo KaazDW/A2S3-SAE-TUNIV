@@ -98,8 +98,14 @@ $equipes=$listeequipe->fetchAll();
                             <a href='../config/config-bracket-tournoi.php?id=". $_GET['id'] . "'><img src='../assets/img/reload.png'>Generer l'arbre final</a>
                         </div>
                         </section>");
+                } else if ($_SESSION["type"] == "administrateur" && $tournoi[0]["Etape"]==2) {
+                    echo("<section class='bottom-top'>
+                    <div class='generationdiv'>
+                        <a href='../config/config-fin-tournoi.php?id=". $_GET['id'] . "'><img src='../assets/img/reload.png'>Mettre fin au tournoi</a>
+                    </div>
+                    </section>");
                 }
-                
+                 
                 ?> 
         </section>
 

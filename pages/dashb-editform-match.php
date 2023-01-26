@@ -64,10 +64,10 @@ $nomEquipe1 = $nomsEquipes->fetch()[0];
 $nomsEquipes->execute(['varId' => $listeIds[1]]);
 $nomEquipe2 = $nomsEquipes->fetch()[0];
 
-$scoresEquipes = $pdo->prepare("SELECT Score FROM Jouer WHERE ID_Equipe = :varId");
-$scoresEquipes->execute(['varId' => $listeIds[0]]);
+$scoresEquipes = $pdo->prepare("SELECT Score FROM Jouer WHERE ID_Equipe = :varId AND ID_Match = :varMatch");
+$scoresEquipes->execute(['varId' => $listeIds[0], 'varMatch' => $_GET["id"]]);
 $scoreEquipe1 = $scoresEquipes->fetch()[0];
-$scoresEquipes->execute(['varId' => $listeIds[1]]);
+$scoresEquipes->execute(['varId' => $listeIds[1], 'varMatch' => $_GET["id"]]);
 $scoreEquipe2 = $scoresEquipes->fetch()[0];
 
 ?>
