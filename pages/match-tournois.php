@@ -181,28 +181,5 @@ $equipes=$listeequipe->fetchAll();
         </section>
     </main> 
     <?php include '../modules/footer.php'; ?>
-    <script>
-        // console.log('ahahahahaha');
-        // el1 = document.getElementById('el1')
-        // el2 = document.getElementById('el2')
-        // el3 = document.getElementById('el3')
-        // el4 = document.getElementById('el4')
-        // el5 = document.getElementById('el5')
-        // load = document.getElementById('loaderdiv')
-        // load.style.display = 'flex'
-        // el1.style.display = 'none'
-        // el2.style.display = 'none'
-        // el3.style.display = 'none'
-        // el4.style.display = 'none'
-        // el5.style.display = 'none'
-        // setTimeout(() => { 
-        //     load.style.display = 'none'
-        //     el1.style.display = 'block'
-        //     el2.style.display = 'block'
-        //     el3.style.display = 'block'
-        //     el4.style.display = 'block'
-        //     el5.style.display = 'block'
-        // }, 1000);
-    </script>
 </body>
 </html>
