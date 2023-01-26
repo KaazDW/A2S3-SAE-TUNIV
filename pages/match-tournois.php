@@ -69,7 +69,7 @@ $equipes=$listeequipe->fetchAll();
             $reponses=$reponse->fetchAll();
 
 
-                if ($_SESSION["type"] == "administrateur") {
+                if ($_SESSION["type"] == "administrateur" && $tournoi[0]["Etape"]==0) {
 
                     echo (" 
                     <section class='bottom-top'>
@@ -91,7 +91,13 @@ $equipes=$listeequipe->fetchAll();
                         </div>
                     </section>    
                         ");
-                };
+                } else if ($_SESSION["type"] == "administrateur" && $tournoi[0]["Etape"]==1) {
+                    echo("<section class='bottom-top'>
+                        <div class='generationdiv'>
+                            <a href='../config/config-bracket.php?id=". $_GET['id'] . "'><img src='../assets/img/reload.png'>Generer l'arbre final</a>
+                        </div>
+                        </section>");
+                }
                 
                 ?> 
         </section>
@@ -112,7 +118,7 @@ $equipes=$listeequipe->fetchAll();
                             <h3><?php echo($equipe['Nom']);?></h3>
                             <span><?php echo ($nomCapitaine["Prenom"]); echo " ", $nomCapitaine["Nom"] ?></span>
                         </article>
-                        <?php if ($_SESSION["type"] == "administrateur") {
+                        <?php if ($_SESSION["type"] == "administrateur" && $tournoi[0]["Etape"]==0) {
                             echo (" <a  href='../config/config-delete-team-inscrit.php?idEquipe=" .  $equipe['ID_Equipe'] . "&amp;idTournoi=" . $_GET['id'] . "'>
                                     <img src='../assets/img/delete-blanc.png'>
                                 </a>");
@@ -153,7 +159,7 @@ $equipes=$listeequipe->fetchAll();
                 <p><?php echo "<span>> Fin : </span>" . $match['DateDebut'];?></p>
                 <p><?php echo "<span>> Debut : </span>" . $match['DateFin'];?></p>
                 <p><?php echo "<span>> Stade : </span>" . $match['Stade'];?></p>
-                <?php if ($_SESSION["type"] == "administrateur") {
+                <?php if ($_SESSION["type"] == "administrateur" || $_SESSION["type"] == "arbitre" && $_SESSION["userId"]==$match["ID_User"]) {
                             echo (" <a  href='dashb-editform-match.php?id=" .  $match['ID_Match'] . "'>
                                     <img src='../assets/img/edit-blanc.png'>
                                 </a>");
