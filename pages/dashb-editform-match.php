@@ -1,10 +1,16 @@
 <?php session_start();
 
-if ($_SESSION["type"]!="administrateur") {
-    header("Location: ../../index.php");
-}
-
 include '../config/db.php';
+
+$idArbitre = $pdo->prepare("SELECT ID_User FROM MatchTournoi WHERE ID_Match = :varId;");
+$idArbitre->execute(['varId' => $_GET['id']]);
+$idArbitre = $idArbitre->fetch()[0];
+
+if ($_SESSION["type"]!="administrateur") {
+    if ($_SESSION["type"]=="arbitre" && $_SESSION["userId"]!=$idArbitre) {
+        header("Location: ../../index.php");
+    }
+}
 
 $dateDebut = $pdo->prepare("SELECT DateDebut FROM MatchTournoi WHERE ID_Match = :varId;");
 $dateDebut->execute(['varId' => $_GET['id']]);
