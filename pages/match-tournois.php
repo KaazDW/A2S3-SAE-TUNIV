@@ -150,6 +150,12 @@ $equipes=$listeequipe->fetchAll();
                 <p><?php echo "<span>> Fin : </span>" . $match['DateDebut'];?></p>
                 <p><?php echo "<span>> Debut : </span>" . $match['DateFin'];?></p>
                 <p><?php echo "<span>> Stade : </span>" . $match['Stade'];?></p>
+                <?php if ($_SESSION["type"] == "administrateur") {
+                            echo (" <a  href='dashb-editform-match.php?id=" .  $match['ID_Match'] . "'>
+                                    <img src='../assets/img/edit-blanc.png'>
+                                </a>");
+                        };
+                        ?> 
                 <?php
                     // echo($nomEquipe1[0] ." contre ". $nomEquipe2[0] . " Début à " . $match['DateDebut'] ." Fin à ". $match['DateFin']." Stade : ".$match['Stade']   ) ?>
                 </div>
