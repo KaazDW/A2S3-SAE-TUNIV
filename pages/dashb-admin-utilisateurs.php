@@ -23,8 +23,16 @@ $listeUtilisateurs = $pdo->query($sql);
 </head> 
 <body>
     <?php include '../modules/header.php'; ?>
+    
+
+     
     <main class="main-dashboard user-dash-main">
         <h2 class="title">Utilisateurs</h2>
+        <?php 
+        if (!empty($_SESSION["userErreur"])){
+            echo("<div>" . $_SESSION["userErreur"] . "</div>");
+        }
+        ?>
         <section class="dashadmin-section users-resp">
             <div class="dashadmin-topmid">
                 <div class="display-tournaments dashadmin-card">
