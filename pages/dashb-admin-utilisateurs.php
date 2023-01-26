@@ -77,35 +77,30 @@ $listeUtilisateurs = $pdo->query($sql);
                     <h3>Créer un nouvel utilisateur</h3>
                     <form action="../config/config-crea-user.php" method="POST">
                         <div class="form">
-                            <div class="form-parta">
-                                <label for="name">Nom</label>
-                                <input name="name" type="text" id="name" maxlength=25 required="required">
+                            <label for="name">Nom</label>
+                            <input name="name" type="text" id="name" maxlength=25 required="required">
 
-                                <label for="surname">Prénom</label>
-                                <input name="surname" type="text" id="surname" maxlength=25 required="required">
+                            <label for="surname">Prénom</label>
+                            <input name="surname" type="text" id="surname" maxlength=25 required="required">
 
-                                <label for="login">Identifiant</label>
-                                <input name="login" type="text" id="login" maxlength=25 required="required">
+                            <label for="login">Identifiant</label>
+                            <input name="login" type="text" id="login" maxlength=25 required="required">
 
-                                <label for="password">Mot de passe</label>
-                                <input name="password" type="password" id="password" maxlength=25 required="required">
+                            <label for="password">Mot de passe</label>
+                            <input name="password" type="password" id="password" maxlength=25 required="required">
 
-                                <label for="passwordConfirm">Confirmer le mot de passe</label>
-                                <input name="passwordConfirm" type="password" id="passwordConfirm" maxlength=25 required="required">
+                            <label for="passwordConfirm">Confirmer le mot de passe</label>
+                            <input name="passwordConfirm" type="password" id="passwordConfirm" maxlength=25 required="required">
 
-                                <label for="email">Email</label>
-                                <input name="email" type="email" id="email" maxlength=50 required="required">
+                            <label for="email">Email</label>
+                            <input name="email" type="email" id="email" maxlength=50 required="required">
 
-                                <label for='role'>Choisir un role</label>
-                                    <select name='role' id='role' >;
-
-                                        <option value="0">Administrateur</option>
-                                        <option value="1">Capitaine</option>
-                                        <option value="2">Arbitre</option>
-
-                                    </select>
-
-                            </div>
+                            <label for='role'>Choisir un role</label>
+                            <select name='role' id='role' >;
+                                <option value="0">Administrateur</option>
+                                <option value="1">Capitaine</option>
+                                <option value="2">Arbitre</option>
+                            </select>
                         </div>
 
                         <div class="form-button">
