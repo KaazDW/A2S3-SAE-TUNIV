@@ -167,7 +167,7 @@ $equipes=$listeequipe->fetchAll();
                     <p><?php echo "<span>> Fin : </span>" . $match['DateDebut'];?></p>
                     <p><?php echo "<span>> Debut : </span>" . $match['DateFin'];?></p>
                     <p><?php echo "<span>> Stade : </span>" . $match['Stade'];?></p>
-                    <?php if (($_SESSION["type"] == "administrateur" || ($_SESSION["type"]==arbitre && $match["ID_User"]==$_SESSION["userId"])) && $match["Etat"]==0) {
+                    <?php if (($_SESSION["type"] == "administrateur" || ($_SESSION["type"]=="arbitre" && $match["ID_User"]==$_SESSION["userId"])) && $match["Etat"]==0) {
                                 echo (" <a  href='dashb-editform-match.php?id=" . $match['ID_Match'] . "'>
                                         <img src='../assets/img/edit-blanc.png'>
                                     </a>");
