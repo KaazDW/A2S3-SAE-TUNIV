@@ -31,6 +31,7 @@ $listeUtilisateurs = $pdo->query($sql);
         <?php 
         if (!empty($_SESSION["userErreur"])){
             echo("<div>" . $_SESSION["userErreur"] . "</div>");
+            unset($_SESSION["userErreur"]);
         }
         ?>
         <section class="dashadmin-section users-resp">

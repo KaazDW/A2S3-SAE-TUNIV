@@ -29,7 +29,13 @@ $listeEquipes = $pdo->query($sql);
 <body>
     <?php include '../modules/header.php'; ?>
     <main class="real-main-dashboard">
-        <h2 class="title">Ajouter une equipe</h2>
+        <h2 class="title">Ajouter une équipe</h2>
+        <?php 
+        if (!empty($_SESSION["tournoiErreur"])){
+            echo("<div>" . $_SESSION["tournoiErreur"] . "</div>");
+            unset($_SESSION["tournoiErreur"]);
+        }
+        ?>
         <section class="dashadmin-section">
             <div class="form-tournois ffield">
                 <h3>Créer un nouveau tournoi</h3>
@@ -56,7 +62,7 @@ $listeEquipes = $pdo->query($sql);
                 </form>
             </div>
             <div class="form-equipe ffield">
-                <h3>Cree une nouvelle équipe</h3>
+                <h3>Créer une nouvelle équipe</h3>
                 <form action="../config/config-admin-crea-equipe.php" method="POST">
                     <div class="form-button">
                             <button type="submit">Créer l'équipe</button>

@@ -23,6 +23,12 @@
     <?php include '../modules/header.php';?>
     <main class="main-admin-annonce-form">
         <h2 class="title">Créer une nouvelle annonce</h2>
+        <?php 
+        if (!empty($_SESSION["annonceErreur"])){
+            echo("<div>" . $_SESSION["annonceErreur"] . "</div>");
+            unset($_SESSION["annonceErreur"]);
+        }
+        ?>
         <section class="form-annonce-section">
             <form action="../config/config-annonce.php" method="POST" enctype="multipart/form-data">
                     <!-- Champ titre -->
