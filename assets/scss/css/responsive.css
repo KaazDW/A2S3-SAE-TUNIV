@@ -176,6 +176,17 @@
   body main.main-matchtournois section.forequipesection div.forequipediv {
     width: 100%;
   }
+  body main.main-dash-editform-match section div form {
+    margin: 0;
+  }
+  body main.main-dash-editform-match section div.addt form {
+    flex-direction: column;
+    margin: 20px auto;
+  }
+  body main.main-dash-editform-match section div.addt form select, body main.main-dash-editform-match section div.addt form option {
+    margin-top: 15px;
+    width: 130px;
+  }
 }
 
 /*# sourceMappingURL=responsive.css.map */

@@ -222,5 +222,24 @@
                 }
             }
         }
+        main.main-dash-editform-match{
+            section{
+                div{
+                    form{
+                        margin: 0;
+                    }
+                }
+                div.addt{
+                    form{
+                        flex-direction: column;
+                        margin: 20px auto;
+                        select, option{
+                            margin-top: 15px;
+                            width: 130px;
+                        }
+                    }
+                } 
+            }
+        }
     }
 }
