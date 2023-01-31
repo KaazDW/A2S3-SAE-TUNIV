@@ -6,13 +6,10 @@ window.addEventListener("scroll", function(){
     header.classList.toggle("scroll-style", window.scrollY > 50);
 })
 
-
 // MOIBLE RESPONSIV STYLE
-
 var nav = document.getElementById("mobilenav");
 act = false;
 nav.style.display = 'none'
-
 
 function mobilemenu() {
     if (act === false){
@@ -26,27 +23,8 @@ function mobilemenu() {
     }
 }
 
-// THEME MOD FUNCTION
-// not finished
-// var isdark = true;
-// var themeicon = document.getElementById("themebutton");
-// function theme(){
-//     if(isdark){
-//         isdark = false;
-//         console.log("dark theme OFF");
-//         themeicon.innerHTML="NUIT";
-
-//     } else{
-//         isdark = true;
-//         console.log("dark theme ON");
-//         themeicon.innerHTML="JOUR";
-//     }
-// }
-
-
-
 function fnBrowserDetect(){
-                 
+             
     let userAgent = navigator.userAgent;
     let browserName;
     
@@ -65,6 +43,5 @@ function fnBrowserDetect(){
     }
     console.log(userAgent)
     console.log("You are using", browserName, "browser")
-    //  document.querySelector("h1").innerText="You are using "+ browserName +" browser";         
 }
 fnBrowserDetect()

@@ -1,0 +1,1287 @@
+@import "https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;600;700&family=Poppins:wght@100;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap";
+/*
+font-family: 'Comfortaa', cursive;
+font-family: 'Poppins', sans-serif;
+font-family: 'Roboto', sans-serif;
+*/
+/* GLOBAL PAGES SETTINGS */
+/* @keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  } */
+/* Hide scroll bar*/
+@keyframes openPage {
+  from {
+    opacity: 0;
+    /* filter: blur(5px); */
+  }
+  to {
+    opacity: 1;
+    /* blur:(0px); */
+  }
+}
+/* HEADER TITLE DIV */
+/* HEADER NAV DIV */
+/* INDEX PAGE STYLE */
+/* INDEX ANNONCE SECTION */
+/* ADMIN CARD ANNONCE */
+/* LOGIN PAGE STYLE */
+/* INFORMATION  PAGE STYLE */
+/* STATISTIQUES PAGE STYLE */
+/* A PROPOS PAGE STYLE */
+@keyframes up1 {
+  0% {
+    transform: translateY(0px);
+  }
+  30% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(0px);
+  }
+}
+/* TOURNOIS PAGE STYLE */
+/* DASHBOARD ADMIN */
+/* THE OTHER DASH */
+@keyframes editableanim {
+  from {
+    opacity: 0;
+    transform: translate(105px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0px);
+  }
+}
+/* ANNONCES FORM STYLE */
+/* EDIT FORM TOURNOIS DASHBOARD ADMIN */
+/* CAPITAINE 'MON EQUIPE' STYLE */
+/* dashcap-section open menu EDIT JOUEURS */
+/* FOOTER STYLE */
+/* RESPONSIVE STYLE SETTINGS */
+/* header .icon{
+        display: flex;
+        height: 50px;
+    } */
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  color: white;
+  letter-spacing: 0.6px;
+}
+* a {
+  text-decoration: none;
+}
+
+input {
+  color: black;
+}
+
+textarea {
+  color: black;
+}
+
+:root {
+  --blue: rgb(82,148,226);
+  --red: rgb(224, 78, 78);
+  --color-hover: rgb(36, 36, 36);
+  --color-border: rgba(64, 68, 73, 0.5);
+  --color-element: rgba(32, 28, 28, 0.6);
+  --color-element-full: rgba(32, 29, 29, 0.822);
+  --color-body-background: #111;
+  --color-hover: var(--color-border);
+}
+
+body {
+  background: #2f3339;
+  background: #1a1d22;
+  background: linear-gradient(to right, #14161a, #2d3b46);
+  font-family: "Poppins", sans-serif;
+  width: 75vw;
+  margin: auto;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+body::-webkit-scrollbar {
+  width: 0 !important;
+}
+
+header {
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%);
+  top: 15px;
+  border: 2px solid rgba(255, 255, 255, 0);
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 76vw;
+  padding: 7px 0px;
+  padding-bottom: 10px;
+  min-width: 590px;
+  backdrop-filter: blur(20px);
+  z-index: 2;
+  transition: 0.1s;
+}
+header h1 {
+  letter-spacing: 3px;
+}
+header > a {
+  margin: 0px 40px;
+}
+header .nav-icon {
+  margin: 0px 40px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  user-select: none;
+  cursor: pointer;
+}
+header .nav-icon .login-link a:hover {
+  background-color: rgba(255, 255, 255, 0);
+  border: 1px solid rgba(255, 255, 255, 0);
+}
+header .nav-icon .login-link img {
+  height: 35px;
+}
+header .nav-icon li a:hover {
+  background-color: var(--color-hover);
+  border: 1px solid var(--color-border);
+}
+header .icon {
+  display: none;
+}
+header li a {
+  margin: 2px;
+  border: 1px solid rgba(255, 255, 255, 0);
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+header .link {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+header .link li a:hover {
+  background-color: var(--color-hover);
+  border: 1px solid var(--color-border);
+}
+
+main {
+  margin-top: 150px;
+  animation: openPage 1s;
+}
+
+.scroll-style {
+  border: 2px solid var(--color-border);
+}
+
+.admin-header {
+  height: 30px;
+  border: 1px solid var(--color-border);
+  border-radius: 5px;
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%);
+  top: 100px;
+  width: 75vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-element-full);
+  backdrop-filter: blur(10px);
+  z-index: 2;
+  padding: 2px 12px;
+}
+.admin-header ul {
+  color: grey;
+  display: flex;
+}
+.admin-header a {
+  color: rgb(199, 199, 199);
+  padding: 2px 12px;
+  transition: 0.3s;
+  border-radius: 5px;
+  margin: 0px 5px;
+}
+.admin-header a:hover {
+  color: rgb(255, 255, 255);
+  background-color: var(--color-hover);
+}
+
+.title {
+  border-bottom: 1px solid rgb(73, 73, 73);
+  padding-bottom: 3px;
+  margin-bottom: 25px;
+}
+
+.main-home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  text-align: center;
+}
+.main-home .main-content {
+  margin-top: -250px;
+}
+.main-home .main-content h1 {
+  -webkit-text-stroke: 1px white;
+  color: rgba(255, 255, 255, 0);
+  font-size: 55px;
+  margin: 15px;
+}
+.main-home .main-content a {
+  background-color: var(--red);
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+
+.index-actu h2 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+.index-actu .annonce-card {
+  width: 60%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  border: 1px solid var(--color-border);
+  margin-bottom: 15px;
+}
+.index-actu .annonce-card .text-field {
+  margin: 15px 0px;
+  margin-right: 10px;
+}
+.index-actu .annonce-card .text-field p.date {
+  color: rgb(136, 133, 133);
+  font-style: oblique 20deg;
+}
+.index-actu .annonce-card .text-field span.role {
+  color: rgb(255, 255, 255);
+}
+.index-actu .annonce-card .text-field p:last-child {
+  margin-top: 5px;
+  font-family: Roboto;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid var(--color-border);
+}
+.index-actu .annonce-card img {
+  object-fit: cover;
+  height: 105px;
+  width: 105px;
+  border-radius: 5px;
+  margin: 10px 30px;
+  margin-right: 35px;
+}
+.index-actu .annonce-card-admin {
+  width: 60%;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 5px;
+  border: 1px solid var(--color-border);
+  margin-bottom: 15px;
+}
+.index-actu .annonce-card-admin a.edit {
+  margin: 0 50px;
+  border-radius: 50px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  transition: 0.3s;
+}
+.index-actu .annonce-card-admin a.edit:hover {
+  background-color: var(--red);
+}
+.index-actu .annonce-card-admin .edit img {
+  height: 50px;
+}
+.index-actu .annonce-card-admin .text-field {
+  margin: 15px 0px;
+  margin-right: 10px;
+  width: 100%;
+}
+.index-actu .annonce-card-admin .text-field p.date {
+  color: rgb(136, 133, 133);
+  font-style: oblique 20deg;
+}
+.index-actu .annonce-card-admin .text-field p:last-child {
+  margin-top: 5px;
+  font-family: Roboto;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid var(--color-border);
+}
+.index-actu .annonce-card-admin .img-cover {
+  object-fit: cover;
+  height: 105px;
+  width: 105px;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+.main-login {
+  margin-bottom: 50vh;
+}
+.main-login form {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 150px auto;
+  width: 200px;
+}
+.main-login form input {
+  padding: 5px 8px;
+  color: black;
+  margin: 10px;
+}
+.main-login form button {
+  background-color: var(--red);
+  width: 60%;
+  padding: 10px 10px;
+  margin: 10px auto;
+  border: 1px solid rgba(255, 255, 255, 0);
+  border-radius: 5px;
+}
+
+.logout-div {
+  display: flex;
+  justify-content: center;
+  margin-top: 250px;
+  text-align: center;
+}
+.logout-div .logout-button {
+  background-color: var(--red);
+  line-height: 90px;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: 0.2s;
+}
+.logout-div .logout-button:hover {
+  background-color: rgb(147, 41, 41);
+}
+
+section.information-content {
+  margin-left: 20px;
+  line-height: 29px;
+}
+section.information-content pre {
+  background-color: rgb(52, 52, 52);
+  color: white;
+  border-radius: 5px;
+  padding: 10px 15px;
+  margin: 15px;
+}
+
+section.stats-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 151px;
+  grid-gap: 7px;
+}
+section.stats-section div {
+  border: 1px solid var(--color-border);
+  background-color: var(--color-element);
+  border-radius: 5px;
+}
+section.stats-section div.file-counter {
+  background-color: var(--color-element);
+}
+section.stats-section div.file-counter h3 {
+  margin: 5px;
+}
+section.stats-section div.file-counter div {
+  width: 50%;
+  margin: auto;
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 7px 20px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
+  align-items: center;
+}
+section.stats-section div.file-counter div span {
+  padding: 5px 12px;
+}
+section.stats-section div.file-counter div p {
+  background-color: var(--color-element-full);
+  border: 1px solid var(--color-border);
+  border-radius: 5px;
+}
+section.stats-section div.file-counter div p:hover {
+  background-color: var(--color-hover);
+  border: 1px solid var(--color-border);
+  border-radius: 5px;
+}
+section.stats-section div.file-counter p {
+  padding: 5px 12px;
+}
+section.stats-section div.file-counter > p {
+  margin: 22px 15px;
+}
+
+.main-apropos .apropos-content p {
+  line-height: 22px;
+  text-align: center;
+  width: 80%;
+  margin: auto;
+  margin-top: 15px;
+}
+.main-apropos .apropos-content p span {
+  background-color: var(--color-element);
+  padding: 5px;
+  border: 1px solid var(--color-border);
+  border-radius: 5px;
+}
+.main-apropos .apropos-content p span:hover {
+  background-color: var(--color-hover);
+  user-select: none;
+}
+.main-apropos .apropos-content .apropos-title {
+  display: flex;
+  justify-content: center;
+}
+.main-apropos .apropos-content .apropos-title h1 {
+  margin: 0;
+}
+.main-apropos .apropos-content .apropos-title:nth-child(1) {
+  animation: up1 4s;
+  animation-iteration-count: infinite;
+  animation-delay: 0s;
+}
+.main-apropos .apropos-content .apropos-title:nth-child(2) {
+  animation: up1 4s;
+  animation-iteration-count: infinite;
+  animation-delay: 0.5s;
+}
+.main-apropos .apropos-content .apropos-title:nth-child(3) {
+  animation: up1 4s;
+  animation-iteration-count: infinite;
+  animation-delay: 1s;
+}
+.main-apropos .apropos-content .apropos-title:nth-child(4) {
+  animation: up1 4s;
+  animation-iteration-count: infinite;
+  animation-delay: 1.5s;
+}
+.main-apropos .apropos-content .apropos-title:nth-child(5) {
+  animation: up1 4s;
+  animation-iteration-count: infinite;
+  animation-delay: 2s;
+}
+.main-apropos .apropos-content .navcompa div.table {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 30%;
+  margin: 35px auto;
+  border: 1px solid var(--color-hover);
+  background-color: rgba(19, 19, 19, 0.295);
+  padding: 15px;
+  border-radius: 8px;
+}
+.main-apropos .apropos-content .navcompa div.table span {
+  font-weight: 700;
+  border-bottom: 1px solid var(--color-hover);
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+.main-apropos .apropos-content .navcompa div.table span.name {
+  font-weight: 400;
+  color: var(--red);
+}
+.main-apropos .apropos-content .navcompa div.table span.version {
+  font-weight: 400;
+}
+.main-apropos .apropos-content h1 {
+  font-size: 55px;
+  -webkit-text-stroke: 2px rgb(255, 255, 255);
+  color: rgba(255, 255, 255, 0);
+  text-align: center;
+  margin: 35px;
+}
+.main-apropos .apropos-content div.card {
+  display: flex;
+  justify-content: center;
+  margin: 15px;
+}
+.main-apropos .apropos-content div.card .apropos-personnalcard {
+  background-color: rgba(19, 19, 19, 0.295);
+  margin: 15px;
+  border-radius: 5px;
+  border: 1px solid var(--color-border);
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.main-apropos .apropos-content div.card .apropos-personnalcard:hover {
+  border: 1px solid grey;
+  cursor: pointer;
+}
+.main-apropos .apropos-content div.card .apropos-personnalcard img {
+  width: 50px;
+  border-radius: 50%;
+  margin: 10px auto;
+  filter: grayscale(1);
+}
+
+.main-tournois .tournois-line {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  margin: 15px 0px;
+  border: 1px solid var(--color-border);
+  border-radius: 5px;
+  align-items: center;
+}
+.main-tournois .tournois-line:hover {
+  background-color: var(--color-hover);
+}
+.main-tournois .tournois-line span {
+  margin: 5px 10px;
+}
+.main-tournois .tournois-line span:nth-child(2) {
+  grid-column: 2/4;
+}
+.main-tournois .title-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  margin: 15px 0px;
+  text-align: center;
+  margin-left: -55px;
+  align-items: center;
+}
+.main-tournois .title-grid span {
+  letter-spacing: 1px;
+  color: var(--red);
+}
+.main-tournois .title-grid span:nth-child(2) {
+  grid-column: 2/4;
+}
+
+.real-main-dashboard .dashadmin-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.real-main-dashboard .dashadmin-section div {
+  background-color: var(--color-element-full);
+  border-radius: 5px;
+  border: 1px solid var(--color-border);
+  padding: 5px;
+}
+.real-main-dashboard .dashadmin-section .ffield h3 {
+  margin: 5px;
+}
+.real-main-dashboard .dashadmin-section .ffield form .form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 2px 15px;
+}
+.real-main-dashboard .dashadmin-section .ffield form .form input {
+  margin: 5px;
+  height: 30px;
+}
+.real-main-dashboard .dashadmin-section .ffield form .form-button {
+  display: flex;
+  justify-content: center;
+  margin: 5px 15px;
+  margin-top: 15px;
+  border: none;
+}
+.real-main-dashboard .dashadmin-section .ffield form .form-button button {
+  background-color: var(--red);
+  border: none;
+  padding: 10px 15px;
+  text-transform: uppercase;
+}
+.real-main-dashboard .dashadmin-section .display-t {
+  padding: 15px;
+}
+.real-main-dashboard .dashadmin-section .display-t .tournois-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 5px 0;
+}
+.real-main-dashboard .dashadmin-section .display-t .tournois-line img {
+  height: 25px;
+}
+
+label {
+  margin: 5px;
+}
+
+.main-dashboard .dashadmin-section .dashadmin-topgrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 15px;
+  height: 200px;
+  text-align: center;
+  align-items: center;
+  margin: 15px 0px;
+}
+.main-dashboard .dashadmin-section .dashadmin-topgrid div:nth-child(1) {
+  grid-column: 1/3;
+}
+.main-dashboard .dashadmin-section .dashadmin-topmid {
+  display: flex;
+}
+.main-dashboard .dashadmin-section .dashadmin-topmid .display-tournaments {
+  width: 60%;
+  background-color: var(--color-element);
+}
+.main-dashboard .dashadmin-section .dashadmin-topmid .display-tournaments .tournois-line {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  border-radius: 2px;
+  border: 1px solid var(--color-border);
+  margin: 3px 12px;
+}
+.main-dashboard .dashadmin-section .dashadmin-topmid .display-tournaments .tournois-line:nth-child(1) {
+  margin-top: 15px;
+}
+.main-dashboard .dashadmin-section .dashadmin-topmid .display-tournaments .tournois-line:last-child {
+  margin-bottom: 15px;
+}
+.main-dashboard .dashadmin-section .dashadmin-topmid .display-tournaments .tournois-line span {
+  margin: 2px;
+  padding: 5px;
+}
+.main-dashboard .dashadmin-section .dashadmin-topmid .display-tournaments .tournois-line span:nth-child(2) {
+  grid-column: 2/5;
+}
+.main-dashboard .dashadmin-section .dashadmin-topmid .display-tournaments .tournois-line div {
+  grid-column: 5/7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main-dashboard .dashadmin-section .dashadmin-topmid .display-tournaments .tournois-line div a {
+  padding: 2px 10px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  transition: 0.2s;
+  cursor: pointer;
+  border-radius: 2px;
+}
+.main-dashboard .dashadmin-section .dashadmin-topmid .display-tournaments .tournois-line div a:hover {
+  background-color: var(--color-hover);
+}
+.main-dashboard .dashadmin-section .dashadmin-topmid .display-tournaments .tournois-line div a img {
+  height: 25px;
+}
+.main-dashboard .dashadmin-section .dashadmin-topmid .init-tourn {
+  width: 40%;
+  margin-left: 5px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.main-dashboard .dashadmin-section .dashadmin-topmid .init-tourn h3 {
+  -webkit-text-stroke: 1px white;
+  color: transparent;
+  font-size: 55px;
+  text-transform: uppercase;
+}
+.main-dashboard .dashadmin-section .dashadmin-topmid .init-tourn a {
+  width: 65px;
+  height: 65px;
+  transition: 0.3s;
+}
+.main-dashboard .dashadmin-section .dashadmin-topmid .init-tourn a:hover {
+  cursor: pointer;
+  background-color: var(--color-hover);
+  border-radius: 50%;
+}
+.main-dashboard .dashadmin-section .dashadmin-topmid .init-tourn a img {
+  height: 55px;
+  width: 55px;
+  margin: 3px 3px;
+}
+.main-dashboard .dashadmin-section .dashadmin-topmid #tcreationmenu {
+  position: absolute;
+  backdrop-filter: blur(12px);
+  top: 15vh;
+  left: 10vw;
+  height: 80vh;
+  width: 80vw;
+  background-color: rgba(35, 94, 107, 0.345);
+  animation: editableanim 0.5s;
+}
+.main-dashboard .dashadmin-section .dashadmin-topmid #tcreationmenu header {
+  height: 25px;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.main-dashboard .dashadmin-section .dashadmin-topmid #tcreationmenu header a {
+  cursor: pointer;
+}
+.main-dashboard .dashadmin-section .dashadmin-topmid #tcreationmenu header img {
+  margin-top: 5px;
+  margin-right: -30px;
+  height: 35px;
+}
+.main-dashboard .dashadmin-section .dashadmin-topmid #tcreationmenu form .form {
+  width: 50%;
+  margin: auto;
+  display: grid;
+  margin-top: 35px;
+  grid-template-columns: repeat(2, 1fr);
+}
+.main-dashboard .dashadmin-section .dashadmin-topmid #tcreationmenu form .form input {
+  margin: 1px;
+}
+.main-dashboard .dashadmin-section .dashadmin-topmid #tcreationmenu form .form-button {
+  text-align: center;
+  margin-top: 50px;
+}
+.main-dashboard .dashadmin-section .dashadmin-topmid #tcreationmenu form .form-button button {
+  background-color: var(--red);
+  border: none;
+  padding: 8px;
+}
+.main-dashboard .dashadmin-card {
+  background-color: var(--color-element);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  height: 100%;
+}
+
+.main-admin-annonce-form {
+  padding-top: 15px;
+}
+.main-admin-annonce-form .form {
+  display: flex;
+  justify-content: center;
+}
+.main-admin-annonce-form .form .textarea {
+  margin: 0 25px;
+  width: 50%;
+}
+.main-admin-annonce-form .form .textarea label {
+  line-height: 25px;
+}
+.main-admin-annonce-form .form textarea {
+  width: 100%;
+  min-width: 700px;
+  padding: 5px;
+  min-height: 120%;
+  font-size: 16px;
+  resize: none;
+}
+.main-admin-annonce-form .form-parta {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 25px;
+}
+.main-admin-annonce-form .form-parta input {
+  margin-bottom: 5px;
+  padding: 5px 12px;
+}
+.main-admin-annonce-form .form-button {
+  text-align: center;
+  margin-top: 20px;
+  width: 40%;
+}
+.main-admin-annonce-form form button {
+  background-color: var(--red);
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+}
+.main-admin-annonce-form .form-annonce-section {
+  margin-bottom: 100px;
+  margin-top: 50px;
+}
+
+.main-editform-dashbadmin .edit-form-section form {
+  display: grid;
+  margin: auto;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+  padding-top: 15px;
+  width: 40%;
+}
+.main-editform-dashbadmin .edit-form-section form input {
+  border-radius: 2px;
+  grid-column: 2/4;
+  border: none;
+  padding: 5px;
+}
+.main-editform-dashbadmin .edit-form-section form button {
+  grid-column: 2;
+  margin: auto;
+  background-color: var(--red);
+  border: none;
+  margin-top: 25px;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.main-editform-dashbadmin .edit-form-section form button:hover {
+  background-color: rgb(147, 41, 41);
+}
+
+.main-dashcap .dashcap-section div.joueurs-liste {
+  margin-top: 25px;
+}
+.main-dashcap .dashcap-section div.nomequipe {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.main-dashcap .dashcap-section div.nomequipe h3 {
+  margin-right: 15px;
+}
+.main-dashcap .dashcap-section div.nomequipe p {
+  color: var(--red);
+  font-weight: 700;
+  font-size: 20px;
+}
+.main-dashcap .dashcap-section .joueurs-liste-section {
+  display: flex;
+  justify-content: center;
+}
+.main-dashcap .dashcap-section .joueurs-liste-section .joueurs-liste-div .joueur-line {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 480px;
+  margin: 5px auto;
+  border-radius: 2px;
+  padding: 5px;
+  border: 1px solid var(--color-border);
+}
+.main-dashcap .dashcap-section .joueurs-liste-section .joueurs-liste-div .joueur-line div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main-dashcap .dashcap-section .joueurs-liste-section .joueurs-liste-div .joueur-line div img {
+  height: 25px;
+  margin: 5px;
+}
+.main-dashcap .dashcap-section .joueurs-liste-section .joueurs-liste-div .joueur-line div a {
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  margin: 0 8px;
+}
+.main-dashcap .dashcap-section .joueurs-liste-section .joueurs-liste-div .joueur-line div a:hover {
+  background-color: var(--color-hover);
+}
+.main-dashcap .dashcap-section .joueurs-liste-section .joueurs-liste-div .title {
+  font-weight: 700;
+  border: none;
+}
+.main-dashcap .dashcap-section .joueurs-liste-section div.ajout-joueurs {
+  margin-left: 5vw;
+  margin-top: 15px;
+}
+.main-dashcap .dashcap-section .joueurs-liste-section div.ajout-joueurs form h3 {
+  margin-bottom: 15px;
+}
+.main-dashcap .dashcap-section .joueurs-liste-section div.ajout-joueurs form div {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 5px;
+}
+.main-dashcap .dashcap-section .joueurs-liste-section div.ajout-joueurs form button {
+  padding: 5px 12px;
+  margin-top: 15px;
+  background-color: var(--red);
+  border: none;
+  border-radius: 3px;
+}
+.main-dashcap .dashcap-section #joueur-edit {
+  position: absolute;
+  backdrop-filter: blur(12px);
+  border-radius: 5px;
+  top: 20vh;
+  left: 10vw;
+  height: 50vh;
+  width: 80vw;
+  background-color: rgba(35, 94, 107, 0.345);
+  animation: editableanim 0.5s;
+}
+.main-dashcap .dashcap-section #joueur-edit header {
+  height: 25px;
+  top: 0;
+  width: 99.8%;
+  border-radius: 5px 5px 0 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.main-dashcap .dashcap-section #joueur-edit header button {
+  cursor: pointer;
+  background-color: var(--red);
+  border: none;
+  padding: 5px 8px;
+  margin-right: 15px;
+}
+
+main.user-dash-main section.dashadmin-section div.dashadmin-topmid div.display-tournaments div.tournois-line-user {
+  display: grid;
+  text-align: center;
+  gap: 0px;
+  grid-template-columns: repeat(8, 1fr);
+  margin: 20px 10px;
+}
+main.user-dash-main section.dashadmin-section div.dashadmin-topmid div.display-tournaments div.tournois-line-user span {
+  padding: 0 15px;
+}
+main.user-dash-main section.dashadmin-section div.dashadmin-topmid div.display-tournaments div.tournois-line-user span:nth-child(3) {
+  grid-column: 3/5;
+  width: 80%;
+}
+main.user-dash-main section.dashadmin-section div.dashadmin-topmid div.display-tournaments div.tournois-line-user span:nth-child(4) {
+  grid-column: 5/7;
+}
+main.user-dash-main section.dashadmin-section div.dashadmin-topmid div.display-tournaments div.tournois-line-user a.edit {
+  width: 50%;
+  margin: auto;
+  padding: 8px 0px;
+  text-align: centers;
+}
+main.user-dash-main section.dashadmin-section div.dashadmin-topmid div.display-tournaments div.tournois-line-user a img {
+  height: 25px;
+}
+main.user-dash-main section.dashadmin-section div.dashadmin-topmid div.display-tournaments div.tournois-line-user span, main.user-dash-main section.dashadmin-section div.dashadmin-topmid div.display-tournaments div.tournois-line-user a {
+  border-radius: 5px;
+}
+main.user-dash-main section.dashadmin-section div.dashadmin-topmid div.display-tournaments div.tournois-line-user a:hover {
+  background-color: var(--color-hover);
+}
+
+main.main-matchtournois #loaderdiv {
+  width: 75vw;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}
+main.main-matchtournois #loaderdiv .loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  animation: spin 2s linear infinite;
+  position: absolute;
+  margin-left: 150px;
+  margin: auto;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+main.main-matchtournois section.topsec {
+  border: 1px solid rgb(73, 73, 73);
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+main.main-matchtournois section.topsec h2.title {
+  text-align: center;
+  font-size: 28px;
+}
+main.main-matchtournois section.topsec span.sub {
+  text-align: center;
+}
+main.main-matchtournois section.topsec div.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  text-align: left;
+  border: 1px solid rgb(73, 73, 73);
+  border-radius: 5px;
+  padding: 5px;
+  width: 70%;
+  margin: auto;
+  margin-top: 15px;
+}
+main.main-matchtournois section.topsec div.grid h3 {
+  color: lightgrey;
+  font-weight: 400;
+}
+main.main-matchtournois section.topsec div.grid span {
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+main.main-matchtournois section.topsec section.bottom-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+main.main-matchtournois section.topsec section.bottom-top div.addt {
+  border: 1px solid rgb(73, 73, 73);
+  border-radius: 5px;
+  padding: 5px;
+}
+main.main-matchtournois section.topsec section.bottom-top div.addt div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main.main-matchtournois section.topsec section.bottom-top div.addt div select, main.main-matchtournois section.topsec section.bottom-top div.addt div option {
+  color: black;
+  padding: 4px;
+  margin: 5px;
+  width: 70%;
+  border-radius: 3px;
+}
+main.main-matchtournois section.topsec section.bottom-top div.addt div select:focus {
+  outline: none;
+}
+main.main-matchtournois section.topsec section.bottom-top div.addt div button {
+  background-color: var(--red);
+  padding: 2px 9px;
+  border: 1px solid var(--red);
+  border-radius: 3px;
+  text-transform: uppercase;
+  font-size: 14px;
+  transition: 0.2s;
+}
+main.main-matchtournois section.topsec section.bottom-top div.addt div button:hover {
+  cursor: pointer;
+  background-color: rgb(182, 45, 45);
+  border: 1px solid rgb(182, 45, 45);
+}
+main.main-matchtournois section.topsec section.bottom-top div.generationdiv {
+  margin: 0 25px;
+}
+main.main-matchtournois section.topsec section.bottom-top div.generationdiv a {
+  background-color: var(--blue);
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  text-transform: uppercase;
+  padding-right: 15px;
+  transition: 0.2s;
+}
+main.main-matchtournois section.topsec section.bottom-top div.generationdiv a img {
+  height: 45px;
+  margin: 5px;
+}
+main.main-matchtournois section.topsec section.bottom-top div.generationdiv a:hover {
+  background-color: rgb(54, 107, 171);
+}
+main.main-matchtournois section.forequipesection {
+  display: flex;
+  border: 1px solid rgb(73, 73, 73);
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 30px;
+}
+main.main-matchtournois section.forequipesection div.forequipediv {
+  align-items: center;
+  width: 30%;
+  margin: 5px;
+  border: 1px solid rgb(73, 73, 73);
+  border-radius: 5px;
+}
+main.main-matchtournois section.forequipesection div.forequipediv div {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  padding-bottom: 15px;
+}
+main.main-matchtournois section.forequipesection div.forequipediv div article span {
+  color: lightgrey;
+  padding-left: 10px;
+  border-left: 1px solid rgb(73, 73, 73);
+}
+main.main-matchtournois section.forequipesection div.forequipediv div article span.score {
+  border: 1px solid white;
+  background-color: var(--color-hover);
+  border-radius: 5px;
+  padding: 0 5px;
+}
+main.main-matchtournois section.forequipesection div.forequipediv a {
+  grid-column: 3;
+}
+main.main-matchtournois section.forequipesection div.forequipediv a img {
+  height: 35px;
+}
+main.main-matchtournois section.display-poule {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+main.main-matchtournois section.display-poule div.line-poule {
+  padding: 10px;
+  border: 1px solid white;
+  border-radius: 5px;
+  margin: 5px;
+}
+main.main-matchtournois section.display-poule div.line-poule h3 {
+  text-align: center;
+  border-radius: 5px;
+  background-color: var(--color-hover);
+  padding: 3px;
+}
+main.main-matchtournois section.display-poule div.line-poule h3 span {
+  background-color: var(--red);
+  border-radius: 5px;
+  margin: 5px 10px;
+}
+main.main-matchtournois section.display-poule div.line-poule p {
+  display: flex;
+  width: 40%;
+  margin: auto;
+  justify-content: space-between;
+}
+main.main-matchtournois section.display-poule div.line-poule p span {
+  color: lightgrey;
+}
+main.main-matchtournois section.display-poule div.line-poule p:nth-child(4) {
+  font-weight: 700;
+}
+main.main-matchtournois section.display-poule div.line-poule p:nth-child(4) span {
+  font-weight: 500;
+}
+main.main-matchtournois section.display-poule div.line-poule a {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+main.main-matchtournois section.display-poule div.line-poule a img {
+  height: 35px;
+  margin: auto;
+}
+
+main.main-edit-tournois section.dashcap-section {
+  display: flex;
+  justify-content: center;
+  border: 1px solid var(--color-hover);
+  border-radius: 5px;
+  padding: 15px;
+  width: 70%;
+  margin: auto;
+}
+main.main-edit-tournois section.dashcap-section div.ajout-joueurs {
+  margin: 0 25px;
+}
+main.main-edit-tournois section.dashcap-section div.ajout-joueurs form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 15px 0;
+}
+main.main-edit-tournois section.dashcap-section div.ajout-joueurs form input {
+  height: 18px;
+}
+main.main-edit-tournois section.dashcap-section div.ajout-joueurs form button {
+  background-color: var(--red);
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  transition: 0.2s;
+}
+main.main-edit-tournois section.dashcap-section div.ajout-joueurs form button:hover {
+  cursor: pointer;
+  background-color: rgb(182, 45, 45);
+}
+main.main-edit-tournois section.dashcap-section div.equinscr {
+  border-left: 1px solid var(--color-hover);
+  padding-left: 25px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+main.main-edit-tournois section.dashcap-section div.equinscr p {
+  border: 1px solid var(--color-hover);
+  border-radius: 5px;
+  background-color: var(--color-hover);
+  padding: 10px;
+  margin: 5px;
+  width: 100%;
+}
+
+main.main-dash-editform-match section div form {
+  display: grid;
+  width: 50%;
+  margin: auto;
+  grid-template-columns: repeat(2, 1fr);
+}
+main.main-dash-editform-match section div form input {
+  height: 30px;
+  margin: 2px;
+  padding: 2px 8px;
+}
+main.main-dash-editform-match section div form button, main.main-dash-editform-match section div form a {
+  background-color: var(--red);
+  border: none;
+  padding: 8px;
+  margin: 10px;
+  text-transform: uppercase;
+  text-align: center;
+}
+main.main-dash-editform-match section div.addt form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid grey;
+  border-radius: 5px;
+  background-color: var(--color-hover);
+}
+main.main-dash-editform-match section div.addt form select, main.main-dash-editform-match section div.addt form option {
+  color: black;
+  padding: 0;
+  height: 30px;
+  width: 250px;
+}
+
+footer {
+  text-align: center;
+  border-top: 2px solid var(--color-border);
+  padding-top: 50px;
+  margin-top: 50px;
+}
+
+@media (max-width: 700px) {
+  header {
+    width: 90vw;
+    min-width: 0vh;
+  }
+  header .nav {
+    display: none;
+    background-color: var(--color-element);
+    backdrop-filter: blur(50em);
+    width: 90vw;
+    height: 90vh;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    left: 0;
+  }
+}
+
+/*# sourceMappingURL=main-style.css.map */
