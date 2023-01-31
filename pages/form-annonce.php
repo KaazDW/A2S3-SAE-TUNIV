@@ -74,7 +74,7 @@
             foreach($annonces as $annonce):?>
 
             <div class="annonce-card-admin">
-                <img class="img-cover" src=<?php if($annonce['Image']!=NULL) {echo("../../" . $annonce['Image']);} else {echo("../../assets/img/annonce.png");}?> alt="logo de l'annonce" >
+                <img class="img-cover"  alt="" src=<?php if($annonce['Image']!=NULL) {echo("../../" . $annonce['Image']);} else {echo("../../assets/img/annonce.png");}?> alt="logo de l'annonce" >
                 <div class="text-field">
                     <h3><?php echo($annonce['Titre'])?></h3>
                     <p class="date"><?php echo($annonce['Date_annonce']) ?></p>
@@ -82,7 +82,7 @@
                     <p><?php echo($annonce['Contenu'])?></p>
                 </div>
                 <a class="edit" href="../config/config-suppr-annonce.php?id=<?php echo($annonce['ID_Annonce']) ?>">
-                    <img src='../assets/img/delete-blanc.png' alt='logo suppression'>
+                    <img  alt="" src='../assets/img/delete-blanc.png' alt='logo suppression'>
                 </a>
             </div>
 
