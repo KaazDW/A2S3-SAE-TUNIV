@@ -36,10 +36,10 @@ $user->execute(['varId' => $_GET["id"]]);
                     $utilisateur = $pdo->prepare('SELECT Nom,Prenom, Email, Type_user from Utilisateurs  where ID_User=:varId;');
                     $utilisateur->execute(['varId' => $_GET["id"]]);
                     $joueurs = $utilisateur->fetch();
-                    $nom= $joueurs[0];
-                    $prenom= $joueurs[1];
-                    $mail= $joueurs[2];
-                    $type= $joueurs[3];
+                    $nom = $joueurs[0];
+                    $prenom = $joueurs[1];
+                    $mail = $joueurs[2];
+                    $type = $joueurs[3];
                     ?>
 
                     <div class="ajout-joueurs">
@@ -47,19 +47,19 @@ $user->execute(['varId' => $_GET["id"]]);
                             <h3>Modifier l'utilisateur</h3>
                             <div>
                                 <label for="new-surname1">Prénom</label>
-                                <input name="new-surname1" value=<?php echo($prenom) ?> id="new-surname1">
+                                <input name="new-surname1" value=<?php echo ($prenom) ?> id="new-surname1">
                             </div>
                             <div>
                                 <label for="new-name1">Nom</label>
-                                <input name="new-name1" value=<?php echo($nom) ?> id="new-name1">
+                                <input name="new-name1" value=<?php echo ($nom) ?> id="new-name1">
                             </div>
                             <div>
                                 <label for="new-mail1">Mail</label>
-                                <input name="new-mail1" value=<?php echo($mail) ?> id="new-mail1">
+                                <input name="new-mail1" value=<?php echo ($mail) ?> id="new-mail1">
                             </div>
                             <div>
                                 <label for="new-type1">Type</label>
-                                <input name="new-type1" value=<?php echo($type) ?> id="new-type1">
+                                <input name="new-type1" value=<?php echo ($type) ?> id="new-type1">
                             </div>
                             <button>Valider</button>
                         </form>
