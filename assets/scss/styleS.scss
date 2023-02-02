@@ -208,6 +208,15 @@ main.main-matchtournois{
                         padding-left: 10px;
                         border-left: 1px solid rgb(73, 73, 73);
                     }
+                    span.score{
+                        border: 1px solid white;
+                        // display: flex;
+                        // justify-content: center;
+                        // align-items: center;
+                        background-color: var(--color-hover);
+                        border-radius: 5px;
+                        padding: 0 5px;
+                    }
                 }
             }
             a{
@@ -331,12 +340,13 @@ main.main-dash-editform-match{
                     margin: 2px;
                     padding: 2px 8px;
                 }
-                button{
+                button, a{
                     background-color: var(--red);
                     border: none;
                     padding: 8px;
                     margin: 10px;
                     text-transform: uppercase;
+                    text-align: center;
                 }
             }
         }

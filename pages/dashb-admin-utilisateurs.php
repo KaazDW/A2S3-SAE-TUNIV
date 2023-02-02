@@ -50,10 +50,10 @@ $listeUtilisateurs = $pdo->query($sql);
                         <span><?php echo($utilisateur['Email']) ?></span>
                         <div>
                             <a class="edit" href="dashb-admin-editform-user.php?id=<?= $utilisateur['ID_User'] ?>">
-                                <img src="../assets/img/edit-blanc.png">
+                                <img  alt="" src="../assets/img/edit-blanc.png">
                             </a>
                             <a class="edit" href="../config/config-suppr-user.php?id=<?= $utilisateur['ID_User'] ?>">
-                                <img src="../assets/img/delete-blanc.png">
+                                <img  alt="" src="../assets/img/delete-blanc.png">
                             </a>
                         </div>
                     </div>
@@ -65,13 +65,13 @@ $listeUtilisateurs = $pdo->query($sql);
                 <div class="init-tourn dashadmin-card">
                     <h3>Utilisateur</h3>
                     <a id="tcreate">
-                        <img src="../assets/img/create.png">
+                        <img  alt="" src="../assets/img/create.png">
                     </a>
                 </div>
                 <div id="tcreationmenu">
                     <header>
                         <a id="creationmenuclose">
-                            <img src="../assets/img/cross.png">
+                            <img  alt="" src="../assets/img/cross.png">
                         </a>
                     </header>
 

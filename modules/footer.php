@@ -1,4 +1,4 @@
 <footer>
     <!-- <h3>footer</h5> -->
-    <a href="">©TUNIV</a>
+    <a href="/pages/apropos.php">©TUNIV</a>
 </footer>

@@ -190,6 +190,12 @@ main.main-matchtournois section.forequipesection div.forequipediv div article sp
   padding-left: 10px;
   border-left: 1px solid rgb(73, 73, 73);
 }
+main.main-matchtournois section.forequipesection div.forequipediv div article span.score {
+  border: 1px solid white;
+  background-color: var(--color-hover);
+  border-radius: 5px;
+  padding: 0 5px;
+}
 main.main-matchtournois section.forequipesection div.forequipediv a {
   grid-column: 3;
 }
@@ -301,12 +307,13 @@ main.main-dash-editform-match section div form input {
   margin: 2px;
   padding: 2px 8px;
 }
-main.main-dash-editform-match section div form button {
+main.main-dash-editform-match section div form button, main.main-dash-editform-match section div form a {
   background-color: var(--red);
   border: none;
   padding: 8px;
   margin: 10px;
   text-transform: uppercase;
+  text-align: center;
 }
 main.main-dash-editform-match section div.addt form {
   display: flex;

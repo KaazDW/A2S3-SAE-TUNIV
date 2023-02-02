@@ -103,9 +103,8 @@ $scoreEquipe2 = $scoresEquipes->fetch()[0];
                     <label for="new-score-equipe2">Score <?php echo $nomEquipe2 ?></label>
                     <input name="new-score-equipe2" value="<?php echo $scoreEquipe2 ?>" id="new-score-equipe2">
                     <button>Valider</button>
+                    <a style="background-color: var(--blue)" href="../config/config-verrouillage-match.php?id=<?php echo($_GET["id"]);?>">VERROUILLER LE MATCH</a>
                 </form>
-
-                <a style="background-color: var(--blue)" href="../config/config-verrouillage-match.php?id=<?php echo($_GET["id"]);?>">VERROUILLER LE MATCH</a>
             </div>
             
             <?php 
