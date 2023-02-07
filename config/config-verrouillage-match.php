@@ -53,4 +53,20 @@ if ($scoreEquipe1>$scoreEquipe2){
 $verrouillage = $pdo->prepare("UPDATE MatchTournoi SET Etat = 1 WHERE ID_Match = :varId");
 $verrouillage->execute(['varId' => $_GET["id"]]);
 
-header("Location: ../pages/match-tournois.php?id=" . $tournoi);
+$testFini = $pdo->prepare("SELECT COUNT(ID_Match) FROM MatchTournoi WHERE ID_Tournoi = :varTournoi AND Etat = 0;");
+$testFini->execute(['varTournoi' => $tournoi]);
+$testFini = $testFini->fetch()[0];
+if ($testFini==0){
+    $etapeTournoi = $pdo->prepare("SELECT Etape FROM Tournoi WHERE ID_Tournoi = :varTournoi");
+    $etapeTournoi->execute(['varTournoi' => $tournoi]);
+    $etapeTournoi = $etapeTournoi->fetch()[0];
+    if ($etapeTournoi==1){
+        header("Location: config-bracket-tournoi.php?id=" . $tournoi);
+    }
+    else {
+        header("Location: config-fin-tournoi.php?id=" . $tournoi);
+    }
+}
+else {
+    header("Location: ../pages/match-tournois.php?id=" . $tournoi);
+}
