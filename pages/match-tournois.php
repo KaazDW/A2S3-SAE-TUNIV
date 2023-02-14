@@ -80,7 +80,7 @@ $equipes=$listeequipe->fetchAll();
                                  <form name='store' id='store' method='POST' action='../config/config-add-team-inscrit.php?id=". $_GET['id'] . "'>
                                     <select name='selectid' id='selectid' >");
                                     foreach($reponses as $value):
-                                        echo "<option value=" . $value['ID_Equipe'] . ">" . $value['Nom'] . " </option>";
+                                        echo "<option value=" . htmlspecialchars($value['ID_Equipe']) . ">" . htmlspecialchars($value['Nom']) . " </option>";
                                     endforeach;
                                 echo ("</select>
                                 <button>Ajouter</button>
@@ -122,12 +122,12 @@ $equipes=$listeequipe->fetchAll();
                         $nomCapitaine = $nomCapitaine->fetch();
                         ?>
                         <article>
-                            <h3><?php echo($equipe['Nom']);?></h3>
-                            <span><?php echo ($nomCapitaine["Prenom"]); echo " ", $nomCapitaine["Nom"] ?></span>
-                            <span class="score"><?php echo ($equipe["Score"]) ?></span>
+                            <h3><?php echo(htmlspecialchars($equipe['Nom']));?></h3>
+                            <span><?php echo(htmlspecialchars($nomCapitaine["Prenom"])); echo " ", htmlspecialchars($nomCapitaine["Nom"]) ?></span>
+                            <span class="score"><?php echo(htmlspecialchars($equipe["Score"])) ?></span>
                         </article>
                         <?php if ($_SESSION["type"] == "administrateur" && $tournoi[0]["Etape"]==0) {
-                            echo (" <a  href='../config/config-delete-team-inscrit.php?idEquipe=" .  $equipe['ID_Equipe'] . "&amp;idTournoi=" . $_GET['id'] . "'>
+                            echo (" <a  href='../config/config-delete-team-inscrit.php?idEquipe=" .  htmlspecialchars($equipe['ID_Equipe']) . "&amp;idTournoi=" . $_GET['id'] . "'>
                                     <img src='../assets/img/delete-blanc.png'>
                                 </a>");
                         };
@@ -162,13 +162,13 @@ $equipes=$listeequipe->fetchAll();
                     $scoreEquipe2 = $scoresEquipes->fetch();
                     ?>
                     <h3>
-                        <?php echo $nomEquipe1[0]; echo(" "); echo $scoreEquipe1[0]; ?><span> VS </span> <?php echo $scoreEquipe2[0]; echo(" "); echo $nomEquipe2[0];?>
+                        <?php echo htmlspecialchars($nomEquipe1[0]); echo(" "); echo htmlspecialchars($scoreEquipe1[0]); ?><span> VS </span> <?php echo htmlspecialchars($scoreEquipe2[0]); echo(" "); echo htmlspecialchars($nomEquipe2[0]);?>
                     </h3>
-                    <p><?php echo "<span>> Fin : </span>" . $match['DateDebut'];?></p>
-                    <p><?php echo "<span>> Debut : </span>" . $match['DateFin'];?></p>
-                    <p><?php echo "<span>> Stade : </span>" . $match['Stade'];?></p>
+                    <p><?php echo "<span>> Fin : </span>" . htmlspecialchars($match['DateDebut']);?></p>
+                    <p><?php echo "<span>> Debut : </span>" . htmlspecialchars($match['DateFin']);?></p>
+                    <p><?php echo "<span>> Stade : </span>" . htmlspecialchars($match['Stade']);?></p>
                     <?php if (($_SESSION["type"] == "administrateur" || ($_SESSION["type"]=="arbitre" && $match["ID_User"]==$_SESSION["userId"])) && $match["Etat"]==0) {
-                                echo (" <a  href='dashb-editform-match.php?id=" . $match['ID_Match'] . "'>
+                                echo (" <a href='dashb-editform-match.php?id=" . htmlspecialchars($match['ID_Match']) . "'>
                                             <img src='../assets/img/edit-blanc.png'>
                                         </a>"
                                 );
