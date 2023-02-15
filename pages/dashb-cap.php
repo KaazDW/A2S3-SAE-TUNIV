@@ -7,26 +7,18 @@ if ($_SESSION["type"] != "capitaine") {
     header("Location: ../index.php");
 }
 
-
-
 include '../config/db.php';
 
 $sql = "SELECT * FROM Tournoi;";
 $listeTournois = $pdo->query($sql);
-
-
-
-
 ?>
 
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <?php include '../modules/head.php'; ?>
     <link href="../assets/css/style.css" rel="stylesheet">
 </head>
-
 <body>
     <?php include '../modules/header.php'; ?>
     <main class="main-dashcap">
@@ -36,14 +28,10 @@ $listeTournois = $pdo->query($sql);
                 <h3>Nom de l'équipe : </h3>
                 <p>
                     <?php
-                    $listematch = $pdo->prepare('SELECT Nom, ID_Equipe from Equipe where ID_Capitaine=:varId;');
-                    $listematch->execute(
-                        [
-                            'varId' => $_SESSION["userId"],
-                        ]
-                    );
-                    $equipe = $listematch->fetch();
-                    $_SESSION["actuel"] = $equipe[1];
+                        $listematch = $pdo->prepare('SELECT Nom, ID_Equipe from Equipe where ID_Capitaine=:varId;');
+                        $listematch->execute(['varId' => $_SESSION["userId"],]);
+                        $equipe = $listematch->fetch();
+                        $_SESSION["actuel"] = $equipe[1];
                     ?>
                 <form action="../config/config-cap-edit-team.php" method="POST" enctype="multipart/form-data">
                     <div>
@@ -63,11 +51,7 @@ $listeTournois = $pdo->query($sql);
                     </div>
                     <?php
                     $listejoueur = $pdo->prepare('SELECT Joueur.Prenom, Joueur.Nom, Joueur.ID_Joueur from Joueur inner join Equipe on Joueur.ID_Equipe=Equipe.ID_Equipe where Equipe.ID_Capitaine=:varId;');
-                    $listejoueur->execute(
-                        [
-                            'varId' => $_SESSION["userId"],
-                        ]
-                    );
+                    $listejoueur->execute(['varId' => $_SESSION["userId"],]);
                     $joueurs = $listejoueur->fetchAll();
                     foreach ($joueurs as $joueur) :
                     ?>
@@ -75,7 +59,6 @@ $listeTournois = $pdo->query($sql);
                         <div class="joueur-line">
                             <span><?php echo ($joueur['Prenom']) ?></span>
                             <span><?php echo ($joueur['Nom']) ?></span>
-
                             <div>
                                 <a class="edit" href="dashb-cap-edit.php?id=<?= $joueur['ID_Joueur'] ?>"><img src="/assets/img/edit-blanc.png"></a>
                                 <a class="edit" href="../config/config-suppr-joueur.php?id=<?= $joueur['ID_Joueur'] ?>"><img src="/assets/img/delete-blanc.png"></a>
@@ -123,5 +106,4 @@ $listeTournois = $pdo->query($sql);
         });
     </script>
 </body>
-
 </html>

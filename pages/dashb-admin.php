@@ -1,31 +1,27 @@
 <?php session_start();
+    if (empty($_SESSION["type"])) {
+        $_SESSION["type"] = false;
+    }
 
-if (empty($_SESSION["type"])) {
-    $_SESSION["type"] = false;
-}
+    if ($_SESSION["type"] != "administrateur") {
+        header("Location: ../index.php");
+    }
 
-if ($_SESSION["type"] != "administrateur") {
-    header("Location: ../index.php");
-}
+    include '../config/db.php';
 
-include '../config/db.php';
+    $sql = "SELECT * FROM Tournoi;";
+    $listeTournois = $pdo->query($sql);
 
-$sql = "SELECT * FROM Tournoi;";
-$listeTournois = $pdo->query($sql);
-
-$sql = "SELECT * FROM Equipe;";
-$listeEquipes = $pdo->query($sql);
-
+    $sql = "SELECT * FROM Equipe;";
+    $listeEquipes = $pdo->query($sql);
 ?>
 
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <?php include '../modules/head.php'; ?>
-    <link href="../assets/css/style.css" rel="stylesheet">
+    <!-- <link href="../assets/css/style.css" rel="stylesheet"> -->
 </head>
-
 <body>
     <?php include '../modules/header.php'; ?>
     <main class="real-main-dashboard">
@@ -71,7 +67,7 @@ $listeEquipes = $pdo->query($sql);
                 <h3>Créer une nouvelle équipe</h3>
                 <form action="../config/config-admin-crea-equipe.php" method="POST">
                     <div class="form-button">
-                            <button type="submit">Créer l'équipe</button>
+                        <button type="submit">Créer l'équipe</button>
                     </div>    
                     <div class="form">
                         <label for="name">Nom</label>
@@ -86,8 +82,6 @@ $listeEquipes = $pdo->query($sql);
                         <label for="firstname-capitaine">Prenom Capitaine</label>
                         <input name="firstname-capitaine" type="firstname-capitaine" id="firstname-capitaine" required="required">
                     </div>
-
-
                 </form>
             </div>
             <div class="display-t">
@@ -129,7 +123,7 @@ $listeEquipes = $pdo->query($sql);
                             </div>
                         </div>
                     <?php
-                    endforeach;
+                        endforeach;
                     ?>
                 </div>
         </section>
