@@ -1,18 +1,16 @@
 <?php session_start();
+    if (empty($_SESSION["type"])) {
+        $_SESSION["type"] = false;
+    }
 
-if (empty($_SESSION["type"])) {
-    $_SESSION["type"] = false;
-}
+    if ($_SESSION["type"]!="administrateur") {
+        header("Location: ../index.php");
+    }
 
-if ($_SESSION["type"]!="administrateur") {
-    header("Location: ../index.php");
-}
+    include '../config/db.php';
 
-include '../config/db.php';
-
-$sql = "SELECT * FROM Utilisateurs;";
-$listeUtilisateurs = $pdo->query($sql);
-
+    $sql = "SELECT * FROM Utilisateurs;";
+    $listeUtilisateurs = $pdo->query($sql);
 ?>
 
 <!DOCTYPE html>
@@ -23,16 +21,13 @@ $listeUtilisateurs = $pdo->query($sql);
 </head> 
 <body>
     <?php include '../modules/header.php'; ?>
-    
-
-     
     <main class="main-dashboard user-dash-main">
         <h2 class="title">Utilisateurs</h2>
         <?php 
-        if (!empty($_SESSION["userErreur"])){
-            echo("<div>" . $_SESSION["userErreur"] . "</div>");
-            unset($_SESSION["userErreur"]);
-        }
+            if (!empty($_SESSION["userErreur"])){
+                echo("<div>" . $_SESSION["userErreur"] . "</div>");
+                unset($_SESSION["userErreur"]);
+            }
         ?>
         <section class="dashadmin-section users-resp">
             <div class="dashadmin-topmid">
@@ -41,13 +36,13 @@ $listeUtilisateurs = $pdo->query($sql);
                         foreach($utilisateurs as $utilisateur):
                     ?>
                     <div class="tournois-line-user">
-                        <span><?php echo($utilisateur['Prenom']) ?></span>
-                        <span><?php echo($utilisateur['Nom']) ?></span>
+                        <span><?php echo(htmlspecialchars($utilisateur['Prenom'])) ?></span>
+                        <span><?php echo(htmlspecialchars($utilisateur['Nom'])) ?></span>
                         <span><?php if ($utilisateur['Type_user']==0) {echo('Administrateur');}
                                     else if ($utilisateur['Type_user']==1) {echo('Arbitre');}
                                     else {echo('Capitaine');}
                                 ?></span>
-                        <span><?php echo($utilisateur['Email']) ?></span>
+                        <span><?php echo(htmlspecialchars($utilisateur['Email'])) ?></span>
                         <div>
                             <a class="edit" href="dashb-admin-editform-user.php?id=<?= $utilisateur['ID_User'] ?>">
                                 <img  alt="" src="../assets/img/edit-blanc.png">
@@ -58,10 +53,9 @@ $listeUtilisateurs = $pdo->query($sql);
                         </div>
                     </div>
                     <?php
-                    endforeach;
+                        endforeach;
                     ?>
                 </div>
-
                 <div class="init-tourn dashadmin-card">
                     <h3>Utilisateur</h3>
                     <a id="tcreate">
@@ -74,7 +68,6 @@ $listeUtilisateurs = $pdo->query($sql);
                             <img  alt="" src="../assets/img/cross.png">
                         </a>
                     </header>
-
                     <h3>Créer un nouvel utilisateur</h3>
                     <form action="../config/config-crea-user.php" method="POST">
                         <div class="form">
@@ -103,17 +96,13 @@ $listeUtilisateurs = $pdo->query($sql);
                                 <option value="2">Arbitre</option>
                             </select>
                         </div>
-
                         <div class="form-button">
                             <button type="submit">Créer l'utilisateur</button>
                         </div>      
                     </form>
-
                 </div>
             </div>
         </section>
-
-
     </main>
     <?php include '../modules/footer.php'; ?>
     <script>

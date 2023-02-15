@@ -63,7 +63,7 @@ $listeAnnonces = $pdo->query($sql);
                     <button type="submit">Créer l'annonce</button>
                 </div>
             </form>
-            <?php if (!empty($_SESSION["annonceErreur"])) {
+            <?php if (!empty($_SESSION["annonceErreur"])) { //pas compris a quoi servent ces lignes (jf)
                 echo ("<p>$_SESSION[annonceErreur]</p>");
                 unset($_SESSION["annonceErreur"]);
             } ?>
@@ -79,12 +79,12 @@ $listeAnnonces = $pdo->query($sql);
             <div class="annonce-card-admin">
                 <img class="img-cover"  alt="" src=<?php if($annonce['Image']!=NULL) {echo("../../" . $annonce['Image']);} else {echo("../../assets/img/annonce.png");}?> alt="logo de l'annonce" >
                 <div class="text-field">
-                    <h3><?php echo($annonce['Titre'])?></h3>
+                    <h3><?php echo(htmlspecialchars($annonce['Titre']))?></h3>
                     <p class="date"><?php echo($annonce['Date_annonce']) ?></p>
-                    <p><?php echo($annonce['Auteur']) ?>, <span class="role"><?php echo($annonce['Role'])?></span></p>
-                    <p><?php echo($annonce['Contenu'])?></p>
+                    <p><?php echo(htmlspecialchars($annonce['Auteur'])) ?>, <span class="role"><?php echo(htmlspecialchars($annonce['Role']))?></span></p>
+                    <p><?php echo(htmlspecialchars($annonce['Contenu']))?></p>
                 </div>
-                <a class="edit" href="../config/config-suppr-annonce.php?id=<?php echo($annonce['ID_Annonce']) ?>">
+                <a class="edit" href="../config/config-suppr-annonce.php?id=<?php echo(htmlspecialchars($annonce['ID_Annonce'])) ?>">
                     <img  alt="" src='../assets/img/delete-blanc.png' alt='logo suppression'>
                 </a>
             </div>

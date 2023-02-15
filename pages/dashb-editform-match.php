@@ -74,16 +74,14 @@ $scoreEquipe2 = $scoresEquipes->fetch()[0];
 
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <?php include '../modules/head.php'; ?>
     <link href="../assets/css/style.css" rel="stylesheet">
 </head>
-
 <body>
     <?php include '../modules/header.php'; ?>
     <main class="main-dash-editform-match">
-        <h2 class="title">Modifier le match <?php echo ($nomEquipe1 . " VS " . $nomEquipe2)?></h2>
+        <h2 class="title">Modifier le match <?php echo (htmlspecialchars($nomEquipe1) . " VS " . htmlspecialchars($nomEquipe2))?></h2>
         <section>
             <div>
                 <h3>Modifier le match</h3>
@@ -95,13 +93,13 @@ $scoreEquipe2 = $scoresEquipes->fetch()[0];
                     <input name="new-date-fin" value="<?php echo $dateFin ?>" id="new-date-fin">
 
                     <label for="new-stade">Stade</label>
-                    <input name="new-stade" value="<?php echo $stade ?>" id="new-stade">
+                    <input name="new-stade" value="<?php echo htmlspecialchars($stade) ?>" id="new-stade">
 
                     <label for="new-score-equipe1">Score <?php echo $nomEquipe1 ?></label>
-                    <input name="new-score-equipe1" value="<?php echo $scoreEquipe1 ?>" id="new-score-equipe1">
+                    <input name="new-score-equipe1" value="<?php echo htmlspecialchars($scoreEquipe1) ?>" id="new-score-equipe1">
                     
                     <label for="new-score-equipe2">Score <?php echo $nomEquipe2 ?></label>
-                    <input name="new-score-equipe2" value="<?php echo $scoreEquipe2 ?>" id="new-score-equipe2">
+                    <input name="new-score-equipe2" value="<?php echo htmlspecialchars($scoreEquipe2) ?>" id="new-score-equipe2">
                     <button>Valider</button>
                     <a style="background-color: var(--blue)" href="../config/config-verrouillage-match.php?id=<?php echo($_GET["id"]);?>">VERROUILLER LE MATCH</a>
                 </form>
@@ -120,7 +118,7 @@ $scoreEquipe2 = $scoresEquipes->fetch()[0];
                                 <form name='store' id='store' method='POST' action='../config/config-changer-arbitre.php?id=". $_GET['id'] . "'>
                                     <select name='selectid' id='selectid' >");
                                     foreach($reponses as $value):
-                                        echo "<option value=" . $value['ID_User'] . ">" . $value['Prenom'] . " " . $value['Nom'] . " </option>";
+                                        echo "<option value=" . $value['ID_User'] . ">" . htmlspecialchars($value['Prenom']) . " " . htmlspecialchars($value['Nom']) . " </option>";
                                     endforeach;
                                     echo ("</select>
                                     <button>Ajouter</button>

@@ -1,47 +1,40 @@
 <?php session_start();
-if (empty($_SESSION["type"])) {
-    $_SESSION["type"] = false;
-}
+    if (empty($_SESSION["type"])) {
+        $_SESSION["type"] = false;
+    }
+    if ($_SESSION["type"] != "administrateur") {
+        header("Location: ../index.php");
+    }
 
-if ($_SESSION["type"] != "administrateur") {
-    header("Location: ../index.php");
-}
+    include '../config/db.php';
 
-include '../config/db.php';
-
-$user = $pdo->prepare('SELECT * FROM Utilisateurs where ID_User =:varId');
-
-$user->execute(['varId' => $_GET["id"]]);
+    $user = $pdo->prepare('SELECT * FROM Utilisateurs where ID_User =:varId');
+    $user->execute(['varId' => $_GET["id"]]);
 ?>
 
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <?php include '../modules/head.php'; ?>
-    <link href="../assets/css/style.css" rel="stylesheet">
+    <!-- <link href="../assets/css/style.css" rel="stylesheet"> -->
 </head>
-
 <body>
     <?php include '../modules/header.php'; ?>
     <main class="main-dashcap">
         <h2 class="title">Modifier l'utilisateur</h2>
         <section class="dashcap-section">
-
             <section class="joueurs-liste-section">
                 <div class="joueurs-liste-div">
-
                     <!-- Problème foreach et form -->
                     <?php
-                    $utilisateur = $pdo->prepare('SELECT Nom,Prenom, Email, Type_user from Utilisateurs  where ID_User=:varId;');
-                    $utilisateur->execute(['varId' => $_GET["id"]]);
-                    $joueurs = $utilisateur->fetch();
-                    $nom = $joueurs[0];
-                    $prenom = $joueurs[1];
-                    $mail = $joueurs[2];
-                    $type = $joueurs[3];
+                        $utilisateur = $pdo->prepare('SELECT Nom,Prenom, Email, Type_user from Utilisateurs  where ID_User=:varId;');
+                        $utilisateur->execute(['varId' => $_GET["id"]]);
+                        $joueurs = $utilisateur->fetch();
+                        $nom = htmlspecialchars($joueurs[0]);
+                        $prenom = htmlspecialchars($joueurs[1]);
+                        $mail = htmlspecialchars($joueurs[2]);
+                        $type = htmlspecialchars($joueurs[3]);
                     ?>
-
                     <div class="ajout-joueurs">
                         <form action="../config/config-admin-edit-user.php?id=<?php echo ($_GET["id"]) ?>" method='POST' enctype='multipart/form-data'>
                             <h3>Modifier l'utilisateur</h3>
@@ -64,20 +57,15 @@ $user->execute(['varId' => $_GET["id"]]);
                             <button>Valider</button>
                         </form>
                     </div>
-
-
-
                 </div>
-
             </section>
-            <section id="joueur-edit">
+            <!-- <section id="joueur-edit">
                 <header>
                     <button onclick="closeeditjoueurs()">Annuler</button>
                 </header>
                 <div class="content">
-                    <!-- CONTENU DU MENU D'EDITION D'UN JOUEURS -->
                 </div>
-            </section>
+            </section> -->
         </section>
     </main>
     <?php include '../modules/footer.php'; ?>
