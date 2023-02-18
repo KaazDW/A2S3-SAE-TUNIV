@@ -48,18 +48,15 @@ $listeEquipe->execute(['varId' =>$_GET["id"]]);
                         $joueurs=$listejoueur->fetchAll();
                         foreach($joueurs as $joueur):    
                     ?>
-
-                    
                     <div class="joueur-line">
-                        <span><?php echo($joueur['Prenom']) ?></span>
-                        <span><?php echo($joueur['Nom']) ?></span>
+                        <span><?php echo(htmlspecialchars($joueur['Prenom'])) ?></span>
+                        <span><?php echo(htmlspecialchars($joueur['Nom'])) ?></span>
                         <div>
                             <a href="../config/config-admin-suppr-joueur.php?id=<?= $joueur['ID_Joueur']?>&amp;id2=<?= $joueur['ID_Equipe']?>"><img src="/assets/img/delete-blanc.png"></a>
                         </div>
                     </div>
-
                     <?php
-                    endforeach;
+                        endforeach;
                     ?>
                 </div>
                 <div class="ajout-joueurs">
@@ -81,7 +78,6 @@ $listeEquipe->execute(['varId' =>$_GET["id"]]);
     </main>
     <?php include '../modules/footer.php'; ?>
     <script>
-
         // DISPLAY JOUEURS EDIT MENU
         document.getElementById('joueur-edit').style.display = "none";
 
@@ -95,7 +91,6 @@ $listeEquipe->execute(['varId' =>$_GET["id"]]);
         document.getElementById('closebtneditjoueurs').addEventListener("click", function(){
             document.getElementById('joueur-edit').style.display = "none";
         });
-
     </script>
 </body>
 </html>

@@ -27,15 +27,13 @@ $listeTournois = $pdo->query($sql);
         ?>
 
         <a href="match-tournois.php?id=<?= $tournoi['ID_Tournoi'] ?>" class="tournois-line">
-            <span><?php echo($tournoi['Sport']) ?></span>
-            <span><?php echo($tournoi['Nom']) ?></span>
-            <span><?php echo($tournoi['DateDebut']) ?></span>
-            <span><?php echo($tournoi['DateFin']) ?></span>
+            <span><?php echo(htmlspecialchars($tournoi['Sport'])); ?></span>
+            <span><?php echo(htmlspecialchars($tournoi['Nom'])) ?></span>
+            <span><?php echo(htmlspecialchars($tournoi['DateDebut'])) ?></span>
+            <span><?php echo(htmlspecialchars($tournoi['DateFin'])) ?></span>
         </a>
 
-        <?php
-        endforeach;
-        ?>
+        <?php endforeach; ?>
     </main>
     <?php include '../modules/footer.php'; ?>
 </body>
