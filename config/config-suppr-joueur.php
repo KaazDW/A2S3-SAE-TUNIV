@@ -1,24 +1,14 @@
-<?php session_start();
-
-if ($_SESSION["type"]!="capitaine") {
+<?php if ($_SESSION["type"]!="capitaine") {
     header("Location: ../index.php");
 }
 
-    include 'db.php';
+$suppr = $pdo->prepare('DELETE from Joueur where ID_Joueur = :varId');
 
- 
-        $suppr = $pdo->prepare('DELETE from Joueur where ID_Joueur = :varId');
+$suppr->execute(
+[
 
-        
-        $suppr->execute(
-            [
+    'varId' =>$_GET["id"],
+]
+);
 
-                'varId' =>$_GET["id"],
-            ]
-            );
-        
-
-            header("Location: ../pages/dashb-cap.php");
-        
-        
-?>
+header("Location: ../pages/dashb-cap.php");

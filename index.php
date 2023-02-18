@@ -1,8 +1,4 @@
-<?php session_start();
-
-include 'config/db.php';
-
-$sql = "SELECT * FROM Annonces ORDER BY ID_Annonce DESC LIMIT 30;";
+<?php $sql = "SELECT * FROM Annonces ORDER BY ID_Annonce DESC LIMIT 30;";
 $listeAnnonces = $pdo->query($sql);
 ?>
 

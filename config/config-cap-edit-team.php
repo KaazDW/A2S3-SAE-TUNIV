@@ -1,14 +1,10 @@
-<?php session_start();
-
-if (empty($_SESSION["loggedIn"])) {
+<?php if (empty($_SESSION["loggedIn"])) {
     $_SESSION["loggedIn"] = false;
 }
 
 if ($_SESSION["type"] != "capitaine") {
     header("Location: ../index.php");
 }
-
-include 'db.php';
 
 $equipe = $_POST["new-name-team"];
 

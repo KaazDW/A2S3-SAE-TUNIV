@@ -1,25 +1,19 @@
-<?php session_start();
-
-if ($_SESSION["type"]!="administrateur") {
+<?php if ($_SESSION["type"]!="administrateur") {
     header("Location: ../index.php");
 }
 
-    include 'db.php';
-    
- 
-        $suppr = $pdo->prepare('DELETE from Joueur where ID_Joueur = :varId');
+include 'db.php';
 
-        
-        $suppr->execute(
-            [
+$suppr = $pdo->prepare('DELETE from Joueur where ID_Joueur = :varId');
 
-                'varId' =>$_GET["id"],
-            ]
-            );
-        
+$suppr->execute(
+[
+    'varId' =>$_GET["id"],
+]
+);
 
-            header("Location: ../pages/dashb-admin-editform-equipe.php?id=" . $_GET["id2"]);
-          
-        
-        
+header("Location: ../pages/dashb-admin-editform-equipe.php?id=" . $_GET["id2"]);
+
+
+
 ?>

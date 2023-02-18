@@ -1,10 +1,6 @@
-<?php session_start();
-
-if ($_SESSION["type"]!="administrateur") {
+<?php if ($_SESSION["type"]!="administrateur") {
     header("Location: ../../index.php");
 }
-
-include 'db.php';
 
 $id = $_POST["selectid"];
 

@@ -1,10 +1,6 @@
-<?php session_start();
-
-if ($_SESSION["type"]!="administrateur") {
+<?php if ($_SESSION["type"]!="administrateur") {
     header("Location: ../../index.php");
 }
-
-include("db.php");
 
 $tournoi = $pdo->prepare('SELECT * FROM Tournoi WHERE ID_Tournoi =:varId');
 $tournoi->execute(['varId' =>$_GET["id"]]);

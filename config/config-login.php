@@ -1,16 +1,8 @@
-<?php session_start();
-
-if ($_SESSION["loggedIn"]) {
+<?php if ($_SESSION["loggedIn"]) {
 
     header("Location: /index.php");
 
 }
-
-
-
-include '../config/db.php';
-
-
 
 $login = $_POST["login"];
 $password = $_POST["password"];
@@ -28,8 +20,6 @@ $statement->execute(
 
 
 $res = $statement->fetch();
-
-
 
 if ($res[0] == 1) { // On vérifie qu'il existe un utilisateur avec l'identifiant donné
 

@@ -1,4 +1,4 @@
-<?php session_start();
+<?php 
 if (empty($_SESSION["loggedIn"])) {
     $_SESSION["loggedIn"] = false;
 }
@@ -33,13 +33,13 @@ if (empty($_SESSION["type"])) {
                     echo("que capitaine.</p>");
                 }
 
-                echo("      <a href='../config/config-logout.php' class='logout-button'>Se déconnecter</a>
+                echo("      <a href='/logout' class='logout-button'>Se déconnecter</a>
                         </div>
                     </div>
                 ");
             } else {
                 echo ("<h2>LOGIN PAGE</h2>
-                <form class='center' action='../config/config-login.php' method='POST'>
+                <form class='center' method='POST'>
                     <!-- <div> -->
                     <label for='login-input'>Login</label>
                     <input type='text' name='login' id='login-input'>

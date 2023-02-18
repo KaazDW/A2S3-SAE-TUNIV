@@ -1,6 +1,4 @@
-<?php session_start();
-
-if ($_SESSION["type"]!="capitaine") {
+<?php if ($_SESSION["type"]!="capitaine") {
     header("Location: ../index.php");
 }
 

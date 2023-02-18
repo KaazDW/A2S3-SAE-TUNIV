@@ -1,10 +1,6 @@
-<?php session_start();
-
-if ($_SESSION["type"] != "administrateur") {
+<?php if ($_SESSION["type"] != "administrateur") {
     header("Location: ../../index.php");
 }
-
-include 'db.php';
 
 $sport = $_POST["new-sport"];
 $nom = $_POST["new-name"];
@@ -27,6 +23,5 @@ $edit->execute(
         'varId' => $_GET["id"],
     ]
 );
-
 
 header("Location: /../pages/dashb-admin.php");
