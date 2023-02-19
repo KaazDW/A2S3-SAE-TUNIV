@@ -15,8 +15,8 @@ if (empty($_SESSION["type"])) {
         <img src="../assets/img/menu-icon.png" alt="">
     </a>
     <div id="mobilenav">
-        <a href="/pages/tournois.php">Tournois</a>
-        <a href="/pages/apropos.php">A propos</a>
+        <a href="/tournois">Tournois</a>
+        <a href="/a-propos">A propos</a>
         <a href="/login" class="login-link"><img  alt="" src=<?php if ($_SESSION["loggedIn"]) {
                                                                             echo ("'/assets/img/pp-blanc2.png'");
                                                                         } else {
@@ -25,8 +25,8 @@ if (empty($_SESSION["type"])) {
                                                                         </a>
     </div>
     <ul class="link" id="nav">
-        <li><a href="/pages/tournois.php">Tournois</a></li>
-        <li><a href="/pages/apropos.php">A propos</a></li>
+        <li><a href="/tournois">Tournois</a></li>
+        <li><a href="/apropos">A propos</a></li>
     </ul>
     <ul class="nav-icon">
         <li class="login-link"><a href="/login"><img  alt="" src=<?php if ($_SESSION["loggedIn"]) {

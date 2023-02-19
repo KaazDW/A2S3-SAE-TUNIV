@@ -1,7 +1,7 @@
-<?php session_start();
-    if (empty($_SESSION["loggedIn"])) {
-        $_SESSION["loggedIn"] = false;
-    }
+<?php
+if (empty($_SESSION["loggedIn"])) {
+    $_SESSION["loggedIn"] = false;
+}
 ?>
 <!DOCTYPE html>
 <html lang="fr">

@@ -1,7 +1,4 @@
-<?php session_start();
-
-include '../config/db.php';
-
+<?php 
 $sql = "SELECT * FROM Tournoi;";
 $listeTournois = $pdo->query($sql);
 

@@ -1,12 +1,10 @@
-<?php session_start();
-    if (empty($_SESSION["loggedIn"])) {
-        $_SESSION["loggedIn"] = false;
-    }
+<?php 
+if (empty($_SESSION["loggedIn"])) {
+    $_SESSION["loggedIn"] = false;
+}
 
-    include '../config/db.php';
-
-    $sql = $pdo->prepare("SELECT COUNT(DISTINCT ID_Tournoi) FROM Tournoi;");
-    $sql->execute();
+$sql = $pdo->prepare("SELECT COUNT(DISTINCT ID_Tournoi) FROM Tournoi;");
+$sql->execute();
 ?>
 <!DOCTYPE html>
 <html lang="fr">

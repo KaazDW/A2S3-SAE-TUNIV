@@ -27,16 +27,16 @@ switch ($path) {
         unset($_SESSION);
         header("Location: /login");
         break;
-    case "/todo-list":
-        require_once APP . "todo-list.php";
+    case "/tournois":
+        require_once APP . "/pages/tournois.php";
         break;
-    case "/form-edit":
-        if ($_SERVER["REQUEST_METHOD"] == "GET") {
-            require_once APP . "form-edit.php";
-            break;
-        } else {
-            require_once APP . "traitement-form-add-ticket.php";
-        }
+    case "/a-propos":
+        require_once APP . "/pages/apropos.php";
+        break;
+
+    case "/support":
+        require_once APP . "/pages/support.php";
+        break;
 
     default:
         header('HTTP/1.0 404 Not Found');
