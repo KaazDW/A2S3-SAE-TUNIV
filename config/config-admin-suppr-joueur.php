@@ -1,8 +1,6 @@
 <?php if ($_SESSION["type"]!="administrateur") {
-    header("Location: ../index.php");
+    header("Location: /index.php");
 }
-
-include 'db.php';
 
 $suppr = $pdo->prepare('DELETE from Joueur where ID_Joueur = :varId');
 
@@ -12,8 +10,5 @@ $suppr->execute(
 ]
 );
 
-header("Location: ../pages/dashb-admin-editform-equipe.php?id=" . $_GET["id2"]);
-
-
-
+header("Location: /dashb-admin-editform-equipe?id=" . $_GET["id2"]);
 ?>

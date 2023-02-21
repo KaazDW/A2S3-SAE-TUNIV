@@ -54,9 +54,13 @@ switch ($path) {
         require_once APP . "/pages/match-tournois.php";
         break;
 
+    // Dashboard Administrateur
+
     case "/dashb-admin":
         require_once APP . "/pages/dashb-admin.php";
         break;
+
+        // Dashboard Administrateur Annonces
 
     case "/form-annonce":
         if ($_SERVER["REQUEST_METHOD"] == "GET") {
@@ -70,9 +74,7 @@ switch ($path) {
         require_once APP . "/config/config-suppr-annonce.php";
         break;
 
-    case "/dashb-admin":
-        require_once APP . "/pages/dashb-admin.php";
-        break;
+        // Dashboard Administrateur Tournois
 
     case "/config-crea-tournoi":
         require_once APP . "/config/config-crea-tournoi.php";
@@ -90,6 +92,30 @@ switch ($path) {
     case "/config-suppr-tournoi":
         require_once APP . "/config/config-suppr-tournoi.php";
         break;
+
+        // Dashboard Administrateur Équipes
+
+    case "/config-admin-crea-equipe":
+        require_once APP . "/config/config-admin-crea-equipe.php";
+        break;
+
+    case "/dashb-admin-editform-equipe":
+        if ($_SERVER["REQUEST_METHOD"] == "GET"){
+            require_once APP . "/pages/dashb-admin-editform-equipe.php";
+        } else {
+            require_once APP . "/config/config-add-joueur-admin.php";
+        }
+        break;
+
+    case "/config-admin-suppr-joueur":
+        require_once APP . "/config/config-admin-suppr-joueur.php";
+        break;
+
+    case "/config-suppr-equipe":
+        require_once APP . "/config/config-suppr-equipe.php";
+        break;
+
+        // Dashboard Administrateur Utilisateurs
 
     case "/dashb-admin-utilisateurs":
         if ($_SERVER["REQUEST_METHOD"] == "GET"){
