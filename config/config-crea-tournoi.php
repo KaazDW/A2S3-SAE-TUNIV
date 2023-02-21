@@ -1,5 +1,5 @@
 <?php if ($_SESSION["type"]!="administrateur") {
-    header("Location: ../../index.php");
+    header("Location: /index.php");
 }
 
 if (!empty($_SESSION["tournoiErreur"])) {
@@ -40,10 +40,10 @@ $sql = "INSERT INTO Tournoi VALUES (0, $sport, $name, $dateDeb, $dateFin, $teams
 $res = $pdo->exec($sql);
 if (!$res) {
     $_SESSION["tournoiErreur"] = "La création du tournoi a échoué, veuillez réessayer. Si l'erreur persiste, contactez le support.";
-    header("Location: ../pages/dashb-admin.php");
+    header("Location: /dashb-admin.php");
 } else {
     $sql = "SELECT max(ID_Tournoi) FROM Tournoi;";
     $id = $pdo->query(($sql))->fetch()[0];
     
-    header("Location: ../pages/match-tournois.php?id=$id");
+    header("Location: /match-tournois?id=$id");
 }

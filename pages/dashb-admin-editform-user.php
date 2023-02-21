@@ -34,7 +34,7 @@
                         $type = htmlspecialchars($joueurs[3]);
                     ?>
                     <div class="ajout-joueurs">
-                        <form action="../config/config-admin-edit-user.php?id=<?php echo ($_GET["id"]) ?>" method='POST' enctype='multipart/form-data'>
+                        <form method='POST' enctype='multipart/form-data'>
                             <h3>Modifier l'utilisateur</h3>
                             <div>
                                 <label for="new-surname1">Prénom</label>
