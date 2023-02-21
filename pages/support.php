@@ -1,7 +1,7 @@
 <?php
-if (empty($_SESSION["loggedIn"])) {
-    $_SESSION["loggedIn"] = false;
-}
+    if (empty($_SESSION["loggedIn"])) {
+        $_SESSION["loggedIn"] = false;
+    }
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -11,9 +11,19 @@ if (empty($_SESSION["loggedIn"])) {
 <body>
     <?php include '../modules/header.php'; ?>
     <main class="main-support">
-        <h2 class="title">Support</h2>
+        <h2 class="title">Contactez le support</h2>
         <section class="support-content">
-            
+            <form method="POST" enctype="multipart/form-data"> <!-- reste à faire l'action="traitement-support.php" dans le router (jf)-->
+                <input type="text" name="nom" placeholder="Nom">
+                <input type="text" name="prenom" placeholder="Prénom">
+                <input type="text" name="email" placeholder="Adresse Email">
+                <textarea type="text" name="content" placeholder="Détaillez votre requête"></textarea>  
+                <div>
+                    <label for="screenshot" class="form-label">Joindre une capture d'écran</label>
+                    <input type="file" id="screenshot" name="screenshot" />
+                </div>
+                <button type="submit">Envoyer</button>
+            </form>
         </section>
     </main> 
     <?php include '../modules/footer.php'; ?>

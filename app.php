@@ -13,8 +13,8 @@ $listeTournois = $pdo->prepare("SELECT ID_Tournoi FROM Tournoi");
 $listeTournois->execute();
 $listeTournois = $listeTournois->fetchAll();
 
-if (!isset($_SERVER["QUERY_STRING"])){
-    $_SERVER["QUERY_STRING"]="vide";
+if (!isset($_SERVER["QUERY_STRING"])) {
+    $_SERVER["QUERY_STRING"] = "vide";
 }
 
 // var_dump($_SERVER);
@@ -23,9 +23,11 @@ switch ($path) {
     case "/":
         require_once APP . "index.php";
         break;
+
     case "/index":
         require_once APP . "index.php";
         break;
+
     case "/login":
         if ($_SERVER["REQUEST_METHOD"] == "GET") {
             require_once APP . "/pages/login.php";
@@ -33,24 +35,30 @@ switch ($path) {
             require_once APP . "/config/config-login.php";
         }
         break;
+
     case "/logout":
         $_SESSION = [];
         unset($_SESSION);
         header("Location: /login");
         break;
+
     case "/tournois":
         require_once APP . "/pages/tournois.php";
         break;
+
     case "/a-propos":
         require_once APP . "/pages/apropos.php";
         break;
 
     case "/support":
-        require_once APP . "/pages/support.php";
+        if ($_SERVER["REQUEST_METHOD"] == "GET") {
+            require_once APP . "/pages/support.php";
+        } else{
+            require_once APP . "/config/config-support.php";
+        }
         break;
 
     case "/match-tournois":
-        $_SESSION["idTournoi"] = preg_replace("/id=/", $_SERVER["QUERY_STRING"], "");
         require_once APP . "/pages/match-tournois.php";
         break;
 
@@ -169,6 +177,7 @@ switch ($path) {
         break;
 
     
+
 
     default:
         header('HTTP/1.0 404 Not Found');
