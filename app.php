@@ -70,6 +70,14 @@ switch ($path) {
         require_once APP . "/pages/dashb-admin-utilisateurs.php";
         break;
 
+    case "/dashb-cap":
+        require_once APP . "/pages/dashb-cap.php";
+        break;
+
+    case "/dashb-arbitre":
+        require_once APP . "/pages/dashb-arbitre.php";
+        break;
+
     default:
         header('HTTP/1.0 404 Not Found');
         exit;

@@ -54,14 +54,14 @@ if ($_SESSION["type"]=="administrateur") {
     echo ("    
     <section class='admin-header'>
                 <ul>
-                    <li><a href='/pages/dashb-cap.php'>MON EQUIPE</a></li>
+                    <li><a href='/dashb-cap'>MON EQUIPE</a></li>
                 </ul>
             </section>");
 } else if(($_SESSION["type"]=="arbitre")){
     echo ("    
     <section class='admin-header'>
                 <ul>
-                    <li><a href='/pages/dashb-arbitre.php'>MATCH</a></li>
+                    <li><a href='/dashb-arbitre'>MATCH</a></li>
                 </ul>
             </section>");
 } 
