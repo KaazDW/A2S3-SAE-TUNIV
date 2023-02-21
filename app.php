@@ -206,6 +206,6 @@ switch ($path) {
         
 
     default:
-        header('HTTP/1.0 404 Not Found');
+        require_once APP . "/pages/error404.php";
         exit;
 }

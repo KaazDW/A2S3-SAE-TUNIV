@@ -27,7 +27,7 @@ $score2 = $_POST["new-score-equipe2"];
 $edit = $pdo->prepare('UPDATE MatchTournoi  set DateDebut=:varDeb, DateFin=:varFin, Stade=:varStade where ID_Match = :varId');
 
 
-$edit->execute(['varDeb'=>$dateDebut,'varFin'=>$dateFin,'varStade'=>$stade, 'varId' =>$_GET["id"]]);
+$edit->execute(['varDeb' => $dateDebut, 'varFin' => $dateFin, 'varStade' => $stade, 'varId' => $_GET["id"]]);
 
 $idsEquipes = $pdo->prepare("SELECT ID_Equipe FROM Jouer WHERE ID_Match = :varId;");
 $idsEquipes->execute(['varId' => $_GET['id']]);
@@ -35,7 +35,7 @@ $idsEquipes = $idsEquipes->fetchAll();
 $listeIds = [];
 
 $i = 0;
-foreach($idsEquipes as $idEquipe){
+foreach ($idsEquipes as $idEquipe) {
     $listeIds[$i] = $idEquipe["ID_Equipe"];
     $i++;
 }
