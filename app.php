@@ -46,7 +46,11 @@ switch ($path) {
         break;
 
     case "/support":
-        require_once APP . "/pages/support.php";
+        if ($_SERVER["REQUEST_METHOD"] == "GET") {
+            require_once APP . "/pages/support.php";
+        } else{
+            require_once APP . "/config/config-support.php";
+        }
         break;
 
     case "/match-tournois":
@@ -60,10 +64,6 @@ switch ($path) {
 
     case "/form-annonce":
         require_once APP . "/pages/form-annonce.php";
-        break;
-
-    case "/dashb-admin":
-        require_once APP . "/pages/dashb-admin.php";
         break;
 
     case "/dashb-admin-utilisateurs":
