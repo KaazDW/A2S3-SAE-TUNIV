@@ -30,7 +30,7 @@
                     ?>
                 </pre>
                 <h3>Modifier un tournoi</h3>
-                <form action="../config/config-editform-tournoi.php?id=<?php echo ($_GET["id"]) ?>" method="POST" enctype="multipart/form-data">
+                <form method="POST" enctype="multipart/form-data">
                     <label for="new-sport">Sport</label>
                     <input name="new-sport" value="<?php echo $tournoi['Sport'] ?>" id="new-sport">
                     <label for="new-name">Nom</label>

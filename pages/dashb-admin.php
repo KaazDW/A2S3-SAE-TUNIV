@@ -4,7 +4,7 @@
     }
 
     if ($_SESSION["type"] != "administrateur") {
-        header("Location: ../index.php");
+        header("Location: /index.php");
     }
 
     $sql = "SELECT * FROM Tournoi;";
@@ -39,7 +39,7 @@
         <section class="dashadmin-section">
             <div class="form-tournois ffield">
                 <h3>Créer un nouveau tournoi</h3>
-                <form action="../config/config-crea-tournoi.php" method="POST">
+                <form action="/config-crea-tournoi" method="POST">
                     <div class="form-button">
                         <button type="submit">Créer le tournoi</button>
                     </div>    
@@ -91,10 +91,10 @@
                             <span><?php echo ($tournoi['Sport']) ?></span>
                             <span><?php echo ($tournoi['Nom']) ?></span>
                             <div>
-                                <a class="edit" href="dashb-admin-editform-tournoi.php?id=<?= $tournoi['ID_Tournoi'] ?>">
+                                <a class="edit" href="dashb-admin-editform-tournoi?id=<?= $tournoi['ID_Tournoi'] ?>">
                                     <img src="../assets/img/edit-blanc.png">
                                 </a>
-                                <a class="edit" href="../config/config-suppr-tournoi.php?id=<?= $tournoi['ID_Tournoi'] ?>">
+                                <a class="edit" href="/config-suppr-tournoi?id=<?= $tournoi['ID_Tournoi'] ?>">
                                     <img src="../assets/img/delete-blanc.png">
                                 </a>
                             </div>

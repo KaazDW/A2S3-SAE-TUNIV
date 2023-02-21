@@ -1,8 +1,8 @@
 <?php if ($_SESSION["type"]!="administrateur") {
-    header("Location: ../index.php");
+    header("Location: /index.php");
 }
 
 $suppr = $pdo->prepare('DELETE from Tournoi where ID_Tournoi = :varId');
 $suppr->execute(['varId' =>$_GET["id"]]);
 
-header("Location: /../pages/dashb-admin.php");
+header("Location: /dashb-admin");

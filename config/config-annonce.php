@@ -38,7 +38,7 @@ if (($_FILES["img"]['size']==0)){
     $img = $pdo->quote('');
 } else {
     $img = $pdo->quote("assets/img/" . basename($_FILES["img"]["name"]));
-    move_uploaded_file($_FILES["img"]["tmp_name"], "../assets/img/" . basename($_FILES["img"]["name"]));
+    move_uploaded_file($_FILES["img"]["tmp_name"], "../webroot/assets/img/" . basename($_FILES["img"]["name"]));
 }
 
 $sql = "INSERT INTO Annonces VALUES (0, $title, now(), $author, $role, $content, $img);";

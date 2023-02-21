@@ -74,6 +74,23 @@ switch ($path) {
         require_once APP . "/pages/dashb-admin.php";
         break;
 
+    case "/config-crea-tournoi":
+        require_once APP . "/config/config-crea-tournoi.php";
+        break;
+
+    case "/dashb-admin-editform-tournoi":
+        if ($_SERVER["REQUEST_METHOD"] == "GET") {
+            require_once APP . "/pages/dashb-admin-editform-tournoi.php";
+        } else {
+            require_once APP . "/config/config-editform-tournoi.php";
+        }
+        
+        break;
+
+    case "/config-suppr-tournoi":
+        require_once APP . "/config/config-suppr-tournoi.php";
+        break;
+
     case "/dashb-admin-utilisateurs":
         if ($_SERVER["REQUEST_METHOD"] == "GET"){
             require_once APP . "/pages/dashb-admin-utilisateurs.php";
