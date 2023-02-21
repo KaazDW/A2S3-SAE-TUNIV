@@ -1,4 +1,4 @@
-<?php 
+<?php
 if (empty($_SESSION["loggedIn"])) {
     $_SESSION["loggedIn"] = false;
 }
@@ -15,10 +15,12 @@ $listeTournois = $pdo->query($sql);
 
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <?php include '../modules/head.php'; ?>
     <link href="../assets/css/style.css" rel="stylesheet">
 </head>
+
 <body>
     <?php include '../modules/header.php'; ?>
     <main class="main-dashcap">
@@ -28,12 +30,12 @@ $listeTournois = $pdo->query($sql);
                 <h3>Nom de l'équipe : </h3>
                 <p>
                     <?php
-                        $listematch = $pdo->prepare('SELECT Nom, ID_Equipe from Equipe where ID_Capitaine=:varId;');
-                        $listematch->execute(['varId' => $_SESSION["userId"],]);
-                        $equipe = $listematch->fetch();
-                        $_SESSION["actuel"] = $equipe[1];
+                    $listematch = $pdo->prepare('SELECT Nom, ID_Equipe from Equipe where ID_Capitaine=:varId;');
+                    $listematch->execute(['varId' => $_SESSION["userId"],]);
+                    $equipe = $listematch->fetch();
+                    $_SESSION["actuel"] = $equipe[1];
                     ?>
-                <form action="../config/config-cap-edit-team.php" method="POST" enctype="multipart/form-data">
+                <form action="/config-cap-edit-team" method="POST" enctype="multipart/form-data">
                     <div>
                         <label for="new-name-team"></label>
                         <input name="new-name-team" type='text' value="<?php echo $equipe[0] ?>" id="new-name-team" required="required">
@@ -60,8 +62,8 @@ $listeTournois = $pdo->query($sql);
                             <span><?php echo ($joueur['Prenom']) ?></span>
                             <span><?php echo ($joueur['Nom']) ?></span>
                             <div>
-                                <a class="edit" href="dashb-cap-edit.php?id=<?= $joueur['ID_Joueur'] ?>"><img src="/assets/img/edit-blanc.png"></a>
-                                <a class="edit" href="../config/config-suppr-joueur.php?id=<?= $joueur['ID_Joueur'] ?>"><img src="/assets/img/delete-blanc.png"></a>
+                                <a class="edit" href="/dashb-cap-edit?id=<?= $joueur['ID_Joueur'] ?>"><img src="/assets/img/edit-blanc.png"></a>
+                                <a class="edit" href="/config-suppr-joueur?id=<?= $joueur['ID_Joueur'] ?>"><img src="/assets/img/delete-blanc.png"></a>
                             </div>
                         </div>
                     <?php
@@ -69,7 +71,7 @@ $listeTournois = $pdo->query($sql);
                     ?>
                 </div>
                 <div class="ajout-joueurs">
-                    <form action="../config/config-add-joueur.php" method="POST" enctype="multipart/form-data">
+                    <form action="/config-add-joueur" method="POST" enctype="multipart/form-data">
 
                         <h3>Ajouter un Joueur</h3>
                         <div>
@@ -106,4 +108,5 @@ $listeTournois = $pdo->query($sql);
         });
     </script>
 </body>
+
 </html>

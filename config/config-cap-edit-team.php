@@ -20,4 +20,4 @@ $edit->execute(
 );
 
 
-header("Location: ../pages/dashb-cap.php");
+header("Location: /dashb-cap");

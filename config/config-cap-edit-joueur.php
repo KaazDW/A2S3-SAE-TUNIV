@@ -2,8 +2,8 @@
     $_SESSION["loggedIn"] = false;
 }
 
-if ($_SESSION["type"]!="capitaine") {
-    header("Location: ../index.php");
+if ($_SESSION["type"] != "capitaine") {
+    header("Location: /index");
 }
 
 include 'db.php';
@@ -14,11 +14,11 @@ $nom = $_POST["new-name"];
 $edit = $pdo->prepare('UPDATE Joueur  set Prenom=:varprenom, Nom=:varnom where ID_Joueur = :varId');
 
 $edit->execute(
-[
-    'varprenom'=>$prenom,
-    'varnom'=>$nom,
-    'varId' =>$_GET["id"],
-]
+    [
+        'varprenom' => $prenom,
+        'varnom' => $nom,
+        'varId' => $_GET["id"],
+    ]
 );
 
-header("Location: ../pages/dashb-cap.php");  
+header("Location: /dashb-cap");
