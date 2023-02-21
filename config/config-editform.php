@@ -1,5 +1,5 @@
 <?php if ($_SESSION["type"] != "administrateur") {
-    header("Location: ../../index.php");
+    header("Location: /index");
 }
 
 $sport = $_POST["new-sport"];
@@ -24,4 +24,4 @@ $edit->execute(
     ]
 );
 
-header("Location: /../pages/dashb-admin.php");
+header("Location: /pages/dashb-admin");

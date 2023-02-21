@@ -3,7 +3,7 @@
 }
 
 if ($_SESSION["type"] != "capitaine") {
-    header("Location: ../index.php");
+    header("Location: /index");
 }
 
 $equipe = $_POST["new-name-team"];

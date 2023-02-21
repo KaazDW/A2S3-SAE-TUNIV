@@ -1,5 +1,5 @@
 <?php if ($_SESSION["type"]!="administrateur") {
-    header("Location: ../../index.php");
+    header("Location: /index");
 }
 
 $tournoi = $pdo->prepare('SELECT * FROM Tournoi WHERE ID_Tournoi =:varId');
@@ -7,7 +7,7 @@ $tournoi->execute(['varId' =>$_GET["id"]]);
 $tournoi=$tournoi->fetchAll();
 
 if ($tournoi[0]["Etape"]!=0){
-    header("Location: ../pages/match-tournois.php?id=".$_GET["id"]);
+    header("Location: /match-tournois?id=".$_GET["id"]);
 }
 
 // On construit une liste des équipes participant au tournoi
@@ -47,4 +47,4 @@ for ($i=0; $i<$nbEquipes; $i++) {
 $changerStatut = $pdo->prepare("UPDATE Tournoi SET Etape = 1 WHERE ID_Tournoi = :varTournoi;");
 $changerStatut->execute(['varTournoi' => $_GET["id"]]);
 
-header("Location: ../pages/match-tournois.php?id=" . $_GET["id"]);
+header("Location: /match-tournois?id=" . $_GET["id"]);

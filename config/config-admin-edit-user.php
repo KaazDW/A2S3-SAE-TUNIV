@@ -3,7 +3,7 @@
 }
 
 if ($_SESSION["type"]!="administrateur") {
-    header("Location: ../index.php");
+    header("Location: /index");
 }
 
 $prenom = $_POST["new-surname1"];

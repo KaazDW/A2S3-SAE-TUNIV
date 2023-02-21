@@ -1,5 +1,5 @@
 <?php if ($_SESSION["type"]!="administrateur") {
-    header("Location: /index.php");
+    header("Location: /index");
 }
 
 $suppr = $pdo->prepare('DELETE from Tournoi where ID_Tournoi = :varId');

@@ -1,5 +1,5 @@
 <?php if ($_SESSION["type"]!="administrateur") {
-    header("Location: ../../index.php");
+    header("Location: /index");
 }
 
 if (!empty($_SESSION["userErreur"])) {
@@ -8,40 +8,40 @@ if (!empty($_SESSION["userErreur"])) {
 
 if (empty($_POST["name"])){
     $_SESSION["userErreur"] = "Nom de l'utilisateur manquant";
-    header("Location: ../pages/dashb-admin-utilisateurs.php");
+    header("Location: /dashb-admin-utilisateurs");
 }
 
 else if (empty($_POST["surname"])){
     $_SESSION["userErreur"] = "Prénom de l'utilisateur manquant";
-    header("Location: ../pages/dashb-admin-utilisateurs.php");
+    header("Location: /dashb-admin-utilisateurs");
 }
 
 else if (empty($_POST["login"])){
     $_SESSION["userErreur"] = "Identifiant de l'utilisateur manquant";
-    header("Location: ../pages/dashb-admin-utilisateurs.php");
+    header("Location: /dashb-admin-utilisateurs");
 }
 
 else if (empty($_POST["password"])){
     $_SESSION["userErreur"] = "Mot de passe de l'utilisateur manquant";
-    header("Location: ../pages/dashb-admin-utilisateurs.php");
+    header("Location: /dashb-admin-utilisateurs");
 }
 else if (empty($_POST["passwordConfirm"])){
     $_SESSION["userErreur"] = "Confirmation du mot de passe de l'utilisateur manquante";
-    header("Location: ../pages/dashb-admin-utilisateurs.php");
+    header("Location: /dashb-admin-utilisateurs");
 }
 else if ($_POST["password"]!=$_POST["passwordConfirm"]){
     $_SESSION["userErreur"] = "Mot de passe et confirmation différents";
-    header("Location: ../pages/dashb-admin-utilisateurs.php");
+    header("Location: /dashb-admin-utilisateurs");
 }
 
 else if (empty($_POST["email"])){
     $_SESSION["userErreur"] = "Email de l'utilisateur manquant";
-    header("Location: ../pages/dashb-admin-utilisateurs.php");
+    header("Location: /dashb-admin-utilisateurs");
 }
 
 else if (empty($_POST["role"])){
     $_SESSION["userErreur"] = "Rôle de l'utilisateur manquant";
-    header("Location: ../pages/dashb-admin-utilisateurs.php");
+    header("Location: /dashb-admin-utilisateurs");
 }
 
 else {

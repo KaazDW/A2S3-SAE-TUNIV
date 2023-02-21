@@ -1,6 +1,6 @@
 <?php if ($_SESSION["loggedIn"]) {
 
-    header("Location: /index.php");
+    header("Location: /index");
 
 }
 
@@ -69,7 +69,7 @@ if ($res[0] == 1) { // On vérifie qu'il existe un utilisateur avec l'identifian
             $res = $statement->fetch();
             $_SESSION["userId"] = $res[0];
             $_SESSION["type"] = "administrateur";
-            header("Location: /index.php");
+            header("Location: /index");
 
         } else if ($type == 1) {
 
@@ -79,7 +79,7 @@ if ($res[0] == 1) { // On vérifie qu'il existe un utilisateur avec l'identifian
             $res = $statement->fetch();
             $_SESSION["userId"] = $res[0];
             $_SESSION["type"] = "arbitre";
-            header("Location: /index.php");
+            header("Location: /index");
 
         } else {
 
@@ -89,7 +89,7 @@ if ($res[0] == 1) { // On vérifie qu'il existe un utilisateur avec l'identifian
             $res = $statement->fetch();
             $_SESSION["userId"] = $res[0];
             $_SESSION["type"] = "capitaine";
-            header("Location: /index.php");
+            header("Location: /index");
         }
 
 
@@ -100,7 +100,7 @@ if ($res[0] == 1) { // On vérifie qu'il existe un utilisateur avec l'identifian
 
         $_SESSION["errorMessage"] = "Mot de passe incorrect";
 
-        header("Location: /pages/login.php");
+        header("Location: /login");
 
     }
 
@@ -110,6 +110,6 @@ if ($res[0] == 1) { // On vérifie qu'il existe un utilisateur avec l'identifian
 
     $_SESSION["errorMessage"] = "L'utilisateur n'existe pas.";
 
-    header("Location: /pages/login.php");
+    header("Location: /login");
 
 }

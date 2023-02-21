@@ -1,5 +1,5 @@
 <?php if ($_SESSION["type"] != "administrateur") {
-    header("Location: /index.php");
+    header("Location: /index");
 }
 
 if (empty($_POST["name"])){

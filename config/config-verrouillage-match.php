@@ -3,7 +3,7 @@ $idArbitre->execute(['varId' => $_GET['id']]);
 $idArbitre = $idArbitre->fetch()[0];
 
 if ($_SESSION["type"]!="administrateur" || ($_SESSION["type"]=="arbitre" && $_SESSION["userId"]!=$idArbitre)) {
-    header("Location: ../../index.php");
+    header("Location: /index");
 }
 
 $matchFini = $pdo->prepare("SELECT Etat FROM MatchTournoi WHERE ID_Match = :varId");
@@ -15,7 +15,7 @@ $tournoi->execute(['varId' => $_GET["id"]]);
 $tournoi = $tournoi->fetch()[0];
 
 if ($matchFini==1) {
-    header("Location: ../pages/match-tournois.php?id=" . $tournoi);
+    header("Location: /match-tournois?id=" . $tournoi);
 }
 
 $idsEquipes = $pdo->prepare("SELECT ID_Equipe FROM Jouer WHERE ID_Match = :varId;");
@@ -64,5 +64,5 @@ if ($testFini==0){
     }
 }
 else {
-    header("Location: ../pages/match-tournois.php?id=" . $tournoi);
+    header("Location: /match-tournois?id=" . $tournoi);
 }

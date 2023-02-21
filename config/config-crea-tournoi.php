@@ -1,5 +1,5 @@
 <?php if ($_SESSION["type"]!="administrateur") {
-    header("Location: /index.php");
+    header("Location: /index");
 }
 
 if (!empty($_SESSION["tournoiErreur"])) {
@@ -8,31 +8,31 @@ if (!empty($_SESSION["tournoiErreur"])) {
 
 if (empty($_POST["name"])){
     $_SESSION["tournoiErreur"] = "Nom du tournoi manquant";
-    header("Location: ../pages/dashb-admin.php");
+    header("Location: /dashb-admin");
 }
 $name = $pdo->quote($_POST["name"]);
 
 if (empty($_POST["sport"])){
     $_SESSION["tournoiErreur"] = "Sport du tournoi manquant";
-    header("Location: ../pages/dashb-admin.php");
+    header("Location: /dashb-admin");
 }
 $sport = $pdo->quote($_POST["sport"]);
 
 if (empty($_POST["dateDeb"])){
     $_SESSION["tournoiErreur"] = "Date de début manquante";
-    header("Location: ../pages/dashb-admin.php");
+    header("Location: /dashb-admin");
 }
 $dateDeb = $pdo->quote($_POST["dateDeb"]);
 
 if (empty($_POST["dateFin"])){
     $_SESSION["tournoiErreur"] = "Date de fin manquante";
-    header("Location: ../pages/dashb-admin.php");
+    header("Location: /dashb-admin");
 }
 $dateFin = $pdo->quote($_POST["dateFin"]);
 
 if (empty($_POST["teams"])){
     $_SESSION["tournoiErreur"] = "Nombre maximum d'équipes manquant";
-    header("Location: ../pages/dashb-admin.php");
+    header("Location: /dashb-admin");
 }
 $teams = $pdo->quote($_POST["teams"]);
 

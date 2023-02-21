@@ -2,9 +2,6 @@
     $_SESSION["admin"] = false; 
 }
 
-// $_GET["id"]=$_SESSION["idTournoi"];
-// unset($_SESSION["idTournoi"]);
-
 $listematch = $pdo->prepare('SELECT * FROM MatchTournoi where ID_Tournoi =:varId');
 
 $listematch->execute(['varId' =>$_GET["id"]]);
@@ -77,7 +74,7 @@ $equipes=$listeequipe->fetchAll();
                         <div class='addt'>
                             <label for='pet-select'>Ajouter une équipe</label>
                             <div>
-                                 <form name='store' id='store' method='POST' action='../config/config-add-team-inscrit.php?id=". $_GET['id'] . "'>
+                                 <form name='store' id='store' method='POST' action='/config-add-team-inscrit?id=". $_GET['id'] . "'>
                                     <select name='selectid' id='selectid' >");
                                     foreach($reponses as $value):
                                         echo "<option value=" . htmlspecialchars($value['ID_Equipe']) . ">" . htmlspecialchars($value['Nom']) . " </option>";
@@ -88,20 +85,20 @@ $equipes=$listeequipe->fetchAll();
                             </div>
                         </div>
                         <div class='generationdiv'>
-                            <a href='../config/config-poules-tournoi.php?id=". $_GET['id'] . "'><img src='../assets/img/reload.png'>Generer les poules</a>
+                            <a href='/config-poules-tournoi?id=". $_GET['id'] . "'><img src='../assets/img/reload.png'>Generer les poules</a>
                         </div>
                     </section>    
                         ");
                 } else if ($_SESSION["type"] == "administrateur" && $tournoi[0]["Etape"]==1) {
                     echo("<section class='bottom-top'>
                         <div class='generationdiv'>
-                            <a href='../config/config-bracket-tournoi.php?id=". $_GET['id'] . "'><img src='../assets/img/reload.png'>Generer l'arbre final</a>
+                            <a href='/config-bracket-tournoi?id=". $_GET['id'] . "'><img src='../assets/img/reload.png'>Generer l'arbre final</a>
                         </div>
                         </section>");
                 } else if ($_SESSION["type"] == "administrateur" && $tournoi[0]["Etape"]==2) {
                     echo("<section class='bottom-top'>
                     <div class='generationdiv'>
-                        <a href='../config/config-fin-tournoi.php?id=". $_GET['id'] . "'><img src='../assets/img/reload.png'>Mettre fin au tournoi</a>
+                        <a href='/config-fin-tournoi?id=". $_GET['id'] . "'><img src='../assets/img/reload.png'>Mettre fin au tournoi</a>
                     </div>
                     </section>");
                 }
@@ -127,7 +124,7 @@ $equipes=$listeequipe->fetchAll();
                             <span class="score"><?php echo(htmlspecialchars($equipe["Score"])) ?></span>
                         </article>
                         <?php if ($_SESSION["type"] == "administrateur" && $tournoi[0]["Etape"]==0) {
-                            echo (" <a  href='../config/config-delete-team-inscrit.php?idEquipe=" .  htmlspecialchars($equipe['ID_Equipe']) . "&amp;idTournoi=" . $_GET['id'] . "'>
+                            echo (" <a  href='/config-delete-team-inscrit?idEquipe=" .  htmlspecialchars($equipe['ID_Equipe']) . "&amp;idTournoi=" . $_GET['id'] . "'>
                                     <img src='../assets/img/delete-blanc.png'>
                                 </a>");
                         };
@@ -168,7 +165,7 @@ $equipes=$listeequipe->fetchAll();
                     <p><?php echo "<span>> Debut : </span>" . htmlspecialchars($match['DateFin']);?></p>
                     <p><?php echo "<span>> Stade : </span>" . htmlspecialchars($match['Stade']);?></p>
                     <?php if (($_SESSION["type"] == "administrateur" || ($_SESSION["type"]=="arbitre" && $match["ID_User"]==$_SESSION["userId"])) && $match["Etat"]==0) {
-                                echo (" <a href='dashb-editform-match.php?id=" . htmlspecialchars($match['ID_Match']) . "'>
+                                echo (" <a href='dashb-editform-match?id=" . htmlspecialchars($match['ID_Match']) . "'>
                                             <img src='../assets/img/edit-blanc.png'>
                                         </a>"
                                 );

@@ -81,7 +81,7 @@ $scoreEquipe2 = $scoresEquipes->fetch()[0];
         <section>
             <div>
                 <h3>Modifier le match</h3>
-                <form action="../config/config-edit-match.php?id=<?php echo ($_GET["id"]) ?>" method="POST" enctype="multipart/form-data">
+                <form method="POST" enctype="multipart/form-data">
                     <label for="new-date-debut">Date de début</label>
                     <input name="new-date-debut" value="<?php echo $dateDebut ?>" id="new-date-debut">
 
@@ -97,7 +97,7 @@ $scoreEquipe2 = $scoresEquipes->fetch()[0];
                     <label for="new-score-equipe2">Score <?php echo $nomEquipe2 ?></label>
                     <input name="new-score-equipe2" value="<?php echo htmlspecialchars($scoreEquipe2) ?>" id="new-score-equipe2">
                     <button>Valider</button>
-                    <a style="background-color: var(--blue)" href="../config/config-verrouillage-match.php?id=<?php echo($_GET["id"]);?>">VERROUILLER LE MATCH</a>
+                    <a style="background-color: var(--blue)" href="/config-verrouillage-match?id=<?php echo($_GET["id"]);?>">VERROUILLER LE MATCH</a>
                 </form>
             </div>
             
@@ -111,7 +111,7 @@ $scoreEquipe2 = $scoresEquipes->fetch()[0];
                         <div class='addt'>
                             <label for='pet-select'>Modifier l'arbitre du match</label>
                             <div>
-                                <form name='store' id='store' method='POST' action='../config/config-changer-arbitre.php?id=". $_GET['id'] . "'>
+                                <form name='store' id='store' method='POST' action='/config-changer-arbitre?id=". $_GET['id'] . "'>
                                     <select name='selectid' id='selectid' >");
                                     foreach($reponses as $value):
                                         echo "<option value=" . $value['ID_User'] . ">" . htmlspecialchars($value['Prenom']) . " " . htmlspecialchars($value['Nom']) . " </option>";

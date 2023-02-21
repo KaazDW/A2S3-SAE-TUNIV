@@ -9,16 +9,6 @@ const APP = __DIR__ . '/';
 $link = explode('?', $_SERVER["PATH_INFO"] ?? "/");
 $path = $link[0];
 
-$listeTournois = $pdo->prepare("SELECT ID_Tournoi FROM Tournoi");
-$listeTournois->execute();
-$listeTournois = $listeTournois->fetchAll();
-
-if (!isset($_SERVER["QUERY_STRING"])) {
-    $_SERVER["QUERY_STRING"] = "vide";
-}
-
-// var_dump($_SERVER);
-
 switch ($path) {
     case "/":
         require_once APP . "index.php";
@@ -62,7 +52,7 @@ switch ($path) {
         require_once APP . "/pages/match-tournois.php";
         break;
 
-    // Dashboard Administrateur
+    // Administrateur
 
     case "/dashb-admin":
         require_once APP . "/pages/dashb-admin.php";
@@ -145,6 +135,32 @@ switch ($path) {
         require_once APP . "/config/config-suppr-user.php";
         break;
 
+        // Gestion tournois administrateur
+
+    case "/config-add-team-inscrit":
+        require_once APP . "/config/config-add-team-inscrit.php";
+        break;
+
+    case "/config-delete-team-inscrit":
+        require_once APP . "/config/config-delete-team-inscrit.php";
+        break;
+
+    case "/config-poules-tournoi":
+        require_once APP . "/config/config-poules-tournoi.php";
+        break;
+
+    case "/config-bracket-tournoi":
+        require_once APP . "/config/config-bracket-tournoi.php";
+        break;
+
+    case "/config-fin-tournoi":
+        require_once APP . "/config/config-fin-tournoi.php";
+        break;
+
+    case "/config-changer-arbitre":
+        require_once APP . "/config/config-changer-arbitre.php";
+        break;
+
     // Dashboard Capitaine
     case "/dashb-cap":
         require_once APP . "/pages/dashb-cap.php";
@@ -170,14 +186,24 @@ switch ($path) {
         require_once APP . "/config/config-cap-edit-team.php";
         break;
     
-    // Dashboard Arbitre
+    // Arbitre
 
     case "/dashb-arbitre":
         require_once APP . "/pages/dashb-arbitre.php";
         break;
 
-    
+    case "/dashb-editform-match":
+        if ($_SERVER["REQUEST_METHOD"] == "GET") {
+            require_once APP . "/pages/dashb-editform-match.php";
+        } else {
+            require_once APP . "/config/config-edit-match.php";
+        }
+        break;
 
+    case "/config-verrouillage-match":
+        require_once APP . "/config/config-verrouillage-match.php";
+        break;
+        
 
     default:
         header('HTTP/1.0 404 Not Found');

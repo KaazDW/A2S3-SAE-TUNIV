@@ -1,5 +1,5 @@
 <?php if ($_SESSION["type"]!="administrateur") {
-    header("Location: ../../index.php");
+    header("Location: /index");
 }
 
 $sport = $_POST["new-sport"];
@@ -9,7 +9,7 @@ $date_fin = $_POST["new-date-fin"];
 $nb_equipe = $_POST["new-nb-equipe"];
 $etape = $_POST["new-etape"];
 
-$edit = $pdo->prepare('UPDATE Tournoi  set Sport=:varsport, Nom=:varnom, DateDebut=:vardatedebut, DateFin=:vardatefin, Nb_Equipe=:varnb, Etape=:varetape where ID_Tournoi = :varId');
+$edit = $pdo->prepare('UPDATE Tournoi set Sport=:varsport, Nom=:varnom, DateDebut=:vardatedebut, DateFin=:vardatefin, Nb_Equipe=:varnb, Etape=:varetape where ID_Tournoi = :varId');
 
 
 $edit->execute(

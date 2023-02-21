@@ -1,5 +1,5 @@
 <?php if ($_SESSION["type"]!="capitaine") {
-    header("Location: ../index.php");
+    header("Location: /index");
 }
 
     include 'db.php';
