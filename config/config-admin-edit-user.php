@@ -25,6 +25,6 @@ $edit->execute(
 );
 
 
-header("Location: ../pages/dashb-admin-utilisateurs.php");  
+header("Location: /dashb-admin-utilisateurs");  
         
 ?>

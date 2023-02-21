@@ -60,5 +60,5 @@ else {
         $res = $pdo->exec($sql);
     }
 
-    header("Location: ../pages/form-annonce.php");
+    header("Location: /form-annonce");
 }

@@ -59,7 +59,15 @@ switch ($path) {
         break;
 
     case "/form-annonce":
-        require_once APP . "/pages/form-annonce.php";
+        if ($_SERVER["REQUEST_METHOD"] == "GET") {
+            require_once APP . "/pages/form-annonce.php";
+        } else {
+            require_once APP . "/config/config-annonce.php";
+        }
+        break;
+
+    case "/config-suppr-annonce":
+        require_once APP . "/config/config-suppr-annonce.php";
         break;
 
     case "/dashb-admin":
@@ -67,7 +75,23 @@ switch ($path) {
         break;
 
     case "/dashb-admin-utilisateurs":
-        require_once APP . "/pages/dashb-admin-utilisateurs.php";
+        if ($_SERVER["REQUEST_METHOD"] == "GET"){
+            require_once APP . "/pages/dashb-admin-utilisateurs.php";
+        } else {
+            require_once APP . "/config/config-crea-user.php";
+        }
+        break;
+
+    case "/dashb-admin-editform-user":
+        if ($_SERVER["REQUEST_METHOD"] == "GET") {
+            require_once APP . "/pages/dashb-admin-editform-user.php";
+        } else {
+            require_once APP . "/config/config-admin-edit-user.php";
+        }
+        break;
+
+    case "/config-suppr-user":
+        require_once APP . "/config/config-suppr-user.php";
         break;
 
     case "/dashb-cap":
