@@ -2,8 +2,8 @@
 $idArbitre->execute(['varId' => $_GET['id']]);
 $idArbitre = $idArbitre->fetch()[0];
 
-if ($_SESSION["type"]!="administrateur" || ($_SESSION["type"]=="arbitre" && $_SESSION["userId"]!=$idArbitre)) {
-    header("Location: ../../index.php");
+if ($_SESSION["type"] != "administrateur" || ($_SESSION["type"] == "arbitre" && $_SESSION["userId"] != $idArbitre)) {
+    header("Location: /index.php");
 }
 
 $matchFini = $pdo->prepare("SELECT Etat FROM MatchTournoi WHERE ID_Match = :varId");
@@ -14,8 +14,8 @@ $tournoi = $pdo->prepare("SELECT ID_Tournoi FROM MatchTournoi WHERE ID_Match = :
 $tournoi->execute(['varId' => $_GET["id"]]);
 $tournoi = $tournoi->fetch()[0];
 
-if ($matchFini==1) {
-    header("Location: ../pages/match-tournois.php?id=" . $tournoi);
+if ($matchFini == 1) {
+    header("Location: /match-tournois?id=" . $tournoi);
 }
 
 $idsEquipes = $pdo->prepare("SELECT ID_Equipe FROM Jouer WHERE ID_Match = :varId;");
@@ -24,7 +24,7 @@ $idsEquipes = $idsEquipes->fetchAll();
 $listeIds = [];
 
 $i = 0;
-foreach($idsEquipes as $idEquipe){
+foreach ($idsEquipes as $idEquipe) {
     $listeIds[$i] = $idEquipe["ID_Equipe"];
     $i++;
 }
@@ -37,9 +37,9 @@ $scoreEquipe2 = $scoresEquipes->fetch()[0];
 
 $majScore = $pdo->prepare("UPDATE Participer SET Score= Score+:varScore WHERE ID_Equipe= :varEquipe AND ID_Tournoi = :varTournoi");
 
-if ($scoreEquipe1>$scoreEquipe2){
+if ($scoreEquipe1 > $scoreEquipe2) {
     $majScore->execute(['varScore' => 3, 'varEquipe' => $listeIds[0], 'varTournoi' => $tournoi]);
-} else if ($scoreEquipe2>$scoreEquipe1){
+} else if ($scoreEquipe2 > $scoreEquipe1) {
     $majScore->execute(['varScore' => 3, 'varEquipe' => $listeIds[1], 'varTournoi' => $tournoi]);
 } else {
     $majScore->execute(['varScore' => 1, 'varEquipe' => $listeIds[0], 'varTournoi' => $tournoi]);
@@ -52,17 +52,15 @@ $verrouillage->execute(['varId' => $_GET["id"]]);
 $testFini = $pdo->prepare("SELECT COUNT(ID_Match) FROM MatchTournoi WHERE ID_Tournoi = :varTournoi AND Etat = 0;");
 $testFini->execute(['varTournoi' => $tournoi]);
 $testFini = $testFini->fetch()[0];
-if ($testFini==0){
+if ($testFini == 0) {
     $etapeTournoi = $pdo->prepare("SELECT Etape FROM Tournoi WHERE ID_Tournoi = :varTournoi");
     $etapeTournoi->execute(['varTournoi' => $tournoi]);
     $etapeTournoi = $etapeTournoi->fetch()[0];
-    if ($etapeTournoi==1){
+    if ($etapeTournoi == 1) {
         header("Location: config-bracket-tournoi.php?id=" . $tournoi);
-    }
-    else {
+    } else {
         header("Location: config-fin-tournoi.php?id=" . $tournoi);
     }
-}
-else {
-    header("Location: ../pages/match-tournois.php?id=" . $tournoi);
+} else {
+    header("Location: /match-tournois?id=" . $tournoi);
 }

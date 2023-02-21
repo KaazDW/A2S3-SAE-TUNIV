@@ -75,7 +75,6 @@ switch ($path) {
         break;
 
 
-
     default:
         header('HTTP/1.0 404 Not Found');
         exit;
