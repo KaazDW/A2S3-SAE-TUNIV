@@ -137,13 +137,38 @@ switch ($path) {
         require_once APP . "/config/config-suppr-user.php";
         break;
 
+    // Dashboard Capitaine
     case "/dashb-cap":
         require_once APP . "/pages/dashb-cap.php";
         break;
 
+    case "/dashb-cap-edit":
+        if ($_SERVER["REQUEST_METHOD"] == "GET") {
+            require_once APP . "/pages/dashb-cap-edit.php";
+        } else {
+            require_once APP . "/config/config-cap-edit-joueur.php";
+        }
+        break;
+
+    case "/config-suppr-joueur":
+        require_once APP . "/config/config-suppr-joueur.php";
+        break;
+
+    case "/config-add-joueur":
+        require_once APP . "/config/config-add-joueur.php";
+        break;
+
+    case "/config-cap-edit-team":
+        require_once APP . "/config/config-cap-edit-team.php";
+        break;
+    
+    // Dashboard Arbitre
+
     case "/dashb-arbitre":
         require_once APP . "/pages/dashb-arbitre.php";
         break;
+
+    
 
     default:
         header('HTTP/1.0 404 Not Found');
