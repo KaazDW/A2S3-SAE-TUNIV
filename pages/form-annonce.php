@@ -26,12 +26,12 @@ $listeAnnonces = $pdo->query($sql);
         <h2 class="title">Créer une nouvelle annonce</h2>
         <?php
         if (!empty($_SESSION["annonceErreur"])) {
-            echo ("<div>" . $_SESSION["annonceErreur"] . "</div>");
+            echo ("<p>" . $_SESSION["annonceErreur"] . "</p>");
             unset($_SESSION["annonceErreur"]);
         }
         ?>
         <section class="form-annonce-section">
-            <form action="../config/config-annonce.php" method="POST" enctype="multipart/form-data">
+            <form method="POST" enctype="multipart/form-data">
                 <!-- Champ titre -->
                 <div class="form">
                     <div class="form-parta">
@@ -61,10 +61,6 @@ $listeAnnonces = $pdo->query($sql);
                     <button type="submit">Créer l'annonce</button>
                 </div>
             </form>
-            <?php if (!empty($_SESSION["annonceErreur"])) { //pas compris a quoi servent ces lignes (jf)
-                echo ("<p>$_SESSION[annonceErreur]</p>");
-                unset($_SESSION["annonceErreur"]);
-            } ?>
         </section>
 
         <h2 class="title">Supprimer une annonce</h2>
@@ -82,7 +78,7 @@ $listeAnnonces = $pdo->query($sql);
                     <p><?php echo(htmlspecialchars($annonce['Auteur'])) ?>, <span class="role"><?php echo(htmlspecialchars($annonce['Role']))?></span></p>
                     <p><?php echo(htmlspecialchars($annonce['Contenu']))?></p>
                 </div>
-                <a class="edit" href="../config/config-suppr-annonce.php?id=<?php echo(htmlspecialchars($annonce['ID_Annonce'])) ?>">
+                <a class="edit" href="/config-suppr-annonce?id=<?php echo(htmlspecialchars($annonce['ID_Annonce'])) ?>">
                     <img  alt="" src='../assets/img/delete-blanc.png' alt='logo suppression'>
                 </a>
             </div>

@@ -62,17 +62,121 @@ switch ($path) {
         require_once APP . "/pages/match-tournois.php";
         break;
 
+    // Dashboard Administrateur
+
     case "/dashb-admin":
         require_once APP . "/pages/dashb-admin.php";
         break;
 
+        // Dashboard Administrateur Annonces
+
     case "/form-annonce":
-        require_once APP . "/pages/form-annonce.php";
+        if ($_SERVER["REQUEST_METHOD"] == "GET") {
+            require_once APP . "/pages/form-annonce.php";
+        } else {
+            require_once APP . "/config/config-annonce.php";
+        }
         break;
 
-    case "/dashb-admin-utilisateurs":
-        require_once APP . "/pages/dashb-admin-utilisateurs.php";
+    case "/config-suppr-annonce":
+        require_once APP . "/config/config-suppr-annonce.php";
         break;
+
+        // Dashboard Administrateur Tournois
+
+    case "/config-crea-tournoi":
+        require_once APP . "/config/config-crea-tournoi.php";
+        break;
+
+    case "/dashb-admin-editform-tournoi":
+        if ($_SERVER["REQUEST_METHOD"] == "GET") {
+            require_once APP . "/pages/dashb-admin-editform-tournoi.php";
+        } else {
+            require_once APP . "/config/config-editform-tournoi.php";
+        }
+        
+        break;
+
+    case "/config-suppr-tournoi":
+        require_once APP . "/config/config-suppr-tournoi.php";
+        break;
+
+        // Dashboard Administrateur Équipes
+
+    case "/config-admin-crea-equipe":
+        require_once APP . "/config/config-admin-crea-equipe.php";
+        break;
+
+    case "/dashb-admin-editform-equipe":
+        if ($_SERVER["REQUEST_METHOD"] == "GET"){
+            require_once APP . "/pages/dashb-admin-editform-equipe.php";
+        } else {
+            require_once APP . "/config/config-add-joueur-admin.php";
+        }
+        break;
+
+    case "/config-admin-suppr-joueur":
+        require_once APP . "/config/config-admin-suppr-joueur.php";
+        break;
+
+    case "/config-suppr-equipe":
+        require_once APP . "/config/config-suppr-equipe.php";
+        break;
+
+        // Dashboard Administrateur Utilisateurs
+
+    case "/dashb-admin-utilisateurs":
+        if ($_SERVER["REQUEST_METHOD"] == "GET"){
+            require_once APP . "/pages/dashb-admin-utilisateurs.php";
+        } else {
+            require_once APP . "/config/config-crea-user.php";
+        }
+        break;
+
+    case "/dashb-admin-editform-user":
+        if ($_SERVER["REQUEST_METHOD"] == "GET") {
+            require_once APP . "/pages/dashb-admin-editform-user.php";
+        } else {
+            require_once APP . "/config/config-admin-edit-user.php";
+        }
+        break;
+
+    case "/config-suppr-user":
+        require_once APP . "/config/config-suppr-user.php";
+        break;
+
+    // Dashboard Capitaine
+    case "/dashb-cap":
+        require_once APP . "/pages/dashb-cap.php";
+        break;
+
+    case "/dashb-cap-edit":
+        if ($_SERVER["REQUEST_METHOD"] == "GET") {
+            require_once APP . "/pages/dashb-cap-edit.php";
+        } else {
+            require_once APP . "/config/config-cap-edit-joueur.php";
+        }
+        break;
+
+    case "/config-suppr-joueur":
+        require_once APP . "/config/config-suppr-joueur.php";
+        break;
+
+    case "/config-add-joueur":
+        require_once APP . "/config/config-add-joueur.php";
+        break;
+
+    case "/config-cap-edit-team":
+        require_once APP . "/config/config-cap-edit-team.php";
+        break;
+    
+    // Dashboard Arbitre
+
+    case "/dashb-arbitre":
+        require_once APP . "/pages/dashb-arbitre.php";
+        break;
+
+
 
     default:
         require_once APP . "/pages/error404.php";

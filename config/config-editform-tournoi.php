@@ -25,4 +25,4 @@ $edit->execute(
 );
 
 
-header("Location: /../pages/dashb-admin.php");
+header("Location: /dashb-admin");

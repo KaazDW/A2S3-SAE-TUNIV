@@ -56,9 +56,9 @@ else {
     $res = $pdo->exec($sql);
     if (!$res) {
         $_SESSION["userErreur"] = "La création de l'utilisateur a échoué, veuillez réessayer. Si l\'erreur persiste, contactez le support.";
-        header("Location: ../pages/dashb-admin-utilisateurs.php");
+        header("Location: /dashb-admin-utilisateurs");
     } else {
-        header("Location: ../pages/dashb-admin-utilisateurs.php");
+        header("Location: /dashb-admin-utilisateurs");
     }
 }
 

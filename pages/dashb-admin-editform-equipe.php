@@ -4,7 +4,7 @@ if (empty($_SESSION["loggedIn"])) {
 }
 
 if ($_SESSION["type"]!="administrateur") {
-    header("Location: ../index.php");
+    header("Location: /index.php");
 }
 
 $listeEquipe = $pdo->prepare('SELECT * FROM Equipe where ID_Equipe =:varId');
@@ -50,7 +50,7 @@ $listeEquipe->execute(['varId' =>$_GET["id"]]);
                         <span><?php echo(htmlspecialchars($joueur['Prenom'])) ?></span>
                         <span><?php echo(htmlspecialchars($joueur['Nom'])) ?></span>
                         <div>
-                            <a href="../config/config-admin-suppr-joueur.php?id=<?= $joueur['ID_Joueur']?>&amp;id2=<?= $joueur['ID_Equipe']?>"><img src="/assets/img/delete-blanc.png"></a>
+                            <a href="/config-admin-suppr-joueur?id=<?= $joueur['ID_Joueur']?>&amp;id2=<?= $joueur['ID_Equipe']?>"><img src="/assets/img/delete-blanc.png"></a>
                         </div>
                     </div>
                     <?php
@@ -58,7 +58,7 @@ $listeEquipe->execute(['varId' =>$_GET["id"]]);
                     ?>
                 </div>
                 <div class="ajout-joueurs">
-                    <form action="../config/config-add-joueur-admin.php?id=<?php echo ($_GET["id"])?>" method='POST' enctype='multipart/form-data'>
+                    <form method='POST' enctype='multipart/form-data'>
                         <h3>Ajouter un joueur</h3>
                         <div>
                             <label for="new-surname">Prénom</label>

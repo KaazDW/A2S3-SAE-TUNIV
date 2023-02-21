@@ -42,10 +42,10 @@
                                 ?></span>
                         <span><?php echo(htmlspecialchars($utilisateur['Email'])) ?></span>
                         <div>
-                            <a class="edit" href="dashb-admin-editform-user.php?id=<?= $utilisateur['ID_User'] ?>">
+                            <a class="edit" href="dashb-admin-editform-user?id=<?= $utilisateur['ID_User'] ?>">
                                 <img  alt="" src="../assets/img/edit-blanc.png">
                             </a>
-                            <a class="edit" href="../config/config-suppr-user.php?id=<?= $utilisateur['ID_User'] ?>">
+                            <a class="edit" href="/config-suppr-user?id=<?= $utilisateur['ID_User'] ?>">
                                 <img  alt="" src="../assets/img/delete-blanc.png">
                             </a>
                         </div>
@@ -67,7 +67,7 @@
                         </a>
                     </header>
                     <h3>Créer un nouvel utilisateur</h3>
-                    <form action="../config/config-crea-user.php" method="POST">
+                    <form method="POST">
                         <div class="form">
                             <label for="name">Nom</label>
                             <input name="name" type="text" id="name" maxlength=25 required="required">
