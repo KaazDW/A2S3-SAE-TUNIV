@@ -23,7 +23,7 @@ $listeTournois = $pdo->query($sql);
             foreach($tournois as $tournoi):
         ?>
 
-        <a href="match-tournois.php?id=<?= $tournoi['ID_Tournoi'] ?>" class="tournois-line">
+        <a href="/match-tournois?id=<?= $tournoi['ID_Tournoi'] ?>" class="tournois-line">
             <span><?php echo(htmlspecialchars($tournoi['Sport'])); ?></span>
             <span><?php echo(htmlspecialchars($tournoi['Nom'])) ?></span>
             <span><?php echo(htmlspecialchars($tournoi['DateDebut'])) ?></span>

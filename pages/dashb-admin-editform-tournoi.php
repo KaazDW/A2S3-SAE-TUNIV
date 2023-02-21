@@ -1,12 +1,10 @@
-<?php session_start();
+<?php 
     if (empty($_SESSION["loggedIn"])) {
         $_SESSION["loggedIn"] = false;
     }
     if ($_SESSION["type"] != "administrateur") {
         header("Location: ../index.php");
     }
-
-    include '../config/db.php';
 
     $listeequipe = $pdo->prepare('SELECT Nom FROM Participer natural join Equipe WHERE ID_Tournoi =:varId');
     $listeequipe->execute(['varId' =>$_GET["id"]]);

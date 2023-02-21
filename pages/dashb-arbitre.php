@@ -1,4 +1,4 @@
-<?php session_start();
+<?php 
 if (empty($_SESSION["loggedIn"])) {
     $_SESSION["loggedIn"] = false;
 }
@@ -7,16 +7,8 @@ if ($_SESSION["type"] != "arbitre") {
     header("Location: ../index.php");
 }
 
-
-
-include '../config/db.php';
-
 $sql = "SELECT * FROM Tournoi;";
 $listeTournois = $pdo->query($sql);
-
-
-
-
 ?>
 
 <!DOCTYPE html>

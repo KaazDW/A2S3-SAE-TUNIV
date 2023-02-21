@@ -2,11 +2,22 @@
 
 session_start();
 
-include 'config/db.php';
+include_once 'config/db.php';
 
 const APP = __DIR__ . '/';
 
-$path = $_SERVER["PATH_INFO"] ?? "/";
+$link = explode('?', $_SERVER["PATH_INFO"] ?? "/");
+$path = $link[0];
+
+$listeTournois = $pdo->prepare("SELECT ID_Tournoi FROM Tournoi");
+$listeTournois->execute();
+$listeTournois = $listeTournois->fetchAll();
+
+if (!isset($_SERVER["QUERY_STRING"])){
+    $_SERVER["QUERY_STRING"]="vide";
+}
+
+// var_dump($_SERVER);
 
 switch ($path) {
     case "/":
@@ -36,6 +47,27 @@ switch ($path) {
 
     case "/support":
         require_once APP . "/pages/support.php";
+        break;
+
+    case "/match-tournois":
+        $_SESSION["idTournoi"] = preg_replace("/id=/", $_SERVER["QUERY_STRING"], "");
+        require_once APP . "/pages/match-tournois.php";
+        break;
+
+    case "/dashb-admin":
+        require_once APP . "/pages/dashb-admin.php";
+        break;
+
+    case "/form-annonce":
+        require_once APP . "/pages/form-annonce.php";
+        break;
+
+    case "/dashb-admin":
+        require_once APP . "/pages/dashb-admin.php";
+        break;
+
+    case "/dashb-admin-utilisateurs":
+        require_once APP . "/pages/dashb-admin-utilisateurs.php";
         break;
 
     default:

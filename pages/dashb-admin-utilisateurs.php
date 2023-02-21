@@ -1,4 +1,4 @@
-<?php session_start();
+<?php 
     if (empty($_SESSION["type"])) {
         $_SESSION["type"] = false;
     }
@@ -6,8 +6,6 @@
     if ($_SESSION["type"]!="administrateur") {
         header("Location: ../index.php");
     }
-
-    include '../config/db.php';
 
     $sql = "SELECT * FROM Utilisateurs;";
     $listeUtilisateurs = $pdo->query($sql);

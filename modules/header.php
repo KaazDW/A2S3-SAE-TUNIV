@@ -26,7 +26,7 @@ if (empty($_SESSION["type"])) {
     </div>
     <ul class="link" id="nav">
         <li><a href="/tournois">Tournois</a></li>
-        <li><a href="/apropos">A propos</a></li>
+        <li><a href="/a-propos">A propos</a></li>
     </ul>
     <ul class="nav-icon">
         <li class="login-link"><a href="/login"><img  alt="" src=<?php if ($_SESSION["loggedIn"]) {
@@ -43,9 +43,9 @@ if ($_SESSION["type"]=="administrateur") {
     echo (" 
     <section class='admin-header'>
         <ul>
-            <li><a href='/pages/dashb-admin.php'>DASHBOARD</a></li>|
-            <li><a href='/pages/form-annonce.php'>ANNONCES</a></li>|
-            <li><a href='/pages/dashb-admin-utilisateurs.php'>UTILISATEURS</a></li>
+            <li><a href='/dashb-admin'>DASHBOARD</a></li>|
+            <li><a href='/form-annonce'>ANNONCES</a></li>|
+            <li><a href='/dashb-admin-utilisateurs'>UTILISATEURS</a></li>
         </ul>
     </section>
 

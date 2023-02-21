@@ -1,12 +1,10 @@
-<?php session_start();
+<?php 
     if (empty($_SESSION["type"])) {
         $_SESSION["type"] = false;
     }
     if ($_SESSION["type"] != "administrateur") {
         header("Location: ../index.php");
     }
-
-    include '../config/db.php';
 
     $user = $pdo->prepare('SELECT * FROM Utilisateurs where ID_User =:varId');
     $user->execute(['varId' => $_GET["id"]]);

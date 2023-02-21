@@ -1,4 +1,4 @@
-<?php session_start();
+<?php 
 if (empty($_SESSION["loggedIn"])) {
     $_SESSION["loggedIn"] = false;
 }
@@ -6,8 +6,6 @@ if (empty($_SESSION["loggedIn"])) {
 if ($_SESSION["type"]!="administrateur") {
     header("Location: ../index.php");
 }
-
-include '../config/db.php';
 
 $listeEquipe = $pdo->prepare('SELECT * FROM Equipe where ID_Equipe =:varId');
 

@@ -13,7 +13,7 @@ $listeAnnonces = $pdo->query($sql);
         <section class="main-home">
             <section class="main-content">
                 <h1>TUNIV.</h1>
-                <a href="/pages/tournois.php">Accéder aux tournois</a>
+                <a href="/tournois">Accéder aux tournois</a>
             </section>
         </section>
         <section class="index-actu">

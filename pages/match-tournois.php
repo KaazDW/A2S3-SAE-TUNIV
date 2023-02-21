@@ -1,9 +1,9 @@
-<?php session_start();
-if (empty($_SESSION["admin"])) {
+<?php if (empty($_SESSION["admin"])) {
     $_SESSION["admin"] = false; 
 }
 
-include_once '../config/db.php';
+// $_GET["id"]=$_SESSION["idTournoi"];
+// unset($_SESSION["idTournoi"]);
 
 $listematch = $pdo->prepare('SELECT * FROM MatchTournoi where ID_Tournoi =:varId');
 
