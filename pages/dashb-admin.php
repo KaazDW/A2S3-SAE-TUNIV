@@ -88,8 +88,8 @@
                     foreach ($tournois as $tournoi) :
                     ?>
                         <div class="tournois-line">
-                            <span><?php echo ($tournoi['Sport']) ?></span>
-                            <span><?php echo ($tournoi['Nom']) ?></span>
+                            <span><?php echo htmlspecialchars($tournoi['Sport']) ?></span>
+                            <span><?php echo htmlspecialchars($tournoi['Nom']) ?></span>
                             <div>
                                 <a class="edit" href="dashb-admin-editform-tournoi?id=<?= $tournoi['ID_Tournoi'] ?>">
                                     <img src="../assets/img/edit-blanc.png">
@@ -109,8 +109,8 @@
                     foreach ($equipes as $equipe) :
                     ?>
                         <div class="tournois-line">
-                            <span><?php echo ($equipe['Sport']) ?></span>
-                            <span><?php echo ($equipe['Nom']) ?></span>
+                            <span><?php echo htmlspecialchars($equipe['Sport']) ?></span>
+                            <span><?php echo htmlspecialchars($equipe['Nom']) ?></span>
                             <div>
                                 <a class="edit" href="dashb-admin-editform-equipe?id=<?= $equipe['ID_Equipe'] ?>">
                                     <img src="../assets/img/edit-blanc.png">
