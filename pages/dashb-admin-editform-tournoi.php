@@ -3,7 +3,7 @@
         $_SESSION["loggedIn"] = false;
     }
     if ($_SESSION["type"] != "administrateur") {
-        header("Location: ../index.php");
+        header("Location: /index");
     }
 
     $listeequipe = $pdo->prepare('SELECT Nom FROM Participer natural join Equipe WHERE ID_Tournoi =:varId');

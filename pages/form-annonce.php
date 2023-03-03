@@ -4,7 +4,7 @@ if (empty($_SESSION["loggedIn"])) {
 }
 
 if ($_SESSION["type"] != "administrateur") {
-    header("Location: ../index.php");
+    header("Location: /index");
 }
 
 // $sql = "SELECT Titre, Date_annonce, Auteur, Role, Contenu, Image FROM Annonces ORDER BY ID_Annonce DESC LIMIT 30;";

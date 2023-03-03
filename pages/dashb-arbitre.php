@@ -4,7 +4,7 @@ if (empty($_SESSION["loggedIn"])) {
 }
 
 if ($_SESSION["type"] != "arbitre") {
-    header("Location: ../index.php");
+    header("Location: /index");
 }
 
 $sql = "SELECT * FROM Tournoi;";

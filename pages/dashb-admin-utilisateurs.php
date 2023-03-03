@@ -4,7 +4,7 @@
     }
 
     if ($_SESSION["type"]!="administrateur") {
-        header("Location: ../index.php");
+        header("Location: /index");
     }
 
     $sql = "SELECT * FROM Utilisateurs;";

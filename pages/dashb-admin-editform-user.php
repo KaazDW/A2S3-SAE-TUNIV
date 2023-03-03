@@ -3,7 +3,7 @@
         $_SESSION["type"] = false;
     }
     if ($_SESSION["type"] != "administrateur") {
-        header("Location: ../index.php");
+        header("Location: /index");
     }
 
     $user = $pdo->prepare('SELECT * FROM Utilisateurs where ID_User =:varId');
