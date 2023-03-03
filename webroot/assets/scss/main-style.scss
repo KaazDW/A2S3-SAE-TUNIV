@@ -36,17 +36,7 @@ font-family: 'Roboto', sans-serif;
 /* INFORMATION  PAGE STYLE */
 /* STATISTIQUES PAGE STYLE */
 /* A PROPOS PAGE STYLE */
-@keyframes up1 {
-	0% {
-		transform: translateY(0px);
-	}
-	30% {
-		transform: translateY(-10px);
-	}
-	60% {
-		transform: translateY(0px);
-	}
-}
+
 /* TOURNOIS PAGE STYLE */
 /* DASHBOARD ADMIN */
 /* THE OTHER DASH */
@@ -97,9 +87,11 @@ textarea {
 	--color-hover: var(--color-border);
 }
 body {
-	background: #2f3339;
-	background: #1a1d22;
-	background: linear-gradient(to right, #14161a, #2d3b46);
+	// background: #f7f7f7;
+    background: #1a1d22 ;
+    background: linear-gradient(to right, #161718, #193236);
+	// background: rgb(61,28,84);
+	// background: linear-gradient(180deg, rgb(38, 17, 53) 1%, rgba(39,38,40,1) 50%);
 	font-family: 'Poppins', sans-serif;
 	width: 75vw;
 	margin: auto;
@@ -238,6 +230,9 @@ main {
 	text-align: center;
 	.main-content {
 		margin-top: -250px;
+		// box-shadow: -1px 1px 62px 15px rgb(161, 56, 209);
+		// background-color: #a038d1bd;
+		// border-radius: 50px;
 		h1 {
 			-webkit-text-stroke: 1px white;
 			color: rgba(255, 255, 255, 0);
@@ -467,30 +462,35 @@ section.stats-section {
 			h1 {
 				margin: 0;
 			}
-			&:nth-child(1) {
+			:nth-child(1) {
 				animation: up1 4s;
 				animation-iteration-count: infinite;
 				animation-delay: 0s;
 			}
-			&:nth-child(2) {
+			:nth-child(2) {
 				animation: up1 4s;
 				animation-iteration-count: infinite;
 				animation-delay: 0.5s;
 			}
-			&:nth-child(3) {
+			:nth-child(3) {
 				animation: up1 4s;
 				animation-iteration-count: infinite;
 				animation-delay: 1s;
 			}
-			&:nth-child(4) {
+			:nth-child(4) {
 				animation: up1 4s;
 				animation-iteration-count: infinite;
 				animation-delay: 1.5s;
 			}
-			&:nth-child(5) {
+			:nth-child(5) {
 				animation: up1 4s;
 				animation-iteration-count: infinite;
 				animation-delay: 2s;
+			}
+			:nth-child(6) {
+				animation: up1 4s;
+				animation-iteration-count: infinite;
+				animation-delay: 2.5s;
 			}
 		}
 		.navcompa {
@@ -1329,6 +1329,32 @@ main.main-dash-editform-match{
         }
     }
 }
+main.main-404{
+	div{
+		text-align: center;
+		padding-top: 100px;
+		padding-bottom: 150px;;
+		h1{
+			-webkit-text-stroke: 1px rgb(255, 255, 255);
+			color:rgba(36, 36, 36, 0);
+			font-size: 53px;
+			letter-spacing: 2px;
+			span{
+				color: white;
+				-webkit-text-stroke: 0px rgb(255, 255, 255);
+
+			}
+		}
+		p{
+			margin-bottom: 135px;
+		}
+		a{
+			background-color: var(--red);
+			padding: 15px;
+			border-radius: 15px;
+		}
+	}
+}
 footer {
 	text-align: center;
 	border-top: 2px solid var(--color-border);
@@ -1350,5 +1376,16 @@ footer {
 			top: 80px;
 			left: 0;
 		}
+	}
+}
+@keyframes up1 {
+	0% {
+		transform: translateY(0px);
+	}
+	30% {
+		transform: translateY(-10px);
+	}
+	60% {
+		transform: translateY(0px);
 	}
 }
