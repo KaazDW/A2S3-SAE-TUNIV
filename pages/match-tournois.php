@@ -110,7 +110,7 @@ $equipes = $listeequipe->fetchAll();
         </section>
 
         <!-- Affichage Equipe inscrites -->
-        <h2 class="title">Equipes Inscrites</h2>
+        <h2 class="title">Équipes Inscrites</h2>
         <section class="forequipesection">
             <?php
             foreach ($equipes as $equipe) :
@@ -172,12 +172,11 @@ $equipes = $listeequipe->fetchAll();
                     <p><?php echo "<span>> Fin : </span>" . htmlspecialchars($match['DateDebut']);?></p>
                     <p><?php echo "<span>> Debut : </span>" . htmlspecialchars($match['DateFin']);?></p>
                     <p><?php echo "<span>> Stade : </span>" . htmlspecialchars($match['Stade']);?></p>
-                    <?php if (($_SESSION["type"] == "administrateur" || ($_SESSION["type"]=="arbitre" && $match["ID_User"]==$_SESSION["userId"])) && $match["Etat"]==0) {
+                    <?php if (($_SESSION["type"] == "administrateur") || ($_SESSION["type"]=="arbitre" && $match["ID_User"]==$_SESSION["userId"] && $match["Etat"]==0)) {
                                 echo (" <a href='dashb-editform-match?id=" . htmlspecialchars($match['ID_Match']) . "'>
                                             <img src='../assets/img/edit-blanc.png'>
-                                        </a>"
-                        );
-                    };
+                                        </a>");
+                        };
                     ?>
                     <?php
                     // echo($nomEquipe1[0] ." contre ". $nomEquipe2[0] . " Début à " . $match['DateDebut'] ." Fin à ". $match['DateFin']." Stade : ".$match['Stade']   ) 
