@@ -59,8 +59,8 @@ $listeTournois = $pdo->query($sql);
                     ?>
 
                         <div class="joueur-line">
-                            <span><?php echo ($joueur['Prenom']) ?></span>
-                            <span><?php echo ($joueur['Nom']) ?></span>
+                            <span><?php echo htmlspecialchars($joueur['Prenom']) ?></span>
+                            <span><?php echo htmlspecialchars($joueur['Nom']) ?></span>
                             <div>
                                 <a class="edit" href="/dashb-cap-edit?id=<?= $joueur['ID_Joueur'] ?>"><img src="/assets/img/edit-blanc.png"></a>
                                 <a class="edit" href="/config-suppr-joueur?id=<?= $joueur['ID_Joueur'] ?>"><img src="/assets/img/delete-blanc.png"></a>
@@ -72,7 +72,6 @@ $listeTournois = $pdo->query($sql);
                 </div>
                 <div class="ajout-joueurs">
                     <form action="/config-add-joueur" method="POST" enctype="multipart/form-data">
-
                         <h3>Ajouter un Joueur</h3>
                         <div>
                             <label for="new-surname2">Prénom</label>
@@ -86,8 +85,6 @@ $listeTournois = $pdo->query($sql);
                     </form>
                 </div>
             </section>
-
-
         </section>
     </main>
     <?php include '../modules/footer.php'; ?>

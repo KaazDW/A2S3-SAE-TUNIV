@@ -207,5 +207,5 @@ switch ($path) {
 
     default:
         require_once APP . "/pages/error404.php";
-        exit;
+    exit;
 }

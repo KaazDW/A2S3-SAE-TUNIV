@@ -62,7 +62,7 @@ $listeTournois = $pdo->query($sql);
                                     $scoreEquipe2 = $scoresEquipes->fetch();
                                     ?>
                                     <h3>
-                                        <?php echo $nomEquipe1[0];
+                                        <?php echo htmlspecialchars($nomEquipe1[0]);
                                         echo (" ");
                                         echo $scoreEquipe1[0]; ?><span> VS </span> <?php echo $scoreEquipe2[0];
                                                                                                                             echo (" ");
@@ -70,7 +70,7 @@ $listeTournois = $pdo->query($sql);
                                     </h3>
                                     <p><?php echo "<span>> Fin : </span>" . $match['DateDebut']; ?></p>
                                     <p><?php echo "<span>> Debut : </span>" . $match['DateFin']; ?></p>
-                                    <p><?php echo "<span>> Stade : </span>" . $match['Stade']; ?></p>
+                                    <p><?php echo "<span>> Stade : </span>" . htmlspecialchars($match['Stade']); ?></p>
                                     <p><?php echo "<br>" ?></p>
                                 </div>
                             </a>
