@@ -48,7 +48,8 @@ else {
     $name = $pdo->quote($_POST["name"]);
     $surname = $pdo->quote($_POST["surname"]);
     $login = $pdo->quote($_POST["login"]);
-    $password = $pdo->quote($_POST["password"]);
+    $password = password_hash($_POST["password"], PASSWORD_BCRYPT);
+    $password = $pdo->quote($password);
     $email = $pdo->quote($_POST["email"]);
     $role = $pdo->quote($_POST["role"]);
     
