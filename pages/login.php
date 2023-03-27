@@ -49,10 +49,12 @@ if (empty($_SESSION["type"])) {
                     <input type='password' name='password' id='password-input'>
                     <!-- </div> -->
                     <button type='submit'>Se Connecter</button>
+                    <div class='cf-turnstile' data-sitekey='0x4AAAAAAADR2zXo9bNOJV2W' data-callback='javascriptCallback'></div>
                 </form>");
             }
         ?>
     </main>
     <?php include '../modules/footer.php'; ?>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </body>
 </html>

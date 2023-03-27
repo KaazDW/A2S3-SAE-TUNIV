@@ -28,13 +28,18 @@ function getIp(){
     return $ip;
   }
 // echo 'L adresse IP de l utilisateur est : '.getIp();
-  
+
 function checkConnectionSpam(){
     if(getIP()){
         return false;
     }
     return true;
 }
+
+// $sql = mysql_query("SELECT * FROM log_brutf WHERE user='$user'") or die (mysql_error());
+// $sql_r = mysql_fetch_array($sql);
+
+// $temps1 = $temps - 60;//Ici $temps1 vaut $temps - 60 donc l'heure actuelle moins 1 minute
 
 $res = $statement->fetch();
 
@@ -56,7 +61,6 @@ if ($res[0] == 1) { // On vérifie qu'il existe un utilisateur avec l'identifian
         $statement->execute(
             [
                 'varLogin' => "$login"
-
             ]
 
         );
@@ -97,9 +101,7 @@ if ($res[0] == 1) { // On vérifie qu'il existe un utilisateur avec l'identifian
     } else {
 
         // Si le mot de passe n'est pas bon, on le renvoie vers la page de connexion avec un message d'erreur
-
         $_SESSION["errorMessage"] = "Mot de passe incorrect";
-
         header("Location: /login");
 
     }

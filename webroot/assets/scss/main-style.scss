@@ -40,16 +40,7 @@ font-family: 'Roboto', sans-serif;
 /* TOURNOIS PAGE STYLE */
 /* DASHBOARD ADMIN */
 /* THE OTHER DASH */
-@keyframes editableanim {
-	from {
-		opacity: 0;
-		transform: translate(105px);
-	}
-	to {
-		opacity: 1;
-		transform: translate(0px);
-	}
-}
+
 /* ANNONCES FORM STYLE */
 /* EDIT FORM TOURNOIS DASHBOARD ADMIN */
 /* CAPITAINE 'MON EQUIPE' STYLE */
@@ -1387,5 +1378,15 @@ footer {
 	}
 	60% {
 		transform: translateY(0px);
+	}
+}
+@keyframes editableanim {
+	from {
+		opacity: 0;
+		transform: translate(105px);
+	}
+	to {
+		opacity: 1;
+		transform: translate(0px);
 	}
 }
