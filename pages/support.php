@@ -14,18 +14,19 @@
         <h2 class="title">Contactez le support</h2>
         <section class="support-content">
             <form method="POST" enctype="multipart/form-data"> <!-- reste à faire l'action="traitement-support.php" dans le router (jf)-->
-                <input type="text" name="nom" placeholder="Nom">
-                <input type="text" name="prenom" placeholder="Prénom">
-                <input type="text" name="email" placeholder="Adresse Email">
+                <div class='input'>
+                    <input type="text" name="nom" placeholder="Nom">
+                    <input type="text" name="prenom" placeholder="Prénom">
+                    <input type="text" name="email" placeholder="Adresse Email">
+                </div>    
                 <textarea type="text" name="content" placeholder="Détaillez votre requête"></textarea>  
                 <div>
                     <label for="screenshot" class="form-label">Joindre une capture d'écran</label>
                     <input type="file" id="screenshot" name="screenshot" />
                 </div>
-                <button type="submit">Envoyer</button>
+                <button type="submit">Envoyer à l'administrateur</button>
             </form>
         </section>
     </main> 
-    <?php include '../modules/footer.php'; ?>
 </body>
 </html>
