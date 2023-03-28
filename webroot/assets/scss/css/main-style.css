@@ -335,6 +335,9 @@ main {
   border: 1px solid rgba(255, 255, 255, 0);
   border-radius: 5px;
 }
+.main-login form div.cf-turnstile {
+  margin-left: -45px;
+}
 
 .logout-div {
   display: flex;

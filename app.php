@@ -25,13 +25,13 @@ switch ($path) {
             require_once APP . "/config/config-capcha.php";
         }
         break;
-    case "/capcha":
-        if ($_SERVER["REQUEST_METHOD"] == "GET") {
-            require_once APP . "/pages/login.php";
-        } else {
-            require_once APP . "/config/config-login.php";
-        }
-        break;
+    // case "/capcha":
+    //     if ($_SERVER["REQUEST_METHOD"] == "GET") {
+    //         require_once APP . "/pages/login.php";
+    //     } else {
+    //         require_once APP . "/config/config-login.php";
+    //     }
+    //     break;
     case "/logout":
         $_SESSION = [];
         unset($_SESSION);

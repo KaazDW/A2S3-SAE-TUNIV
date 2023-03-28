@@ -1,5 +1,7 @@
 <?php
 $SECRET_KEY = '0x4AAAAAAADR2xz5lPYphZCyMeSrpixEzk8';
+$login = $_POST['login'];
+$pswd = $_POST['password'];
 
 
 $formData = array(
@@ -20,12 +22,15 @@ $context = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 $outcome = json_decode($result, true);
 
-var_dump($outcome);
+// var_dump($outcome);
 
 if ($outcome['success']) {
 	echo "OK";
+	// header("Location: /config-login.php");
 } else {
     echo "KO";
+	header("Location: /login");
+
 }
 ?>
 
