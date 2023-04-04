@@ -17,8 +17,7 @@ if ($res[0] == 1) { // On vérifie qu'il existe un utilisateur avec l'identifian
 
     if (password_verify($password,$res[0])) { // Si oui, on vérifie que le mot de passe donné correspond à celui de l'utilisateur
         $statement = $pdo->prepare("SELECT Type_user FROM Utilisateurs WHERE Identifiant=:varLogin");
-        $statement->execute(
-            ['varLogin' => "$login"]);
+        $statement->execute(['varLogin' => "$login"]);
 
         // attribution du role
         $type = $statement->fetch()[0];
