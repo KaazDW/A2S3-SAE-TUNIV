@@ -38,8 +38,12 @@ if (empty($_SESSION["type"])) {
                     </div>
                 ");
             } else {
+                if (isset($_SERVER["errorMessage"])){
+                    echo($_SESSION["errorMessage"]);
+                    unset($_SESSION["errorMessage"]);
+                }
                 echo ("<h2>LOGIN PAGE</h2>
-                <form class='center' method='POST'>
+                <form class='center' method='POST' id='form'>
                     <!-- <div> -->
                     <label for='login-input'>Login</label>
                     <input type='text' name='login' id='login-input'>

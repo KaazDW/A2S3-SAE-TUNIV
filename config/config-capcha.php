@@ -2,6 +2,7 @@
 $SECRET_KEY = '0x4AAAAAAADR2xz5lPYphZCyMeSrpixEzk8';
 $login = $_POST['login'];
 $pswd = $_POST['password'];
+include_once 'db.php';
 
 
 $formData = array(
@@ -22,73 +23,72 @@ $context = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 $outcome = json_decode($result, true);
 
-// var_dump($outcome);
-
 if ($outcome['success']) {
 	echo "OK";
-	// header("Location: /config-login.php");
+	$_SESSION["captcha"] = true;
+	$_POST['login'] = $login;
+	$_POST['password'] = $pswd;
+	configLogin($login, $pswd);
+
+	// header("Location: /capcha");
 } else {
-    echo "KO";
+    // echo "KO";
 	header("Location: /login");
-
 }
-?>
 
-<script>
-/*
-let login = <?php echo json_encode($_POST['login']); ?>
-let pswd = <?php echo json_encode($_POST['password']); ?>
 
-const SECRET_KEY = '0x4AAAAAAADR2xz5lPYphZCyMeSrpixEzk8';
-
-async function handlePost(request) {
-	const body = await request.formData();
-	// Turnstile injects a token in "cf-turnstile-response".
-	const token = body.get('cf-turnstile-response');
-	const ip = request.headers.get('CF-Connecting-IP');
-
-	// Validate the token by calling the
-	// "/siteverify" API endpoint.
-	let formData = new FormData();
-	formData.append('secret', SECRET_KEY);
-	formData.append('response', token);
-	formData.append('remoteip', ip);
-
-	const url = 'https://challenges.cloudflare.com/turnstile/v0/siteverify';
-	const result = await fetch(url, {
-		body: formData,
-		method: 'POST',
-	});
-
-	const outcome = await result.json();
-	if (outcome.success) {
-        document.body.innerHTML = 'VICTIOPE !'
-        let response = connect()
-        response.then(() => {
-            document.location.href="";
-        })
+function configLogin($login, $password){
+	try {
+		$pdo = new PDO("mysql:dbname=db_tuniv;host=localhost", "root", "", [PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION]);
+	} catch (PDOException $e) {
+		die();
 	}
-}
+	$statement = $pdo->prepare("SELECT count(*) FROM Utilisateurs WHERE Identifiant =:varLogin");
+	$statement->execute(['varLogin' => "$login"]);
+	$res = $statement->fetch();
 
-async function connect() {
-    try {
-        const response = await fetch('capcha', {
-            method: 'POST',
-            body: {
-                login: login,
-                password: apswd
-            }
-        })
-        if (!response.ok)
-            throw new Error('Fail during fetching')
-        return await response
-    } catch (error) {
-        console.error(error)
-    }
-}
-*/
-</script>
-
-
-
-
+	if ($res[0] == 1) { // On vérifie qu'il existe un utilisateur avec l'identifiant donné
+		$statement = $pdo->prepare("SELECT Mot_de_passe FROM Utilisateurs WHERE Identifiant=:varLogin");
+		$statement->execute(['varLogin' => "$login",]);
+		$res = $statement->fetch();
+		if ($res[0] == $password) { // Si oui, on vérifie que le mot de passe donné correspond à celui de l'utilisateur
+			$statement = $pdo->prepare("SELECT Type_user FROM Utilisateurs WHERE Identifiant=:varLogin");
+			$statement->execute(['varLogin' => "$login"]);
+			$type = $statement->fetch()[0];
+			if ($type == 0) {
+				$_SESSION["loggedIn"] = true;
+				$statement = $pdo->prepare("SELECT ID_User FROM Utilisateurs WHERE Identifiant=:varLogin AND Mot_de_passe=:varPassword");
+				$statement->execute(['varLogin' => "$login", 'varPassword' => "$password"]);
+				$res = $statement->fetch();
+				$_SESSION["userId"] = $res[0];
+				$_SESSION["type"] = "administrateur";
+				header("Location: /index");
+			} else if ($type == 1) {
+				$_SESSION["loggedIn"] = true;
+				$statement = $pdo->prepare("SELECT ID_User FROM Utilisateurs WHERE Identifiant=:varLogin AND Mot_de_passe=:varPassword");
+				$statement->execute(['varLogin' => "$login", 'varPassword' => "$password"]);
+				$res = $statement->fetch();
+				$_SESSION["userId"] = $res[0];
+				$_SESSION["type"] = "arbitre";
+				header("Location: /index");
+			} else {
+				$_SESSION["loggedIn"] = true;
+				$statement = $pdo->prepare("SELECT ID_User FROM Utilisateurs WHERE Identifiant=:varLogin AND Mot_de_passe=:varPassword");
+				$statement->execute(['varLogin' => "$login", 'varPassword' => "$password"]);
+				$res = $statement->fetch();
+				$_SESSION["userId"] = $res[0];
+				$_SESSION["type"] = "capitaine";
+				header("Location: /index");
+			}
+		} else {
+			// Si le mot de passe n'est pas bon, on le renvoie vers la page de connexion avec un message d'erreur
+			$_SESSION["errorMessage"] = "Mot de passe incorrect";
+			header("Location: /login");
+		}
+	} else {
+		// Si l'utilisateur n'existe pas, on le renvoie vers la page de connexion avec un message d'erreur
+		$_SESSION["errorMessage"] = "L'utilisateur n'existe pas.";
+		header("Location: /login");
+	}
+};
+?>

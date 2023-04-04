@@ -6,6 +6,7 @@
 
 $login = $_POST["login"];
 $password = $_POST["password"];
+
 $statement = $pdo->prepare("SELECT count(*) FROM Utilisateurs WHERE Identifiant =:varLogin");
 $statement->execute(
     // On exécute la requête préparée
@@ -17,24 +18,6 @@ $statement->execute(
 
 );
 
-function getIp(){
-    if(!empty($_SERVER['HTTP_CLIENT_IP'])){
-      $ip = $_SERVER['HTTP_CLIENT_IP'];
-    }elseif(!empty($_SERVER['HTTP_X_FORWARDED_FOR'])){
-      $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
-    }else{
-      $ip = $_SERVER['REMOTE_ADDR'];
-    }
-    return $ip;
-  }
-// echo 'L adresse IP de l utilisateur est : '.getIp();
-
-function checkConnectionSpam(){
-    if(getIP()){
-        return false;
-    }
-    return true;
-}
 
 // $sql = mysql_query("SELECT * FROM log_brutf WHERE user='$user'") or die (mysql_error());
 // $sql_r = mysql_fetch_array($sql);
