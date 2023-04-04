@@ -38,8 +38,12 @@ if (empty($_SESSION["type"])) {
                     </div>
                 ");
             } else {
+                if (isset($_SERVER["errorMessage"])){
+                    echo($_SESSION["errorMessage"]);
+                    unset($_SESSION["errorMessage"]);
+                }
                 echo ("<h2>LOGIN PAGE</h2>
-                <form class='center' method='POST'>
+                <form class='center' method='POST' id='form'>
                     <!-- <div> -->
                     <label for='login-input'>Login</label>
                     <input type='text' name='login' id='login-input'>
@@ -49,10 +53,12 @@ if (empty($_SESSION["type"])) {
                     <input type='password' name='password' id='password-input'>
                     <!-- </div> -->
                     <button type='submit'>Se Connecter</button>
+                    <div class='cf-turnstile' data-sitekey='0x4AAAAAAADR2zXo9bNOJV2W' data-callback='javascriptCallback'></div>
                 </form>");
             }
         ?>
     </main>
     <?php include '../modules/footer.php'; ?>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </body>
 </html>

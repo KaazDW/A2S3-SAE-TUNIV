@@ -1,4 +1,5 @@
-<?php if ($_SESSION["type"] != "administrateur") {
+<?php 
+if ($_SESSION["type"] != "administrateur") {
     header("Location: /index");
 }
 

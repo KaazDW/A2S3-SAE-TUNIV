@@ -20,11 +20,9 @@ $edit->execute(
     'varnom'=>$nom,
     'varId' =>$_GET["id"],
     'varmail'=>$mail,
-    'vartype'=>$type,
+    'vartype'=>$type
 ]
 );
 
-
-header("Location: /dashb-admin-utilisateurs");  
-        
+header("Location: /dashb-admin-utilisateurs");          
 ?>

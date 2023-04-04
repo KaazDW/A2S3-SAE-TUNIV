@@ -12,13 +12,6 @@ $prenom = $_POST["new-surname"];
 $nom = $_POST["new-name"];
 
 $edit = $pdo->prepare('UPDATE Joueur  set Prenom=:varprenom, Nom=:varnom where ID_Joueur = :varId');
-
-$edit->execute(
-    [
-        'varprenom' => $prenom,
-        'varnom' => $nom,
-        'varId' => $_GET["id"],
-    ]
-);
+$edit->execute(['varprenom' => $prenom,'varnom' => $nom,'varId' => $_GET["id"]]);
 
 header("Location: /dashb-cap");

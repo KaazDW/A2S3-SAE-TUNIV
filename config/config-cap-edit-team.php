@@ -8,16 +8,7 @@ if ($_SESSION["type"] != "capitaine") {
 
 $equipe = $_POST["new-name-team"];
 
-
 $edit = $pdo->prepare('UPDATE Equipe  set Nom=:varnom where ID_Equipe=:idequipe');
-
-
-$edit->execute(
-    [
-        'varnom' => $equipe,
-        'idequipe' => $_SESSION["actuel"],
-    ]
-);
-
+$edit->execute(['varnom' => $equipe,'idequipe' => $_SESSION["actuel"]]);
 
 header("Location: /dashb-cap");
