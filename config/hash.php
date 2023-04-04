@@ -1,18 +1,16 @@
 <?php 
 
-/* Script de chiffrement des mot de passes
-$sql = "SELECT password FROM users;";
-$listeMdp = $pdo->query($sql);
-$compteur = 0;
+$sql = "SELECT ID_User, Mot_de_passe FROM Utilisateurs;";
+$users = $pdo->query($sql);
+$users = $users->fetchAll();
 
-foreach ($listeMdp as $mdp) {
+foreach($users as $user){
     set_time_limit(100);
-    $mdp = $listeMdp->fetch()[0];
-    $mdpHash = $pdo->quote(password_hash($mdp, PASSWORD_BCRYPT));
-    $sql = "UPDATE TABLE users SET password=$mdpHash WHERE id=$compteur;";
-    $pdo->exec($sql);
-    $compteur++;
+    $id = $user["ID_User"];
+    $mdp = $user["Mot_de_passe"];
+    $mdpHash = password_hash($mdp,PASSWORD_BCRYPT);
+    $maj = $pdo->prepare("UPDATE Utilisateurs SET Mot_de_passe=:varHash WHERE ID_User=:varId");
+    $maj->execute(['varHash' => $mdpHash, 'varId' => $id]);
 }
-*/ 
 
-header("Location: ../index.php");
+header("Location: /index");

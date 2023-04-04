@@ -212,7 +212,6 @@ switch ($path) {
     case "/config-verrouillage-match":
         require_once APP . "/config/config-verrouillage-match.php";
         break;
-        
 
     default:
         require_once APP . "/pages/error404.php";

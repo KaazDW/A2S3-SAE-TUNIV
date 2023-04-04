@@ -1,3 +1,9 @@
+<?php
+if ($_SESSION["type"] != "capitaine") {
+    header("Location: /index");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 

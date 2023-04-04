@@ -4,10 +4,8 @@ if (empty($_SESSION["loggedIn"])) {
 }
 
 if ($_SESSION["type"] != "capitaine") {
-    header("Location: ../index.php");
+    header("Location: /index");
 }
-
-include '../config/db.php';
 
 $sql = "SELECT * FROM Tournoi;";
 $listeTournois = $pdo->query($sql);

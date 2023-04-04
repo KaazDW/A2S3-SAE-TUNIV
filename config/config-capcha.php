@@ -50,7 +50,7 @@ function configLogin($login, $password){
 		$statement = $pdo->prepare("SELECT Mot_de_passe FROM Utilisateurs WHERE Identifiant=:varLogin");
 		$statement->execute(['varLogin' => "$login",]);
 		$res = $statement->fetch();
-		if ($res[0] == $password) { // Si oui, on vérifie que le mot de passe donné correspond à celui de l'utilisateur
+		if (password_verify($password,$res[0])) { // Si oui, on vérifie que le mot de passe donné correspond à celui de l'utilisateur
 			$statement = $pdo->prepare("SELECT Type_user FROM Utilisateurs WHERE Identifiant=:varLogin");
 			$statement->execute(['varLogin' => "$login"]);
 			$type = $statement->fetch()[0];
