@@ -1,9 +1,9 @@
 <?php
+// Backend CloudFare Turnstile Captcha
 $SECRET_KEY = '0x4AAAAAAADR2xz5lPYphZCyMeSrpixEzk8';
 $login = $_POST['login'];
 $pswd = $_POST['password'];
 include_once 'db.php';
-
 
 $formData = array(
 	'secret' => $SECRET_KEY,
@@ -34,7 +34,6 @@ if ($outcome['success']) {
 } else {
 	header("Location: /login");
 }
-
 
 //verification de l'utilisateur dans la bd et association du rôles associé
 function configLogin($login, $password){

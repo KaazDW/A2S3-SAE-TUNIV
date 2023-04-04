@@ -10,8 +10,6 @@ $nb_equipe = $_POST["new-nb-equipe"];
 $etape = $_POST["new-etape"];
 
 $edit = $pdo->prepare('UPDATE Tournoi set Sport=:varsport, Nom=:varnom, DateDebut=:vardatedebut, DateFin=:vardatefin, Nb_Equipe=:varnb, Etape=:varetape where ID_Tournoi = :varId');
-
-
 $edit->execute(
 [
     'varsport'=>$sport,
@@ -23,6 +21,4 @@ $edit->execute(
     'varId' =>$_GET["id"],
 ]
 );
-
-
 header("Location: /dashb-admin");
