@@ -15,8 +15,8 @@
         <section class="support-content">
             <form method="POST" enctype="multipart/form-data"> <!-- reste à faire l'action="traitement-support.php" dans le router (jf)-->
                 <div class='input'>
-                    <input type="text" name="nom" placeholder="Nom">
-                    <input type="text" name="prenom" placeholder="Prénom">
+                    <input type="text" name="lastname" placeholder="Nom">
+                    <input type="text" name="firstname" placeholder="Prénom">
                     <input type="text" name="email" placeholder="Adresse Email">
                 </div>    
                 <textarea type="text" name="content" placeholder="Détaillez votre requête"></textarea>  
