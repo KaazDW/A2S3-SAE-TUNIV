@@ -1,4 +1,5 @@
-<?php if ($_SESSION["type"]!="administrateur") {
+<?php 
+if ($_SESSION["type"]!="administrateur") {
     header("Location: /index");
 }
 
@@ -37,7 +38,6 @@ for ($i=0; $i<$nbEquipes; $i++) {
         $creerMatch->execute(['varTournoi' => $_GET["id"]]);
         $numMatch = $pdo->query("SELECT max(ID_Match) FROM MatchTournoi;");
         $numMatch = $numMatch->fetch()[0];
-
 
         $creerParticiper = $pdo->query("INSERT INTO Jouer VALUES($numMatch," . $listeEquipes[$i][0] . ",0);");
         $creerParticiper = $pdo->query("INSERT INTO Jouer VALUES($numMatch," . $listeEquipes[$j][0] . ",0);");

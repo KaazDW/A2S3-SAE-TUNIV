@@ -23,20 +23,20 @@ $context = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 $outcome = json_decode($result, true);
 
+//verification du résultat du capcha
 if ($outcome['success']) {
-	echo "OK";
+	// si ok recupération des identifiants envoyés
 	$_SESSION["captcha"] = true;
 	$_POST['login'] = $login;
 	$_POST['password'] = $pswd;
+	//puis verification de leur authenticité
 	configLogin($login, $pswd);
-
-	// header("Location: /capcha");
 } else {
-    // echo "KO";
 	header("Location: /login");
 }
 
 
+//verification de l'utilisateur dans la bd et association du rôles associé
 function configLogin($login, $password){
 	try {
 		$pdo = new PDO("mysql:dbname=db_tuniv;host=localhost", "root", "", [PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION]);

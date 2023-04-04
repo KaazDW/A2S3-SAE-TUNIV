@@ -7,6 +7,7 @@ DROP TABLE IF EXISTS MatchTournoi;
 DROP TABLE IF EXISTS Equipe;
 DROP TABLE IF EXISTS Tournoi;
 DROP TABLE IF EXISTS Utilisateurs;
+DROP TABLE IF EXISTS support;
 
 CREATE TABLE IF NOT EXISTS Utilisateurs (
 ID_User		INT PRIMARY KEY AUTO_INCREMENT,
@@ -75,6 +76,16 @@ CREATE TABLE IF NOT EXISTS Annonces (
     Role VARCHAR(50) NOT NULL,
     Contenu VARCHAR(400) NOT NULL,
     Image TEXT
+);
+
+CREATE TABLE IF NOT EXISTS support (
+	id integer NOT NULL AUTO_INCREMENT,
+   email varchar(50) NOT NULL,
+   firstname varchar(50) NOT NULL,
+   lastname VARCHAR(50) NOT NULL,
+   descr varchar(255) NOT NULL,
+   screen VARCHAR(255),
+   PRIMARY KEY (id)
 );
 
  DROP PROCEDURE IF EXISTS viderAnnonces;
