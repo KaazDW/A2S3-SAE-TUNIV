@@ -352,10 +352,28 @@ main {
 			border: 1px solid rgba(255, 255, 255, 0);
 			border-radius: 5px;
 		}
+		button:hover{
+			cursor: pointer;
+		}
 		div.cf-turnstile{
 			margin-left: -45px;
 			// border: 1px solid red;
 			// padding: 15px;
+		}
+		a{
+			text-decoration: underline;
+		}
+		p{
+			display: none;
+			background-color: var(--color-hover);
+			padding: 15px;
+			border-radius: 5px;
+			position: relative;
+			width: 150%;
+			margin-left: -60px;
+		}
+		a:hover ~ p, p:hover{
+			display: block;
 		}
 	}
 }
@@ -545,6 +563,45 @@ section.stats-section {
 					filter: grayscale(1);
 				}
 			}
+		}
+	}
+}
+.support-admin-main-dashboard{
+	.dashadmin-section{
+		.grid{
+			.support-line:first-child{
+				background-color: var(--color-hover);
+				border-radius: 2px;
+			}
+			.support-line{
+				display: grid;
+				display: grid;
+				grid-template-columns: repeat(8, 1fr);
+				margin: 15px 0px;
+				border: 1px solid var(--color-border);
+				border-radius: 5px;
+				align-items: center;
+				&:hover {
+					background-color: var(--color-hover);
+				}
+				span {
+					&:nth-child(5) {
+						grid-column: 5 / 7;
+					}
+					margin: 5px 10px;
+				}
+				a:last-child{
+					color: var(--red);
+					border: 1px solid var(--red);
+					border-radius: 2px;
+					padding: 2px;
+					width: 89px;
+				}
+				a:last-child:hover{
+					text-decoration: underline;
+				}
+			}
+
 		}
 	}
 }

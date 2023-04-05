@@ -9,7 +9,7 @@ if ($_SESSION["type"] != "capitaine") {
 
 <head>
     <?php include '../modules/head.php'; ?>
-    <link href="../assets/css/style.css" rel="stylesheet">
+    <!-- <link href="../assets/css/style.css" rel="stylesheet"> -->
     <?php include '../modules/header.php';
     include '../config/db.php'; ?>
 </head>

@@ -45,8 +45,9 @@ if ($_SESSION["type"] == "administrateur") {
         <ul>
             <li><a href='/dashb-admin'>DASHBOARD</a></li>|
             <li><a href='/form-annonce'>ANNONCES</a></li>|
-            <li><a href='/dashb-admin-utilisateurs'>UTILISATEURS</a></li>
-            <li><a href='/password'>MOT DE PASSE</a></li>
+            <li><a href='/dashb-admin-utilisateurs'>UTILISATEURS</a></li>|
+            <li><a href='/password'>MOT DE PASSE</a></li>|
+            <li><a href='/log-support'>SUPPORT</a></li>
         </ul>
     </section>
     ");

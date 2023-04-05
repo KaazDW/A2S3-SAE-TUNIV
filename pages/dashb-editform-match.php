@@ -73,7 +73,7 @@ $scoreEquipe2 = $scoresEquipes->fetch()[0];
 
 <head>
     <?php include '../modules/head.php'; ?>
-    <link href="../assets/css/style.css" rel="stylesheet">
+    <!-- <link href="../assets/css/style.css" rel="stylesheet"> -->
 </head>
 
 <body>
