@@ -146,6 +146,10 @@ switch ($path) {
         require_once APP . "/config/config-suppr-user.php";
         break;
 
+    case "/config-reset-password":
+        require_once APP . "/config/config-reset-password.php";
+        break;
+
         // Gestion tournois administrateur
 
     case "/config-add-team-inscrit":
