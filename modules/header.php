@@ -55,6 +55,7 @@ if ($_SESSION["type"] == "administrateur") {
     <section class='admin-header'>
                 <ul>
                     <li><a href='/dashb-cap'>MON EQUIPE</a></li>
+                    <li><a href='/password-cap'>MOT DE PASSE</a></li>
                 </ul>
             </section>");
 } else if (($_SESSION["type"] == "arbitre")) {

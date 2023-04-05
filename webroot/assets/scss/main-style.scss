@@ -548,6 +548,30 @@ section.stats-section {
 		}
 	}
 }
+.main-editpass{
+	.edit-password-cap-section{
+		form{
+			display: grid;
+			width: 300px;
+			margin: auto;
+			margin-top: 30px;
+			input{
+				padding: 10px 15px;
+				margin: 2px;
+				border-radius: 5px;
+			}
+			button{
+				background-color: var(--red);
+				padding: 10px;
+				border-radius: 5px;
+				margin-top: 10px;
+			}
+			button:hover{
+				cursor: pointer;
+			}
+		}
+	}
+}
 .main-tournois {
 	.tournois-line {
 		display: grid;

@@ -13,7 +13,9 @@ switch ($path) {
     case "/":
         require_once APP . "index.php";
         break;
-
+    // case "/hash":
+    //     require_once APP . "/config/hash.php";
+    //     break;
     case "/index":
         require_once APP . "index.php";
         break;
@@ -196,7 +198,6 @@ switch ($path) {
         break;
     
     // Arbitre
-
     case "/dashb-arbitre":
         require_once APP . "/pages/dashb-arbitre.php";
         break;
@@ -211,6 +212,10 @@ switch ($path) {
 
     case "/config-verrouillage-match":
         require_once APP . "/config/config-verrouillage-match.php";
+        break;
+
+    case "/password-cap":
+        require_once APP . "/pages/dash-cap-password.php";
         break;
 
     default:
