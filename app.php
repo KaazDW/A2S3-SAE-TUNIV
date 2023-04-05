@@ -214,8 +214,12 @@ switch ($path) {
         require_once APP . "/config/config-verrouillage-match.php";
         break;
 
-    case "/password-cap":
-        require_once APP . "/pages/dash-cap-password.php";
+    case "/password":
+        if ($_SERVER["REQUEST_METHOD"]=="GET") {
+            require_once APP . "/pages/dashb-password.php";
+        } else {
+            require_once APP . "/config/config-dashb-password.php";
+        }
         break;
 
     default:
