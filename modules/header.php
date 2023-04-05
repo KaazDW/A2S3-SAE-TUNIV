@@ -46,22 +46,26 @@ if ($_SESSION["type"] == "administrateur") {
             <li><a href='/dashb-admin'>DASHBOARD</a></li>|
             <li><a href='/form-annonce'>ANNONCES</a></li>|
             <li><a href='/dashb-admin-utilisateurs'>UTILISATEURS</a></li>
+            <li><a href='/password'>MOT DE PASSE</a></li>
         </ul>
     </section>
-
     ");
 } else if (($_SESSION["type"] == "capitaine")) {
     echo ("    
     <section class='admin-header'>
-                <ul>
-                    <li><a href='/dashb-cap'>MON EQUIPE</a></li>
-                </ul>
-            </section>");
+        <ul>
+            <li><a href='/dashb-cap'>MON EQUIPE</a></li>
+            <li><a href='/password'>MOT DE PASSE</a></li>
+        </ul>
+    </section>
+    ");
 } else if (($_SESSION["type"] == "arbitre")) {
     echo ("    
     <section class='admin-header'>
-                <ul>
-                    <li><a href='/dashb-arbitre'>MATCH</a></li>
-                </ul>
-            </section>");
+        <ul>
+            <li><a href='/dashb-arbitre'>MATCH</a></li>
+            <li><a href='/password'>MOT DE PASSE</a></li>
+        </ul>
+    </section>
+    ");
 }

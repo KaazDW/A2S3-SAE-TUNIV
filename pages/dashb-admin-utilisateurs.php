@@ -48,6 +48,9 @@
                             <a class="edit" href="/config-suppr-user?id=<?= $utilisateur['ID_User'] ?>">
                                 <img  alt="" src="../assets/img/delete-blanc.png">
                             </a>
+                            <a class="password" href="/config-reset-password?id=<?=$utilisateur['ID_User']?>">
+                                <img  alt="" src="../assets/img/password.png">
+                            </a>
                         </div>
                     </div>
                     <?php

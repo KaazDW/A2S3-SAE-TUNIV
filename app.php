@@ -13,7 +13,9 @@ switch ($path) {
     case "/":
         require_once APP . "index.php";
         break;
-
+    // case "/hash":
+    //     require_once APP . "/config/hash.php";
+    //     break;
     case "/index":
         require_once APP . "index.php";
         break;
@@ -144,6 +146,10 @@ switch ($path) {
         require_once APP . "/config/config-suppr-user.php";
         break;
 
+    case "/config-reset-password":
+        require_once APP . "/config/config-reset-password.php";
+        break;
+
         // Gestion tournois administrateur
 
     case "/config-add-team-inscrit":
@@ -196,7 +202,6 @@ switch ($path) {
         break;
     
     // Arbitre
-
     case "/dashb-arbitre":
         require_once APP . "/pages/dashb-arbitre.php";
         break;
@@ -211,6 +216,14 @@ switch ($path) {
 
     case "/config-verrouillage-match":
         require_once APP . "/config/config-verrouillage-match.php";
+        break;
+
+    case "/password":
+        if ($_SERVER["REQUEST_METHOD"]=="GET") {
+            require_once APP . "/pages/dashb-password.php";
+        } else {
+            require_once APP . "/config/config-dashb-password.php";
+        }
         break;
 
     default:

@@ -1,4 +1,5 @@
-<?php if (empty($_SESSION["loggedIn"])) {
+<?php 
+if (empty($_SESSION["loggedIn"])) {
     $_SESSION["loggedIn"] = false;
 }
 

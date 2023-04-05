@@ -1,9 +1,9 @@
 <?php
+// Backend CloudFare Turnstile Captcha
 $SECRET_KEY = '0x4AAAAAAADR2xz5lPYphZCyMeSrpixEzk8';
 $login = $_POST['login'];
 $pswd = $_POST['password'];
 include_once 'db.php';
-
 
 $formData = array(
 	'secret' => $SECRET_KEY,
@@ -35,7 +35,6 @@ if ($outcome['success']) {
 	header("Location: /login");
 }
 
-
 //verification de l'utilisateur dans la bd et association du rôles associé
 function configLogin($login, $password){
 	try {
@@ -50,15 +49,15 @@ function configLogin($login, $password){
 	if ($res[0] == 1) { // On vérifie qu'il existe un utilisateur avec l'identifiant donné
 		$statement = $pdo->prepare("SELECT Mot_de_passe FROM Utilisateurs WHERE Identifiant=:varLogin");
 		$statement->execute(['varLogin' => "$login",]);
-		$res = $statement->fetch();
-		if (password_verify($password,$res[0])) { // Si oui, on vérifie que le mot de passe donné correspond à celui de l'utilisateur
+		$passwordHashe = $statement->fetch()[0];
+		if (password_verify($password,$passwordHashe)) { // Si oui, on vérifie que le mot de passe donné correspond à celui de l'utilisateur
 			$statement = $pdo->prepare("SELECT Type_user FROM Utilisateurs WHERE Identifiant=:varLogin");
 			$statement->execute(['varLogin' => "$login"]);
 			$type = $statement->fetch()[0];
 			if ($type == 0) {
 				$_SESSION["loggedIn"] = true;
 				$statement = $pdo->prepare("SELECT ID_User FROM Utilisateurs WHERE Identifiant=:varLogin AND Mot_de_passe=:varPassword");
-				$statement->execute(['varLogin' => "$login", 'varPassword' => "$password"]);
+				$statement->execute(['varLogin' => "$login", 'varPassword' => "$passwordHashe"]);
 				$res = $statement->fetch();
 				$_SESSION["userId"] = $res[0];
 				$_SESSION["type"] = "administrateur";
@@ -66,7 +65,7 @@ function configLogin($login, $password){
 			} else if ($type == 1) {
 				$_SESSION["loggedIn"] = true;
 				$statement = $pdo->prepare("SELECT ID_User FROM Utilisateurs WHERE Identifiant=:varLogin AND Mot_de_passe=:varPassword");
-				$statement->execute(['varLogin' => "$login", 'varPassword' => "$password"]);
+				$statement->execute(['varLogin' => "$login", 'varPassword' => "$passwordHashe"]);
 				$res = $statement->fetch();
 				$_SESSION["userId"] = $res[0];
 				$_SESSION["type"] = "arbitre";
@@ -74,7 +73,7 @@ function configLogin($login, $password){
 			} else {
 				$_SESSION["loggedIn"] = true;
 				$statement = $pdo->prepare("SELECT ID_User FROM Utilisateurs WHERE Identifiant=:varLogin AND Mot_de_passe=:varPassword");
-				$statement->execute(['varLogin' => "$login", 'varPassword' => "$password"]);
+				$statement->execute(['varLogin' => "$login", 'varPassword' => "$passwordHashe"]);
 				$res = $statement->fetch();
 				$_SESSION["userId"] = $res[0];
 				$_SESSION["type"] = "capitaine";

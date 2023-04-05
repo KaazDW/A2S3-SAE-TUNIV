@@ -3,8 +3,6 @@ if ($_SESSION["type"]!="capitaine") {
     header("Location: /index");
 }
 
-// == CONFIG FILE USE TO ADD A PLAYER TO [...] FROM [...]
-
 include 'db.php';
 
 $prenom = $_POST["new-surname2"];
