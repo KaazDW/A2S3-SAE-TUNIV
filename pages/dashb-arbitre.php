@@ -13,12 +13,10 @@ $listeTournois = $pdo->query($sql);
 
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <?php include '../modules/head.php'; ?>
-    <link href="../assets/css/style.css" rel="stylesheet">
+    <!-- <link href="../assets/css/style.css" rel="stylesheet"> -->
 </head>
-
 <body>
     <?php include '../modules/header.php'; ?>
     <main class="main-dashcap">
@@ -32,12 +30,7 @@ $listeTournois = $pdo->query($sql);
                 <div class="joueurs-liste-div">
                     <?php
                     $listematch = $pdo->prepare('SELECT * from MatchTournoi where ID_User=:varId;');
-                    $listematch->execute(
-                        [
-                            'varId' => $_SESSION["userId"],
-
-                        ]
-                    );
+                    $listematch->execute(['varId' => $_SESSION["userId"]]);
                     $matchs = $listematch->fetchAll(); ?>
                     <section id="el5" class="display-poule">
                         <?php foreach ($matchs as $match) : ?>

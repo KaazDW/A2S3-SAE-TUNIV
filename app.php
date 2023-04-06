@@ -59,9 +59,14 @@ switch ($path) {
             require_once APP . "/config/config-support.php";
         }
         break;
-
+    case "/log-support":
+        require_once APP . "/pages/dashb-admin-support.php";
+        break;
     case "/match-tournois":
         require_once APP . "/pages/match-tournois.php";
+        break;
+    case "/config-supp-support":
+        require_once APP . "/config/config-supp-support.php";
         break;
 
     // Administrateur

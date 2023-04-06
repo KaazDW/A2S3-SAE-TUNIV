@@ -54,6 +54,8 @@ if (empty($_SESSION["type"])) {
                     <!-- </div> -->
                     <button type='submit'>Se Connecter</button>
                     <div class='cf-turnstile' data-sitekey='0x4AAAAAAADR2zXo9bNOJV2W' data-callback='javascriptCallback'></div>
+                    <a href='/support'>mot de passe oublié ?</a>
+                    <p>Rédigez votre demande de reinitialisation de votre mot de passe dans le 'formulaire de contact d'un administrateur'. Celui-ci vous recontactera au plus vite.</p>
                 </form>");
             }
         ?>

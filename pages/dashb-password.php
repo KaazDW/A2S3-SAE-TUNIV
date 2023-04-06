@@ -11,7 +11,6 @@ if ($_SESSION["loggedIn"] != true) {
         include '../modules/head.php';
         include '../modules/header.php';
     ?>
-    <link href="../assets/css/style.css" rel="stylesheet">
 </head>
 <body>
     <main class="main-editpass">

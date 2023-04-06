@@ -335,8 +335,26 @@ main {
   border: 1px solid rgba(255, 255, 255, 0);
   border-radius: 5px;
 }
+.main-login form button:hover {
+  cursor: pointer;
+}
 .main-login form div.cf-turnstile {
   margin-left: -45px;
+}
+.main-login form a {
+  text-decoration: underline;
+}
+.main-login form p {
+  display: none;
+  background-color: var(--color-hover);
+  padding: 15px;
+  border-radius: 5px;
+  position: relative;
+  width: 150%;
+  margin-left: -60px;
+}
+.main-login form a:hover ~ p, .main-login form p:hover {
+  display: block;
 }
 
 .logout-div {
@@ -524,6 +542,39 @@ section.stats-section div.file-counter > p {
   border-radius: 50%;
   margin: 10px auto;
   filter: grayscale(1);
+}
+
+.support-admin-main-dashboard .dashadmin-section .grid .support-line:first-child {
+  background-color: var(--color-hover);
+  border-radius: 2px;
+}
+.support-admin-main-dashboard .dashadmin-section .grid .support-line {
+  display: grid;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  margin: 15px 0px;
+  border: 1px solid var(--color-border);
+  border-radius: 5px;
+  align-items: center;
+}
+.support-admin-main-dashboard .dashadmin-section .grid .support-line:hover {
+  background-color: var(--color-hover);
+}
+.support-admin-main-dashboard .dashadmin-section .grid .support-line span {
+  margin: 5px 10px;
+}
+.support-admin-main-dashboard .dashadmin-section .grid .support-line span:nth-child(5) {
+  grid-column: 5/7;
+}
+.support-admin-main-dashboard .dashadmin-section .grid .support-line a:last-child {
+  color: var(--red);
+  border: 1px solid var(--red);
+  border-radius: 2px;
+  padding: 2px;
+  width: 89px;
+}
+.support-admin-main-dashboard .dashadmin-section .grid .support-line a:last-child:hover {
+  text-decoration: underline;
 }
 
 .main-editpass .edit-password-cap-section form {
