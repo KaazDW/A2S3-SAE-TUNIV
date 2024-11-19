@@ -33,7 +33,7 @@ $sql->execute();
                 </div>
                 <div class="apropos-personnalcard">
                     <img src="../assets/img/account.png">
-                    <a href="http://github.com/kaazdw" target="_blank">Jean-François MARCOURT</a>
+                    <a href="http://github.com/kaazdw" target="_blank">KaazDW</a>
                 </div>
                 <div class="apropos-personnalcard">
                     <img src="../assets/img/account.png">
